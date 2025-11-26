@@ -43,7 +43,7 @@ export default function ContactPageContent() {
                       <Mail className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <div className="font-semibold">Email</div>
+                      <div className="font-semibold">E-mail</div>
                       <a
                         href="mailto:contact@advantage.com"
                         className="text-muted-foreground hover:text-primary transition-colors"

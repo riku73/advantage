@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import EmailMarketingPageContent from "@/components/service-page-email";
 
 export const metadata: Metadata = {
-  title: "Email Marketing | Advantage",
+  title: "E-mail marketing | Advantage",
   description:
-    "Fidélisez et convertissez avec l'email marketing. Campagnes automatisées, segmentation avancée et reporting détaillé.",
+    "Fidélisez et convertissez avec l'e-mail marketing. Campagnes automatisées, segmentation avancée et reporting détaillé.",
 };
 
 export default function EmailMarketingPage() {

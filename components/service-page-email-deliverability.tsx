@@ -9,7 +9,7 @@ import ServiceFeaturesPricing from "@/components/sections/service-features-prici
 import { getServiceById } from "@/lib/services-data";
 
 const benefits = [
-  "Vos emails arrivent en boîte de réception",
+  "Vos e-mails arrivent en boîte de réception",
   "Meilleur taux d'ouverture",
   "Protection contre le blacklistage",
   "Réputation d'expéditeur optimisée",
@@ -38,14 +38,14 @@ export default function EmailDeliverabilityPageContent() {
             <FadeIn direction="left">
               <div className="inline-flex items-center gap-2 rounded-full border bg-background px-4 py-2 text-sm font-medium">
                 <Server className="h-4 w-4 text-primary" />
-                <span>Email Deliverability</span>
+                <span>Délivrabilité e-mail</span>
               </div>
               <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl">
-                Assurez que vos emails arrivent à destination
+                Assurez que vos e-mails arrivent à destination
               </h1>
               <p className="mt-6 text-lg text-muted-foreground">
                 Évitez les filtres anti-spam et améliorez la délivrabilité de vos
-                emails avec notre expertise technique. Configuration complète et
+                e-mails avec notre expertise technique. Configuration complète et
                 optimisation de réputation.
               </p>
               <div className="mt-8">
@@ -62,7 +62,7 @@ export default function EmailDeliverabilityPageContent() {
               <div className="aspect-square overflow-hidden rounded-2xl shadow-xl">
                 <Image
                   src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=800&fit=crop&q=80"
-                  alt="Email deliverability and server configuration"
+                  alt="Délivrabilité e-mail et configuration serveur"
                   width={800}
                   height={800}
                   className="object-cover transition-transform hover:scale-105 duration-700"
@@ -131,7 +131,7 @@ export default function EmailDeliverabilityPageContent() {
             </h2>
             <p className="mt-4 text-lg text-primary-foreground/90">
               Contactez-nous pour un audit et optimisez la délivrabilité de vos
-              campagnes email.
+              campagnes e-mail.
             </p>
             <div className="mt-8">
               <Link

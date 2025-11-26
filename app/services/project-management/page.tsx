@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import ProjectManagementPageContent from "@/components/service-page-project-management";
 
 export const metadata: Metadata = {
-  title: "Gestion de Projet Externalisée | Advantage",
+  title: "Gestion de projet externalisée | Advantage",
   description:
     "Coordination complète de vos projets digitaux et marketing de A à Z. À partir de €490/projet.",
   keywords: [

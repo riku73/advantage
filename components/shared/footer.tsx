@@ -5,12 +5,12 @@ const navigation = {
   services: [
     { name: "SEO", href: "/services/seo" },
     { name: "SEA", href: "/services/sea" },
-    { name: "Email Marketing", href: "/services/email-marketing" },
-    { name: "Sites Web", href: "/services/sites-web" },
-    { name: "Landing Pages", href: "/services/landing-pages" },
+    { name: "E-mail marketing", href: "/services/email-marketing" },
+    { name: "Sites web", href: "/services/sites-web" },
+    { name: "Landing pages", href: "/services/landing-pages" },
   ],
   company: [
-    { name: "À Propos", href: "/a-propos" },
+    { name: "À propos", href: "/a-propos" },
     { name: "Services", href: "/services" },
     { name: "Contact", href: "/contact" },
   ],

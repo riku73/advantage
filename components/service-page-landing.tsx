@@ -36,7 +36,7 @@ export default function LandingPagesPageContent() {
             <FadeIn direction="left">
               <div className="inline-flex items-center gap-2 rounded-full border bg-background px-4 py-2 text-sm font-medium">
                 <Target className="h-4 w-4 text-primary" />
-                <span>Landing Pages</span>
+                <span>Landing pages</span>
               </div>
               <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl">
                 Landing pages qui convertissent

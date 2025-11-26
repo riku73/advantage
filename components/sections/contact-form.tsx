@@ -8,15 +8,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { contactFormSchema, type ContactFormData } from "@/lib/schemas/contact-form";
 import { submitContactForm } from "@/app/actions/submit-contact-form";
 
-const services = [
-  { value: "seo", label: "SEO - Référencement Naturel" },
-  { value: "sea", label: "SEA - Google Ads" },
-  { value: "email", label: "Email Marketing" },
-  { value: "website", label: "Site Web" },
-  { value: "landing", label: "Landing Page" },
-  { value: "other", label: "Autre" },
-];
-
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -94,91 +85,71 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-      {/* Name */}
-      <div>
-        <label htmlFor="name" className="block text-sm font-medium">
-          Nom complet <span className="text-destructive">*</span>
-        </label>
-        <input
-          {...register("name")}
-          type="text"
-          id="name"
-          className="mt-2 block w-full rounded-md border border-input bg-background px-4 py-3 text-foreground transition-all focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 hover:border-primary/50"
-          placeholder="Jean Dupont"
-        />
-        {errors.name && (
-          <p className="mt-1 text-sm text-destructive">{errors.name.message}</p>
-        )}
+      {/* Name & E-mail - 2 columns on desktop */}
+      <div className="grid gap-6 sm:grid-cols-2">
+        <div>
+          <label htmlFor="name" className="block text-sm font-medium">
+            Nom complet <span className="text-destructive">*</span>
+          </label>
+          <input
+            {...register("name")}
+            type="text"
+            id="name"
+            className="mt-2 block w-full rounded-md border border-input bg-background px-4 py-3 text-foreground transition-all focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 hover:border-primary/50"
+            placeholder="Jean Dupont"
+          />
+          {errors.name && (
+            <p className="mt-1 text-sm text-destructive">{errors.name.message}</p>
+          )}
+        </div>
+
+        <div>
+          <label htmlFor="email" className="block text-sm font-medium">
+            E-mail <span className="text-destructive">*</span>
+          </label>
+          <input
+            {...register("email")}
+            type="email"
+            id="email"
+            className="mt-2 block w-full rounded-md border border-input bg-background px-4 py-3 text-foreground transition-all focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 hover:border-primary/50"
+            placeholder="jean.dupont@example.com"
+          />
+          {errors.email && (
+            <p className="mt-1 text-sm text-destructive">{errors.email.message}</p>
+          )}
+        </div>
       </div>
 
-      {/* Email */}
-      <div>
-        <label htmlFor="email" className="block text-sm font-medium">
-          Email <span className="text-destructive">*</span>
-        </label>
-        <input
-          {...register("email")}
-          type="email"
-          id="email"
-          className="mt-2 block w-full rounded-md border border-input bg-background px-4 py-3 text-foreground transition-all focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 hover:border-primary/50"
-          placeholder="jean.dupont@example.com"
-        />
-        {errors.email && (
-          <p className="mt-1 text-sm text-destructive">{errors.email.message}</p>
-        )}
-      </div>
+      {/* Phone & Company - 2 columns on desktop */}
+      <div className="grid gap-6 sm:grid-cols-2">
+        <div>
+          <label htmlFor="phone" className="block text-sm font-medium">
+            Téléphone
+          </label>
+          <input
+            {...register("phone")}
+            type="tel"
+            id="phone"
+            className="mt-2 block w-full rounded-md border border-input bg-background px-4 py-3 text-foreground transition-all focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 hover:border-primary/50"
+            placeholder="+33 6 12 34 56 78"
+          />
+          {errors.phone && (
+            <p className="mt-1 text-sm text-destructive">{errors.phone.message}</p>
+          )}
+        </div>
 
-      {/* Phone */}
-      <div>
-        <label htmlFor="phone" className="block text-sm font-medium">
-          Téléphone
-        </label>
-        <input
-          {...register("phone")}
-          type="tel"
-          id="phone"
-          className="mt-2 block w-full rounded-md border border-input bg-background px-4 py-3 text-foreground transition-all focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 hover:border-primary/50"
-          placeholder="+33 6 12 34 56 78"
-        />
-        {errors.phone && (
-          <p className="mt-1 text-sm text-destructive">{errors.phone.message}</p>
-        )}
-      </div>
-
-      {/* Company */}
-      <div>
-        <label htmlFor="company" className="block text-sm font-medium">
-          Entreprise
-        </label>
-        <input
-          {...register("company")}
-          type="text"
-          id="company"
-          className="mt-2 block w-full rounded-md border border-input bg-background px-4 py-3 text-foreground transition-all focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 hover:border-primary/50"
-          placeholder="Nom de votre entreprise"
-        />
-      </div>
-
-      {/* Service */}
-      <div>
-        <label htmlFor="service" className="block text-sm font-medium">
-          Service souhaité <span className="text-destructive">*</span>
-        </label>
-        <select
-          {...register("service")}
-          id="service"
-          className="mt-2 block w-full rounded-md border border-input bg-background px-4 py-3 text-foreground transition-all focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 hover:border-primary/50"
-        >
-          <option value="">Sélectionnez un service</option>
-          {services.map((service) => (
-            <option key={service.value} value={service.value}>
-              {service.label}
-            </option>
-          ))}
-        </select>
-        {errors.service && (
-          <p className="mt-1 text-sm text-destructive">{errors.service.message}</p>
-        )}
+        <div>
+          <label htmlFor="company" className="block text-sm font-medium">
+            Entreprise
+          </label>
+          <input
+            {...register("company")}
+            type="text"
+            id="company"
+            className="mt-2 block w-full rounded-md border border-input bg-background px-4 py-3 text-foreground transition-all focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 hover:border-primary/50"
+            placeholder="Nom de votre entreprise"
+          />
+        </div>
       </div>
 
       {/* Message */}

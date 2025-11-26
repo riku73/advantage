@@ -9,11 +9,15 @@ import {
   FileText,
   Briefcase,
   Target,
-  DollarSign,
   User,
   Calendar,
   Sparkles,
-  Send
+  Send,
+  Globe,
+  Palette,
+  Share2,
+  Video,
+  Lightbulb
 } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -23,10 +27,12 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Checkbox } from "@/components/ui/checkbox";
 import FadeIn from "@/components/ui/fade-in";
+import { cn } from "@/lib/utils";
+import { services, type ServiceCategory } from "@/lib/services-data";
 
 interface FormData {
-  // Step 1: Project Type
-  projectType: string;
+  // Step 1: Project Category & Services
+  projectCategory: ServiceCategory | "autre" | "";
   services: string[];
 
   // Step 2: Project Details
@@ -51,7 +57,7 @@ interface FormData {
 }
 
 const initialFormData: FormData = {
-  projectType: "",
+  projectCategory: "",
   services: [],
   projectName: "",
   projectDescription: "",
@@ -67,25 +73,50 @@ const initialFormData: FormData = {
   hearAboutUs: "",
 };
 
-const projectTypes = [
-  { value: "site-web", label: "Site Web", description: "Site vitrine, e-commerce ou application web" },
-  { value: "seo", label: "Référencement SEO", description: "Optimisation pour les moteurs de recherche" },
-  { value: "sea", label: "Publicité SEA", description: "Google Ads et campagnes payantes" },
-  { value: "social-media", label: "Réseaux Sociaux", description: "Gestion et contenu social media" },
-  { value: "package", label: "Package Complet", description: "Solution marketing complète" },
-  { value: "autre", label: "Autre", description: "Projet personnalisé" },
+const projectCategories = [
+  {
+    value: "digital-web",
+    label: "Digital & Web",
+    description: "Sites web, SEO, SEA, E-mail marketing",
+    icon: Globe
+  },
+  {
+    value: "visual-print",
+    label: "Identité visuelle & print",
+    description: "Logo, branding, supports imprimés",
+    icon: Palette
+  },
+  {
+    value: "social-media",
+    label: "Réseaux sociaux",
+    description: "Publicité sociale, création de contenu",
+    icon: Share2
+  },
+  {
+    value: "media-production",
+    label: "Production média",
+    description: "Vidéo, photographie professionnelle",
+    icon: Video
+  },
+  {
+    value: "consulting",
+    label: "Consulting & Gestion",
+    description: "Stratégie digitale, gestion de projet",
+    icon: Lightbulb
+  },
+  {
+    value: "autre",
+    label: "Autre",
+    description: "Projet personnalisé",
+    icon: Briefcase
+  },
 ];
 
-const serviceOptions = [
-  { value: "web-design", label: "Design Web" },
-  { value: "development", label: "Développement" },
-  { value: "seo", label: "SEO" },
-  { value: "sea", label: "SEA/Google Ads" },
-  { value: "social-media", label: "Social Media" },
-  { value: "content-creation", label: "Création de Contenu" },
-  { value: "branding", label: "Branding" },
-  { value: "analytics", label: "Analytics & Reporting" },
-];
+// Group services by category for easy filtering
+const getServicesForCategory = (category: string) => {
+  if (category === "autre") return services; // Show all services for "autre"
+  return services.filter(s => s.category === category);
+};
 
 const budgetRanges = [
   { value: "small", label: "< 5 000€", description: "Projet simple" },
@@ -125,7 +156,7 @@ export default function CustomQuotePageContent() {
   const canProceed = () => {
     switch (currentStep) {
       case 1:
-        return formData.projectType !== "";
+        return formData.projectCategory !== "";
       case 2:
         return formData.projectName !== "" && formData.projectDescription !== "";
       case 3:
@@ -207,7 +238,7 @@ export default function CustomQuotePageContent() {
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 rounded-full border bg-background px-4 py-2 text-sm font-medium mb-4">
               <Sparkles className="h-4 w-4 text-primary" />
-              <span>Devis Personnalisé</span>
+              <span>Devis personnalisé</span>
             </div>
             <h1 className="text-4xl font-bold mb-4">
               Obtenez votre devis sur mesure
@@ -260,11 +291,11 @@ export default function CustomQuotePageContent() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-3">
-                {currentStep === 1 && <><FileText className="h-6 w-6 text-primary" />Type de Projet</>}
-                {currentStep === 2 && <><Briefcase className="h-6 w-6 text-primary" />Détails du Projet</>}
-                {currentStep === 3 && <><DollarSign className="h-6 w-6 text-primary" />Budget & Délais</>}
-                {currentStep === 4 && <><User className="h-6 w-6 text-primary" />Vos Coordonnées</>}
-                {currentStep === 5 && <><Target className="h-6 w-6 text-primary" />Informations Complémentaires</>}
+                {currentStep === 1 && <><FileText className="h-6 w-6 text-primary" />Type de projet</>}
+                {currentStep === 2 && <><Briefcase className="h-6 w-6 text-primary" />Détails du projet</>}
+                {currentStep === 3 && <>Budget & Délais</>}
+                {currentStep === 4 && <><User className="h-6 w-6 text-primary" />Vos coordonnées</>}
+                {currentStep === 5 && <><Target className="h-6 w-6 text-primary" />Informations complémentaires</>}
               </CardTitle>
               <CardDescription>
                 {currentStep === 1 && "Quel type de projet souhaitez-vous réaliser ?"}
@@ -275,62 +306,115 @@ export default function CustomQuotePageContent() {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
-              {/* Step 1: Project Type */}
+              {/* Step 1: Project Category & Services */}
               {currentStep === 1 && (
                 <div className="space-y-6">
                   <div>
                     <Label className="text-base font-semibold mb-4 block">
-                      Type de projet principal
+                      Catégorie de projet
                     </Label>
                     <RadioGroup
-                      value={formData.projectType}
-                      onValueChange={(value) => updateFormData("projectType", value)}
+                      value={formData.projectCategory}
+                      onValueChange={(value) => updateFormData("projectCategory", value)}
                     >
                       <div className="grid gap-4 sm:grid-cols-2">
-                        {projectTypes.map((type) => (
-                          <div key={type.value}>
-                            <RadioGroupItem
-                              value={type.value}
-                              id={type.value}
-                              className="peer sr-only"
-                            />
-                            <Label
-                              htmlFor={type.value}
-                              className="flex flex-col items-start gap-2 rounded-lg border-2 border-muted bg-card p-4 hover:bg-accent hover:border-primary cursor-pointer peer-data-[state=checked]:border-primary peer-data-[state=checked]:bg-primary/5"
-                            >
-                              <span className="font-semibold">{type.label}</span>
-                              <span className="text-sm text-muted-foreground">
-                                {type.description}
-                              </span>
-                            </Label>
-                          </div>
-                        ))}
+                        {projectCategories.map((category) => {
+                          const isSelected = formData.projectCategory === category.value;
+                          const Icon = category.icon;
+                          return (
+                            <div key={category.value}>
+                              <RadioGroupItem
+                                value={category.value}
+                                id={category.value}
+                                className="peer sr-only"
+                              />
+                              <Label
+                                htmlFor={category.value}
+                                className={cn(
+                                  "relative flex flex-col items-start gap-2 rounded-lg border-2 p-4 cursor-pointer transition-all",
+                                  isSelected
+                                    ? "border-primary bg-primary/10 dark:bg-primary/20 shadow-lg"
+                                    : "border-muted bg-card hover:bg-accent/50 hover:border-primary/50"
+                                )}
+                              >
+                                <div className="flex items-center gap-2">
+                                  <Icon className={cn(
+                                    "h-5 w-5",
+                                    isSelected ? "text-primary" : "text-muted-foreground"
+                                  )} />
+                                  <span className={cn(
+                                    "font-semibold",
+                                    isSelected && "text-primary"
+                                  )}>{category.label}</span>
+                                </div>
+                                <span className={cn(
+                                  "text-sm",
+                                  isSelected ? "text-foreground" : "text-muted-foreground"
+                                )}>
+                                  {category.description}
+                                </span>
+                                {isSelected && (
+                                  <div className="absolute top-2 right-2">
+                                    <CheckCircle2 className="h-5 w-5 text-primary" />
+                                  </div>
+                                )}
+                              </Label>
+                            </div>
+                          );
+                        })}
                       </div>
                     </RadioGroup>
                   </div>
 
-                  <div>
-                    <Label className="text-base font-semibold mb-4 block">
-                      Services souhaités (optionnel)
-                    </Label>
-                    <div className="grid gap-3 sm:grid-cols-2">
-                      {serviceOptions.map((service) => (
-                        <div key={service.value} className="flex items-center space-x-2">
-                          <Checkbox
-                            id={service.value}
-                            checked={formData.services.includes(service.value)}
-                            onCheckedChange={() => handleServiceToggle(service.value)}
-                          />
-                          <Label
-                            htmlFor={service.value}
-                            className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
-                          >
-                            {service.label}
-                          </Label>
-                        </div>
-                      ))}
+                  {formData.projectCategory && formData.projectCategory !== "" && (
+                    <div>
+                      <Label className="text-base font-semibold mb-4 block">
+                        Services spécifiques (optionnel)
+                      </Label>
+                      <div className="grid gap-3 sm:grid-cols-2">
+                        {getServicesForCategory(formData.projectCategory).map((service) => {
+                          const isChecked = formData.services.includes(service.id);
+                          const ServiceIcon = service.icon;
+                          return (
+                            <div
+                              key={service.id}
+                              className={cn(
+                                "flex items-center space-x-3 rounded-lg border-2 p-3 transition-all cursor-pointer",
+                                isChecked
+                                  ? "border-primary bg-primary/10 dark:bg-primary/20"
+                                  : "border-muted hover:border-primary/50 bg-card hover:bg-accent/50"
+                              )}
+                              onClick={() => handleServiceToggle(service.id)}
+                            >
+                              <Checkbox
+                                id={service.id}
+                                checked={isChecked}
+                                onCheckedChange={() => handleServiceToggle(service.id)}
+                                className="data-[state=checked]:bg-primary data-[state=checked]:border-primary"
+                              />
+                              <div className="flex-1">
+                                <div className="flex items-center gap-2">
+                                  <ServiceIcon className="h-4 w-4 text-muted-foreground" />
+                                  <Label
+                                    htmlFor={service.id}
+                                    className={cn(
+                                      "text-sm font-medium cursor-pointer select-none",
+                                      isChecked ? "text-primary" : "text-foreground"
+                                    )}
+                                  >
+                                    {service.title}
+                                  </Label>
+                                </div>
+                                <p className="text-xs text-muted-foreground mt-1">
+                                  {service.shortDescription}
+                                </p>
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
               )}
 
@@ -388,27 +472,43 @@ export default function CustomQuotePageContent() {
                       onValueChange={(value) => updateFormData("budget", value)}
                     >
                       <div className="grid gap-4">
-                        {budgetRanges.map((range) => (
-                          <div key={range.value}>
-                            <RadioGroupItem
-                              value={range.value}
-                              id={`budget-${range.value}`}
-                              className="peer sr-only"
-                            />
-                            <Label
-                              htmlFor={`budget-${range.value}`}
-                              className="flex items-center justify-between rounded-lg border-2 border-muted bg-card p-4 hover:bg-accent hover:border-primary cursor-pointer peer-data-[state=checked]:border-primary peer-data-[state=checked]:bg-primary/5"
-                            >
-                              <div>
-                                <span className="font-semibold block">{range.label}</span>
-                                <span className="text-sm text-muted-foreground">
-                                  {range.description}
-                                </span>
-                              </div>
-                              <DollarSign className="h-5 w-5 text-muted-foreground" />
-                            </Label>
-                          </div>
-                        ))}
+                        {budgetRanges.map((range) => {
+                          const isSelected = formData.budget === range.value;
+                          return (
+                            <div key={range.value}>
+                              <RadioGroupItem
+                                value={range.value}
+                                id={`budget-${range.value}`}
+                                className="peer sr-only"
+                              />
+                              <Label
+                                htmlFor={`budget-${range.value}`}
+                                className={cn(
+                                  "relative flex items-center justify-between rounded-lg border-2 p-4 cursor-pointer transition-all",
+                                  isSelected
+                                    ? "border-primary bg-primary/10 dark:bg-primary/20 shadow-lg"
+                                    : "border-muted bg-card hover:bg-accent/50 hover:border-primary/50"
+                                )}
+                              >
+                                <div>
+                                  <span className={cn(
+                                    "font-semibold block",
+                                    isSelected && "text-primary"
+                                  )}>{range.label}</span>
+                                  <span className={cn(
+                                    "text-sm",
+                                    isSelected ? "text-foreground" : "text-muted-foreground"
+                                  )}>
+                                    {range.description}
+                                  </span>
+                                </div>
+                                {isSelected && (
+                                  <CheckCircle2 className="h-5 w-5 text-primary" />
+                                )}
+                              </Label>
+                            </div>
+                          );
+                        })}
                       </div>
                     </RadioGroup>
                   </div>
@@ -422,27 +522,45 @@ export default function CustomQuotePageContent() {
                       onValueChange={(value) => updateFormData("timeline", value)}
                     >
                       <div className="grid gap-4 sm:grid-cols-2">
-                        {timelineOptions.map((option) => (
-                          <div key={option.value}>
-                            <RadioGroupItem
-                              value={option.value}
-                              id={`timeline-${option.value}`}
-                              className="peer sr-only"
-                            />
-                            <Label
-                              htmlFor={`timeline-${option.value}`}
-                              className="flex flex-col items-start gap-2 rounded-lg border-2 border-muted bg-card p-4 hover:bg-accent hover:border-primary cursor-pointer peer-data-[state=checked]:border-primary peer-data-[state=checked]:bg-primary/5"
-                            >
-                              <div className="flex items-center gap-2">
-                                <Calendar className="h-4 w-4 text-primary" />
-                                <span className="font-semibold">{option.label}</span>
-                              </div>
-                              <span className="text-sm text-muted-foreground">
-                                {option.description}
-                              </span>
-                            </Label>
-                          </div>
-                        ))}
+                        {timelineOptions.map((option) => {
+                          const isSelected = formData.timeline === option.value;
+                          return (
+                            <div key={option.value}>
+                              <RadioGroupItem
+                                value={option.value}
+                                id={`timeline-${option.value}`}
+                                className="peer sr-only"
+                              />
+                              <Label
+                                htmlFor={`timeline-${option.value}`}
+                                className={cn(
+                                  "relative flex flex-col items-start gap-2 rounded-lg border-2 p-4 cursor-pointer transition-all",
+                                  isSelected
+                                    ? "border-primary bg-primary/10 dark:bg-primary/20 shadow-lg"
+                                    : "border-muted bg-card hover:bg-accent/50 hover:border-primary/50"
+                                )}
+                              >
+                                <div className="flex items-center gap-2">
+                                  {isSelected ? (
+                                    <CheckCircle2 className="h-4 w-4 text-primary" />
+                                  ) : (
+                                    <Calendar className="h-4 w-4 text-muted-foreground" />
+                                  )}
+                                  <span className={cn(
+                                    "font-semibold",
+                                    isSelected && "text-primary"
+                                  )}>{option.label}</span>
+                                </div>
+                                <span className={cn(
+                                  "text-sm",
+                                  isSelected ? "text-foreground" : "text-muted-foreground"
+                                )}>
+                                  {option.description}
+                                </span>
+                              </Label>
+                            </div>
+                          );
+                        })}
                       </div>
                     </RadioGroup>
                   </div>
@@ -476,28 +594,30 @@ export default function CustomQuotePageContent() {
                     </div>
                   </div>
 
-                  <div>
-                    <Label htmlFor="email">Email *</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="jean.dupont@exemple.com"
-                      value={formData.email}
-                      onChange={(e) => updateFormData("email", e.target.value)}
-                      className="mt-2"
-                    />
-                  </div>
+                  <div className="grid gap-6 sm:grid-cols-2">
+                    <div>
+                      <Label htmlFor="email">E-mail *</Label>
+                      <Input
+                        id="email"
+                        type="email"
+                        placeholder="jean.dupont@exemple.com"
+                        value={formData.email}
+                        onChange={(e) => updateFormData("email", e.target.value)}
+                        className="mt-2"
+                      />
+                    </div>
 
-                  <div>
-                    <Label htmlFor="phone">Téléphone *</Label>
-                    <Input
-                      id="phone"
-                      type="tel"
-                      placeholder="+352 XX XX XX XX"
-                      value={formData.phone}
-                      onChange={(e) => updateFormData("phone", e.target.value)}
-                      className="mt-2"
-                    />
+                    <div>
+                      <Label htmlFor="phone">Téléphone *</Label>
+                      <Input
+                        id="phone"
+                        type="tel"
+                        placeholder="+352 XX XX XX XX"
+                        value={formData.phone}
+                        onChange={(e) => updateFormData("phone", e.target.value)}
+                        className="mt-2"
+                      />
+                    </div>
                   </div>
 
                   <div className="rounded-lg border bg-muted/50 p-4">
@@ -547,9 +667,9 @@ export default function CustomQuotePageContent() {
                     </h3>
                     <div className="space-y-3 text-sm">
                       <div className="flex justify-between">
-                        <span className="text-muted-foreground">Type de projet :</span>
+                        <span className="text-muted-foreground">Catégorie :</span>
                         <span className="font-medium">
-                          {projectTypes.find((t) => t.value === formData.projectType)?.label}
+                          {projectCategories.find((c) => c.value === formData.projectCategory)?.label}
                         </span>
                       </div>
                       <div className="flex justify-between">
@@ -566,16 +686,19 @@ export default function CustomQuotePageContent() {
                       </div>
                       {formData.services.length > 0 && (
                         <div>
-                          <span className="text-muted-foreground">Services :</span>
+                          <span className="text-muted-foreground">Services sélectionnés :</span>
                           <div className="flex flex-wrap gap-2 mt-2">
-                            {formData.services.map((service) => (
-                              <span
-                                key={service}
-                                className="inline-flex rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary"
-                              >
-                                {serviceOptions.find((s) => s.value === service)?.label}
-                              </span>
-                            ))}
+                            {formData.services.map((serviceId) => {
+                              const service = services.find((s) => s.id === serviceId);
+                              return service ? (
+                                <span
+                                  key={serviceId}
+                                  className="inline-flex rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary"
+                                >
+                                  {service.title}
+                                </span>
+                              ) : null;
+                            })}
                           </div>
                         </div>
                       )}
