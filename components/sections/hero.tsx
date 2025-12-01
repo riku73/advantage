@@ -51,7 +51,15 @@ export default function Hero() {
           >
             Pendant que vous hésitez,
             <br />
-            d&apos;autres prennent l&apos;<span className="text-primary">Advantage</span>
+            d&apos;autres prennent l&apos;<span className="relative inline-block text-primary">
+              Advantage
+              <motion.span
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+                className="absolute -bottom-1 left-0 h-[4px] w-full origin-left rounded-full bg-primary sm:-bottom-2 sm:h-[6px]"
+              />
+            </span>
           </motion.h1>
 
           <motion.p
