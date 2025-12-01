@@ -6,6 +6,7 @@ import { Mail, ArrowRight, CheckCircle2 } from "lucide-react";
 import FadeIn from "@/components/ui/fade-in";
 import StaggerContainer, { StaggerItem } from "@/components/ui/stagger-container";
 import PricingTiers from "@/components/sections/pricing-tiers";
+import FAQSection, { emailMarketingFAQs } from "@/components/sections/faq-section";
 import { getServiceById } from "@/lib/services-data";
 
 const benefits = [
@@ -17,7 +18,7 @@ const benefits = [
 ];
 
 const features = [
-  "Design d'emails responsive",
+  "Design d'e-mails responsive",
   "Automation marketing",
   "Segmentation comportementale",
   "A/B testing",
@@ -37,13 +38,13 @@ export default function EmailMarketingPageContent() {
             <FadeIn direction="left">
               <div className="inline-flex items-center gap-2 rounded-full border bg-background px-4 py-2 text-sm font-medium">
                 <Mail className="h-4 w-4 text-primary" />
-                <span>Email Marketing</span>
+                <span>E-mail marketing</span>
               </div>
               <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl">
                 Transformez vos contacts en clients fidèles
               </h1>
               <p className="mt-6 text-lg text-muted-foreground">
-                Créez des campagnes email personnalisées qui engagent, convertissent
+                Créez des campagnes e-mail personnalisées qui engagent, convertissent
                 et fidélisent votre audience avec un ROI exceptionnel.
               </p>
               <div className="mt-8">
@@ -60,7 +61,7 @@ export default function EmailMarketingPageContent() {
               <div className="aspect-square overflow-hidden rounded-2xl shadow-xl">
                 <Image
                   src="https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=800&h=800&fit=crop&q=80"
-                  alt="Email marketing campaign with newsletter design"
+                  alt="E-mail marketing campaign with newsletter design"
                   width={800}
                   height={800}
                   className="object-cover transition-transform hover:scale-105 duration-700"
@@ -75,7 +76,7 @@ export default function EmailMarketingPageContent() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="mx-auto max-w-3xl">
             <FadeIn>
-              <h2 className="text-3xl font-bold">Pourquoi l'email marketing ?</h2>
+              <h2 className="text-3xl font-bold">Pourquoi l'e-mail marketing ?</h2>
             </FadeIn>
             <StaggerContainer className="mt-8 space-y-4">
               {benefits.map((benefit) => (
@@ -95,7 +96,7 @@ export default function EmailMarketingPageContent() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <FadeIn>
-              <h2 className="text-3xl font-bold">Nos services email marketing</h2>
+              <h2 className="text-3xl font-bold">Nos services e-mail marketing</h2>
             </FadeIn>
             <StaggerContainer className="mt-12 grid gap-4 sm:grid-cols-2">
               {features.map((feature) => (
@@ -115,19 +116,27 @@ export default function EmailMarketingPageContent() {
       {tiers.length > 0 && (
         <PricingTiers
           tiers={tiers}
-          title="Nos Tarifs Email Marketing"
+          title="Nos tarifs e-mail marketing"
           description="Newsletter setup ou campagnes à la demande"
         />
       )}
+
+      {/* FAQ */}
+      <FAQSection
+        title="Questions fréquentes sur l'e-mail marketing"
+        subtitle="Tout ce que vous devez savoir sur nos services e-mail"
+        faqs={emailMarketingFAQs}
+        className="bg-muted/50"
+      />
 
       <section className="bg-primary py-20">
         <div className="container mx-auto px-4 lg:px-8">
           <FadeIn className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold text-primary-foreground">
-              Prêt à booster votre email marketing ?
+              Prêt à booster votre e-mail marketing ?
             </h2>
             <p className="mt-4 text-lg text-primary-foreground/90">
-              Découvrez comment nos campagnes email peuvent transformer votre communication.
+              Découvrez comment nos campagnes e-mail peuvent transformer votre communication.
             </p>
             <div className="mt-8">
               <Link

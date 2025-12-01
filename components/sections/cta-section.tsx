@@ -22,16 +22,15 @@ export default function CtaSection() {
       <div className="container mx-auto px-4 lg:px-8">
         <FadeIn className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl">
-            Prêt à booster votre croissance digitale ?
+            Prêt à faire décoller votre présence digitale ?
           </h2>
           <p className="mt-6 text-lg text-primary-foreground/90">
-            Discutons de vos objectifs et découvrez comment Advantage peut
-            transformer votre présence en ligne pour des résultats concrets et
-            mesurables.
+            Notre équipe vous accompagne de A à Z dans votre
+            croissance digitale. Parlons de votre projet.
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">
             <Link
-              href="/contact"
+              href="/devis-personnalise"
               className="group inline-flex items-center justify-center gap-2 rounded-md bg-black dark:bg-white px-8 py-3 text-base font-semibold text-white dark:text-black shadow-lg transition-all hover:bg-gray-900 dark:hover:bg-gray-100 hover:shadow-xl hover:scale-105"
             >
               Demandez un devis gratuit

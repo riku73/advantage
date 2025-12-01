@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import DigitalStrategyPageContent from "@/components/service-page-digital-strategy";
 
 export const metadata: Metadata = {
-  title: "Consulting Stratégie Digitale | Advantage",
+  title: "Consulting stratégie digitale | ADVANTAGE",
   description:
     "Conseil stratégique personnalisé pour votre croissance digitale. Session d'1 heure + roadmap à €120/heure.",
   keywords: [

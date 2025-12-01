@@ -9,8 +9,19 @@ import {
   categoryLabels,
   ServiceCategory,
 } from "@/lib/services-data";
+import { ServiceHero } from "@/components/ui/page-hero";
 
 export default function ServicesPageContent() {
+  // Custom order for digital-web services
+  const digitalWebOrder = [
+    "landing-pages",
+    "sites-web",
+    "seo",
+    "sea",
+    "email-marketing",
+    "email-deliverability",
+  ];
+
   // Group services by category
   const servicesByCategory = services.reduce(
     (acc, service) => {
@@ -23,26 +34,49 @@ export default function ServicesPageContent() {
     {} as Record<ServiceCategory, typeof services>
   );
 
+  // Sort digital-web services according to custom order
+  if (servicesByCategory["digital-web"]) {
+    servicesByCategory["digital-web"].sort((a, b) => {
+      const aIndex = digitalWebOrder.indexOf(a.id);
+      const bIndex = digitalWebOrder.indexOf(b.id);
+      if (aIndex === -1) return 1;
+      if (bIndex === -1) return -1;
+      return aIndex - bIndex;
+    });
+  }
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-background to-muted/50 py-20">
+      <ServiceHero
+        backgroundImage="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1920&h=1080&fit=crop&q=80"
+        backgroundAlt="Digital marketing services and strategy planning"
+      >
         <div className="container mx-auto px-4 lg:px-8">
           <FadeIn className="mx-auto max-w-3xl text-center" immediate>
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
               Nos Services Marketing Digital
             </h1>
             <p className="mt-6 text-lg text-muted-foreground">
               Des solutions complètes et sur-mesure pour accélérer votre
               croissance digitale et atteindre vos objectifs business.
             </p>
+            <div className="mt-8">
+              <Link
+                href="/devis-personnalise"
+                className="group inline-flex items-center justify-center gap-2 rounded-md bg-black dark:bg-white px-8 py-3 font-semibold text-white dark:text-black transition-all hover:bg-gray-800 dark:hover:bg-gray-100 hover:scale-105"
+              >
+                Demandez un devis gratuit
+                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </div>
           </FadeIn>
         </div>
-      </section>
+      </ServiceHero>
 
       {/* Services by Category */}
       {Object.entries(servicesByCategory).map(([category, categoryServices]) => (
-        <section key={category} className="py-16">
+        <section key={category} id={category} className="py-16 scroll-mt-20">
           <div className="container mx-auto px-4 lg:px-8">
             <FadeIn>
               <h2 className="text-3xl font-bold mb-2">
@@ -57,13 +91,6 @@ export default function ServicesPageContent() {
 
             <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
               {categoryServices.map((service, index) => {
-                // Get pricing for badge
-                const pricingForBadge = service.pricing
-                  ? Array.isArray(service.pricing)
-                    ? service.pricing[0].price
-                    : service.pricing
-                  : null;
-
                 return (
                   <FadeIn
                     key={service.id}
@@ -74,7 +101,6 @@ export default function ServicesPageContent() {
                         <div className="inline-flex rounded-lg bg-primary/10 p-3 text-primary">
                           <service.icon className="h-6 w-6" />
                         </div>
-                        {pricingForBadge && <PricingBadge pricing={pricingForBadge} />}
                       </div>
 
                       <h3 className="mt-6 text-2xl font-bold">{service.title}</h3>
@@ -114,19 +140,25 @@ export default function ServicesPageContent() {
         <div className="container mx-auto px-4 lg:px-8">
           <FadeIn className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold text-primary-foreground">
-              Besoin d'un devis personnalisé ?
+              Parlons de votre projet
             </h2>
             <p className="mt-4 text-lg text-primary-foreground/90">
-              Contactez-nous pour discuter de vos besoins et recevoir une offre
-              sur-mesure.
+              Chaque entreprise est unique. Discutons de vos objectifs pour
+              définir la stratégie qui vous correspond.
             </p>
-            <div className="mt-8">
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
               <Link
                 href="/contact"
                 className="group inline-flex items-center gap-2 rounded-md bg-black dark:bg-white px-8 py-3 font-semibold text-white dark:text-black transition-all hover:bg-gray-900 dark:hover:bg-gray-100 hover:scale-105"
               >
-                Demandez un devis gratuit
+                Contactez-nous
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Link>
+              <Link
+                href="/a-propos"
+                className="inline-flex items-center justify-center gap-2 rounded-md border-2 border-black dark:border-white bg-transparent px-8 py-3 font-semibold text-black dark:text-white transition-all hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black hover:scale-105"
+              >
+                Voir nos clients
               </Link>
             </div>
           </FadeIn>

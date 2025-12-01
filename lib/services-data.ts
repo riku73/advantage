@@ -48,17 +48,6 @@ export interface Service {
   color?: string;
 }
 
-export interface ServiceBundle {
-  id: string;
-  name: string;
-  price: number;
-  description: string;
-  includedServices: string[]; // Service IDs
-  features: string[];
-  savings?: number;
-  popular?: boolean;
-}
-
 export type ServiceCategory =
   | "digital-web"
   | "visual-print"
@@ -73,7 +62,7 @@ export const services: Service[] = [
     id: "seo",
     category: "digital-web",
     name: "SEO",
-    title: "Référencement Naturel (SEO)",
+    title: "Référencement naturel (SEO)",
     shortDescription: "Positionnez-vous en première page Google",
     description:
       "Améliorez votre visibilité sur Google et attirez un trafic qualifié et durable grâce à notre expertise en référencement naturel.",
@@ -92,7 +81,7 @@ export const services: Service[] = [
         ],
       },
       {
-        name: "Optimisation Mensuelle",
+        name: "Optimisation mensuelle",
         price: { amount: 290, period: "monthly", startingFrom: true },
         features: [
           "Optimisation on-page et off-page",
@@ -117,7 +106,7 @@ export const services: Service[] = [
     id: "sea",
     category: "digital-web",
     name: "SEA",
-    title: "Référencement Payant (SEA)",
+    title: "Référencement payant (SEA)",
     shortDescription: "Résultats immédiats avec Google Ads",
     description:
       "Générez des résultats immédiats avec nos campagnes Google Ads optimisées pour un retour sur investissement maximal.",
@@ -125,7 +114,7 @@ export const services: Service[] = [
     href: "/services/sea",
     pricing: [
       {
-        name: "Configuration Campagne",
+        name: "Configuration campagne",
         price: { amount: 390, period: "one-time", startingFrom: true },
         features: [
           "Configuration compte Google Ads",
@@ -136,7 +125,7 @@ export const services: Service[] = [
         ],
       },
       {
-        name: "Gestion Mensuelle",
+        name: "Gestion mensuelle",
         price: { amount: 290, period: "monthly", startingFrom: true },
         features: [
           "Monitoring quotidien",
@@ -160,16 +149,16 @@ export const services: Service[] = [
   {
     id: "email-marketing",
     category: "digital-web",
-    name: "Email Marketing",
-    title: "Email Marketing",
-    shortDescription: "Fidélisez et convertissez par email",
+    name: "E-mail marketing",
+    title: "E-mail marketing",
+    shortDescription: "Fidélisez et convertissez par e-mail",
     description:
-      "Fidélisez vos clients et convertissez vos prospects avec des campagnes email personnalisées et automatisées.",
+      "Fidélisez vos clients et convertissez vos prospects avec des campagnes e-mail personnalisées et automatisées.",
     icon: Mail,
     href: "/services/email-marketing",
     pricing: [
       {
-        name: "Newsletter Design + Setup",
+        name: "Newsletter design + setup",
         price: { amount: 290, period: "one-time" },
         features: [
           "Template Mailchimp personnalisé",
@@ -180,7 +169,7 @@ export const services: Service[] = [
         ],
       },
       {
-        name: "Campagne Email",
+        name: "Campagne e-mail",
         price: { amount: 190, period: "campaign", startingFrom: true },
         features: [
           "Création du contenu",
@@ -192,7 +181,7 @@ export const services: Service[] = [
       },
     ],
     features: [
-      "Campagnes email créatives",
+      "Campagnes e-mail créatives",
       "Segmentation avancée",
       "Automation et workflows",
       "A/B testing et optimisation",
@@ -203,8 +192,8 @@ export const services: Service[] = [
   {
     id: "sites-web",
     category: "digital-web",
-    name: "Sites Web",
-    title: "Développement de Sites Web",
+    name: "Sites web",
+    title: "Sites web",
     shortDescription: "Sites web professionnels et performants",
     description:
       "Créez une présence en ligne professionnelle avec un site web performant, responsive et optimisé pour la conversion.",
@@ -212,7 +201,7 @@ export const services: Service[] = [
     href: "/services/sites-web",
     pricing: [
       {
-        name: "Site Basic (1 Page)",
+        name: "Site basic (1 page)",
         price: { amount: 590, period: "one-time", startingFrom: true },
         features: [
           "Design responsive moderne",
@@ -223,7 +212,7 @@ export const services: Service[] = [
         ],
       },
       {
-        name: "Site Standard (5 Pages)",
+        name: "Site standard (5 pages)",
         price: { amount: 1490, period: "one-time", startingFrom: true },
         features: [
           "Design sur-mesure",
@@ -235,7 +224,7 @@ export const services: Service[] = [
         popular: true,
       },
       {
-        name: "Site E-Commerce",
+        name: "Site e-commerce",
         price: { amount: 2490, period: "one-time", startingFrom: true },
         features: [
           "Boutique en ligne complète",
@@ -258,8 +247,8 @@ export const services: Service[] = [
   {
     id: "landing-pages",
     category: "digital-web",
-    name: "Landing Pages",
-    title: "Landing Pages",
+    name: "Landing pages",
+    title: "Landing pages",
     shortDescription: "Pages de conversion haute performance",
     description:
       "Maximisez vos conversions avec des landing pages optimisées, testées et conçues pour transformer vos visiteurs en clients.",
@@ -287,7 +276,7 @@ export const services: Service[] = [
     id: "logo-branding",
     category: "visual-print",
     name: "Logo & Branding",
-    title: "Logo Design + Identité de Marque",
+    title: "Logo design + identité de marque",
     shortDescription: "Identité visuelle professionnelle",
     description:
       "Créez une identité de marque forte et mémorable avec un logo professionnel et un guide de style complet.",
@@ -314,7 +303,7 @@ export const services: Service[] = [
     id: "print-design",
     category: "visual-print",
     name: "Print Design",
-    title: "Design de Supports Imprimés",
+    title: "Design de supports imprimés",
     shortDescription: "Cartes de visite, flyers, brochures",
     description:
       "Matériel marketing imprimé professionnel pour renforcer votre présence offline.",
@@ -338,8 +327,8 @@ export const services: Service[] = [
   {
     id: "print-coordination",
     category: "visual-print",
-    name: "Coordination Impression",
-    title: "Services d'Impression",
+    name: "Coordination impression",
+    title: "Services d'impression",
     shortDescription: "Gestion de l'impression A-Z",
     description:
       "Nous coordonnons l'impression de vos supports avec nos partenaires locaux de confiance.",
@@ -366,8 +355,8 @@ export const services: Service[] = [
   {
     id: "social-media-ads",
     category: "social-media",
-    name: "Social Media Ads",
-    title: "Publicité sur Réseaux Sociaux",
+    name: "Social media ads",
+    title: "Publicité sur réseaux sociaux",
     shortDescription: "Campagnes Meta, LinkedIn, TikTok",
     description:
       "Atteignez votre audience cible avec des campagnes publicitaires optimisées sur Facebook, Instagram, LinkedIn.",
@@ -375,7 +364,7 @@ export const services: Service[] = [
     href: "/services/social-media-ads",
     pricing: [
       {
-        name: "Configuration Campagne",
+        name: "Configuration campagne",
         price: { amount: 290, period: "one-time" },
         features: [
           "Design des publicités",
@@ -386,7 +375,7 @@ export const services: Service[] = [
         ],
       },
       {
-        name: "Gestion Mensuelle",
+        name: "Gestion mensuelle",
         price: { amount: 190, period: "monthly", startingFrom: true },
         features: [
           "Gestion par plateforme",
@@ -411,8 +400,8 @@ export const services: Service[] = [
   {
     id: "social-content",
     category: "social-media",
-    name: "Social Media Content",
-    title: "Création de Contenu Social",
+    name: "Social media content",
+    title: "Création de contenu",
     shortDescription: "Contenu engageant pour vos réseaux",
     description:
       "Calendrier éditorial complet avec visuels créatifs, captions et hashtags optimisés pour maximiser l'engagement.",
@@ -440,8 +429,8 @@ export const services: Service[] = [
   {
     id: "video-production",
     category: "media-production",
-    name: "Production Vidéo",
-    title: "Services de Production Vidéo",
+    name: "Production vidéo",
+    title: "Services de production vidéo",
     shortDescription: "Vidéos promo et corporate",
     description:
       "Captez l'attention avec des vidéos professionnelles pour vos réseaux sociaux, site web ou publicités.",
@@ -449,7 +438,7 @@ export const services: Service[] = [
     href: "/services/video-production",
     pricing: [
       {
-        name: "Vidéo Promo Courte",
+        name: "Vidéo promo courte",
         price: { amount: 490, period: "one-time", startingFrom: true },
         features: [
           "Jusqu'à 60 secondes",
@@ -460,7 +449,7 @@ export const services: Service[] = [
         ],
       },
       {
-        name: "Vidéo Corporate",
+        name: "Vidéo corporate",
         price: { amount: 990, period: "one-time", startingFrom: true },
         features: [
           "2-3 minutes",
@@ -486,7 +475,7 @@ export const services: Service[] = [
     id: "photography",
     category: "media-production",
     name: "Photographie",
-    title: "Séances Photo Professionnelles",
+    title: "Séances photo professionnelles",
     shortDescription: "Photos événements et corporate",
     description:
       "Photos professionnelles pour votre site web, réseaux sociaux, ou couverture d'événements.",
@@ -514,8 +503,8 @@ export const services: Service[] = [
   {
     id: "digital-strategy",
     category: "consulting",
-    name: "Consulting Digital",
-    title: "Consulting Stratégie Digitale",
+    name: "Consulting digital",
+    title: "Consulting stratégie digitale",
     shortDescription: "Conseil stratégique personnalisé",
     description:
       "Guidance experte sur votre stratégie digitale, branding, marketing et choix de plateformes.",
@@ -531,15 +520,15 @@ export const services: Service[] = [
       "Recommandations stratégiques",
       "Roadmap personnalisée",
       "Conseil sur les outils",
-      "Support par email (7j)",
+      "Support par e-mail (7j)",
     ],
     color: "text-amber-600",
   },
   {
     id: "project-management",
     category: "consulting",
-    name: "Gestion de Projet",
-    title: "Gestion de Projet Externalisée",
+    name: "Gestion de projet",
+    title: "Gestion de projet externalisée",
     shortDescription: "Coordination complète de vos projets",
     description:
       "Nous gérons vos campagnes, lancements de site ou projets média de A à Z.",
@@ -565,11 +554,11 @@ export const services: Service[] = [
   {
     id: "email-deliverability",
     category: "digital-web",
-    name: "Email Deliverability",
-    title: "Optimisation de la Délivrabilité Email",
-    shortDescription: "Assurez que vos emails arrivent en boîte de réception",
+    name: "E-mail Deliverability",
+    title: "Optimisation de la délivrabilité e-mail",
+    shortDescription: "Assurez que vos e-mails arrivent en boîte de réception",
     description:
-      "Améliorez la délivrabilité de vos emails et évitez les filtres anti-spam avec notre expertise technique.",
+      "Améliorez la délivrabilité de vos e-mails et évitez les filtres anti-spam avec notre expertise technique.",
     icon: Server,
     href: "/services/email-deliverability",
     pricing: {
@@ -590,46 +579,6 @@ export const services: Service[] = [
   },
 ];
 
-// Service Bundles
-export const bundles: ServiceBundle[] = [
-  {
-    id: "startup-pack",
-    name: "Start-Up Pack",
-    price: 1590,
-    description:
-      "Le package essentiel pour lancer votre présence digitale professionnelle",
-    includedServices: ["logo-branding", "sites-web", "print-design"],
-    features: [
-      "Logo + Identité de marque complète",
-      "Site web one-pager responsive",
-      "Cartes de visite professionnelles",
-      "SEO de base inclus",
-      "Formation à la gestion",
-      "3 mois de support",
-    ],
-    savings: 200,
-    popular: true,
-  },
-  {
-    id: "growth-pack",
-    name: "Growth Pack",
-    price: 3290,
-    description:
-      "La solution complète pour accélérer votre croissance digitale",
-    includedServices: ["sites-web", "seo", "sea", "social-content"],
-    features: [
-      "Site web 5 pages sur-mesure",
-      "SEO: Audit + 3 mois d'optimisation",
-      "Google Ads: Setup + 2 mois de gestion",
-      "Social Media: 2 mois de contenu",
-      "Formation complète",
-      "6 mois de support prioritaire",
-    ],
-    savings: 500,
-    popular: false,
-  },
-];
-
 // Helper Functions
 export function getServiceById(id: string): Service | undefined {
   return services.find((service) => service.id === id);
@@ -639,10 +588,6 @@ export function getServicesByCategory(
   category: ServiceCategory
 ): Service[] {
   return services.filter((service) => service.category === category);
-}
-
-export function getBundleById(id: string): ServiceBundle | undefined {
-  return bundles.find((bundle) => bundle.id === id);
 }
 
 export function formatPrice(pricing: ServicePricing): string {
@@ -666,9 +611,9 @@ export function formatPrice(pricing: ServicePricing): string {
 
 // Category Labels
 export const categoryLabels: Record<ServiceCategory, string> = {
-  "digital-web": "Digital & Web",
-  "visual-print": "Identité Visuelle & Print",
-  "social-media": "Réseaux Sociaux & Publicité",
-  "media-production": "Production Média",
-  "consulting": "Management & Consulting",
+  "digital-web": "Digital & web",
+  "visual-print": "Identité visuelle & print",
+  "social-media": "Réseaux sociaux & publicité",
+  "media-production": "Production média",
+  "consulting": "Management & consulting",
 };

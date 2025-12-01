@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import PrintDesignPageContent from "@/components/service-page-print-design";
 
 export const metadata: Metadata = {
-  title: "Design de Supports Imprimés | Advantage",
+  title: "Design de supports imprimés | ADVANTAGE",
   description:
     "Cartes de visite, flyers, brochures professionnels. Designs créatifs prêts pour l'impression à partir de €90.",
   keywords: [

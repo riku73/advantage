@@ -6,6 +6,7 @@ import { MousePointerClick, ArrowRight, CheckCircle2 } from "lucide-react";
 import FadeIn from "@/components/ui/fade-in";
 import StaggerContainer, { StaggerItem } from "@/components/ui/stagger-container";
 import PricingTiers from "@/components/sections/pricing-tiers";
+import FAQSection, { seaFAQs } from "@/components/sections/faq-section";
 import { getServiceById } from "@/lib/services-data";
 
 const benefits = [
@@ -120,6 +121,14 @@ export default function SEAPageContent() {
         />
       )}
 
+      {/* FAQ */}
+      <FAQSection
+        title="Questions fréquentes sur Google Ads"
+        subtitle="Tout ce que vous devez savoir sur la publicité payante"
+        faqs={seaFAQs}
+        className="bg-muted/50"
+      />
+
       <section className="bg-primary py-20">
         <div className="container mx-auto px-4 lg:px-8">
           <FadeIn className="mx-auto max-w-2xl text-center">
@@ -131,7 +140,7 @@ export default function SEAPageContent() {
             </p>
             <div className="mt-8">
               <Link
-                href="/contact"
+                href="/devis-personnalise"
                 className="group inline-flex items-center gap-2 rounded-md bg-black dark:bg-white px-8 py-3 font-semibold text-white dark:text-black transition-all hover:bg-gray-900 dark:hover:bg-gray-100 hover:scale-105"
               >
                 Demandez un devis

@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import Image from "next/image";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import ThemeToggle from "@/components/ui/theme-toggle";
@@ -9,21 +10,53 @@ import ThemeToggle from "@/components/ui/theme-toggle";
 const navigation = [
   { name: "Accueil", href: "/" },
   { name: "Services", href: "/services" },
-  { name: "Packages", href: "/services/packages" },
-  { name: "À Propos", href: "/a-propos" },
+  { name: "À propos", href: "/a-propos" },
   { name: "Contact", href: "/contact" },
 ];
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header
+      className={cn(
+        "sticky top-0 z-50 w-full transition-all duration-300",
+        isScrolled
+          ? "border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+          : "bg-transparent border-transparent"
+      )}
+    >
       <nav className="container mx-auto flex h-16 items-center justify-between px-4 lg:px-8">
         {/* Logo */}
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
-            <span className="text-2xl font-bold text-primary">Advantage</span>
+            {/* Black logo for light mode */}
+            <Image
+              src="/logo-advantage-normal.svg"
+              alt="Advantage"
+              width={180}
+              height={28}
+              className="h-7 w-auto dark:hidden"
+              priority
+            />
+            {/* White logo for dark mode */}
+            <Image
+              src="/logo-advantage-negative.svg"
+              alt="Advantage"
+              width={180}
+              height={28}
+              className="hidden h-7 w-auto dark:block"
+              priority
+            />
           </Link>
         </div>
 
@@ -32,7 +65,10 @@ export default function Header() {
           <ThemeToggle />
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-foreground"
+            className={cn(
+              "-m-2.5 inline-flex items-center justify-center rounded-md p-2.5",
+              isScrolled ? "text-foreground" : "text-black dark:text-white"
+            )}
             onClick={() => setMobileMenuOpen(true)}
             aria-label="Ouvrir le menu"
           >
@@ -46,7 +82,10 @@ export default function Header() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-semibold leading-6 text-foreground transition-colors hover:text-primary"
+              className={cn(
+                "text-sm font-semibold leading-6 transition-colors hover:text-primary",
+                isScrolled ? "text-foreground" : "text-black dark:text-white"
+              )}
             >
               {item.name}
             </Link>
@@ -58,7 +97,7 @@ export default function Header() {
           <ThemeToggle />
           <Link
             href="/devis-personnalise"
-            className="rounded-md bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
+            className="rounded-md bg-black dark:bg-white px-6 py-2.5 text-sm font-semibold text-white dark:text-black shadow-sm transition-colors hover:bg-gray-800 dark:hover:bg-gray-100"
           >
             Devis Gratuit
           </Link>
@@ -83,7 +122,22 @@ export default function Header() {
         <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-background px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-border">
           <div className="flex items-center justify-between">
             <Link href="/" className="-m-1.5 p-1.5">
-              <span className="text-2xl font-bold text-primary">Advantage</span>
+              {/* Black logo for light mode */}
+              <Image
+                src="/logo-advantage-normal.svg"
+                alt="Advantage"
+                width={180}
+                height={28}
+                className="h-7 w-auto dark:hidden"
+              />
+              {/* White logo for dark mode */}
+              <Image
+                src="/logo-advantage-negative.svg"
+                alt="Advantage"
+                width={180}
+                height={28}
+                className="hidden h-7 w-auto dark:block"
+              />
             </Link>
             <div className="flex items-center gap-3">
               <ThemeToggle />
@@ -114,7 +168,7 @@ export default function Header() {
               <div className="py-6">
                 <Link
                   href="/devis-personnalise"
-                  className="block rounded-md bg-primary px-6 py-2.5 text-center text-base font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
+                  className="block rounded-md bg-black dark:bg-white px-6 py-2.5 text-center text-base font-semibold text-white dark:text-black shadow-sm transition-colors hover:bg-gray-800 dark:hover:bg-gray-100"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Devis Gratuit

@@ -6,6 +6,7 @@ import { Briefcase, ArrowRight, CheckCircle2 } from "lucide-react";
 import FadeIn from "@/components/ui/fade-in";
 import StaggerContainer, { StaggerItem } from "@/components/ui/stagger-container";
 import ServiceFeaturesPricing from "@/components/sections/service-features-pricing";
+import FAQSection, { projectManagementFAQs } from "@/components/sections/faq-section";
 import { getServiceById } from "@/lib/services-data";
 
 const benefits = [
@@ -38,7 +39,7 @@ export default function ProjectManagementPageContent() {
             <FadeIn direction="left">
               <div className="inline-flex items-center gap-2 rounded-full border bg-background px-4 py-2 text-sm font-medium">
                 <Briefcase className="h-4 w-4 text-primary" />
-                <span>Gestion de Projet</span>
+                <span>Gestion de projet</span>
               </div>
               <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl">
                 On gère vos projets de A à Z
@@ -122,6 +123,14 @@ export default function ProjectManagementPageContent() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <FAQSection
+        title="Questions fréquentes sur la gestion de projet"
+        subtitle="Tout ce que vous devez savoir sur nos services de coordination"
+        faqs={projectManagementFAQs}
+        className="bg-muted/50"
+      />
+
       {/* CTA */}
       <section className="bg-primary py-20">
         <div className="container mx-auto px-4 lg:px-8">
@@ -135,7 +144,7 @@ export default function ProjectManagementPageContent() {
             </p>
             <div className="mt-8">
               <Link
-                href="/contact"
+                href="/devis-personnalise"
                 className="group inline-flex items-center gap-2 rounded-md bg-black dark:bg-white px-8 py-3 font-semibold text-white dark:text-black transition-all hover:bg-gray-900 dark:hover:bg-gray-100 hover:scale-105"
               >
                 Demandez un devis

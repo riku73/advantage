@@ -6,25 +6,25 @@ import StaggerContainer, { StaggerItem } from "@/components/ui/stagger-container
 
 const values = [
   {
-    name: "Expertise Francophone",
+    name: "Expertise locale",
     description:
-      "Parfaite connaissance des marchés francophones et de leurs spécificités culturelles pour des campagnes ciblées et efficaces.",
+      "Parfaite connaissance du marché local et de ses spécificités pour des campagnes ciblées et efficaces.",
     icon: Users,
   },
   {
-    name: "Approche Data-Driven",
+    name: "Approche data-driven",
     description:
       "Décisions basées sur l'analyse de données réelles et des KPIs précis pour un ROI optimal et mesurable.",
     icon: BarChart3,
   },
   {
-    name: "ROI Transparent",
+    name: "ROI transparent",
     description:
       "Reporting détaillé et transparent de tous vos investissements marketing avec des résultats concrets et mesurables.",
     icon: TrendingUp,
   },
   {
-    name: "Stratégie Personnalisée",
+    name: "Stratégie personnalisée",
     description:
       "Solutions sur-mesure adaptées à vos objectifs spécifiques, votre secteur et votre budget pour un impact maximal.",
     icon: Target,
@@ -38,7 +38,7 @@ export default function ValueProps() {
         {/* Section header */}
         <FadeIn className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Pourquoi choisir Advantage ?
+            Pourquoi choisir ADVANTAGE ?
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Notre approche unique combine expertise, transparence et résultats

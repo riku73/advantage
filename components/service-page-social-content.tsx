@@ -6,6 +6,7 @@ import { Calendar, ArrowRight, CheckCircle2 } from "lucide-react";
 import FadeIn from "@/components/ui/fade-in";
 import StaggerContainer, { StaggerItem } from "@/components/ui/stagger-container";
 import ServiceFeaturesPricing from "@/components/sections/service-features-pricing";
+import FAQSection, { socialContentFAQs } from "@/components/sections/faq-section";
 import { getServiceById } from "@/lib/services-data";
 
 const benefits = [
@@ -121,6 +122,14 @@ export default function SocialContentPageContent() {
           </div>
         </div>
       </section>
+
+      {/* FAQ */}
+      <FAQSection
+        title="Questions fréquentes sur le contenu réseaux sociaux"
+        subtitle="Tout ce que vous devez savoir sur nos services de création de contenu"
+        faqs={socialContentFAQs}
+        className="bg-muted/50"
+      />
 
       {/* CTA */}
       <section className="bg-primary py-20">

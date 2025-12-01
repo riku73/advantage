@@ -6,6 +6,7 @@ import { Target, ArrowRight, CheckCircle2 } from "lucide-react";
 import FadeIn from "@/components/ui/fade-in";
 import StaggerContainer, { StaggerItem } from "@/components/ui/stagger-container";
 import ServiceFeaturesPricing from "@/components/sections/service-features-pricing";
+import FAQSection, { landingPagesFAQs } from "@/components/sections/faq-section";
 import { getServiceById } from "@/lib/services-data";
 
 const benefits = [
@@ -36,7 +37,7 @@ export default function LandingPagesPageContent() {
             <FadeIn direction="left">
               <div className="inline-flex items-center gap-2 rounded-full border bg-background px-4 py-2 text-sm font-medium">
                 <Target className="h-4 w-4 text-primary" />
-                <span>Landing Pages</span>
+                <span>Landing pages</span>
               </div>
               <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl">
                 Landing pages qui convertissent
@@ -116,6 +117,13 @@ export default function LandingPagesPageContent() {
           <ServiceFeaturesPricing service={service} />
         </section>
       )}
+
+      {/* FAQ */}
+      <FAQSection
+        title="Questions fréquentes sur les landing pages"
+        subtitle="Tout ce que vous devez savoir sur nos pages de conversion"
+        faqs={landingPagesFAQs}
+      />
 
       <section className="bg-primary py-20">
         <div className="container mx-auto px-4 lg:px-8">

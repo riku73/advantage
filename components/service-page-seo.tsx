@@ -6,7 +6,9 @@ import { Search, TrendingUp, ArrowRight, CheckCircle2 } from "lucide-react";
 import FadeIn from "@/components/ui/fade-in";
 import StaggerContainer, { StaggerItem } from "@/components/ui/stagger-container";
 import PricingTiers from "@/components/sections/pricing-tiers";
+import FAQSection, { seoFAQs } from "@/components/sections/faq-section";
 import { getServiceById } from "@/lib/services-data";
+import { ServiceHero } from "@/components/ui/page-hero";
 
 const benefits = [
   "Augmentation du trafic organique qualifié",
@@ -62,15 +64,18 @@ export default function SEOPageContent() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="bg-gradient-to-b from-background to-muted/50 py-20">
+      <ServiceHero
+        backgroundImage="https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=1920&h=1080&fit=crop&q=80"
+        backgroundAlt="SEO analytics and search engine optimization dashboard"
+      >
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            <FadeIn direction="left">
-              <div className="inline-flex items-center gap-2 rounded-full border bg-background px-4 py-2 text-sm font-medium">
+          <div className="mx-auto max-w-3xl text-center">
+            <FadeIn immediate>
+              <div className="inline-flex items-center gap-2 rounded-full border border-foreground/20 bg-foreground/10 backdrop-blur-md px-4 py-2 text-sm font-medium text-foreground">
                 <Search className="h-4 w-4 text-primary" />
                 <span>Référencement Naturel</span>
               </div>
-              <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl">
+              <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
                 Boostez votre visibilité avec le SEO
               </h1>
               <p className="mt-6 text-lg text-muted-foreground">
@@ -78,30 +83,19 @@ export default function SEOPageContent() {
                 trafic qualifié durable grâce à notre expertise en
                 référencement naturel.
               </p>
-              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+              <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center justify-center gap-2 rounded-md bg-black dark:bg-white px-8 py-3 font-semibold text-white dark:text-black transition-all hover:bg-gray-900 dark:hover:bg-gray-100 hover:scale-105"
+                  className="group inline-flex items-center justify-center gap-2 rounded-md bg-black dark:bg-white px-8 py-3 font-semibold text-white dark:text-black transition-all hover:bg-gray-800 dark:hover:bg-gray-100 hover:scale-105"
                 >
                   Audit SEO gratuit
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
             </FadeIn>
-            <FadeIn direction="right" delay={0.2}>
-              <div className="aspect-square overflow-hidden rounded-2xl shadow-xl">
-                <Image
-                  src="https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=800&h=800&fit=crop&q=80"
-                  alt="SEO analytics and search engine optimization dashboard"
-                  width={800}
-                  height={800}
-                  className="object-cover transition-transform hover:scale-105 duration-700"
-                />
-              </div>
-            </FadeIn>
           </div>
         </div>
-      </section>
+      </ServiceHero>
 
       {/* Benefits */}
       <section className="py-20">
@@ -161,42 +155,13 @@ export default function SEOPageContent() {
         />
       )}
 
-      {/* Stats */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 lg:px-8">
-          <FadeIn>
-            <div className="grid gap-8 rounded-2xl border bg-card p-8 shadow-sm sm:grid-cols-3">
-              <div className="text-center transition-transform hover:scale-110">
-                <div className="inline-flex rounded-full bg-primary/10 p-3">
-                  <TrendingUp className="h-6 w-6 text-primary" />
-                </div>
-                <div className="mt-4 text-3xl font-bold">+180%</div>
-                <div className="mt-2 text-sm text-muted-foreground">
-                  Trafic organique moyen
-                </div>
-              </div>
-              <div className="text-center transition-transform hover:scale-110">
-                <div className="inline-flex rounded-full bg-primary/10 p-3">
-                  <Search className="h-6 w-6 text-primary" />
-                </div>
-                <div className="mt-4 text-3xl font-bold">Top 3</div>
-                <div className="mt-2 text-sm text-muted-foreground">
-                  Positions moyennes obtenues
-                </div>
-              </div>
-              <div className="text-center transition-transform hover:scale-110">
-                <div className="inline-flex rounded-full bg-primary/10 p-3">
-                  <CheckCircle2 className="h-6 w-6 text-primary" />
-                </div>
-                <div className="mt-4 text-3xl font-bold">92%</div>
-                <div className="mt-2 text-sm text-muted-foreground">
-                  Taux de réussite client
-                </div>
-              </div>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
+      {/* FAQ */}
+      <FAQSection
+        title="Questions fréquentes sur le SEO"
+        subtitle="Tout ce que vous devez savoir sur le référencement naturel"
+        faqs={seoFAQs}
+        className="bg-muted/50"
+      />
 
       {/* Related Services */}
       <section className="border-t py-20">
@@ -234,7 +199,7 @@ export default function SEOPageContent() {
             </p>
             <div className="mt-8">
               <Link
-                href="/contact"
+                href="/devis-personnalise"
                 className="group inline-flex items-center gap-2 rounded-md bg-black dark:bg-white px-8 py-3 font-semibold text-white dark:text-black transition-all hover:bg-gray-900 dark:hover:bg-gray-100 hover:scale-105"
               >
                 Demandez votre audit gratuit

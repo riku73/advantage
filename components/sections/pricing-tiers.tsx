@@ -13,7 +13,7 @@ interface PricingTiersProps {
 
 export default function PricingTiers({
   tiers,
-  title = "Nos Tarifs",
+  title = "Nos Formules",
   description = "Choisissez l'option qui correspond le mieux à vos besoins",
 }: PricingTiersProps) {
   return (

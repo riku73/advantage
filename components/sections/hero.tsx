@@ -7,95 +7,103 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-background to-muted/50 py-20 sm:py-32">
-      {/* Decorative elements */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+      {/* Background Image with Duotone Effect */}
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&h=1080&fit=crop&q=80"
+          alt="Digital marketing workspace with analytics dashboard"
+          fill
+          className="object-cover grayscale contrast-125"
+          priority
+        />
+
+        {/* Mode-adaptive overlay */}
+        <div className="absolute inset-0 bg-white/70 dark:bg-gray-900/80 transition-colors duration-300" />
+
+        {/* Subtle brand color accents */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.2, scale: 1 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 1.5 }}
-          className="absolute left-1/2 top-0 ml-[-38rem] h-[25rem] w-[81.25rem] -translate-x-1/2 bg-gradient-to-tr from-primary/30 to-accent/30 blur-3xl"
+          className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10"
         />
       </div>
 
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
-          {/* Content */}
-          <div className="flex flex-col space-y-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 rounded-full border bg-card px-4 py-2 text-sm font-medium shadow-sm w-fit"
-            >
-              <Sparkles className="h-4 w-4 text-accent" />
-              <span>Agence Marketing Digital d'Excellence</span>
-            </motion.div>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl"
-            >
-              Boostez votre croissance{" "}
-              <span className="text-primary">digitale</span>
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-lg text-muted-foreground sm:text-xl"
-            >
-              Expertise en SEO, SEA, Email Marketing et développement web pour
-              propulser votre entreprise vers de nouveaux sommets. Résultats
-              mesurables, ROI transparent.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex flex-col gap-4 sm:flex-row"
-            >
-              <Link
-                href="/contact"
-                className="group inline-flex items-center justify-center gap-2 rounded-md bg-black dark:bg-white px-8 py-3 text-base font-semibold text-white dark:text-black shadow-lg transition-all hover:bg-gray-900 dark:hover:bg-gray-100 hover:scale-105 hover:shadow-xl"
-              >
-                Demandez un devis gratuit
-                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Link>
-              <Link
-                href="/services"
-                className="inline-flex items-center justify-center gap-2 rounded-md border-2 border-black dark:border-white px-8 py-3 text-base font-semibold text-black dark:text-white bg-transparent transition-all hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black hover:scale-105 dark:shadow-[0_0_0_1px_rgba(255,255,255,0.3)]"
-              >
-                Découvrir nos services
-              </Link>
-            </motion.div>
-          </div>
-
-          {/* Hero Image */}
+      {/* Content */}
+      <div className="container relative mx-auto px-4 lg:px-8 py-20">
+        <div className="mx-auto max-w-4xl text-center">
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="relative hidden lg:block"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mx-auto mb-8 inline-flex items-center gap-2 rounded-full border border-foreground/20 bg-foreground/10 backdrop-blur-md px-4 py-2 text-sm font-medium text-foreground"
           >
-            <div className="aspect-square w-full overflow-hidden rounded-2xl shadow-2xl">
-              <Image
-                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=800&fit=crop&q=80"
-                alt="Digital marketing workspace with analytics dashboard"
-                width={800}
-                height={800}
-                className="object-cover transition-transform hover:scale-105 duration-700"
-                priority
-              />
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-primary/20 to-transparent" />
-            </div>
+            <Sparkles className="h-4 w-4 text-yellow-500 dark:text-yellow-400" />
+            <span>Votre agence marketing au Luxembourg</span>
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl"
+          >
+            Pendant que vous hésitez,
+            <br />
+            <span className="whitespace-nowrap">d&apos;autres prennent l&apos;<span className="text-primary">ADVANTAGE</span></span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mx-auto mt-8 max-w-2xl text-lg text-muted-foreground sm:text-xl"
+          >
+            SEO, publicité, sites web — on accélère votre croissance digitale au Luxembourg.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
+          >
+            <Link
+              href="/devis-personnalise"
+              className="group inline-flex items-center justify-center gap-2 rounded-md bg-black dark:bg-white px-8 py-3 text-base font-semibold text-white dark:text-black shadow-lg transition-all hover:bg-gray-800 dark:hover:bg-gray-100 hover:scale-105 hover:shadow-xl"
+            >
+              Demandez un devis gratuit
+              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Link>
+            <Link
+              href="/services"
+              className="inline-flex items-center justify-center gap-2 rounded-md border-2 border-black dark:border-white px-8 py-3 text-base font-semibold text-black dark:text-white bg-black/10 dark:bg-white/10 backdrop-blur-sm transition-all hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black hover:scale-105"
+            >
+              Découvrir nos services
+            </Link>
           </motion.div>
         </div>
       </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+      >
+        <div className="flex flex-col items-center gap-2">
+          <span className="text-xs text-black/60 dark:text-white/60 uppercase tracking-wider">Défiler</span>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+            className="h-6 w-4 rounded-full border border-black/40 dark:border-white/40"
+          >
+            <div className="mx-auto mt-1 h-1.5 w-0.5 rounded-full bg-black/60 dark:bg-white/60" />
+          </motion.div>
+        </div>
+      </motion.div>
     </section>
   );
 }

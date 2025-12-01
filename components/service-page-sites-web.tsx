@@ -25,6 +25,7 @@ import {
 import FadeIn from "@/components/ui/fade-in";
 import StaggerContainer, { StaggerItem } from "@/components/ui/stagger-container";
 import PricingTiers from "@/components/sections/pricing-tiers";
+import FAQSection, { sitesWebFAQs } from "@/components/sections/faq-section";
 import { getServiceById } from "@/lib/services-data";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -46,7 +47,7 @@ export default function SitesWebPageContent() {
             <FadeIn direction="left">
               <div className="inline-flex items-center gap-2 rounded-full border bg-background px-4 py-2 text-sm font-medium">
                 <Globe className="h-4 w-4 text-primary" />
-                <span>Développement Web</span>
+                <span>Développement web</span>
               </div>
               <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl">
                 Sites web qui convertissent vos visiteurs
@@ -112,7 +113,7 @@ export default function SitesWebPageContent() {
               <TabsContent value="frontend">
                 <Card>
                   <CardHeader>
-                    <CardTitle>Frameworks & Librairies</CardTitle>
+                    <CardTitle>Frameworks & librairies</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div className="flex flex-wrap gap-2">
@@ -133,7 +134,7 @@ export default function SitesWebPageContent() {
               <TabsContent value="performance">
                 <Card>
                   <CardHeader>
-                    <CardTitle>Optimisation & Rapidité</CardTitle>
+                    <CardTitle>Optimisation & rapidité</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div className="flex flex-wrap gap-2">
@@ -154,7 +155,7 @@ export default function SitesWebPageContent() {
               <TabsContent value="security">
                 <Card>
                   <CardHeader>
-                    <CardTitle>Protection & Conformité</CardTitle>
+                    <CardTitle>Protection & conformité</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div className="flex flex-wrap gap-2">
@@ -175,7 +176,7 @@ export default function SitesWebPageContent() {
               <TabsContent value="seo">
                 <Card>
                   <CardHeader>
-                    <CardTitle>Référencement Naturel</CardTitle>
+                    <CardTitle>Référencement naturel</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div className="flex flex-wrap gap-2">
@@ -374,15 +375,15 @@ export default function SitesWebPageContent() {
                 <TableHeader>
                   <TableRow>
                     <TableHead className="w-[240px]">Fonctionnalité</TableHead>
-                    <TableHead className="text-center">Site Vitrine</TableHead>
+                    <TableHead className="text-center">Site vitrine</TableHead>
                     <TableHead className="text-center">E-commerce</TableHead>
-                    <TableHead className="text-center">Application Web</TableHead>
+                    <TableHead className="text-center">Application web</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   <TableRow className="bg-muted/30">
                     <TableCell colSpan={4} className="font-semibold text-primary">
-                      Informations Générales
+                      Informations générales
                     </TableCell>
                   </TableRow>
                   <TableRow>
@@ -412,7 +413,7 @@ export default function SitesWebPageContent() {
 
                   <TableRow className="bg-muted/30">
                     <TableCell colSpan={4} className="font-semibold text-primary">
-                      Fonctionnalités Frontend
+                      Fonctionnalités frontend
                     </TableCell>
                   </TableRow>
                   <TableRow>
@@ -454,7 +455,7 @@ export default function SitesWebPageContent() {
 
                   <TableRow className="bg-muted/30">
                     <TableCell colSpan={4} className="font-semibold text-primary">
-                      Fonctionnalités Backend
+                      Fonctionnalités backend
                     </TableCell>
                   </TableRow>
                   <TableRow>
@@ -688,7 +689,7 @@ export default function SitesWebPageContent() {
                     </div>
                     <Badge>ES2023+</Badge>
                   </div>
-                  <CardTitle className="mt-4">Code Moderne</CardTitle>
+                  <CardTitle className="mt-4">Code moderne</CardTitle>
                   <CardDescription>Standards JavaScript actuels</CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -1075,10 +1076,18 @@ export default function SitesWebPageContent() {
       {tiers.length > 0 && (
         <PricingTiers
           tiers={tiers}
-          title="Nos Tarifs Sites Web"
+          title="Nos tarifs sites web"
           description="Du site one-pager à la boutique e-commerce complète"
         />
       )}
+
+      {/* FAQ */}
+      <FAQSection
+        title="Questions fréquentes sur la création de sites web"
+        subtitle="Tout ce que vous devez savoir sur nos services de développement web"
+        faqs={sitesWebFAQs}
+        className="bg-muted/50"
+      />
 
       <section className="bg-primary py-20">
         <div className="container mx-auto px-4 lg:px-8">
@@ -1091,7 +1100,7 @@ export default function SitesWebPageContent() {
             </p>
             <div className="mt-8">
               <Link
-                href="/contact"
+                href="/devis-personnalise"
                 className="group inline-flex items-center gap-2 rounded-md bg-black dark:bg-white px-8 py-3 font-semibold text-white dark:text-black transition-all hover:bg-gray-900 dark:hover:bg-gray-100 hover:scale-105"
               >
                 Demandez un devis

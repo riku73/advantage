@@ -12,20 +12,20 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Advantage - Agence Marketing Digital",
+  title: "ADVANTAGE - Agence Marketing Digital",
   description:
-    "Expert en SEO, SEA, Email Marketing, Sites Web et Landing Pages pour votre croissance digitale.",
+    "Expert en SEO, SEA, E-mail marketing, Sites web et Landing pages pour votre croissance digitale.",
   keywords: [
     "marketing digital",
     "SEO",
     "SEA",
-    "email marketing",
+    "e-mail marketing",
     "agence web",
     "landing pages",
   ],
-  authors: [{ name: "Advantage" }],
+  authors: [{ name: "ADVANTAGE" }],
   openGraph: {
-    title: "Advantage - Agence Marketing Digital",
+    title: "ADVANTAGE - Agence Marketing Digital",
     description:
       "Expert en SEO, SEA, Email Marketing, Sites Web et Landing Pages pour votre croissance digitale.",
     type: "website",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Advantage - Agence Marketing Digital",
+    title: "ADVANTAGE - Agence Marketing Digital",
     description:
       "Expert en SEO, SEA, Email Marketing, Sites Web et Landing Pages pour votre croissance digitale.",
   },

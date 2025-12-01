@@ -6,6 +6,7 @@ import { Camera, ArrowRight, CheckCircle2 } from "lucide-react";
 import FadeIn from "@/components/ui/fade-in";
 import StaggerContainer, { StaggerItem } from "@/components/ui/stagger-container";
 import ServiceFeaturesPricing from "@/components/sections/service-features-pricing";
+import FAQSection, { photographyFAQs } from "@/components/sections/faq-section";
 import { getServiceById } from "@/lib/services-data";
 
 const benefits = [
@@ -38,7 +39,7 @@ export default function PhotographyPageContent() {
             <FadeIn direction="left">
               <div className="inline-flex items-center gap-2 rounded-full border bg-background px-4 py-2 text-sm font-medium">
                 <Camera className="h-4 w-4 text-primary" />
-                <span>Photographie Professionnelle</span>
+                <span>Photographie professionnelle</span>
               </div>
               <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl">
                 Photos professionnelles qui valorisent votre image
@@ -120,6 +121,14 @@ export default function PhotographyPageContent() {
           </div>
         </div>
       </section>
+
+      {/* FAQ */}
+      <FAQSection
+        title="Questions fréquentes sur la photographie"
+        subtitle="Tout ce que vous devez savoir sur nos services photo"
+        faqs={photographyFAQs}
+        className="bg-muted/50"
+      />
 
       {/* CTA */}
       <section className="bg-primary py-20">

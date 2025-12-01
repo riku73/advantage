@@ -1,16 +1,18 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 const navigation = {
   services: [
+    { name: "Landing pages", href: "/services/landing-pages" },
+    { name: "Sites web", href: "/services/sites-web" },
     { name: "SEO", href: "/services/seo" },
     { name: "SEA", href: "/services/sea" },
-    { name: "Email Marketing", href: "/services/email-marketing" },
-    { name: "Sites Web", href: "/services/sites-web" },
-    { name: "Landing Pages", href: "/services/landing-pages" },
+    { name: "E-mail marketing", href: "/services/email-marketing" },
+    { name: "Délivrabilité e-mail", href: "/services/email-deliverability" },
   ],
   company: [
-    { name: "À Propos", href: "/a-propos" },
+    { name: "À propos", href: "/a-propos" },
     { name: "Services", href: "/services" },
     { name: "Contact", href: "/contact" },
   ],
@@ -26,7 +28,22 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block">
-              <span className="text-2xl font-bold text-primary">Advantage</span>
+              {/* Black logo for light mode */}
+              <Image
+                src="/logo-advantage-normal.svg"
+                alt="Advantage"
+                width={180}
+                height={28}
+                className="h-7 w-auto dark:hidden"
+              />
+              {/* White logo for dark mode */}
+              <Image
+                src="/logo-advantage-negative.svg"
+                alt="Advantage"
+                width={180}
+                height={28}
+                className="hidden h-7 w-auto dark:block"
+              />
             </Link>
             <p className="mt-4 text-sm text-muted-foreground">
               Votre agence marketing digital pour une croissance durable et
@@ -80,15 +97,15 @@ export default function Footer() {
             <ul className="mt-4 space-y-3">
               <li className="flex items-start gap-2 text-sm text-muted-foreground">
                 <Mail className="mt-0.5 h-4 w-4 flex-shrink-0" />
-                <span>contact@advantage.com</span>
+                <span>take@advantage.lu</span>
               </li>
               <li className="flex items-start gap-2 text-sm text-muted-foreground">
                 <Phone className="mt-0.5 h-4 w-4 flex-shrink-0" />
-                <span>+33 1 23 45 67 89</span>
+                <span>+352 27 56 59 62</span>
               </li>
               <li className="flex items-start gap-2 text-sm text-muted-foreground">
                 <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0" />
-                <span>Paris, France</span>
+                <span>2 Rue de Sandweiler<br />L-5974 Itzig</span>
               </li>
             </ul>
           </div>
@@ -96,7 +113,7 @@ export default function Footer() {
 
         <div className="mt-12 border-t pt-8">
           <p className="text-center text-sm text-muted-foreground">
-            &copy; {currentYear} Advantage. Tous droits réservés.
+            &copy; {currentYear} ADVANTAGE. Tous droits réservés.
           </p>
         </div>
       </div>

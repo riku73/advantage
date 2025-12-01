@@ -41,22 +41,6 @@ export default function PricingCard({ tier, href = "/contact" }: PricingCardProp
 
       <div className="text-center">
         <h3 className="text-2xl font-bold">{name}</h3>
-        <div className="mt-4 space-y-1">
-          {price.startingFrom && (
-            <div className="text-sm text-muted-foreground">À partir de</div>
-          )}
-          <div className="text-4xl sm:text-5xl font-bold">{price.amount}€</div>
-          {periodDisplay && (
-            <div className="text-sm text-muted-foreground">
-              {periodDisplay}
-            </div>
-          )}
-        </div>
-        {price.description && (
-          <p className="mt-2 text-sm text-muted-foreground">
-            {price.description}
-          </p>
-        )}
       </div>
 
       <ul className="mt-8 space-y-4">
