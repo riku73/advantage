@@ -47,9 +47,11 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl xl:text-7xl"
+            className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl"
           >
-            Faites décoller votre présence digitale
+            Pendant que vous hésitez,
+            <br />
+            d&apos;autres prennent l&apos;<span className="text-primary">Advantage</span>
           </motion.h1>
 
           <motion.p
@@ -58,9 +60,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mx-auto mt-8 max-w-2xl text-lg text-muted-foreground sm:text-xl"
           >
-            Depuis 2022, nous accompagnons les entreprises luxembourgeoises en
-            SEO, SEA, e-mail marketing et création de sites web. Une approche
-            locale, des résultats mesurables.
+            SEO, publicité, sites web — on accélère votre croissance digitale au Luxembourg.
           </motion.p>
 
           <motion.div
