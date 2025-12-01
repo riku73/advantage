@@ -47,12 +47,12 @@ export default function AboutPageContent() {
         <div className="container mx-auto px-4 lg:px-8">
           <FadeIn className="mx-auto max-w-3xl text-center" immediate>
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-              Votre agence marketing au Luxembourg, a l&apos;ecoute de vos ambitions
+              Votre agence marketing au Luxembourg, à l&apos;écoute de vos ambitions
             </h1>
             <p className="mt-6 text-lg text-muted-foreground">
-              Basee a Itzig, Advantage accompagne les entreprises luxembourgeoises
-              dans leur croissance digitale avec des strategies sur-mesure et des
-              resultats mesurables.
+              Basée à Itzig, Advantage accompagne les entreprises luxembourgeoises
+              dans leur croissance digitale avec des stratégies sur-mesure et des
+              résultats mesurables.
             </p>
             <div className="mt-8">
               <Link
@@ -75,19 +75,19 @@ export default function AboutPageContent() {
               <h2 className="text-3xl font-bold">Notre histoire</h2>
               <div className="mt-6 space-y-4 text-muted-foreground">
                 <p>
-                  Fondee en 2022 a Itzig, Advantage est nee de la volonte de proposer
-                  aux entreprises luxembourgeoises une alternative locale et reactive
+                  Fondée en 2022 à Itzig, Advantage est née de la volonté de proposer
+                  aux entreprises luxembourgeoises une alternative locale et réactive
                   aux grandes agences internationales.
                 </p>
                 <p>
-                  Notre equipe accompagne des entreprises de tous secteurs - de la
-                  restauration au transport, de la beaute au e-commerce - dans leur
+                  Notre équipe accompagne des entreprises de tous secteurs - de la
+                  restauration au transport, de la beauté au e-commerce - dans leur
                   croissance digitale.
                 </p>
                 <p>
-                  Nous croyons qu&apos;une strategie marketing reussie repose sur trois
-                  piliers : une ecoute attentive de vos besoins, une execution
-                  impeccable et des resultats mesurables.
+                  Nous croyons qu&apos;une stratégie marketing réussie repose sur trois
+                  piliers : une écoute attentive de vos besoins, une exécution
+                  impeccable et des résultats mesurables.
                 </p>
               </div>
             </FadeIn>
@@ -145,13 +145,13 @@ export default function AboutPageContent() {
           <FadeIn className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold">Notre mission</h2>
             <p className="mt-6 text-lg text-muted-foreground">
-              Aider les entreprises luxembourgeoises et de la Grande Region a
-              exploiter tout le potentiel du marketing digital pour accelerer
+              Aider les entreprises luxembourgeoises et de la Grande Région à
+              exploiter tout le potentiel du marketing digital pour accélérer
               leur croissance et maximiser leur retour sur investissement.
             </p>
             <p className="mt-4 text-lg text-muted-foreground">
-              Proximite, reactivite et resultats concrets : voila ce qui nous
-              differencie des grandes agences internationales.
+              Proximité, réactivité et résultats concrets : voilà ce qui nous
+              différencie des grandes agences internationales.
             </p>
           </FadeIn>
         </div>
@@ -165,7 +165,7 @@ export default function AboutPageContent() {
               Travaillons ensemble
             </h2>
             <p className="mt-4 text-lg text-primary-foreground/90">
-              Pret a donner un nouvel elan a votre presence digitale ?
+              Prêt à donner un nouvel élan à votre présence digitale ?
               Parlons de votre projet.
             </p>
             <div className="mt-8">

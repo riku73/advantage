@@ -133,7 +133,7 @@ export default function SocialMediaAdsPageContent() {
 
       {/* FAQ */}
       <FAQSection
-        title="Questions frequentes sur la publicite reseaux sociaux"
+        title="Questions fréquentes sur la publicité réseaux sociaux"
         subtitle="Tout ce que vous devez savoir sur nos services Social Ads"
         faqs={socialMediaAdsFAQs}
         className="bg-muted/50"

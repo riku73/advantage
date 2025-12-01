@@ -125,8 +125,8 @@ export default function EmailDeliverabilityPageContent() {
 
       {/* FAQ */}
       <FAQSection
-        title="Questions frequentes sur la delivrabilite e-mail"
-        subtitle="Tout ce que vous devez savoir sur nos services de delivrabilite"
+        title="Questions fréquentes sur la délivrabilité e-mail"
+        subtitle="Tout ce que vous devez savoir sur nos services de délivrabilité"
         faqs={emailDeliverabilityFAQs}
         className="bg-muted/50"
       />

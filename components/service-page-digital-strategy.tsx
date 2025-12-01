@@ -124,8 +124,8 @@ export default function DigitalStrategyPageContent() {
 
       {/* FAQ */}
       <FAQSection
-        title="Questions frequentes sur le consulting digital"
-        subtitle="Tout ce que vous devez savoir sur nos services de strategie"
+        title="Questions fréquentes sur le consulting digital"
+        subtitle="Tout ce que vous devez savoir sur nos services de stratégie"
         faqs={digitalStrategyFAQs}
         className="bg-muted/50"
       />

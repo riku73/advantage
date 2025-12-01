@@ -131,7 +131,7 @@ export default function ServicesPageContent() {
             </h2>
             <p className="mt-4 text-lg text-primary-foreground/90">
               Chaque entreprise est unique. Discutons de vos objectifs pour
-              definir la strategie qui vous correspond.
+              définir la stratégie qui vous correspond.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
               <Link

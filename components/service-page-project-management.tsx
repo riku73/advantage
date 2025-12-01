@@ -125,7 +125,7 @@ export default function ProjectManagementPageContent() {
 
       {/* FAQ */}
       <FAQSection
-        title="Questions frequentes sur la gestion de projet"
+        title="Questions fréquentes sur la gestion de projet"
         subtitle="Tout ce que vous devez savoir sur nos services de coordination"
         faqs={projectManagementFAQs}
         className="bg-muted/50"

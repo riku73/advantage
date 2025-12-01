@@ -125,8 +125,8 @@ export default function PrintDesignPageContent() {
 
       {/* FAQ */}
       <FAQSection
-        title="Questions frequentes sur le design print"
-        subtitle="Tout ce que vous devez savoir sur nos services de design imprime"
+        title="Questions fréquentes sur le design print"
+        subtitle="Tout ce que vous devez savoir sur nos services de design imprimé"
         faqs={printDesignFAQs}
         className="bg-muted/50"
       />

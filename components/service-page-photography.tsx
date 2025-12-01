@@ -124,7 +124,7 @@ export default function PhotographyPageContent() {
 
       {/* FAQ */}
       <FAQSection
-        title="Questions frequentes sur la photographie"
+        title="Questions fréquentes sur la photographie"
         subtitle="Tout ce que vous devez savoir sur nos services photo"
         faqs={photographyFAQs}
         className="bg-muted/50"

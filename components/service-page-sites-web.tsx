@@ -1083,8 +1083,8 @@ export default function SitesWebPageContent() {
 
       {/* FAQ */}
       <FAQSection
-        title="Questions frequentes sur la creation de sites web"
-        subtitle="Tout ce que vous devez savoir sur nos services de developpement web"
+        title="Questions fréquentes sur la création de sites web"
+        subtitle="Tout ce que vous devez savoir sur nos services de développement web"
         faqs={sitesWebFAQs}
         className="bg-muted/50"
       />

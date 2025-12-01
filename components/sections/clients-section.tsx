@@ -19,23 +19,23 @@ const clients: Client[] = [
   {
     name: "On Time",
     sector: "Transport VTC premium",
-    description: "Service de chauffeur prive premium au Luxembourg. Transferts aeroportuaires, transport d'evenements et livraisons discretes.",
-    services: ["Site web", "Strategie digitale", "Branding"],
+    description: "Service de chauffeur privé premium au Luxembourg. Transferts aéroportuaires, transport d'événements et livraisons discrètes.",
+    services: ["Site web", "Stratégie digitale", "Branding"],
     website: "https://ontime.lu",
     logo: "/clients/ontime.svg",
   },
   {
     name: "Malo Studio",
     sector: "Salon de coiffure",
-    description: "Concept unique de salon de coiffure haut de gamme sur la Route d'Esch. Specialiste balayage et coloration.",
-    services: ["Identite visuelle", "Site web", "Reseaux sociaux"],
+    description: "Concept unique de salon de coiffure haut de gamme sur la Route d'Esch. Spécialiste balayage et coloration.",
+    services: ["Identité visuelle", "Site web", "Réseaux sociaux"],
     website: "https://malostudio.lu",
     logo: "/clients/malostudio.png",
   },
   {
-    name: "Art & Beaute",
-    sector: "Institut de beaute",
-    description: "Institut de beaute a Bonnevoie proposant soins visage, massages et ongles. Plus de 10 ans d'expertise.",
+    name: "Art & Beauté",
+    sector: "Institut de beauté",
+    description: "Institut de beauté à Bonnevoie proposant soins visage, massages et ongles. Plus de 10 ans d'expertise.",
     services: ["Site e-commerce", "Boutique en ligne", "SEO local"],
     website: "https://art-beaute.lu",
     logo: "/clients/art-beaute.png",
@@ -44,23 +44,23 @@ const clients: Client[] = [
     name: "Paladar",
     sector: "E-commerce gastronomie",
     description: "E-commerce de produits portugais premium. Paniers gourmands pour entreprises et particuliers.",
-    services: ["Site e-commerce complet", "Strategie de contenu", "Reseaux sociaux"],
+    services: ["Site e-commerce complet", "Stratégie de contenu", "Réseaux sociaux"],
     website: "https://paladar.lu",
     logo: "/clients/paladar.png",
   },
   {
     name: "BauArt",
-    sector: "Renovation interieure",
-    description: "Entreprise de renovation et amenagement interieur au Luxembourg. Consultation sous 48h.",
+    sector: "Rénovation intérieure",
+    description: "Entreprise de rénovation et aménagement intérieur au Luxembourg. Consultation sous 48h.",
     services: ["Site vitrine", "Formulaire de prise de RDV", "SEO local"],
     website: "https://bauart.lu",
     logo: "/clients/bauart.jpg",
   },
   {
-    name: "Pizzeria Millenaire",
+    name: "Pizzeria Millénaire",
     sector: "Restaurant",
-    description: "Pizzeria artisanale a Niederfeulen. Cuisson au feu de bois depuis 2015.",
-    services: ["Menu digital", "Reservation en ligne", "Google Business"],
+    description: "Pizzeria artisanale à Niederfeulen. Cuisson au feu de bois depuis 2015.",
+    services: ["Menu digital", "Réservation en ligne", "Google Business"],
     website: "https://pizzeriamillenaire.lu",
     logo: "/clients/pizzeria-millenaire.png",
   },
@@ -157,7 +157,7 @@ export default function ClientsSection({
 
                 {showServices && (
                   <div className="mt-4 pt-4 border-t">
-                    <p className="text-xs text-muted-foreground mb-2">Services realises :</p>
+                    <p className="text-xs text-muted-foreground mb-2">Services réalisés :</p>
                     <div className="flex flex-wrap gap-2">
                       {client.services.map((service) => (
                         <span

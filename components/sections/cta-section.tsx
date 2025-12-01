@@ -22,10 +22,10 @@ export default function CtaSection() {
       <div className="container mx-auto px-4 lg:px-8">
         <FadeIn className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl">
-            Pret a faire decoller votre presence digitale ?
+            Prêt à faire décoller votre présence digitale ?
           </h2>
           <p className="mt-6 text-lg text-primary-foreground/90">
-            Basee a Itzig, notre equipe vous accompagne de A a Z dans votre
+            Basée à Itzig, notre équipe vous accompagne de A à Z dans votre
             croissance digitale. Parlons de votre projet.
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">

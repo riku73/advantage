@@ -123,7 +123,7 @@ export default function EmailMarketingPageContent() {
 
       {/* FAQ */}
       <FAQSection
-        title="Questions frequentes sur l'e-mail marketing"
+        title="Questions fréquentes sur l'e-mail marketing"
         subtitle="Tout ce que vous devez savoir sur nos services e-mail"
         faqs={emailMarketingFAQs}
         className="bg-muted/50"

@@ -123,8 +123,8 @@ export default function SEAPageContent() {
 
       {/* FAQ */}
       <FAQSection
-        title="Questions frequentes sur Google Ads"
-        subtitle="Tout ce que vous devez savoir sur la publicite payante"
+        title="Questions fréquentes sur Google Ads"
+        subtitle="Tout ce que vous devez savoir sur la publicité payante"
         faqs={seaFAQs}
         className="bg-muted/50"
       />

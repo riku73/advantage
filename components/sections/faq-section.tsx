@@ -21,7 +21,7 @@ interface FAQSectionProps {
 }
 
 export default function FAQSection({
-  title = "Questions frequentes",
+  title = "Questions fréquentes",
   subtitle,
   faqs,
   className = "",
@@ -58,55 +58,55 @@ export default function FAQSection({
 // FAQ data for each service
 export const seoFAQs: FAQItem[] = [
   {
-    question: "Combien de temps faut-il pour voir des resultats SEO ?",
-    answer: "Le SEO est une strategie a moyen-long terme. Les premiers resultats sont generalement visibles apres 3 a 6 mois, avec des ameliorations continues sur 12 mois et au-dela. La rapidite des resultats depend de la concurrence dans votre secteur et de l'etat initial de votre site.",
+    question: "Combien de temps faut-il pour voir des résultats SEO ?",
+    answer: "Le SEO est une stratégie à moyen-long terme. Les premiers résultats sont généralement visibles après 3 à 6 mois, avec des améliorations continues sur 12 mois et au-delà. La rapidité des résultats dépend de la concurrence dans votre secteur et de l'état initial de votre site.",
   },
   {
-    question: "Quelle est la difference entre SEO et SEA ?",
-    answer: "Le SEO (Search Engine Optimization) concerne le referencement naturel et vise a ameliorer votre positionnement organique dans les resultats de recherche. Le SEA (Search Engine Advertising) concerne la publicite payante (Google Ads). Le SEO offre des resultats durables tandis que le SEA permet des resultats immediats mais necessite un budget publicitaire continu.",
+    question: "Quelle est la différence entre SEO et SEA ?",
+    answer: "Le SEO (Search Engine Optimization) concerne le référencement naturel et vise à améliorer votre positionnement organique dans les résultats de recherche. Le SEA (Search Engine Advertising) concerne la publicité payante (Google Ads). Le SEO offre des résultats durables tandis que le SEA permet des résultats immédiats mais nécessite un budget publicitaire continu.",
   },
   {
     question: "Travaillez-vous avec des entreprises de toutes tailles au Luxembourg ?",
-    answer: "Oui, nous accompagnons des entreprises de toutes tailles, des independants aux PME. Notre approche s'adapte a vos objectifs et a votre budget, que vous soyez une startup ou une entreprise etablie.",
+    answer: "Oui, nous accompagnons des entreprises de toutes tailles, des indépendants aux PME. Notre approche s'adapte à vos objectifs et à votre budget, que vous soyez une startup ou une entreprise établie.",
   },
   {
-    question: "Comment mesurez-vous le succes d'une campagne SEO ?",
-    answer: "Nous suivons plusieurs indicateurs cles : positions sur les mots-cles cibles, trafic organique, taux de conversion, nombre de leads generes, et ROI. Vous recevez des rapports mensuels detailles avec l'evolution de ces metriques.",
+    question: "Comment mesurez-vous le succès d'une campagne SEO ?",
+    answer: "Nous suivons plusieurs indicateurs clés : positions sur les mots-clés cibles, trafic organique, taux de conversion, nombre de leads générés, et ROI. Vous recevez des rapports mensuels détaillés avec l'évolution de ces métriques.",
   },
   {
-    question: "Faut-il un contrat longue duree pour le SEO ?",
-    answer: "Nous recommandons un engagement minimum de 6 mois pour voir des resultats significatifs, mais nous proposons des contrats flexibles sans engagement de longue duree. Vous pouvez arreter a tout moment avec un preavis d'un mois.",
+    question: "Faut-il un contrat longue durée pour le SEO ?",
+    answer: "Nous recommandons un engagement minimum de 6 mois pour voir des résultats significatifs, mais nous proposons des contrats flexibles sans engagement de longue durée. Vous pouvez arrêter à tout moment avec un préavis d'un mois.",
   },
   {
-    question: "Que se passe-t-il si je ne suis pas satisfait des resultats ?",
-    answer: "Nous travaillons en toute transparence avec des rapports reguliers. Si les objectifs ne sont pas atteints, nous ajustons notre strategie. Nous ne promettons jamais de resultats garantis car le SEO depend de nombreux facteurs, mais nous nous engageons a mettre en oeuvre les meilleures pratiques.",
+    question: "Que se passe-t-il si je ne suis pas satisfait des résultats ?",
+    answer: "Nous travaillons en toute transparence avec des rapports réguliers. Si les objectifs ne sont pas atteints, nous ajustons notre stratégie. Nous ne promettons jamais de résultats garantis car le SEO dépend de nombreux facteurs, mais nous nous engageons à mettre en œuvre les meilleures pratiques.",
   },
 ];
 
 export const seaFAQs: FAQItem[] = [
   {
     question: "Quel budget minimum faut-il pour Google Ads ?",
-    answer: "Nous recommandons un budget publicitaire minimum de 500 EUR/mois pour des campagnes efficaces au Luxembourg. Ce budget s'ajoute a nos frais de gestion. Le budget optimal depend de votre secteur et de vos objectifs.",
+    answer: "Nous recommandons un budget publicitaire minimum de 500 EUR/mois pour des campagnes efficaces au Luxembourg. Ce budget s'ajoute à nos frais de gestion. Le budget optimal dépend de votre secteur et de vos objectifs.",
   },
   {
-    question: "Combien de temps avant de voir les premiers resultats ?",
-    answer: "Contrairement au SEO, les campagnes Google Ads generent des resultats immediats. Des le lancement, vos annonces sont visibles et vous pouvez recevoir des clics. L'optimisation des performances se fait ensuite sur 2-4 semaines.",
+    question: "Combien de temps avant de voir les premiers résultats ?",
+    answer: "Contrairement au SEO, les campagnes Google Ads génèrent des résultats immédiats. Dès le lancement, vos annonces sont visibles et vous pouvez recevoir des clics. L'optimisation des performances se fait ensuite sur 2-4 semaines.",
   },
   {
-    question: "Gerez-vous aussi les campagnes Microsoft Ads (Bing) ?",
-    answer: "Oui, nous gerons egalement les campagnes Microsoft Ads. Bien que Google domine le marche, Bing peut etre interessant pour certains secteurs avec une concurrence moindre et des couts par clic plus faibles.",
+    question: "Gérez-vous aussi les campagnes Microsoft Ads (Bing) ?",
+    answer: "Oui, nous gérons également les campagnes Microsoft Ads. Bien que Google domine le marché, Bing peut être intéressant pour certains secteurs avec une concurrence moindre et des coûts par clic plus faibles.",
   },
   {
-    question: "Comment optimisez-vous le cout par clic ?",
-    answer: "Nous optimisons vos campagnes en continu : selection precise des mots-cles, ajustement des encheres, amelioration des scores de qualite, tests A/B des annonces, et ciblage geographique affine pour maximiser votre ROI.",
+    question: "Comment optimisez-vous le coût par clic ?",
+    answer: "Nous optimisons vos campagnes en continu : sélection précise des mots-clés, ajustement des enchères, amélioration des scores de qualité, tests A/B des annonces, et ciblage géographique affiné pour maximiser votre ROI.",
   },
   {
     question: "Puis-je modifier mon budget en cours de campagne ?",
-    answer: "Absolument. Votre budget est flexible et peut etre ajuste a tout moment. Nous vous conseillons sur les periodes ou augmenter/reduire vos investissements selon la saisonnalite de votre activite.",
+    answer: "Absolument. Votre budget est flexible et peut être ajusté à tout moment. Nous vous conseillons sur les périodes où augmenter/réduire vos investissements selon la saisonnalité de votre activité.",
   },
   {
     question: "Que comprend exactement la gestion mensuelle ?",
-    answer: "La gestion mensuelle inclut : monitoring quotidien, optimisation des encheres, tests A/B, ajustement des mots-cles, rapports de performance, et un point mensuel avec recommandations strategiques.",
+    answer: "La gestion mensuelle inclut : monitoring quotidien, optimisation des enchères, tests A/B, ajustement des mots-clés, rapports de performance, et un point mensuel avec recommandations stratégiques.",
   },
 ];
 
@@ -116,170 +116,170 @@ export const emailMarketingFAQs: FAQItem[] = [
     answer: "Nous travaillons principalement avec Mailchimp, mais nous pouvons aussi utiliser Brevo (ex-Sendinblue), ActiveCampaign ou d'autres plateformes selon vos besoins et votre CRM existant.",
   },
   {
-    question: "Comment eviter que mes e-mails arrivent en spam ?",
-    answer: "Nous configurons correctement les enregistrements SPF, DKIM et DMARC, utilisons des pratiques d'envoi conformes, maintenons une liste propre, et optimisons le contenu pour eviter les filtres anti-spam.",
+    question: "Comment éviter que mes e-mails arrivent en spam ?",
+    answer: "Nous configurons correctement les enregistrements SPF, DKIM et DMARC, utilisons des pratiques d'envoi conformes, maintenons une liste propre, et optimisons le contenu pour éviter les filtres anti-spam.",
   },
   {
-    question: "Quel taux d'ouverture puis-je esperer ?",
-    answer: "Les taux d'ouverture varient selon le secteur (15-25% en moyenne). Avec une strategie de segmentation et de personnalisation, nous visons des taux superieurs a la moyenne de votre industrie.",
+    question: "Quel taux d'ouverture puis-je espérer ?",
+    answer: "Les taux d'ouverture varient selon le secteur (15-25% en moyenne). Avec une stratégie de segmentation et de personnalisation, nous visons des taux supérieurs à la moyenne de votre industrie.",
   },
   {
     question: "Puis-je importer ma liste de contacts existante ?",
-    answer: "Oui, a condition que vos contacts aient donne leur consentement (RGPD). Nous vous aidons a nettoyer et segmenter votre base pour de meilleures performances.",
+    answer: "Oui, à condition que vos contacts aient donné leur consentement (RGPD). Nous vous aidons à nettoyer et segmenter votre base pour de meilleures performances.",
   },
   {
-    question: "Proposez-vous des templates personnalises ?",
-    answer: "Oui, nous creons des templates sur-mesure alignes avec votre charte graphique. Ces templates sont responsive et optimises pour tous les clients e-mail.",
+    question: "Proposez-vous des templates personnalisés ?",
+    answer: "Oui, nous créons des templates sur-mesure alignés avec votre charte graphique. Ces templates sont responsive et optimisés pour tous les clients e-mail.",
   },
   {
     question: "Comment respectez-vous le RGPD ?",
-    answer: "Toutes nos campagnes sont conformes au RGPD : consentement explicite, lien de desinscription obligatoire, traitement securise des donnees, et documentation des consentements.",
+    answer: "Toutes nos campagnes sont conformes au RGPD : consentement explicite, lien de désinscription obligatoire, traitement sécurisé des données, et documentation des consentements.",
   },
 ];
 
 export const sitesWebFAQs: FAQItem[] = [
   {
-    question: "Combien coute un site web professionnel ?",
-    answer: "Nos sites vitrine demarrent a partir de 590 EUR pour une page unique, 1 490 EUR pour un site standard de 5 pages, et 2 490 EUR pour un site e-commerce. Le prix final depend de vos besoins specifiques.",
+    question: "Combien coûte un site web professionnel ?",
+    answer: "Nos sites vitrine démarrent à partir de 590 EUR pour une page unique, 1 490 EUR pour un site standard de 5 pages, et 2 490 EUR pour un site e-commerce. Le prix final dépend de vos besoins spécifiques.",
   },
   {
-    question: "Combien de temps prend la creation d'un site ?",
-    answer: "Un site vitrine simple prend 2-3 semaines, un site standard 4-6 semaines, et un e-commerce 6-10 semaines. Ces delais incluent la validation de votre part a chaque etape.",
+    question: "Combien de temps prend la création d'un site ?",
+    answer: "Un site vitrine simple prend 2-3 semaines, un site standard 4-6 semaines, et un e-commerce 6-10 semaines. Ces délais incluent la validation de votre part à chaque étape.",
   },
   {
-    question: "Puis-je modifier mon site moi-meme apres la livraison ?",
-    answer: "Oui, nous utilisons WordPress ou des CMS modernes qui permettent de modifier facilement le contenu. Nous incluons une formation complete a la gestion de votre site.",
+    question: "Puis-je modifier mon site moi-même après la livraison ?",
+    answer: "Oui, nous utilisons WordPress ou des CMS modernes qui permettent de modifier facilement le contenu. Nous incluons une formation complète à la gestion de votre site.",
   },
   {
-    question: "Proposez-vous l'hebergement et la maintenance ?",
-    answer: "Oui, nous proposons des forfaits d'hebergement et maintenance a partir de 29 EUR/mois incluant : hebergement securise, sauvegardes, mises a jour, et support technique.",
+    question: "Proposez-vous l'hébergement et la maintenance ?",
+    answer: "Oui, nous proposons des forfaits d'hébergement et maintenance à partir de 29 EUR/mois incluant : hébergement sécurisé, sauvegardes, mises à jour, et support technique.",
   },
   {
-    question: "Mon site sera-t-il optimise pour mobile ?",
-    answer: "Absolument. Tous nos sites sont responsive et optimises pour mobile. Avec plus de 60% du trafic web sur mobile, c'est une priorite absolue.",
+    question: "Mon site sera-t-il optimisé pour mobile ?",
+    answer: "Absolument. Tous nos sites sont responsive et optimisés pour mobile. Avec plus de 60% du trafic web sur mobile, c'est une priorité absolue.",
   },
   {
-    question: "Incluez-vous le referencement de base ?",
-    answer: "Oui, chaque site inclut une optimisation SEO de base : structure technique correcte, balises meta, vitesse de chargement optimisee, et integration Google Analytics.",
+    question: "Incluez-vous le référencement de base ?",
+    answer: "Oui, chaque site inclut une optimisation SEO de base : structure technique correcte, balises meta, vitesse de chargement optimisée, et intégration Google Analytics.",
   },
 ];
 
 export const landingPagesFAQs: FAQItem[] = [
   {
-    question: "Quelle est la difference entre une landing page et un site web ?",
-    answer: "Une landing page est une page unique concue pour convertir les visiteurs en leads ou clients, avec un objectif precis et un appel a l'action clair. Un site web est plus complet avec plusieurs pages et objectifs.",
+    question: "Quelle est la différence entre une landing page et un site web ?",
+    answer: "Une landing page est une page unique conçue pour convertir les visiteurs en leads ou clients, avec un objectif précis et un appel à l'action clair. Un site web est plus complet avec plusieurs pages et objectifs.",
   },
   {
-    question: "Combien de temps pour creer une landing page ?",
-    answer: "Une landing page peut etre livree en 1-2 semaines selon la complexite. Cela inclut le design, le copywriting et l'integration des formulaires.",
+    question: "Combien de temps pour créer une landing page ?",
+    answer: "Une landing page peut être livrée en 1-2 semaines selon la complexité. Cela inclut le design, le copywriting et l'intégration des formulaires.",
   },
   {
     question: "Proposez-vous des tests A/B ?",
-    answer: "Oui, nous pouvons creer plusieurs versions de votre landing page pour tester differents elements (titres, images, CTA) et optimiser les conversions.",
+    answer: "Oui, nous pouvons créer plusieurs versions de votre landing page pour tester différents éléments (titres, images, CTA) et optimiser les conversions.",
   },
   {
-    question: "Puis-je avoir plusieurs landing pages pour une meme campagne ?",
-    answer: "Oui, c'est meme recommande. Avoir des landing pages specifiques pour chaque audience ou mot-cle ameliore significativement les taux de conversion.",
+    question: "Puis-je avoir plusieurs landing pages pour une même campagne ?",
+    answer: "Oui, c'est même recommandé. Avoir des landing pages spécifiques pour chaque audience ou mot-clé améliore significativement les taux de conversion.",
   },
   {
-    question: "Integrez-vous les formulaires avec mon CRM ?",
-    answer: "Oui, nous integrons vos formulaires avec la plupart des CRM (HubSpot, Salesforce, Pipedrive, etc.) et outils marketing (Mailchimp, ActiveCampaign, etc.).",
+    question: "Intégrez-vous les formulaires avec mon CRM ?",
+    answer: "Oui, nous intégrons vos formulaires avec la plupart des CRM (HubSpot, Salesforce, Pipedrive, etc.) et outils marketing (Mailchimp, ActiveCampaign, etc.).",
   },
 ];
 
 export const logoBrandingFAQs: FAQItem[] = [
   {
     question: "Combien de propositions de logo recevrai-je ?",
-    answer: "Vous recevez 3 propositions initiales de concepts differents. Apres votre choix, nous affinons la direction selectionnee avec des variations.",
+    answer: "Vous recevez 3 propositions initiales de concepts différents. Après votre choix, nous affinons la direction sélectionnée avec des variations.",
   },
   {
-    question: "Quels fichiers recevrai-je a la livraison ?",
-    answer: "Vous recevez tous les formats necessaires : AI (source), SVG, PNG (transparent), JPG, PDF, ainsi que des versions pour le web et l'impression en differentes tailles.",
+    question: "Quels fichiers recevrai-je à la livraison ?",
+    answer: "Vous recevez tous les formats nécessaires : AI (source), SVG, PNG (transparent), JPG, PDF, ainsi que des versions pour le web et l'impression en différentes tailles.",
   },
   {
-    question: "Puis-je demander des modifications illimitees ?",
-    answer: "Notre forfait inclut 3 tours de revisions. Des modifications supplementaires sont possibles moyennant un supplement. Nous travaillons avec vous jusqu'a votre satisfaction.",
+    question: "Puis-je demander des modifications illimitées ?",
+    answer: "Notre forfait inclut 3 tours de révisions. Des modifications supplémentaires sont possibles moyennant un supplément. Nous travaillons avec vous jusqu'à votre satisfaction.",
   },
   {
     question: "Incluez-vous un guide de style ?",
-    answer: "Oui, le forfait branding complet inclut un guide de style definissant l'utilisation du logo, la palette de couleurs, la typographie et les regles graphiques.",
+    answer: "Oui, le forfait branding complet inclut un guide de style définissant l'utilisation du logo, la palette de couleurs, la typographie et les règles graphiques.",
   },
   {
-    question: "Combien de temps prend la creation d'un logo ?",
-    answer: "Comptez 2-3 semaines pour un logo, et 4-6 semaines pour une identite de marque complete incluant le guide de style.",
+    question: "Combien de temps prend la création d'un logo ?",
+    answer: "Comptez 2-3 semaines pour un logo, et 4-6 semaines pour une identité de marque complète incluant le guide de style.",
   },
 ];
 
 export const socialMediaAdsFAQs: FAQItem[] = [
   {
-    question: "Sur quelles plateformes gerez-vous les publicites ?",
-    answer: "Nous gerons les publicites sur Meta (Facebook et Instagram), LinkedIn, TikTok et Pinterest selon votre cible et vos objectifs.",
+    question: "Sur quelles plateformes gérez-vous les publicités ?",
+    answer: "Nous gérons les publicités sur Meta (Facebook et Instagram), LinkedIn, TikTok et Pinterest selon votre cible et vos objectifs.",
   },
   {
-    question: "Quel budget minimum pour les reseaux sociaux ?",
-    answer: "Nous recommandons un minimum de 300 EUR/mois de budget publicitaire par plateforme pour des resultats significatifs au Luxembourg.",
+    question: "Quel budget minimum pour les réseaux sociaux ?",
+    answer: "Nous recommandons un minimum de 300 EUR/mois de budget publicitaire par plateforme pour des résultats significatifs au Luxembourg.",
   },
   {
-    question: "Creez-vous les visuels publicitaires ?",
-    answer: "Oui, la creation des visuels et videos courtes est incluse dans nos forfaits. Nous produisons du contenu optimise pour chaque plateforme.",
+    question: "Créez-vous les visuels publicitaires ?",
+    answer: "Oui, la création des visuels et vidéos courtes est incluse dans nos forfaits. Nous produisons du contenu optimisé pour chaque plateforme.",
   },
   {
     question: "Comment ciblez-vous mon audience ?",
-    answer: "Nous utilisons le ciblage demographique, geographique, par interets, comportements, et audiences similaires. Nous affinons le ciblage en continu selon les performances.",
+    answer: "Nous utilisons le ciblage démographique, géographique, par intérêts, comportements, et audiences similaires. Nous affinons le ciblage en continu selon les performances.",
   },
   {
-    question: "Puis-je voir les statistiques en temps reel ?",
-    answer: "Oui, nous pouvons vous donner acces aux tableaux de bord en temps reel, ou vous envoyer des rapports a la frequence souhaitee.",
+    question: "Puis-je voir les statistiques en temps réel ?",
+    answer: "Oui, nous pouvons vous donner accès aux tableaux de bord en temps réel, ou vous envoyer des rapports à la fréquence souhaitée.",
   },
   {
-    question: "Quelle frequence de reporting ?",
-    answer: "Nous fournissons des rapports mensuels detailles avec analyse des performances et recommandations. Des rapports hebdomadaires sont disponibles en option.",
+    question: "Quelle fréquence de reporting ?",
+    answer: "Nous fournissons des rapports mensuels détaillés avec analyse des performances et recommandations. Des rapports hebdomadaires sont disponibles en option.",
   },
 ];
 
 export const videoProductionFAQs: FAQItem[] = [
   {
-    question: "Quel type de videos produisez-vous ?",
-    answer: "Nous produisons des videos promotionnelles courtes (reels, stories), des videos corporate, des temoignages clients, des presentations produits et des videos evenementielles.",
+    question: "Quel type de vidéos produisez-vous ?",
+    answer: "Nous produisons des vidéos promotionnelles courtes (reels, stories), des vidéos corporate, des témoignages clients, des présentations produits et des vidéos événementielles.",
   },
   {
-    question: "Combien de revisions sont incluses ?",
-    answer: "Nos forfaits incluent 3 revisions pour les videos courtes et des revisions illimitees pour les videos corporate. Nous travaillons jusqu'a votre validation finale.",
+    question: "Combien de révisions sont incluses ?",
+    answer: "Nos forfaits incluent 3 révisions pour les vidéos courtes et des révisions illimitées pour les vidéos corporate. Nous travaillons jusqu'à votre validation finale.",
   },
   {
     question: "Filmez-vous sur site au Luxembourg ?",
-    answer: "Oui, nous nous deplacons dans tout le Luxembourg et la Grande Region pour les tournages. Les frais de deplacement sont inclus dans nos devis.",
+    answer: "Oui, nous nous déplaçons dans tout le Luxembourg et la Grande Région pour les tournages. Les frais de déplacement sont inclus dans nos devis.",
   },
   {
     question: "Puis-je utiliser ma propre musique ?",
-    answer: "Oui, si vous avez les droits. Sinon, nous utilisons des bibliotheques de musiques libres de droits incluses dans nos forfaits.",
+    answer: "Oui, si vous avez les droits. Sinon, nous utilisons des bibliothèques de musiques libres de droits incluses dans nos forfaits.",
   },
   {
-    question: "Dans quels formats livrez-vous les videos ?",
-    answer: "Nous livrons les videos dans tous les formats necessaires : MP4 HD/4K, formats optimises pour chaque reseau social (carre, vertical, horizontal), et fichiers source sur demande.",
+    question: "Dans quels formats livrez-vous les vidéos ?",
+    answer: "Nous livrons les vidéos dans tous les formats nécessaires : MP4 HD/4K, formats optimisés pour chaque réseau social (carré, vertical, horizontal), et fichiers source sur demande.",
   },
 ];
 
 export const photographyFAQs: FAQItem[] = [
   {
-    question: "Quelle duree pour une session photo corporate ?",
-    answer: "Une session standard dure 2-3 heures, suffisant pour des portraits individuels et de groupe, plus des photos d'ambiance. Des sessions plus longues sont disponibles pour des besoins specifiques.",
+    question: "Quelle durée pour une session photo corporate ?",
+    answer: "Une session standard dure 2-3 heures, suffisant pour des portraits individuels et de groupe, plus des photos d'ambiance. Des sessions plus longues sont disponibles pour des besoins spécifiques.",
   },
   {
-    question: "Combien de photos retouchees recevrai-je ?",
-    answer: "Une session standard inclut 20-30 photos retouchees. Le nombre exact depend de la duree de la session et de vos besoins.",
+    question: "Combien de photos retouchées recevrai-je ?",
+    answer: "Une session standard inclut 20-30 photos retouchées. Le nombre exact dépend de la durée de la session et de vos besoins.",
   },
   {
     question: "Puis-je utiliser les photos pour tous mes supports ?",
-    answer: "Oui, vous recevez les droits d'utilisation complets pour tous vos supports marketing : site web, reseaux sociaux, print, presentations, etc.",
+    answer: "Oui, vous recevez les droits d'utilisation complets pour tous vos supports marketing : site web, réseaux sociaux, print, présentations, etc.",
   },
   {
-    question: "Faites-vous des photos d'evenements ?",
-    answer: "Oui, nous couvrons les evenements professionnels : conferences, inaugurations, soirees d'entreprise, team buildings, etc.",
+    question: "Faites-vous des photos d'événements ?",
+    answer: "Oui, nous couvrons les événements professionnels : conférences, inaugurations, soirées d'entreprise, team buildings, etc.",
   },
   {
-    question: "Proposez-vous des portraits d'equipe ?",
-    answer: "Oui, c'est l'une de nos specialites. Nous realisons des portraits individuels coherents pour toute votre equipe, ainsi que des photos de groupe.",
+    question: "Proposez-vous des portraits d'équipe ?",
+    answer: "Oui, c'est l'une de nos spécialités. Nous réalisons des portraits individuels cohérents pour toute votre équipe, ainsi que des photos de groupe.",
   },
 ];
 
@@ -289,134 +289,134 @@ export const printDesignFAQs: FAQItem[] = [
     answer: "Nous designons tous types de supports : cartes de visite, flyers, brochures, affiches, roll-ups, packaging, et bien plus encore.",
   },
   {
-    question: "Gerez-vous aussi l'impression ?",
-    answer: "Oui, nous coordonnons l'impression avec nos partenaires locaux de confiance pour garantir la qualite et des tarifs competitifs.",
+    question: "Gérez-vous aussi l'impression ?",
+    answer: "Oui, nous coordonnons l'impression avec nos partenaires locaux de confiance pour garantir la qualité et des tarifs compétitifs.",
   },
   {
-    question: "Combien de revisions sont incluses ?",
-    answer: "Nos forfaits incluent 2-3 tours de revisions selon le type de support. Nous travaillons jusqu'a votre satisfaction.",
+    question: "Combien de révisions sont incluses ?",
+    answer: "Nos forfaits incluent 2-3 tours de révisions selon le type de support. Nous travaillons jusqu'à votre satisfaction.",
   },
   {
     question: "Dans quels formats livrez-vous les fichiers ?",
-    answer: "Vous recevez les fichiers print-ready (PDF haute resolution, CMYK) ainsi que les fichiers sources editables (AI, INDD) sur demande.",
+    answer: "Vous recevez les fichiers print-ready (PDF haute résolution, CMYK) ainsi que les fichiers sources éditables (AI, INDD) sur demande.",
   },
   {
     question: "Respectez-vous notre charte graphique existante ?",
-    answer: "Absolument. Nous travaillons en coherence avec votre identite visuelle existante, ou pouvons vous aider a la creer si necessaire.",
+    answer: "Absolument. Nous travaillons en cohérence avec votre identité visuelle existante, ou pouvons vous aider à la créer si nécessaire.",
   },
 ];
 
 export const digitalStrategyFAQs: FAQItem[] = [
   {
     question: "Qu'est-ce qu'une session de consulting digital ?",
-    answer: "C'est une session d'1 heure ou nous analysons votre presence digitale actuelle et definissons ensemble une strategie adaptee a vos objectifs et budget.",
+    answer: "C'est une session d'1 heure où nous analysons votre présence digitale actuelle et définissons ensemble une stratégie adaptée à vos objectifs et budget.",
   },
   {
-    question: "Que recois-je apres la session ?",
-    answer: "Vous recevez une roadmap personnalisee avec des recommandations concretes, prioritisees et actionables, plus 7 jours de support par e-mail.",
+    question: "Que reçois-je après la session ?",
+    answer: "Vous recevez une roadmap personnalisée avec des recommandations concrètes, priorisées et actionnables, plus 7 jours de support par e-mail.",
   },
   {
-    question: "Pouvez-vous ensuite m'aider a executer la strategie ?",
-    answer: "Oui, nous pouvons vous accompagner dans la mise en oeuvre avec nos differents services ou vous orienter vers les bonnes ressources.",
+    question: "Pouvez-vous ensuite m'aider à exécuter la stratégie ?",
+    answer: "Oui, nous pouvons vous accompagner dans la mise en œuvre avec nos différents services ou vous orienter vers les bonnes ressources.",
   },
   {
     question: "La session peut-elle se faire en visio ?",
-    answer: "Oui, nous proposons des sessions en presentiel a Luxembourg ou en visioconference selon votre preference.",
+    answer: "Oui, nous proposons des sessions en présentiel à Luxembourg ou en visioconférence selon votre préférence.",
   },
   {
-    question: "Pour quel type d'entreprise est-ce adapte ?",
-    answer: "Le consulting est particulierement utile pour les entreprises qui debutent leur transformation digitale ou souhaitent optimiser leur strategie existante.",
+    question: "Pour quel type d'entreprise est-ce adapté ?",
+    answer: "Le consulting est particulièrement utile pour les entreprises qui débutent leur transformation digitale ou souhaitent optimiser leur stratégie existante.",
   },
 ];
 
 export const projectManagementFAQs: FAQItem[] = [
   {
-    question: "Que comprend la gestion de projet externalisee ?",
-    answer: "Nous prenons en charge la coordination complete de votre projet : planification, gestion des prestataires, suivi des delais, controle qualite et reporting regulier.",
+    question: "Que comprend la gestion de projet externalisée ?",
+    answer: "Nous prenons en charge la coordination complète de votre projet : planification, gestion des prestataires, suivi des délais, contrôle qualité et reporting régulier.",
   },
   {
-    question: "Pour quels types de projets est-ce adapte ?",
-    answer: "Ideal pour les lancements de site, campagnes marketing multi-canaux, rebranding, evenements digitaux, ou tout projet necessitant la coordination de plusieurs prestataires.",
+    question: "Pour quels types de projets est-ce adapté ?",
+    answer: "Idéal pour les lancements de site, campagnes marketing multi-canaux, rebranding, événements digitaux, ou tout projet nécessitant la coordination de plusieurs prestataires.",
   },
   {
     question: "Comment se passe la communication ?",
-    answer: "Vous avez un point de contact unique. Nous organisons des points reguliers (hebdomadaires ou bi-hebdomadaires) et vous tenons informe en continu via l'outil de votre choix.",
+    answer: "Vous avez un point de contact unique. Nous organisons des points réguliers (hebdomadaires ou bi-hebdomadaires) et vous tenons informé en continu via l'outil de votre choix.",
   },
   {
     question: "Travaillez-vous avec mes prestataires existants ?",
     answer: "Oui, nous pouvons coordonner vos prestataires actuels ou vous recommander des partenaires de confiance selon les besoins du projet.",
   },
   {
-    question: "Quelle est la duree typique d'un accompagnement ?",
-    answer: "Cela depend du projet. Un lancement de site prend typiquement 2-3 mois, une campagne marketing 1-3 mois. Nous definissons ensemble la duree lors du cadrage.",
+    question: "Quelle est la durée typique d'un accompagnement ?",
+    answer: "Cela dépend du projet. Un lancement de site prend typiquement 2-3 mois, une campagne marketing 1-3 mois. Nous définissons ensemble la durée lors du cadrage.",
   },
 ];
 
 export const emailDeliverabilityFAQs: FAQItem[] = [
   {
     question: "Pourquoi mes e-mails arrivent-ils en spam ?",
-    answer: "Plusieurs facteurs peuvent causer cela : configuration DNS incorrecte (SPF/DKIM/DMARC), reputation de l'expediteur, contenu suspect, ou liste de contacts de mauvaise qualite.",
+    answer: "Plusieurs facteurs peuvent causer cela : configuration DNS incorrecte (SPF/DKIM/DMARC), réputation de l'expéditeur, contenu suspect, ou liste de contacts de mauvaise qualité.",
   },
   {
-    question: "Que comprend l'audit de delivrabilite ?",
-    answer: "Nous analysons votre configuration technique, la reputation de votre domaine, vos pratiques d'envoi, et la qualite de vos listes. Vous recevez un rapport detaille avec recommandations.",
+    question: "Que comprend l'audit de délivrabilité ?",
+    answer: "Nous analysons votre configuration technique, la réputation de votre domaine, vos pratiques d'envoi, et la qualité de vos listes. Vous recevez un rapport détaillé avec recommandations.",
   },
   {
-    question: "Combien de temps pour voir une amelioration ?",
-    answer: "Les corrections techniques ont un effet immediat. L'amelioration de la reputation peut prendre 2-4 semaines selon la gravite des problemes identifies.",
+    question: "Combien de temps pour voir une amélioration ?",
+    answer: "Les corrections techniques ont un effet immédiat. L'amélioration de la réputation peut prendre 2-4 semaines selon la gravité des problèmes identifiés.",
   },
   {
-    question: "Proposez-vous un suivi apres l'intervention ?",
-    answer: "Oui, nous incluons un suivi de 30 jours pour verifier que les ameliorations sont effectives et ajuster si necessaire.",
+    question: "Proposez-vous un suivi après l'intervention ?",
+    answer: "Oui, nous incluons un suivi de 30 jours pour vérifier que les améliorations sont effectives et ajuster si nécessaire.",
   },
   {
     question: "Travaillez-vous avec toutes les plateformes d'envoi ?",
-    answer: "Oui, nous intervenons quelle que soit votre plateforme : Mailchimp, Brevo, SendGrid, Amazon SES, serveur dedie, etc.",
+    answer: "Oui, nous intervenons quelle que soit votre plateforme : Mailchimp, Brevo, SendGrid, Amazon SES, serveur dédié, etc.",
   },
 ];
 
 export const socialContentFAQs: FAQItem[] = [
   {
     question: "Combien de posts par mois sont inclus ?",
-    answer: "Notre forfait standard inclut 8-10 posts par mois. Des forfaits plus frequents (15-20 posts) sont disponibles selon vos besoins.",
+    answer: "Notre forfait standard inclut 8-10 posts par mois. Des forfaits plus fréquents (15-20 posts) sont disponibles selon vos besoins.",
   },
   {
-    question: "Creez-vous les visuels et les textes ?",
-    answer: "Oui, nous creons l'ensemble : visuels personnalises, redaction des captions, recherche de hashtags et planning editorial complet.",
+    question: "Créez-vous les visuels et les textes ?",
+    answer: "Oui, nous créons l'ensemble : visuels personnalisés, rédaction des captions, recherche de hashtags et planning éditorial complet.",
   },
   {
     question: "Sur quelles plateformes publiez-vous ?",
-    answer: "Nous gerons Facebook, Instagram, LinkedIn et TikTok. Le forfait de base inclut 2 plateformes, extensible selon vos besoins.",
+    answer: "Nous gérons Facebook, Instagram, LinkedIn et TikTok. Le forfait de base inclut 2 plateformes, extensible selon vos besoins.",
   },
   {
     question: "Dois-je valider les contenus avant publication ?",
-    answer: "Oui, vous recevez le planning et les contenus en avance pour validation. Nous integrons vos retours avant publication.",
+    answer: "Oui, vous recevez le planning et les contenus en avance pour validation. Nous intégrons vos retours avant publication.",
   },
   {
-    question: "Gerez-vous aussi les reponses aux commentaires ?",
-    answer: "Le community management (reponses, interactions) peut etre ajoute en option a votre forfait de creation de contenu.",
+    question: "Gérez-vous aussi les réponses aux commentaires ?",
+    answer: "Le community management (réponses, interactions) peut être ajouté en option à votre forfait de création de contenu.",
   },
 ];
 
 export const printCoordinationFAQs: FAQItem[] = [
   {
     question: "Comment fonctionne la coordination d'impression ?",
-    answer: "Nous selectionnons l'imprimeur adapte a votre projet, negocions les tarifs, suivons la production et controlons la qualite avant livraison.",
+    answer: "Nous sélectionnons l'imprimeur adapté à votre projet, négocions les tarifs, suivons la production et contrôlons la qualité avant livraison.",
   },
   {
     question: "Avec quels imprimeurs travaillez-vous ?",
-    answer: "Nous avons des partenaires de confiance au Luxembourg et en Grande Region, selectionnes selon le type de support et le volume.",
+    answer: "Nous avons des partenaires de confiance au Luxembourg et en Grande Région, sélectionnés selon le type de support et le volume.",
   },
   {
     question: "Les tarifs d'impression sont-ils transparents ?",
-    answer: "Oui, nous vous transmettons les devis de nos partenaires avec notre marge de coordination clairement indiquee.",
+    answer: "Oui, nous vous transmettons les devis de nos partenaires avec notre marge de coordination clairement indiquée.",
   },
   {
-    question: "Gerez-vous les gros volumes ?",
-    answer: "Oui, nous avons l'habitude de gerer des volumes importants : catalogues, magazines, mailings de masse, etc.",
+    question: "Gérez-vous les gros volumes ?",
+    answer: "Oui, nous avons l'habitude de gérer des volumes importants : catalogues, magazines, mailings de masse, etc.",
   },
   {
-    question: "Quel est le delai de livraison moyen ?",
-    answer: "Les delais varient selon le support : 3-5 jours pour des cartes de visite, 1-2 semaines pour des brochures, jusqu'a 3-4 semaines pour des projets complexes.",
+    question: "Quel est le délai de livraison moyen ?",
+    answer: "Les délais varient selon le support : 3-5 jours pour des cartes de visite, 1-2 semaines pour des brochures, jusqu'à 3-4 semaines pour des projets complexes.",
   },
 ];

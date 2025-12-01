@@ -132,8 +132,8 @@ export default function VideoProductionPageContent() {
 
       {/* FAQ */}
       <FAQSection
-        title="Questions frequentes sur la production video"
-        subtitle="Tout ce que vous devez savoir sur nos services video"
+        title="Questions fréquentes sur la production vidéo"
+        subtitle="Tout ce que vous devez savoir sur nos services vidéo"
         faqs={videoProductionFAQs}
         className="bg-muted/50"
       />

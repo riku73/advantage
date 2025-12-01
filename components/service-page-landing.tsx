@@ -120,7 +120,7 @@ export default function LandingPagesPageContent() {
 
       {/* FAQ */}
       <FAQSection
-        title="Questions frequentes sur les landing pages"
+        title="Questions fréquentes sur les landing pages"
         subtitle="Tout ce que vous devez savoir sur nos pages de conversion"
         faqs={landingPagesFAQs}
       />

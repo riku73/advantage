@@ -125,8 +125,8 @@ export default function LogoBrandingPageContent() {
 
       {/* FAQ */}
       <FAQSection
-        title="Questions frequentes sur le branding"
-        subtitle="Tout ce que vous devez savoir sur la creation de logo et d'identite visuelle"
+        title="Questions fréquentes sur le branding"
+        subtitle="Tout ce que vous devez savoir sur la création de logo et d'identité visuelle"
         faqs={logoBrandingFAQs}
         className="bg-muted/50"
       />

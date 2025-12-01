@@ -49,7 +49,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl xl:text-7xl"
           >
-            Faites decoller votre presence digitale
+            Faites décoller votre présence digitale
           </motion.h1>
 
           <motion.p
@@ -59,8 +59,8 @@ export default function Hero() {
             className="mx-auto mt-8 max-w-2xl text-lg text-muted-foreground sm:text-xl"
           >
             Depuis 2022, nous accompagnons les entreprises luxembourgeoises en
-            SEO, SEA, e-mail marketing et creation de sites web. Une approche
-            locale, des resultats mesurables.
+            SEO, SEA, e-mail marketing et création de sites web. Une approche
+            locale, des résultats mesurables.
           </motion.p>
 
           <motion.div

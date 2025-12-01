@@ -157,8 +157,8 @@ export default function SEOPageContent() {
 
       {/* FAQ */}
       <FAQSection
-        title="Questions frequentes sur le SEO"
-        subtitle="Tout ce que vous devez savoir sur le referencement naturel"
+        title="Questions fréquentes sur le SEO"
+        subtitle="Tout ce que vous devez savoir sur le référencement naturel"
         faqs={seoFAQs}
         className="bg-muted/50"
       />

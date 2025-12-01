@@ -125,8 +125,8 @@ export default function SocialContentPageContent() {
 
       {/* FAQ */}
       <FAQSection
-        title="Questions frequentes sur le contenu reseaux sociaux"
-        subtitle="Tout ce que vous devez savoir sur nos services de creation de contenu"
+        title="Questions fréquentes sur le contenu réseaux sociaux"
+        subtitle="Tout ce que vous devez savoir sur nos services de création de contenu"
         faqs={socialContentFAQs}
         className="bg-muted/50"
       />

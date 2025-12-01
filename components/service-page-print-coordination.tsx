@@ -135,7 +135,7 @@ export default function PrintCoordinationPageContent() {
 
       {/* FAQ */}
       <FAQSection
-        title="Questions frequentes sur la coordination d'impression"
+        title="Questions fréquentes sur la coordination d'impression"
         subtitle="Tout ce que vous devez savoir sur nos services d'impression"
         faqs={printCoordinationFAQs}
         className="bg-muted/50"
