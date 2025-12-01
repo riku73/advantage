@@ -24,21 +24,20 @@ import {
 } from "lucide-react";
 import FadeIn from "@/components/ui/fade-in";
 import StaggerContainer, { StaggerItem } from "@/components/ui/stagger-container";
-import PricingTiers from "@/components/sections/pricing-tiers";
 import FAQSection, { sitesWebFAQs } from "@/components/sections/faq-section";
-import { getServiceById } from "@/lib/services-data";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
-export default function SitesWebPageContent() {
-  const service = getServiceById("sites-web");
-  const tiers = service && Array.isArray(service.pricing) ? service.pricing : [];
+const relatedServices = [
+  { name: "SEO", href: "/services/seo" },
+  { name: "Landing Pages", href: "/services/landing-pages" },
+  { name: "Logo & Branding", href: "/services/logo-branding" },
+];
 
+export default function SitesWebPageContent() {
   return (
     <div className="min-h-screen">
       <section className="bg-gradient-to-b from-background to-muted/50 py-20">
@@ -80,125 +79,6 @@ export default function SitesWebPageContent() {
           </div>
         </div>
       </section>
-
-      {/* Technology Stack Showcase */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 lg:px-8">
-          <FadeIn className="mx-auto max-w-4xl">
-            <h2 className="text-3xl font-bold text-center">Technologies modernes et performantes</h2>
-            <p className="mt-4 text-center text-muted-foreground">
-              Nos sites web sont construits avec les technologies les plus récentes et éprouvées
-            </p>
-
-            <Tabs defaultValue="frontend" className="mt-12">
-              <TabsList className="grid w-full grid-cols-4 bg-muted p-1 h-auto">
-                <TabsTrigger value="frontend" className="data-[state=active]:bg-background">
-                  <Code2 className="h-4 w-4 mr-2" />
-                  Frontend
-                </TabsTrigger>
-                <TabsTrigger value="performance" className="data-[state=active]:bg-background">
-                  <Zap className="h-4 w-4 mr-2" />
-                  Performance
-                </TabsTrigger>
-                <TabsTrigger value="security" className="data-[state=active]:bg-background">
-                  <Shield className="h-4 w-4 mr-2" />
-                  Sécurité
-                </TabsTrigger>
-                <TabsTrigger value="seo" className="data-[state=active]:bg-background">
-                  <Search className="h-4 w-4 mr-2" />
-                  SEO
-                </TabsTrigger>
-              </TabsList>
-
-              <TabsContent value="frontend">
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Frameworks & librairies</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="flex flex-wrap gap-2">
-                      <Badge variant="secondary">React</Badge>
-                      <Badge variant="secondary">Next.js</Badge>
-                      <Badge variant="secondary">TypeScript</Badge>
-                      <Badge variant="secondary">Tailwind CSS</Badge>
-                      <Badge variant="secondary">Vue.js</Badge>
-                    </div>
-                    <p className="text-sm text-muted-foreground">
-                      Utilisation de frameworks modernes pour créer des interfaces utilisateur réactives,
-                      rapides et maintenables. TypeScript garantit la qualité et la fiabilité du code.
-                    </p>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-
-              <TabsContent value="performance">
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Optimisation & rapidité</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="flex flex-wrap gap-2">
-                      <Badge variant="secondary">Lazy Loading</Badge>
-                      <Badge variant="secondary">Code Splitting</Badge>
-                      <Badge variant="secondary">Image Optimization</Badge>
-                      <Badge variant="secondary">CDN</Badge>
-                      <Badge variant="secondary">Caching</Badge>
-                    </div>
-                    <p className="text-sm text-muted-foreground">
-                      Optimisation des Core Web Vitals (LCP, FID, CLS) pour garantir une expérience
-                      utilisateur fluide. Compression automatique des assets et chargement asynchrone.
-                    </p>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-
-              <TabsContent value="security">
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Protection & conformité</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="flex flex-wrap gap-2">
-                      <Badge variant="secondary">SSL/TLS</Badge>
-                      <Badge variant="secondary">HTTPS</Badge>
-                      <Badge variant="secondary">RGPD</Badge>
-                      <Badge variant="secondary">XSS Protection</Badge>
-                      <Badge variant="secondary">CSRF Tokens</Badge>
-                    </div>
-                    <p className="text-sm text-muted-foreground">
-                      Sécurité intégrée dès la conception avec certificats SSL, protection contre
-                      les attaques courantes (XSS, CSRF, injection SQL) et conformité RGPD.
-                    </p>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-
-              <TabsContent value="seo">
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Référencement naturel</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="flex flex-wrap gap-2">
-                      <Badge variant="secondary">Meta Tags</Badge>
-                      <Badge variant="secondary">Schema.org</Badge>
-                      <Badge variant="secondary">Sitemap XML</Badge>
-                      <Badge variant="secondary">Semantic HTML</Badge>
-                      <Badge variant="secondary">Open Graph</Badge>
-                    </div>
-                    <p className="text-sm text-muted-foreground">
-                      Structure HTML sémantique, balisage Schema.org pour les rich snippets,
-                      optimisation des balises meta et génération automatique de sitemaps.
-                    </p>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-            </Tabs>
-          </FadeIn>
-        </div>
-      </section>
-
-      <Separator className="container mx-auto" />
 
       {/* Development Process */}
       <section className="py-20">
@@ -358,252 +238,6 @@ export default function SitesWebPageContent() {
           </FadeIn>
         </div>
       </section>
-
-      <Separator className="container mx-auto" />
-
-      {/* Feature Comparison Table */}
-      <section className="bg-muted/50 py-20">
-        <div className="container mx-auto px-4 lg:px-8">
-          <FadeIn className="mx-auto max-w-6xl">
-            <h2 className="text-3xl font-bold text-center">Comparaison détaillée des types de sites web</h2>
-            <p className="mt-4 text-center text-muted-foreground">
-              Analyse complète des fonctionnalités, technologies et spécifications techniques
-            </p>
-
-            <div className="mt-12 overflow-x-auto">
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead className="w-[240px]">Fonctionnalité</TableHead>
-                    <TableHead className="text-center">Site vitrine</TableHead>
-                    <TableHead className="text-center">E-commerce</TableHead>
-                    <TableHead className="text-center">Application web</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  <TableRow className="bg-muted/30">
-                    <TableCell colSpan={4} className="font-semibold text-primary">
-                      Informations générales
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">Complexité</TableCell>
-                    <TableCell className="text-center">
-                      <Badge variant="secondary">Basique</Badge>
-                    </TableCell>
-                    <TableCell className="text-center">
-                      <Badge variant="secondary">Avancé</Badge>
-                    </TableCell>
-                    <TableCell className="text-center">
-                      <Badge variant="secondary">Expert</Badge>
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">Délai de réalisation</TableCell>
-                    <TableCell className="text-center text-sm">2-4 semaines</TableCell>
-                    <TableCell className="text-center text-sm">8-16 semaines</TableCell>
-                    <TableCell className="text-center text-sm">16-32 semaines</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">Nombre de pages</TableCell>
-                    <TableCell className="text-center text-sm">5-15 pages</TableCell>
-                    <TableCell className="text-center text-sm">20-50 pages</TableCell>
-                    <TableCell className="text-center text-sm">50+ pages</TableCell>
-                  </TableRow>
-
-                  <TableRow className="bg-muted/30">
-                    <TableCell colSpan={4} className="font-semibold text-primary">
-                      Fonctionnalités frontend
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">Design responsive</TableCell>
-                    <TableCell className="text-center">
-                      <CheckCircle2 className="h-5 w-5 text-green-600 mx-auto" />
-                    </TableCell>
-                    <TableCell className="text-center">
-                      <CheckCircle2 className="h-5 w-5 text-green-600 mx-auto" />
-                    </TableCell>
-                    <TableCell className="text-center">
-                      <CheckCircle2 className="h-5 w-5 text-green-600 mx-auto" />
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">Formulaires de contact</TableCell>
-                    <TableCell className="text-center">
-                      <CheckCircle2 className="h-5 w-5 text-green-600 mx-auto" />
-                    </TableCell>
-                    <TableCell className="text-center">
-                      <CheckCircle2 className="h-5 w-5 text-green-600 mx-auto" />
-                    </TableCell>
-                    <TableCell className="text-center">
-                      <CheckCircle2 className="h-5 w-5 text-green-600 mx-auto" />
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">Animations & transitions</TableCell>
-                    <TableCell className="text-center text-sm">Basiques</TableCell>
-                    <TableCell className="text-center text-sm">Avancées</TableCell>
-                    <TableCell className="text-center text-sm">Personnalisées</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">Interface interactive</TableCell>
-                    <TableCell className="text-center text-sm">Simple</TableCell>
-                    <TableCell className="text-center text-sm">Catalogue produits</TableCell>
-                    <TableCell className="text-center text-sm">Dashboard complet</TableCell>
-                  </TableRow>
-
-                  <TableRow className="bg-muted/30">
-                    <TableCell colSpan={4} className="font-semibold text-primary">
-                      Fonctionnalités backend
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">Base de données</TableCell>
-                    <TableCell className="text-center text-sm">Optionnelle</TableCell>
-                    <TableCell className="text-center">
-                      <CheckCircle2 className="h-5 w-5 text-green-600 mx-auto" />
-                    </TableCell>
-                    <TableCell className="text-center">
-                      <CheckCircle2 className="h-5 w-5 text-green-600 mx-auto" />
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">API personnalisée</TableCell>
-                    <TableCell className="text-center text-sm">Non</TableCell>
-                    <TableCell className="text-center">
-                      <CheckCircle2 className="h-5 w-5 text-green-600 mx-auto" />
-                    </TableCell>
-                    <TableCell className="text-center">
-                      <CheckCircle2 className="h-5 w-5 text-green-600 mx-auto" />
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">Authentification utilisateurs</TableCell>
-                    <TableCell className="text-center text-sm">Non</TableCell>
-                    <TableCell className="text-center text-sm">Basique</TableCell>
-                    <TableCell className="text-center text-sm">Avancée (JWT, OAuth)</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">Gestion des rôles</TableCell>
-                    <TableCell className="text-center text-sm">Non</TableCell>
-                    <TableCell className="text-center text-sm">Admin/Client</TableCell>
-                    <TableCell className="text-center text-sm">Multi-rôles</TableCell>
-                  </TableRow>
-
-                  <TableRow className="bg-muted/30">
-                    <TableCell colSpan={4} className="font-semibold text-primary">
-                      E-commerce & Paiements
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">Catalogue produits</TableCell>
-                    <TableCell className="text-center text-sm">Non</TableCell>
-                    <TableCell className="text-center">
-                      <CheckCircle2 className="h-5 w-5 text-green-600 mx-auto" />
-                    </TableCell>
-                    <TableCell className="text-center text-sm">Optionnel</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">Panier & checkout</TableCell>
-                    <TableCell className="text-center text-sm">Non</TableCell>
-                    <TableCell className="text-center">
-                      <CheckCircle2 className="h-5 w-5 text-green-600 mx-auto" />
-                    </TableCell>
-                    <TableCell className="text-center text-sm">Personnalisé</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">Paiement en ligne</TableCell>
-                    <TableCell className="text-center text-sm">Non</TableCell>
-                    <TableCell className="text-center text-sm">Stripe, PayPal</TableCell>
-                    <TableCell className="text-center text-sm">Multi-gateway</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">Gestion des stocks</TableCell>
-                    <TableCell className="text-center text-sm">Non</TableCell>
-                    <TableCell className="text-center">
-                      <CheckCircle2 className="h-5 w-5 text-green-600 mx-auto" />
-                    </TableCell>
-                    <TableCell className="text-center text-sm">API intégration</TableCell>
-                  </TableRow>
-
-                  <TableRow className="bg-muted/30">
-                    <TableCell colSpan={4} className="font-semibold text-primary">
-                      Administration & CMS
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">CMS intégré</TableCell>
-                    <TableCell className="text-center text-sm">Basique</TableCell>
-                    <TableCell className="text-center text-sm">Complet</TableCell>
-                    <TableCell className="text-center text-sm">Sur-mesure</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">Dashboard admin</TableCell>
-                    <TableCell className="text-center text-sm">Simple</TableCell>
-                    <TableCell className="text-center">
-                      <CheckCircle2 className="h-5 w-5 text-green-600 mx-auto" />
-                    </TableCell>
-                    <TableCell className="text-center">
-                      <CheckCircle2 className="h-5 w-5 text-green-600 mx-auto" />
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">Analytics intégrées</TableCell>
-                    <TableCell className="text-center text-sm">Google Analytics</TableCell>
-                    <TableCell className="text-center text-sm">GA4 + E-commerce</TableCell>
-                    <TableCell className="text-center text-sm">Analytics custom</TableCell>
-                  </TableRow>
-
-                  <TableRow className="bg-muted/30">
-                    <TableCell colSpan={4} className="font-semibold text-primary">
-                      Performance & Sécurité
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">Optimisation SEO</TableCell>
-                    <TableCell className="text-center">
-                      <CheckCircle2 className="h-5 w-5 text-green-600 mx-auto" />
-                    </TableCell>
-                    <TableCell className="text-center">
-                      <CheckCircle2 className="h-5 w-5 text-green-600 mx-auto" />
-                    </TableCell>
-                    <TableCell className="text-center">
-                      <CheckCircle2 className="h-5 w-5 text-green-600 mx-auto" />
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">Certificat SSL</TableCell>
-                    <TableCell className="text-center">
-                      <CheckCircle2 className="h-5 w-5 text-green-600 mx-auto" />
-                    </TableCell>
-                    <TableCell className="text-center">
-                      <CheckCircle2 className="h-5 w-5 text-green-600 mx-auto" />
-                    </TableCell>
-                    <TableCell className="text-center">
-                      <CheckCircle2 className="h-5 w-5 text-green-600 mx-auto" />
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">Score Lighthouse cible</TableCell>
-                    <TableCell className="text-center text-sm">&gt; 90</TableCell>
-                    <TableCell className="text-center text-sm">&gt; 85</TableCell>
-                    <TableCell className="text-center text-sm">&gt; 80</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">Sauvegardes automatiques</TableCell>
-                    <TableCell className="text-center text-sm">Quotidiennes</TableCell>
-                    <TableCell className="text-center text-sm">Biquotidiennes</TableCell>
-                    <TableCell className="text-center text-sm">Continues</TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      <Separator className="container mx-auto" />
 
       {/* Code Quality Standards */}
       <section className="py-20">
@@ -1072,15 +706,6 @@ export default function SitesWebPageContent() {
         </div>
       </section>
 
-      {/* Pricing */}
-      {tiers.length > 0 && (
-        <PricingTiers
-          tiers={tiers}
-          title="Nos tarifs sites web"
-          description="Du site one-pager à la boutique e-commerce complète"
-        />
-      )}
-
       {/* FAQ */}
       <FAQSection
         title="Questions fréquentes sur la création de sites web"
@@ -1088,6 +713,29 @@ export default function SitesWebPageContent() {
         faqs={sitesWebFAQs}
         className="bg-muted/50"
       />
+
+      {/* Related Services */}
+      <section className="border-t py-20">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="mx-auto max-w-3xl">
+            <FadeIn>
+              <h2 className="text-2xl font-bold">Services complémentaires</h2>
+              <div className="mt-6 flex flex-wrap gap-4">
+                {relatedServices.map((service) => (
+                  <Link
+                    key={service.name}
+                    href={service.href}
+                    className="inline-flex items-center gap-2 rounded-md border bg-card px-6 py-3 transition-all hover:bg-muted hover:scale-105"
+                  >
+                    {service.name}
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                ))}
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
 
       <section className="bg-primary py-20">
         <div className="container mx-auto px-4 lg:px-8">

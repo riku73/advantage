@@ -5,9 +5,7 @@ import Image from "next/image";
 import { Search, TrendingUp, ArrowRight, CheckCircle2 } from "lucide-react";
 import FadeIn from "@/components/ui/fade-in";
 import StaggerContainer, { StaggerItem } from "@/components/ui/stagger-container";
-import PricingTiers from "@/components/sections/pricing-tiers";
 import FAQSection, { seoFAQs } from "@/components/sections/faq-section";
-import { getServiceById } from "@/lib/services-data";
 import { ServiceHero } from "@/components/ui/page-hero";
 
 const benefits = [
@@ -58,9 +56,6 @@ const relatedServices = [
 ];
 
 export default function SEOPageContent() {
-  const service = getServiceById("seo");
-  const tiers = service && Array.isArray(service.pricing) ? service.pricing : [];
-
   return (
     <div className="min-h-screen">
       {/* Hero */}
@@ -145,15 +140,6 @@ export default function SEOPageContent() {
           </div>
         </div>
       </section>
-
-      {/* Pricing */}
-      {tiers.length > 0 && (
-        <PricingTiers
-          tiers={tiers}
-          title="Nos Tarifs SEO"
-          description="Choisissez entre un audit complet ou une optimisation mensuelle continue"
-        />
-      )}
 
       {/* FAQ */}
       <FAQSection

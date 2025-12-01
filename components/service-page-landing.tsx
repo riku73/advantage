@@ -5,9 +5,7 @@ import Image from "next/image";
 import { Target, ArrowRight, CheckCircle2 } from "lucide-react";
 import FadeIn from "@/components/ui/fade-in";
 import StaggerContainer, { StaggerItem } from "@/components/ui/stagger-container";
-import ServiceFeaturesPricing from "@/components/sections/service-features-pricing";
 import FAQSection, { landingPagesFAQs } from "@/components/sections/faq-section";
-import { getServiceById } from "@/lib/services-data";
 
 const benefits = [
   "Taux de conversion jusqu'à 5x supérieur",
@@ -26,9 +24,36 @@ const features = [
   "Responsive design",
 ];
 
-export default function LandingPagesPageContent() {
-  const service = getServiceById("landing-pages");
+const process = [
+  {
+    step: "1. Brief & Objectifs",
+    description:
+      "Définition des KPIs, de l'audience cible et des objectifs de conversion.",
+  },
+  {
+    step: "2. Design & Copywriting",
+    description:
+      "Création du design conversion-driven et rédaction persuasive.",
+  },
+  {
+    step: "3. Développement",
+    description:
+      "Intégration responsive, formulaires optimisés et tracking avancé.",
+  },
+  {
+    step: "4. Tests & Optimisation",
+    description:
+      "A/B testing, analyse des résultats et ajustements continus.",
+  },
+];
 
+const relatedServices = [
+  { name: "Sites Web", href: "/services/sites-web" },
+  { name: "SEA", href: "/services/sea" },
+  { name: "SEO", href: "/services/seo" },
+];
+
+export default function LandingPagesPageContent() {
   return (
     <div className="min-h-screen">
       <section className="bg-gradient-to-b from-background to-muted/50 py-20">
@@ -111,12 +136,31 @@ export default function LandingPagesPageContent() {
         </div>
       </section>
 
-      {/* Features & Pricing */}
-      {service && (
-        <section className="bg-muted/50">
-          <ServiceFeaturesPricing service={service} />
-        </section>
-      )}
+      {/* Process */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="mx-auto max-w-3xl">
+            <FadeIn className="text-center">
+              <h2 className="text-3xl font-bold">Notre méthodologie</h2>
+              <p className="mt-4 text-muted-foreground">
+                Une approche structurée en 4 étapes pour des landing pages performantes
+              </p>
+            </FadeIn>
+            <StaggerContainer className="mt-12 grid gap-6 sm:grid-cols-2">
+              {process.map((item) => (
+                <StaggerItem key={item.step}>
+                  <div className="h-full rounded-lg border bg-card p-6 transition-all hover:shadow-lg hover:border-primary/50 hover:scale-105">
+                    <h3 className="font-semibold text-primary">{item.step}</h3>
+                    <p className="mt-2 text-sm text-muted-foreground">
+                      {item.description}
+                    </p>
+                  </div>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </div>
+        </div>
+      </section>
 
       {/* FAQ */}
       <FAQSection
@@ -124,6 +168,29 @@ export default function LandingPagesPageContent() {
         subtitle="Tout ce que vous devez savoir sur nos pages de conversion"
         faqs={landingPagesFAQs}
       />
+
+      {/* Related Services */}
+      <section className="border-t py-20">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="mx-auto max-w-3xl">
+            <FadeIn>
+              <h2 className="text-2xl font-bold">Services complémentaires</h2>
+              <div className="mt-6 flex flex-wrap gap-4">
+                {relatedServices.map((service) => (
+                  <Link
+                    key={service.name}
+                    href={service.href}
+                    className="inline-flex items-center gap-2 rounded-md border bg-card px-6 py-3 transition-all hover:bg-muted hover:scale-105"
+                  >
+                    {service.name}
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                ))}
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
 
       <section className="bg-primary py-20">
         <div className="container mx-auto px-4 lg:px-8">
