@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import {
   Globe,
   ArrowRight,
@@ -25,13 +24,22 @@ import {
 import FadeIn from "@/components/ui/fade-in";
 import StaggerContainer, { StaggerItem } from "@/components/ui/stagger-container";
 import FAQSection, { sitesWebFAQs } from "@/components/sections/faq-section";
+import { ServiceHero } from "@/components/ui/page-hero";
+import StatsSection, { StatItem } from "@/components/sections/stats-section";
+import CTAWithServices, { RelatedService } from "@/components/sections/cta-with-services";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
-const relatedServices = [
+const stats: StatItem[] = [
+  { value: "<2.5s", label: "Temps de chargement" },
+  { value: "90+", label: "Score Lighthouse" },
+  { value: "100%", label: "Responsive" },
+];
+
+const relatedServices: RelatedService[] = [
   { name: "SEO", href: "/services/seo" },
   { name: "Landing Pages", href: "/services/landing-pages" },
   { name: "Logo & Branding", href: "/services/logo-branding" },
@@ -40,45 +48,42 @@ const relatedServices = [
 export default function SitesWebPageContent() {
   return (
     <div className="min-h-screen">
-      <section className="bg-gradient-to-b from-background to-muted/50 py-20">
+      {/* Hero */}
+      <ServiceHero
+        backgroundImage="https://images.unsplash.com/photo-1547658719-da2b51169166?w=1920&h=1080&fit=crop&q=80"
+        backgroundAlt="Website development with code and responsive design"
+      >
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            <FadeIn direction="left">
-              <div className="inline-flex items-center gap-2 rounded-full border bg-background px-4 py-2 text-sm font-medium">
+          <div className="mx-auto max-w-3xl text-center">
+            <FadeIn immediate>
+              <div className="inline-flex items-center gap-2 rounded-full border border-foreground/20 bg-foreground/10 backdrop-blur-md px-4 py-2 text-sm font-medium text-foreground">
                 <Globe className="h-4 w-4 text-primary" />
-                <span>Développement web</span>
+                <span>Développement Web</span>
               </div>
-              <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl">
+              <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
                 Sites web qui convertissent vos visiteurs
               </h1>
               <p className="mt-6 text-lg text-muted-foreground">
                 Nous créons des sites web performants, esthétiques et optimisés
-                pour transformer vos visiteurs en clients.
+                pour transformer vos visiteurs en clients. Technologies modernes,
+                accessibilité et SEO intégrés.
               </p>
-              <div className="mt-8">
+              <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center justify-center gap-2 rounded-md bg-black dark:bg-white px-8 py-3 font-semibold text-white dark:text-black transition-all hover:bg-gray-900 dark:hover:bg-gray-100 hover:scale-105"
+                  className="group inline-flex items-center justify-center gap-2 rounded-md bg-black dark:bg-white px-8 py-3 font-semibold text-white dark:text-black transition-all hover:bg-gray-800 dark:hover:bg-gray-100 hover:scale-105"
                 >
                   Démarrer votre projet
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
             </FadeIn>
-            <FadeIn direction="right" delay={0.2}>
-              <div className="aspect-square overflow-hidden rounded-2xl shadow-xl">
-                <Image
-                  src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&h=800&fit=crop&q=80"
-                  alt="Website development with code and responsive design"
-                  width={800}
-                  height={800}
-                  className="object-cover transition-transform hover:scale-105 duration-700"
-                />
-              </div>
-            </FadeIn>
           </div>
         </div>
-      </section>
+      </ServiceHero>
+
+      {/* Stats */}
+      <StatsSection stats={stats} className="bg-muted/30" />
 
       {/* Development Process */}
       <section className="py-20">
@@ -240,7 +245,7 @@ export default function SitesWebPageContent() {
       </section>
 
       {/* Code Quality Standards */}
-      <section className="py-20">
+      <section className="bg-muted/50 py-20">
         <div className="container mx-auto px-4 lg:px-8">
           <FadeIn className="mx-auto max-w-5xl">
             <h2 className="text-3xl font-bold text-center">Standards de qualité</h2>
@@ -579,7 +584,7 @@ export default function SitesWebPageContent() {
                         Rendu hybride
                       </h4>
                       <p className="text-sm text-muted-foreground">
-                        Combine SSR (Server-Side Rendering), SSG (Static Site Generation) et CSR (Client-Side Rendering) selon les besoins de chaque page. Le HTML est généré côté serveur pour un premier affichage quasi-instantané.
+                        Combine SSR (Server-Side Rendering), SSG (Static Site Generation) et CSR (Client-Side Rendering) selon les besoins de chaque page.
                       </p>
                     </div>
                     <div className="rounded-lg border bg-card p-4">
@@ -588,7 +593,7 @@ export default function SitesWebPageContent() {
                         Code splitting automatique
                       </h4>
                       <p className="text-sm text-muted-foreground">
-                        Chaque page charge uniquement le JavaScript nécessaire. Si une page fait 50KB et une autre 200KB, l'utilisateur ne télécharge que ce dont il a besoin.
+                        Chaque page charge uniquement le JavaScript nécessaire. L'utilisateur ne télécharge que ce dont il a besoin.
                       </p>
                     </div>
                   </div>
@@ -622,7 +627,7 @@ export default function SitesWebPageContent() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-sm text-muted-foreground">
-                    Contrairement aux SPAs React classiques où le contenu est généré côté client (invisible pour les crawlers), Next.js envoie du HTML complet au serveur. Les moteurs de recherche indexent immédiatement le contenu sans attendre l'exécution JavaScript.
+                    Contrairement aux SPAs React classiques, Next.js envoie du HTML complet au serveur. Les moteurs de recherche indexent immédiatement le contenu.
                   </p>
 
                   <div className="space-y-3">
@@ -631,7 +636,7 @@ export default function SitesWebPageContent() {
                       <div>
                         <h5 className="font-semibold text-sm">Server Components</h5>
                         <p className="text-xs text-muted-foreground mt-1">
-                          Les composants React Server Components s'exécutent côté serveur, réduisant le JavaScript envoyé au client de 30-50% tout en gardant l'interactivité.
+                          Réduction du JavaScript envoyé au client de 30-50% tout en gardant l'interactivité.
                         </p>
                       </div>
                     </div>
@@ -640,55 +645,9 @@ export default function SitesWebPageContent() {
                       <div>
                         <h5 className="font-semibold text-sm">Metadata API</h5>
                         <p className="text-xs text-muted-foreground mt-1">
-                          Génération automatique des balises meta, Open Graph, Twitter Cards et Schema.org avec typage TypeScript pour éviter les erreurs.
+                          Génération automatique des balises meta, Open Graph, Twitter Cards et Schema.org.
                         </p>
                       </div>
-                    </div>
-                    <div className="flex items-start gap-3 p-3 rounded-lg border bg-card">
-                      <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                      <div>
-                        <h5 className="font-semibold text-sm">Sitemap & Robots.txt dynamiques</h5>
-                        <p className="text-xs text-muted-foreground mt-1">
-                          Génération automatique basée sur les routes du site, toujours à jour même avec du contenu dynamique.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2">
-                <CardHeader>
-                  <CardTitle className="text-2xl">Expérience développeur et maintenabilité</CardTitle>
-                  <CardDescription className="text-base">
-                    Un écosystème moderne qui facilite les évolutions futures
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    <div className="space-y-2">
-                      <Badge variant="secondary">TypeScript natif</Badge>
-                      <p className="text-sm text-muted-foreground">
-                        Détection d'erreurs à la compilation, autocomplétion intelligente, refactoring sécurisé. Le typage strict réduit les bugs de 40% selon nos observations.
-                      </p>
-                    </div>
-                    <div className="space-y-2">
-                      <Badge variant="secondary">Hot Module Replacement</Badge>
-                      <p className="text-sm text-muted-foreground">
-                        Les changements de code apparaissent instantanément sans recharger la page, préservant l'état de l'application. Gain de temps de développement estimé à 30%.
-                      </p>
-                    </div>
-                    <div className="space-y-2">
-                      <Badge variant="secondary">Route Handlers</Badge>
-                      <p className="text-sm text-muted-foreground">
-                        API routes intégrées permettant de créer des endpoints backend sans serveur Node.js séparé. Simplifie l'architecture et réduit les coûts d'infrastructure.
-                      </p>
-                    </div>
-                    <div className="space-y-2">
-                      <Badge variant="secondary">Edge Runtime</Badge>
-                      <p className="text-sm text-muted-foreground">
-                        Déploiement automatique sur un CDN global. Vos pages sont servies depuis le serveur le plus proche géographiquement de l'utilisateur.
-                      </p>
                     </div>
                   </div>
                 </CardContent>
@@ -697,7 +656,7 @@ export default function SitesWebPageContent() {
               <div className="rounded-lg border-2 border-primary bg-primary/5 p-6">
                 <h3 className="font-semibold text-lg mb-2">Alternative considérée</h3>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Nous évaluons systématiquement Vue.js/Nuxt.js pour chaque projet. Next.js est choisi quand la performance SEO est critique et que l'écosystème React offre les librairies nécessaires. Pour des projets avec des besoins différents, nous adaptons notre stack technologique.
+                  Nous évaluons systématiquement Vue.js/Nuxt.js pour chaque projet. Next.js est choisi quand la performance SEO est critique. Pour des projets avec des besoins différents, nous adaptons notre stack technologique.
                 </p>
                 <Badge variant="outline">Approche agnostique • Best tool for the job</Badge>
               </div>
@@ -711,53 +670,16 @@ export default function SitesWebPageContent() {
         title="Questions fréquentes sur la création de sites web"
         subtitle="Tout ce que vous devez savoir sur nos services de développement web"
         faqs={sitesWebFAQs}
-        className="bg-muted/50"
       />
 
-      {/* Related Services */}
-      <section className="border-t py-20">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="mx-auto max-w-3xl">
-            <FadeIn>
-              <h2 className="text-2xl font-bold">Services complémentaires</h2>
-              <div className="mt-6 flex flex-wrap gap-4">
-                {relatedServices.map((service) => (
-                  <Link
-                    key={service.name}
-                    href={service.href}
-                    className="inline-flex items-center gap-2 rounded-md border bg-card px-6 py-3 transition-all hover:bg-muted hover:scale-105"
-                  >
-                    {service.name}
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                ))}
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-primary py-20">
-        <div className="container mx-auto px-4 lg:px-8">
-          <FadeIn className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold text-primary-foreground">
-              Créons ensemble votre site web
-            </h2>
-            <p className="mt-4 text-lg text-primary-foreground/90">
-              Discutons de votre projet et découvrez comment nous pouvons créer le site web parfait pour votre entreprise.
-            </p>
-            <div className="mt-8">
-              <Link
-                href="/devis-personnalise"
-                className="group inline-flex items-center gap-2 rounded-md bg-black dark:bg-white px-8 py-3 font-semibold text-white dark:text-black transition-all hover:bg-gray-900 dark:hover:bg-gray-100 hover:scale-105"
-              >
-                Demandez un devis
-                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
+      {/* CTA with Related Services */}
+      <CTAWithServices
+        title="Créons ensemble votre site web"
+        description="Discutons de votre projet et découvrez comment nous pouvons créer le site web parfait pour votre entreprise."
+        buttonText="Demandez un devis"
+        buttonHref="/devis-personnalise"
+        relatedServices={relatedServices}
+      />
     </div>
   );
 }

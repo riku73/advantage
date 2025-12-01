@@ -1,53 +1,116 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import { Server, ArrowRight, CheckCircle2 } from "lucide-react";
+import {
+  Server,
+  ArrowRight,
+  CheckCircle2,
+  Inbox,
+  Shield,
+  Eye,
+  FileCheck,
+  Settings,
+  Clock,
+} from "lucide-react";
 import FadeIn from "@/components/ui/fade-in";
 import StaggerContainer, { StaggerItem } from "@/components/ui/stagger-container";
 import FAQSection, { emailDeliverabilityFAQs } from "@/components/sections/faq-section";
+import { ServiceHero } from "@/components/ui/page-hero";
+import StatsSection, { StatItem } from "@/components/sections/stats-section";
+import BenefitsGrid, { BenefitItem } from "@/components/sections/benefits-grid";
+import ProcessTimeline, { ProcessStep } from "@/components/sections/process-timeline";
+import CTAWithServices, { RelatedService } from "@/components/sections/cta-with-services";
 
-const benefits = [
-  "Vos e-mails arrivent en boîte de réception",
-  "Meilleur taux d'ouverture",
-  "Protection contre le blacklistage",
-  "Réputation d'expéditeur optimisée",
-  "Conformité technique assurée",
+const stats: StatItem[] = [
+  { value: "99%", label: "Taux d'arrivée en inbox" },
+  { value: "+45%", label: "Amélioration taux ouverture" },
+  { value: "30j", label: "Monitoring inclus" },
+];
+
+const benefits: BenefitItem[] = [
+  {
+    icon: Inbox,
+    title: "Boîte de réception garantie",
+    description:
+      "Vos e-mails arrivent directement dans la boîte de réception principale, pas dans les spams ou promotions.",
+  },
+  {
+    icon: Eye,
+    title: "Meilleur taux d'ouverture",
+    description:
+      "Une bonne délivrabilité se traduit par des taux d'ouverture jusqu'à 45% supérieurs à la moyenne du marché.",
+  },
+  {
+    icon: Shield,
+    title: "Protection anti-blacklist",
+    description:
+      "Surveillance proactive de votre réputation pour éviter le blacklistage et maintenir une image d'expéditeur fiable.",
+  },
+  {
+    icon: FileCheck,
+    title: "Conformité technique totale",
+    description:
+      "Configuration complète SPF, DKIM et DMARC pour respecter les standards d'authentification e-mail.",
+  },
 ];
 
 const includes = [
-  "Audit complet de délivrabilité",
-  "Configuration SPF, DKIM, DMARC",
-  "Tests de spam score",
-  "Recommandations techniques",
-  "Suivi de réputation (30 jours)",
-  "Documentation complète",
+  {
+    icon: FileCheck,
+    name: "Audit complet de délivrabilité",
+    description: "Analyse approfondie de votre configuration actuelle.",
+  },
+  {
+    icon: Settings,
+    name: "Configuration SPF, DKIM, DMARC",
+    description: "Mise en place des protocoles d'authentification.",
+  },
+  {
+    icon: Shield,
+    name: "Tests de spam score",
+    description: "Vérification multi-provider et optimisation du score.",
+  },
+  {
+    icon: FileCheck,
+    name: "Recommandations techniques",
+    description: "Guide détaillé des bonnes pratiques à suivre.",
+  },
+  {
+    icon: Clock,
+    name: "Suivi de réputation (30 jours)",
+    description: "Monitoring continu et alertes automatisées.",
+  },
+  {
+    icon: FileCheck,
+    name: "Documentation complète",
+    description: "Rapport détaillé et guide de maintenance.",
+  },
 ];
 
-const process = [
+const processSteps: ProcessStep[] = [
   {
-    step: "1. Audit technique",
+    title: "Audit technique complet",
     description:
-      "Analyse complète de votre configuration : SPF, DKIM, DMARC, réputation IP et domaine.",
+      "Analyse approfondie de votre configuration actuelle : SPF, DKIM, DMARC, réputation IP, historique de domaine et taux de plaintes.",
   },
   {
-    step: "2. Configuration DNS",
+    title: "Configuration DNS",
     description:
-      "Mise en place des enregistrements DNS nécessaires pour l'authentification e-mail.",
+      "Mise en place et optimisation des enregistrements DNS nécessaires pour l'authentification e-mail auprès de tous les providers.",
   },
   {
-    step: "3. Tests de délivrabilité",
+    title: "Tests de délivrabilité",
     description:
-      "Vérification multi-provider (Gmail, Outlook, Yahoo) et analyse du spam score.",
+      "Vérification multi-provider (Gmail, Outlook, Yahoo, Apple Mail) et analyse du spam score avec recommandations d'amélioration.",
   },
   {
-    step: "4. Monitoring 30 jours",
+    title: "Monitoring 30 jours",
     description:
-      "Suivi de votre réputation d'expéditeur et alertes en cas de problème détecté.",
+      "Suivi continu de votre réputation d'expéditeur avec alertes automatiques en cas de problème détecté ou de blacklistage.",
   },
 ];
 
-const relatedServices = [
+const relatedServices: RelatedService[] = [
   { name: "E-mail marketing", href: "/services/email-marketing" },
   { name: "Sites Web", href: "/services/sites-web" },
 ];
@@ -56,116 +119,88 @@ export default function EmailDeliverabilityPageContent() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="bg-gradient-to-b from-background to-muted/50 py-20">
+      <ServiceHero
+        backgroundImage="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1920&h=1080&fit=crop&q=80"
+        backgroundAlt="Délivrabilité e-mail et configuration serveur"
+      >
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            <FadeIn direction="left">
-              <div className="inline-flex items-center gap-2 rounded-full border bg-background px-4 py-2 text-sm font-medium">
+          <div className="mx-auto max-w-3xl text-center">
+            <FadeIn immediate>
+              <div className="inline-flex items-center gap-2 rounded-full border border-foreground/20 bg-foreground/10 backdrop-blur-md px-4 py-2 text-sm font-medium text-foreground">
                 <Server className="h-4 w-4 text-primary" />
-                <span>Délivrabilité e-mail</span>
+                <span>Délivrabilité E-mail</span>
               </div>
-              <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl">
+              <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
                 Assurez que vos e-mails arrivent à destination
               </h1>
               <p className="mt-6 text-lg text-muted-foreground">
                 Évitez les filtres anti-spam et améliorez la délivrabilité de vos
-                e-mails avec notre expertise technique. Configuration complète et
-                optimisation de réputation.
+                e-mails avec notre expertise technique. Configuration complète SPF,
+                DKIM, DMARC et optimisation de réputation d'expéditeur.
               </p>
-              <div className="mt-8">
+              <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center justify-center gap-2 rounded-md bg-black dark:bg-white px-8 py-3 font-semibold text-white dark:text-black transition-all hover:bg-gray-900 dark:hover:bg-gray-100 hover:scale-105"
+                  className="group inline-flex items-center justify-center gap-2 rounded-md bg-black dark:bg-white px-8 py-3 font-semibold text-white dark:text-black transition-all hover:bg-gray-800 dark:hover:bg-gray-100 hover:scale-105"
                 >
                   Améliorer ma délivrabilité
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
             </FadeIn>
-            <FadeIn direction="right" delay={0.2}>
-              <div className="aspect-square overflow-hidden rounded-2xl shadow-xl">
-                <Image
-                  src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=800&fit=crop&q=80"
-                  alt="Délivrabilité e-mail et configuration serveur"
-                  width={800}
-                  height={800}
-                  className="object-cover transition-transform hover:scale-105 duration-700"
-                />
-              </div>
-            </FadeIn>
           </div>
         </div>
-      </section>
+      </ServiceHero>
 
-      {/* Benefits */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="mx-auto max-w-3xl">
-            <FadeIn>
-              <h2 className="text-3xl font-bold">
-                Pourquoi optimiser la délivrabilité ?
-              </h2>
-            </FadeIn>
-            <StaggerContainer className="mt-8 space-y-4">
-              {benefits.map((benefit) => (
-                <StaggerItem key={benefit}>
-                  <div className="flex items-start gap-3 transition-transform hover:translate-x-2">
-                    <CheckCircle2 className="mt-0.5 h-6 w-6 flex-shrink-0 text-primary" />
-                    <span className="text-lg">{benefit}</span>
-                  </div>
-                </StaggerItem>
-              ))}
-            </StaggerContainer>
-          </div>
-        </div>
-      </section>
+      {/* Stats */}
+      <StatsSection stats={stats} className="bg-muted/30" />
 
-      {/* Includes */}
+      {/* Benefits Grid */}
+      <BenefitsGrid
+        title="Pourquoi optimiser la délivrabilité"
+        subtitle="Une bonne délivrabilité est essentielle pour le succès de vos campagnes e-mail"
+        benefits={benefits}
+        columns={2}
+      />
+
+      {/* Ce qui est inclus */}
       <section className="bg-muted/50 py-20">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <FadeIn>
+          <div className="mx-auto max-w-5xl">
+            <FadeIn className="text-center">
               <h2 className="text-3xl font-bold">Ce qui est inclus</h2>
+              <p className="mt-4 text-muted-foreground">
+                Un audit complet et une configuration optimale pour votre délivrabilité
+              </p>
             </FadeIn>
-            <StaggerContainer className="mt-12 grid gap-4 sm:grid-cols-2">
-              {includes.map((item) => (
-                <StaggerItem key={item}>
-                  <div className="rounded-lg border bg-card p-6 text-left transition-all hover:shadow-lg hover:border-primary/50 hover:scale-105">
-                    <CheckCircle2 className="h-6 w-6 text-primary" />
-                    <p className="mt-3 font-semibold">{item}</p>
-                  </div>
-                </StaggerItem>
-              ))}
+            <StaggerContainer className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {includes.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <StaggerItem key={item.name}>
+                    <div className="h-full rounded-xl border-2 bg-card p-6 transition-all hover:border-primary/50 hover:shadow-lg">
+                      <div className="inline-flex rounded-lg bg-primary/10 p-3">
+                        <Icon className="h-6 w-6 text-primary" />
+                      </div>
+                      <h3 className="mt-4 font-semibold text-lg">{item.name}</h3>
+                      <p className="mt-2 text-sm text-muted-foreground">
+                        {item.description}
+                      </p>
+                    </div>
+                  </StaggerItem>
+                );
+              })}
             </StaggerContainer>
           </div>
         </div>
       </section>
 
-      {/* Process */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="mx-auto max-w-3xl">
-            <FadeIn className="text-center">
-              <h2 className="text-3xl font-bold">Notre méthodologie</h2>
-              <p className="mt-4 text-muted-foreground">
-                Une approche structurée en 4 étapes pour garantir votre délivrabilité
-              </p>
-            </FadeIn>
-            <StaggerContainer className="mt-12 grid gap-6 sm:grid-cols-2">
-              {process.map((item) => (
-                <StaggerItem key={item.step}>
-                  <div className="h-full rounded-lg border bg-card p-6 transition-all hover:shadow-lg hover:border-primary/50 hover:scale-105">
-                    <h3 className="font-semibold text-primary">{item.step}</h3>
-                    <p className="mt-2 text-sm text-muted-foreground">
-                      {item.description}
-                    </p>
-                  </div>
-                </StaggerItem>
-              ))}
-            </StaggerContainer>
-          </div>
-        </div>
-      </section>
+      {/* Process Timeline */}
+      <ProcessTimeline
+        title="Notre méthodologie"
+        subtitle="Une approche structurée en 4 étapes pour garantir votre délivrabilité"
+        steps={processSteps}
+      />
 
       {/* FAQ */}
       <FAQSection
@@ -175,52 +210,14 @@ export default function EmailDeliverabilityPageContent() {
         className="bg-muted/50"
       />
 
-      {/* Related Services */}
-      <section className="border-t py-20">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="mx-auto max-w-3xl">
-            <FadeIn>
-              <h2 className="text-2xl font-bold">Services complémentaires</h2>
-              <div className="mt-6 flex flex-wrap gap-4">
-                {relatedServices.map((service) => (
-                  <Link
-                    key={service.name}
-                    href={service.href}
-                    className="inline-flex items-center gap-2 rounded-md border bg-card px-6 py-3 transition-all hover:bg-muted hover:scale-105"
-                  >
-                    {service.name}
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                ))}
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="bg-primary py-20">
-        <div className="container mx-auto px-4 lg:px-8">
-          <FadeIn className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold text-primary-foreground">
-              Prêt à améliorer votre délivrabilité ?
-            </h2>
-            <p className="mt-4 text-lg text-primary-foreground/90">
-              Contactez-nous pour un audit et optimisez la délivrabilité de vos
-              campagnes e-mail.
-            </p>
-            <div className="mt-8">
-              <Link
-                href="/contact"
-                className="group inline-flex items-center gap-2 rounded-md bg-black dark:bg-white px-8 py-3 font-semibold text-white dark:text-black transition-all hover:bg-gray-900 dark:hover:bg-gray-100 hover:scale-105"
-              >
-                Demandez un audit
-                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
+      {/* CTA with Related Services */}
+      <CTAWithServices
+        title="Prêt à améliorer votre délivrabilité ?"
+        description="Contactez-nous pour un audit complet et optimisez la délivrabilité de vos campagnes e-mail."
+        buttonText="Demandez un audit"
+        buttonHref="/devis-personnalise"
+        relatedServices={relatedServices}
+      />
     </div>
   );
 }

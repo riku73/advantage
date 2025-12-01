@@ -1,55 +1,91 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import { Search, TrendingUp, ArrowRight, CheckCircle2 } from "lucide-react";
+import {
+  Search,
+  TrendingUp,
+  ArrowRight,
+  Target,
+  BarChart3,
+  Globe,
+  FileText,
+  Link2,
+} from "lucide-react";
 import FadeIn from "@/components/ui/fade-in";
-import StaggerContainer, { StaggerItem } from "@/components/ui/stagger-container";
 import FAQSection, { seoFAQs } from "@/components/sections/faq-section";
 import { ServiceHero } from "@/components/ui/page-hero";
+import StatsSection, { StatItem } from "@/components/sections/stats-section";
+import BenefitsGrid, { BenefitItem } from "@/components/sections/benefits-grid";
+import ProcessTimeline, { ProcessStep } from "@/components/sections/process-timeline";
+import CTAWithServices, { RelatedService } from "@/components/sections/cta-with-services";
 
-const benefits = [
-  "Augmentation du trafic organique qualifié",
-  "Meilleure visibilité sur les moteurs de recherche",
-  "Réduction du coût d'acquisition client",
-  "Autorité et crédibilité renforcées",
-  "Résultats durables et long-terme",
+const stats: StatItem[] = [
+  { value: "70%", label: "Trafic web via recherche" },
+  { value: "14.6%", label: "Taux de conversion SEO" },
+  { value: "12-18", label: "Mois pour ROI positif" },
 ];
 
-const process = [
+const benefits: BenefitItem[] = [
   {
-    step: "1. Audit SEO",
+    icon: TrendingUp,
+    title: "Trafic organique qualifié",
     description:
-      "Analyse complète de votre site : technique, contenu, backlinks et concurrence.",
+      "Attirez des visiteurs qui recherchent activement vos produits ou services. Le trafic organique a un taux de conversion 14.6% supérieur aux autres canaux.",
   },
   {
-    step: "2. Stratégie",
+    icon: Globe,
+    title: "Visibilité durable",
     description:
-      "Définition des mots-clés prioritaires et plan d'action personnalisé.",
+      "Contrairement aux publicités payantes, les résultats SEO perdurent dans le temps. Un investissement qui continue de rapporter même après l'arrêt des efforts.",
   },
   {
-    step: "3. Optimisation",
+    icon: Target,
+    title: "Réduction du coût d'acquisition",
     description:
-      "Mise en œuvre des recommandations techniques et optimisation du contenu.",
+      "Le SEO offre un coût par acquisition 61% inférieur aux campagnes payantes sur le long terme. Un canal marketing rentable et pérenne.",
   },
   {
-    step: "4. Création de contenu",
+    icon: BarChart3,
+    title: "Autorité et crédibilité",
     description:
-      "Rédaction et publication de contenu optimisé pour vos mots-clés cibles.",
-  },
-  {
-    step: "5. Link Building",
-    description:
-      "Acquisition de backlinks de qualité pour renforcer votre autorité.",
-  },
-  {
-    step: "6. Suivi & Reporting",
-    description:
-      "Analyse des performances et ajustements continus pour améliorer les résultats.",
+      "Les premiers résultats Google inspirent confiance. Renforcez votre image de marque et votre expertise aux yeux de vos prospects.",
   },
 ];
 
-const relatedServices = [
+const processSteps: ProcessStep[] = [
+  {
+    title: "Audit SEO complet",
+    description:
+      "Analyse approfondie de votre site : audit technique (vitesse, mobile, indexation), audit de contenu et analyse des backlinks existants.",
+  },
+  {
+    title: "Stratégie de mots-clés",
+    description:
+      "Recherche et sélection des mots-clés à fort potentiel. Analyse de la concurrence et définition des priorités d'optimisation.",
+  },
+  {
+    title: "Optimisation technique",
+    description:
+      "Amélioration de la vitesse, correction des erreurs techniques, optimisation mobile et structure du site pour les moteurs de recherche.",
+  },
+  {
+    title: "Création de contenu",
+    description:
+      "Rédaction et optimisation de contenus ciblés sur vos mots-clés prioritaires. Stratégie éditoriale pour attirer et engager votre audience.",
+  },
+  {
+    title: "Link Building",
+    description:
+      "Acquisition de backlinks de qualité auprès de sites pertinents dans votre secteur pour renforcer votre autorité de domaine.",
+  },
+  {
+    title: "Suivi & Reporting",
+    description:
+      "Monitoring des positions, analyse du trafic et des conversions. Rapports mensuels détaillés et ajustements stratégiques continus.",
+  },
+];
+
+const relatedServices: RelatedService[] = [
   { name: "SEA", href: "/services/sea" },
   { name: "Sites Web", href: "/services/sites-web" },
   { name: "Landing Pages", href: "/services/landing-pages" },
@@ -76,7 +112,7 @@ export default function SEOPageContent() {
               <p className="mt-6 text-lg text-muted-foreground">
                 Positionnez votre site en première page Google et attirez un
                 trafic qualifié durable grâce à notre expertise en
-                référencement naturel.
+                référencement naturel. Stratégie data-driven et résultats mesurables.
               </p>
               <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
                 <Link
@@ -92,109 +128,40 @@ export default function SEOPageContent() {
         </div>
       </ServiceHero>
 
-      {/* Benefits */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="mx-auto max-w-3xl">
-            <FadeIn>
-              <h2 className="text-3xl font-bold">
-                Les avantages du référencement naturel
-              </h2>
-            </FadeIn>
-            <StaggerContainer className="mt-8 space-y-4">
-              {benefits.map((benefit) => (
-                <StaggerItem key={benefit}>
-                  <div className="flex items-start gap-3 transition-transform hover:translate-x-2">
-                    <CheckCircle2 className="mt-0.5 h-6 w-6 flex-shrink-0 text-primary" />
-                    <span className="text-lg">{benefit}</span>
-                  </div>
-                </StaggerItem>
-              ))}
-            </StaggerContainer>
-          </div>
-        </div>
-      </section>
+      {/* Stats */}
+      <StatsSection stats={stats} className="bg-muted/30" />
 
-      {/* Process */}
-      <section className="bg-muted/50 py-20">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="mx-auto max-w-3xl">
-            <FadeIn className="text-center">
-              <h2 className="text-3xl font-bold">Notre méthodologie SEO</h2>
-              <p className="mt-4 text-muted-foreground">
-                Une approche structurée en 6 étapes pour des résultats optimaux
-              </p>
-            </FadeIn>
-            <StaggerContainer className="mt-12 grid gap-6 sm:grid-cols-2">
-              {process.map((item) => (
-                <StaggerItem key={item.step}>
-                  <div className="h-full rounded-lg border bg-card p-6 transition-all hover:shadow-lg hover:border-primary/50 hover:scale-105">
-                    <h3 className="font-semibold text-primary">{item.step}</h3>
-                    <p className="mt-2 text-sm text-muted-foreground">
-                      {item.description}
-                    </p>
-                  </div>
-                </StaggerItem>
-              ))}
-            </StaggerContainer>
-          </div>
-        </div>
-      </section>
+      {/* Benefits */}
+      <BenefitsGrid
+        title="Les avantages du référencement naturel"
+        subtitle="Un investissement rentable sur le long terme"
+        benefits={benefits}
+        columns={2}
+      />
+
+      {/* Process Timeline */}
+      <ProcessTimeline
+        title="Notre méthodologie SEO"
+        subtitle="Une approche structurée en 6 étapes pour des résultats optimaux"
+        steps={processSteps}
+        className="bg-muted/50"
+      />
 
       {/* FAQ */}
       <FAQSection
         title="Questions fréquentes sur le SEO"
         subtitle="Tout ce que vous devez savoir sur le référencement naturel"
         faqs={seoFAQs}
-        className="bg-muted/50"
       />
 
-      {/* Related Services */}
-      <section className="border-t py-20">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="mx-auto max-w-3xl">
-            <FadeIn>
-              <h2 className="text-2xl font-bold">Services complémentaires</h2>
-              <div className="mt-6 flex flex-wrap gap-4">
-                {relatedServices.map((service) => (
-                  <Link
-                    key={service.name}
-                    href={service.href}
-                    className="inline-flex items-center gap-2 rounded-md border bg-card px-6 py-3 transition-all hover:bg-muted hover:scale-105"
-                  >
-                    {service.name}
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                ))}
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="bg-primary py-20">
-        <div className="container mx-auto px-4 lg:px-8">
-          <FadeIn className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold text-primary-foreground">
-              Prêt à dominer les résultats de recherche ?
-            </h2>
-            <p className="mt-4 text-lg text-primary-foreground/90">
-              Obtenez un audit SEO gratuit et découvrez comment améliorer votre
-              positionnement.
-            </p>
-            <div className="mt-8">
-              <Link
-                href="/devis-personnalise"
-                className="group inline-flex items-center gap-2 rounded-md bg-black dark:bg-white px-8 py-3 font-semibold text-white dark:text-black transition-all hover:bg-gray-900 dark:hover:bg-gray-100 hover:scale-105"
-              >
-                Demandez votre audit gratuit
-                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
+      {/* CTA with Related Services */}
+      <CTAWithServices
+        title="Prêt à dominer les résultats de recherche ?"
+        description="Obtenez un audit SEO gratuit et découvrez comment améliorer votre positionnement."
+        buttonText="Demandez votre audit gratuit"
+        buttonHref="/devis-personnalise"
+        relatedServices={relatedServices}
+      />
     </div>
   );
 }

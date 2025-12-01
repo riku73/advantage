@@ -1,58 +1,121 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import { MousePointerClick, ArrowRight, CheckCircle2 } from "lucide-react";
+import {
+  MousePointerClick,
+  ArrowRight,
+  CheckCircle2,
+  Target,
+  DollarSign,
+  BarChart3,
+  Eye,
+  ShoppingBag,
+  Video,
+} from "lucide-react";
 import FadeIn from "@/components/ui/fade-in";
 import StaggerContainer, { StaggerItem } from "@/components/ui/stagger-container";
 import FAQSection, { seaFAQs } from "@/components/sections/faq-section";
+import { ServiceHero } from "@/components/ui/page-hero";
+import StatsSection, { StatItem } from "@/components/sections/stats-section";
+import BenefitsGrid, { BenefitItem } from "@/components/sections/benefits-grid";
+import ProcessTimeline, { ProcessStep } from "@/components/sections/process-timeline";
+import CTAWithServices, { RelatedService } from "@/components/sections/cta-with-services";
 
-const benefits = [
-  "Résultats immédiats et trafic instantané",
-  "Ciblage précis de votre audience idéale",
-  "Contrôle total du budget publicitaire",
-  "ROI mesurable et transparent",
-  "Tests et optimisation continue",
+const stats: StatItem[] = [
+  { value: "300%", label: "ROI moyen constaté" },
+  { value: "24h", label: "Premiers résultats" },
+  { value: "100%", label: "Budget sous contrôle" },
+];
+
+const benefits: BenefitItem[] = [
+  {
+    icon: Target,
+    title: "Résultats immédiats",
+    description:
+      "Contrairement au SEO, le SEA génère du trafic qualifié dès la mise en ligne de vos campagnes publicitaires.",
+  },
+  {
+    icon: Eye,
+    title: "Ciblage ultra-précis",
+    description:
+      "Atteignez exactement votre audience idéale grâce aux options de ciblage avancées : mots-clés, localisation, démographie.",
+  },
+  {
+    icon: DollarSign,
+    title: "Contrôle total du budget",
+    description:
+      "Définissez votre budget quotidien et ne payez que lorsqu'un utilisateur clique sur votre annonce. Aucune surprise.",
+  },
+  {
+    icon: BarChart3,
+    title: "ROI mesurable",
+    description:
+      "Tracking complet des conversions pour mesurer précisément le retour sur investissement de chaque euro dépensé.",
+  },
 ];
 
 const services = [
-  "Campagnes Google Search",
-  "Display et remarketing",
-  "Google Shopping",
-  "Campagnes vidéo YouTube",
-  "Optimisation des conversions",
-  "Tracking et analytics avancés",
-];
-
-const process = [
   {
-    step: "1. Audit & Stratégie",
-    description:
-      "Analyse de votre marché, de la concurrence et définition des objectifs de campagne.",
+    icon: MousePointerClick,
+    name: "Google Search",
+    description: "Annonces textuelles sur les résultats de recherche Google.",
   },
   {
-    step: "2. Structure de campagne",
-    description:
-      "Création des groupes d'annonces, sélection des mots-clés et définition des audiences.",
+    icon: Eye,
+    name: "Display & Remarketing",
+    description: "Bannières visuelles sur le réseau Display Google et retargeting.",
   },
   {
-    step: "3. Création des annonces",
-    description:
-      "Rédaction des textes publicitaires et configuration des extensions d'annonces.",
+    icon: ShoppingBag,
+    name: "Google Shopping",
+    description: "Annonces produits avec prix et images pour l'e-commerce.",
   },
   {
-    step: "4. Lancement & Monitoring",
-    description:
-      "Mise en ligne des campagnes et surveillance des performances en temps réel.",
+    icon: Video,
+    name: "YouTube Ads",
+    description: "Publicités vidéo avant, pendant ou après les vidéos YouTube.",
   },
   {
-    step: "5. Optimisation continue",
-    description:
-      "Ajustements des enchères, A/B testing et amélioration du Quality Score.",
+    icon: BarChart3,
+    name: "Optimisation des conversions",
+    description: "Amélioration continue des taux de conversion et du Quality Score.",
+  },
+  {
+    icon: Target,
+    name: "Tracking avancé",
+    description: "Mise en place de tracking précis et tableaux de bord personnalisés.",
   },
 ];
 
-const relatedServices = [
+const processSteps: ProcessStep[] = [
+  {
+    title: "Audit & Stratégie",
+    description:
+      "Analyse approfondie de votre marché, étude de la concurrence et définition des objectifs de campagne avec KPIs mesurables.",
+  },
+  {
+    title: "Structure de campagne",
+    description:
+      "Création des groupes d'annonces optimisés, sélection des mots-clés à fort potentiel et définition des audiences cibles.",
+  },
+  {
+    title: "Création des annonces",
+    description:
+      "Rédaction des textes publicitaires persuasifs et configuration des extensions d'annonces pour maximiser la visibilité.",
+  },
+  {
+    title: "Lancement & Monitoring",
+    description:
+      "Mise en ligne des campagnes avec surveillance des performances en temps réel et alertes automatisées.",
+  },
+  {
+    title: "Optimisation continue",
+    description:
+      "Ajustements des enchères basés sur les données, A/B testing des annonces et amélioration constante du Quality Score.",
+  },
+];
+
+const relatedServices: RelatedService[] = [
   { name: "SEO", href: "/services/seo" },
   { name: "Landing Pages", href: "/services/landing-pages" },
   { name: "Social Media Ads", href: "/services/social-media-ads" },
@@ -61,111 +124,89 @@ const relatedServices = [
 export default function SEAPageContent() {
   return (
     <div className="min-h-screen">
-      <section className="bg-gradient-to-b from-background to-muted/50 py-20">
+      {/* Hero */}
+      <ServiceHero
+        backgroundImage="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1920&h=1080&fit=crop&q=80"
+        backgroundAlt="Google Ads and PPC advertising campaign dashboard"
+      >
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            <FadeIn direction="left">
-              <div className="inline-flex items-center gap-2 rounded-full border bg-background px-4 py-2 text-sm font-medium">
+          <div className="mx-auto max-w-3xl text-center">
+            <FadeIn immediate>
+              <div className="inline-flex items-center gap-2 rounded-full border border-foreground/20 bg-foreground/10 backdrop-blur-md px-4 py-2 text-sm font-medium text-foreground">
                 <MousePointerClick className="h-4 w-4 text-primary" />
                 <span>Référencement Payant</span>
               </div>
-              <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl">
+              <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
                 Google Ads pour des résultats immédiats
               </h1>
               <p className="mt-6 text-lg text-muted-foreground">
                 Atteignez vos clients au moment précis où ils recherchent vos
                 produits ou services avec des campagnes Google Ads optimisées.
+                Résultats mesurables dès les premières 24 heures.
               </p>
-              <div className="mt-8">
+              <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center justify-center gap-2 rounded-md bg-black dark:bg-white px-8 py-3 font-semibold text-white dark:text-black transition-all hover:bg-gray-900 dark:hover:bg-gray-100 hover:scale-105"
+                  className="group inline-flex items-center justify-center gap-2 rounded-md bg-black dark:bg-white px-8 py-3 font-semibold text-white dark:text-black transition-all hover:bg-gray-800 dark:hover:bg-gray-100 hover:scale-105"
                 >
                   Lancer une campagne
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
             </FadeIn>
-            <FadeIn direction="right" delay={0.2}>
-              <div className="aspect-square overflow-hidden rounded-2xl shadow-xl">
-                <Image
-                  src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=800&fit=crop&q=80"
-                  alt="Google Ads and PPC advertising campaign dashboard"
-                  width={800}
-                  height={800}
-                  className="object-cover transition-transform hover:scale-105 duration-700"
-                />
-              </div>
-            </FadeIn>
           </div>
         </div>
-      </section>
+      </ServiceHero>
 
-      <section className="py-20">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="mx-auto max-w-3xl">
-            <FadeIn>
-              <h2 className="text-3xl font-bold">Pourquoi choisir Google Ads ?</h2>
-            </FadeIn>
-            <StaggerContainer className="mt-8 space-y-4">
-              {benefits.map((benefit) => (
-                <StaggerItem key={benefit}>
-                  <div className="flex items-start gap-3 transition-transform hover:translate-x-2">
-                    <CheckCircle2 className="mt-0.5 h-6 w-6 flex-shrink-0 text-primary" />
-                    <span className="text-lg">{benefit}</span>
-                  </div>
-                </StaggerItem>
-              ))}
-            </StaggerContainer>
-          </div>
-        </div>
-      </section>
+      {/* Stats */}
+      <StatsSection stats={stats} className="bg-muted/30" />
 
+      {/* Benefits Grid */}
+      <BenefitsGrid
+        title="Pourquoi choisir Google Ads"
+        subtitle="La publicité payante la plus efficace pour générer du trafic qualifié"
+        benefits={benefits}
+        columns={2}
+      />
+
+      {/* Services SEA */}
       <section className="bg-muted/50 py-20">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <FadeIn>
+          <div className="mx-auto max-w-5xl">
+            <FadeIn className="text-center">
               <h2 className="text-3xl font-bold">Nos services SEA</h2>
+              <p className="mt-4 text-muted-foreground">
+                Une gamme complète de services pour maximiser votre présence sur Google
+              </p>
             </FadeIn>
-            <StaggerContainer className="mt-12 grid gap-4 sm:grid-cols-2">
-              {services.map((service) => (
-                <StaggerItem key={service}>
-                  <div className="rounded-lg border bg-card p-6 text-left transition-all hover:shadow-lg hover:border-primary/50 hover:scale-105">
-                    <CheckCircle2 className="h-6 w-6 text-primary" />
-                    <p className="mt-3 font-semibold">{service}</p>
-                  </div>
-                </StaggerItem>
-              ))}
+            <StaggerContainer className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {services.map((service) => {
+                const Icon = service.icon;
+                return (
+                  <StaggerItem key={service.name}>
+                    <div className="h-full rounded-xl border-2 bg-card p-6 transition-all hover:border-primary/50 hover:shadow-lg">
+                      <div className="inline-flex rounded-lg bg-primary/10 p-3">
+                        <Icon className="h-6 w-6 text-primary" />
+                      </div>
+                      <h3 className="mt-4 font-semibold text-lg">{service.name}</h3>
+                      <p className="mt-2 text-sm text-muted-foreground">
+                        {service.description}
+                      </p>
+                    </div>
+                  </StaggerItem>
+                );
+              })}
             </StaggerContainer>
           </div>
         </div>
       </section>
 
-      {/* Process */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="mx-auto max-w-3xl">
-            <FadeIn className="text-center">
-              <h2 className="text-3xl font-bold">Notre méthodologie Google Ads</h2>
-              <p className="mt-4 text-muted-foreground">
-                Une approche structurée en 5 étapes pour des campagnes performantes
-              </p>
-            </FadeIn>
-            <StaggerContainer className="mt-12 grid gap-6 sm:grid-cols-2">
-              {process.map((item) => (
-                <StaggerItem key={item.step}>
-                  <div className="h-full rounded-lg border bg-card p-6 transition-all hover:shadow-lg hover:border-primary/50 hover:scale-105">
-                    <h3 className="font-semibold text-primary">{item.step}</h3>
-                    <p className="mt-2 text-sm text-muted-foreground">
-                      {item.description}
-                    </p>
-                  </div>
-                </StaggerItem>
-              ))}
-            </StaggerContainer>
-          </div>
-        </div>
-      </section>
+      {/* Process Timeline */}
+      <ProcessTimeline
+        title="Notre méthodologie Google Ads"
+        subtitle="Une approche structurée en 5 étapes pour des campagnes performantes"
+        steps={processSteps}
+      />
 
       {/* FAQ */}
       <FAQSection
@@ -175,50 +216,14 @@ export default function SEAPageContent() {
         className="bg-muted/50"
       />
 
-      {/* Related Services */}
-      <section className="border-t py-20">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="mx-auto max-w-3xl">
-            <FadeIn>
-              <h2 className="text-2xl font-bold">Services complémentaires</h2>
-              <div className="mt-6 flex flex-wrap gap-4">
-                {relatedServices.map((service) => (
-                  <Link
-                    key={service.name}
-                    href={service.href}
-                    className="inline-flex items-center gap-2 rounded-md border bg-card px-6 py-3 transition-all hover:bg-muted hover:scale-105"
-                  >
-                    {service.name}
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                ))}
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-primary py-20">
-        <div className="container mx-auto px-4 lg:px-8">
-          <FadeIn className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold text-primary-foreground">
-              Maximisez votre ROI avec Google Ads
-            </h2>
-            <p className="mt-4 text-lg text-primary-foreground/90">
-              Discutons de vos objectifs et créons ensemble une stratégie Google Ads qui génère des résultats concrets.
-            </p>
-            <div className="mt-8">
-              <Link
-                href="/devis-personnalise"
-                className="group inline-flex items-center gap-2 rounded-md bg-black dark:bg-white px-8 py-3 font-semibold text-white dark:text-black transition-all hover:bg-gray-900 dark:hover:bg-gray-100 hover:scale-105"
-              >
-                Demandez un devis
-                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
+      {/* CTA with Related Services */}
+      <CTAWithServices
+        title="Maximisez votre ROI avec Google Ads"
+        description="Discutons de vos objectifs et créons ensemble une stratégie Google Ads qui génère des résultats concrets."
+        buttonText="Demandez un devis"
+        buttonHref="/devis-personnalise"
+        relatedServices={relatedServices}
+      />
     </div>
   );
 }

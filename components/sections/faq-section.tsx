@@ -85,8 +85,8 @@ export const seoFAQs: FAQItem[] = [
 
 export const seaFAQs: FAQItem[] = [
   {
-    question: "Quel budget minimum faut-il pour Google Ads ?",
-    answer: "Nous recommandons un budget publicitaire minimum de 500 EUR/mois pour des campagnes efficaces au Luxembourg. Ce budget s'ajoute à nos frais de gestion. Le budget optimal dépend de votre secteur et de vos objectifs.",
+    question: "Quel budget prévoir pour Google Ads ?",
+    answer: "Le budget publicitaire optimal dépend de votre secteur, de la concurrence et de vos objectifs. Nous analysons votre marché et vous recommandons un budget adapté lors de notre premier échange.",
   },
   {
     question: "Combien de temps avant de voir les premiers résultats ?",
@@ -139,8 +139,8 @@ export const emailMarketingFAQs: FAQItem[] = [
 
 export const sitesWebFAQs: FAQItem[] = [
   {
-    question: "Combien coûte un site web professionnel ?",
-    answer: "Nos sites vitrine démarrent à partir de 590 EUR pour une page unique, 1 490 EUR pour un site standard de 5 pages, et 2 490 EUR pour un site e-commerce. Le prix final dépend de vos besoins spécifiques.",
+    question: "Comment est déterminé le prix d'un site web ?",
+    answer: "Le prix dépend de plusieurs facteurs : nombre de pages, fonctionnalités souhaitées, design sur-mesure, et intégrations nécessaires. Nous établissons un devis détaillé après analyse de vos besoins.",
   },
   {
     question: "Combien de temps prend la création d'un site ?",
@@ -152,7 +152,7 @@ export const sitesWebFAQs: FAQItem[] = [
   },
   {
     question: "Proposez-vous l'hébergement et la maintenance ?",
-    answer: "Oui, nous proposons des forfaits d'hébergement et maintenance à partir de 29 EUR/mois incluant : hébergement sécurisé, sauvegardes, mises à jour, et support technique.",
+    answer: "Oui, nous proposons des forfaits d'hébergement et maintenance incluant : hébergement sécurisé, sauvegardes automatiques, mises à jour régulières, et support technique réactif.",
   },
   {
     question: "Mon site sera-t-il optimisé pour mobile ?",
@@ -216,8 +216,8 @@ export const socialMediaAdsFAQs: FAQItem[] = [
     answer: "Nous gérons les publicités sur Meta (Facebook et Instagram), LinkedIn, TikTok et Pinterest selon votre cible et vos objectifs.",
   },
   {
-    question: "Quel budget minimum pour les réseaux sociaux ?",
-    answer: "Nous recommandons un minimum de 300 EUR/mois de budget publicitaire par plateforme pour des résultats significatifs au Luxembourg.",
+    question: "Comment définir mon budget publicitaire réseaux sociaux ?",
+    answer: "Le budget optimal dépend de vos objectifs, de votre audience cible et des plateformes choisies. Nous vous conseillons lors d'un premier échange pour définir une stratégie adaptée à votre activité au Luxembourg.",
   },
   {
     question: "Créez-vous les visuels publicitaires ?",
