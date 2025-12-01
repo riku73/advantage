@@ -13,6 +13,7 @@ interface Client {
   services: string[];
   website: string;
   logo: string;
+  logoLight?: string; // Logo for light mode (dark logo)
 }
 
 const clients: Client[] = [
@@ -63,6 +64,7 @@ const clients: Client[] = [
     services: ["Menu digital", "Réservation en ligne", "Google Business"],
     website: "https://pizzeriamillenaire.lu",
     logo: "/clients/pizzeria-millenaire.png",
+    logoLight: "/logos/pizzeria-millenaire.png",
   },
   {
     name: "Eurometal",
@@ -111,13 +113,32 @@ export default function ClientsSection({
                 rel="noopener noreferrer"
                 className="grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300"
               >
-                <Image
-                  src={client.logo}
-                  alt={client.name}
-                  width={160}
-                  height={60}
-                  className="h-12 w-auto object-contain"
-                />
+                {client.logoLight ? (
+                  <>
+                    <Image
+                      src={client.logoLight}
+                      alt={client.name}
+                      width={160}
+                      height={60}
+                      className="h-12 w-auto object-contain dark:hidden"
+                    />
+                    <Image
+                      src={client.logo}
+                      alt={client.name}
+                      width={160}
+                      height={60}
+                      className="h-12 w-auto object-contain hidden dark:block"
+                    />
+                  </>
+                ) : (
+                  <Image
+                    src={client.logo}
+                    alt={client.name}
+                    width={160}
+                    height={60}
+                    className="h-12 w-auto object-contain"
+                  />
+                )}
               </Link>
             ))}
           </div>
@@ -142,13 +163,32 @@ export default function ClientsSection({
               <div className="group h-full rounded-2xl border bg-card p-6 transition-all hover:shadow-lg hover:border-primary/50">
                 <div className="flex items-start justify-between mb-4">
                   <div className="h-16 flex items-center">
-                    <Image
-                      src={client.logo}
-                      alt={client.name}
-                      width={160}
-                      height={64}
-                      className="h-14 w-auto object-contain"
-                    />
+                    {client.logoLight ? (
+                      <>
+                        <Image
+                          src={client.logoLight}
+                          alt={client.name}
+                          width={160}
+                          height={64}
+                          className="h-14 w-auto object-contain dark:hidden"
+                        />
+                        <Image
+                          src={client.logo}
+                          alt={client.name}
+                          width={160}
+                          height={64}
+                          className="h-14 w-auto object-contain hidden dark:block"
+                        />
+                      </>
+                    ) : (
+                      <Image
+                        src={client.logo}
+                        alt={client.name}
+                        width={160}
+                        height={64}
+                        className="h-14 w-auto object-contain"
+                      />
+                    )}
                   </div>
                   <Link
                     href={client.website}
