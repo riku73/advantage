@@ -51,15 +51,21 @@ export default function Hero() {
           >
             Pendant que vous hésitez,
             <br />
-            d&apos;autres prennent l&apos;<span className="relative inline-block text-primary">
+            d&apos;autres prennent l&apos;<motion.span
+              className="relative inline-block text-primary"
+              initial="hidden"
+              animate="visible"
+            >
               Advantage
               <motion.span
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
-                className="absolute -bottom-1 left-0 h-[4px] w-full origin-left rounded-full bg-primary sm:-bottom-2 sm:h-[6px]"
+                variants={{
+                  hidden: { width: 0 },
+                  visible: { width: "100%" }
+                }}
+                transition={{ duration: 0.6, delay: 1, ease: "easeOut" }}
+                className="absolute -bottom-1 left-0 h-[4px] rounded-full bg-primary sm:-bottom-2 sm:h-[6px]"
               />
-            </span>
+            </motion.span>
           </motion.h1>
 
           <motion.p
