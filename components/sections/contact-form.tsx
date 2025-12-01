@@ -96,7 +96,7 @@ export default function ContactForm() {
             type="text"
             id="name"
             className="mt-2 block w-full rounded-md border border-input bg-background px-4 py-3 text-foreground transition-all focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 hover:border-primary/50"
-            placeholder="Jean Dupont"
+            placeholder="Marc Schmit"
           />
           {errors.name && (
             <p className="mt-1 text-sm text-destructive">{errors.name.message}</p>
@@ -112,7 +112,7 @@ export default function ContactForm() {
             type="email"
             id="email"
             className="mt-2 block w-full rounded-md border border-input bg-background px-4 py-3 text-foreground transition-all focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 hover:border-primary/50"
-            placeholder="jean.dupont@example.com"
+            placeholder="marc.schmit@example.lu"
           />
           {errors.email && (
             <p className="mt-1 text-sm text-destructive">{errors.email.message}</p>
@@ -131,7 +131,7 @@ export default function ContactForm() {
             type="tel"
             id="phone"
             className="mt-2 block w-full rounded-md border border-input bg-background px-4 py-3 text-foreground transition-all focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 hover:border-primary/50"
-            placeholder="+33 6 12 34 56 78"
+            placeholder="+352 621 123 456 (optionnel)"
           />
           {errors.phone && (
             <p className="mt-1 text-sm text-destructive">{errors.phone.message}</p>
@@ -147,7 +147,7 @@ export default function ContactForm() {
             type="text"
             id="company"
             className="mt-2 block w-full rounded-md border border-input bg-background px-4 py-3 text-foreground transition-all focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 hover:border-primary/50"
-            placeholder="Nom de votre entreprise"
+            placeholder="Nom de votre entreprise (optionnel)"
           />
         </div>
       </div>

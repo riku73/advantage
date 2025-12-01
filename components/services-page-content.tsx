@@ -12,6 +12,16 @@ import {
 import { ServiceHero } from "@/components/ui/page-hero";
 
 export default function ServicesPageContent() {
+  // Custom order for digital-web services
+  const digitalWebOrder = [
+    "landing-pages",
+    "sites-web",
+    "seo",
+    "sea",
+    "email-marketing",
+    "email-deliverability",
+  ];
+
   // Group services by category
   const servicesByCategory = services.reduce(
     (acc, service) => {
@@ -23,6 +33,17 @@ export default function ServicesPageContent() {
     },
     {} as Record<ServiceCategory, typeof services>
   );
+
+  // Sort digital-web services according to custom order
+  if (servicesByCategory["digital-web"]) {
+    servicesByCategory["digital-web"].sort((a, b) => {
+      const aIndex = digitalWebOrder.indexOf(a.id);
+      const bIndex = digitalWebOrder.indexOf(b.id);
+      if (aIndex === -1) return 1;
+      if (bIndex === -1) return -1;
+      return aIndex - bIndex;
+    });
+  }
 
   return (
     <div className="min-h-screen">
@@ -55,7 +76,7 @@ export default function ServicesPageContent() {
 
       {/* Services by Category */}
       {Object.entries(servicesByCategory).map(([category, categoryServices]) => (
-        <section key={category} className="py-16">
+        <section key={category} id={category} className="py-16 scroll-mt-20">
           <div className="container mx-auto px-4 lg:px-8">
             <FadeIn>
               <h2 className="text-3xl font-bold mb-2">
@@ -70,13 +91,6 @@ export default function ServicesPageContent() {
 
             <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
               {categoryServices.map((service, index) => {
-                // Get pricing for badge
-                const pricingForBadge = service.pricing
-                  ? Array.isArray(service.pricing)
-                    ? service.pricing[0].price
-                    : service.pricing
-                  : null;
-
                 return (
                   <FadeIn
                     key={service.id}
@@ -87,7 +101,6 @@ export default function ServicesPageContent() {
                         <div className="inline-flex rounded-lg bg-primary/10 p-3 text-primary">
                           <service.icon className="h-6 w-6" />
                         </div>
-                        {pricingForBadge && <PricingBadge pricing={pricingForBadge} />}
                       </div>
 
                       <h3 className="mt-6 text-2xl font-bold">{service.title}</h3>

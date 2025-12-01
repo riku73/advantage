@@ -64,6 +64,22 @@ const clients: Client[] = [
     website: "https://pizzeriamillenaire.lu",
     logo: "/clients/pizzeria-millenaire.png",
   },
+  {
+    name: "Eurometal",
+    sector: "Association européenne",
+    description: "Association européenne des distributeurs, stockistes et négociants d'acier.",
+    services: ["Gestion de projet", "Organisation d'événements", "Production vidéo", "Newsletter", "LinkedIn"],
+    website: "https://eurometal.net",
+    logo: "/clients/eurometal.png",
+  },
+  {
+    name: "ProSolutions",
+    sector: "Transport & Logistique",
+    description: "Service de transport, logistique, supply chain et stockage au Luxembourg.",
+    services: ["Création d'entreprise", "Création de logo", "Réservation de domaine"],
+    website: "https://prosolutions.lu",
+    logo: "/clients/prosolutions.png",
+  },
 ];
 
 interface ClientsSectionProps {
@@ -84,9 +100,9 @@ export default function ClientsSection({
       <section className="py-16 border-t">
         <div className="container mx-auto px-4 lg:px-8">
           <FadeIn className="text-center mb-12">
-            <h2 className="text-2xl font-bold">{title}</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">{title}</h2>
           </FadeIn>
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+          <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16">
             {clients.map((client) => (
               <Link
                 key={client.name}
@@ -98,9 +114,9 @@ export default function ClientsSection({
                 <Image
                   src={client.logo}
                   alt={client.name}
-                  width={120}
-                  height={40}
-                  className="h-8 w-auto object-contain"
+                  width={160}
+                  height={60}
+                  className="h-12 w-auto object-contain"
                 />
               </Link>
             ))}
@@ -114,8 +130,8 @@ export default function ClientsSection({
     <section className="py-20 bg-muted/50">
       <div className="container mx-auto px-4 lg:px-8">
         <FadeIn className="text-center mb-16">
-          <h2 className="text-3xl font-bold">{title}</h2>
-          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold">{title}</h2>
+          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
             {subtitle}
           </p>
         </FadeIn>
@@ -125,13 +141,13 @@ export default function ClientsSection({
             <StaggerItem key={client.name}>
               <div className="group h-full rounded-2xl border bg-card p-6 transition-all hover:shadow-lg hover:border-primary/50">
                 <div className="flex items-start justify-between mb-4">
-                  <div className="h-12 flex items-center">
+                  <div className="h-16 flex items-center">
                     <Image
                       src={client.logo}
                       alt={client.name}
-                      width={120}
-                      height={48}
-                      className="h-10 w-auto object-contain"
+                      width={160}
+                      height={64}
+                      className="h-14 w-auto object-contain"
                     />
                   </div>
                   <Link

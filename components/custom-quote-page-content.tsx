@@ -119,10 +119,10 @@ const getServicesForCategory = (category: string) => {
 };
 
 const budgetRanges = [
-  { value: "small", label: "< 5 000€", description: "Projet simple" },
-  { value: "medium", label: "5 000€ - 15 000€", description: "Projet moyen" },
-  { value: "large", label: "15 000€ - 50 000€", description: "Projet important" },
-  { value: "enterprise", label: "> 50 000€", description: "Projet d'envergure" },
+  { value: "small", label: "Petit budget", description: "Projet simple" },
+  { value: "medium", label: "Budget moyen", description: "Projet standard" },
+  { value: "large", label: "Budget conséquent", description: "Projet important" },
+  { value: "enterprise", label: "Grand budget", description: "Projet d'envergure" },
   { value: "flexible", label: "Budget flexible", description: "À discuter" },
 ];
 
@@ -451,7 +451,7 @@ export default function CustomQuotePageContent() {
                     <Label htmlFor="targetAudience">Public cible</Label>
                     <Input
                       id="targetAudience"
-                      placeholder="Ex: Particuliers, B2B, professionnels de la santé..."
+                      placeholder="Ex: Particuliers, B2B, professionnels... (optionnel)"
                       value={formData.targetAudience}
                       onChange={(e) => updateFormData("targetAudience", e.target.value)}
                       className="mt-2"
@@ -575,7 +575,7 @@ export default function CustomQuotePageContent() {
                       <Label htmlFor="fullName">Nom complet *</Label>
                       <Input
                         id="fullName"
-                        placeholder="Jean Dupont"
+                        placeholder="Marc Schmit"
                         value={formData.fullName}
                         onChange={(e) => updateFormData("fullName", e.target.value)}
                         className="mt-2"
@@ -586,7 +586,7 @@ export default function CustomQuotePageContent() {
                       <Label htmlFor="company">Entreprise</Label>
                       <Input
                         id="company"
-                        placeholder="Nom de votre entreprise"
+                        placeholder="Nom de votre entreprise (optionnel)"
                         value={formData.company}
                         onChange={(e) => updateFormData("company", e.target.value)}
                         className="mt-2"
@@ -600,7 +600,7 @@ export default function CustomQuotePageContent() {
                       <Input
                         id="email"
                         type="email"
-                        placeholder="jean.dupont@exemple.com"
+                        placeholder="marc.schmit@example.lu"
                         value={formData.email}
                         onChange={(e) => updateFormData("email", e.target.value)}
                         className="mt-2"
@@ -612,7 +612,7 @@ export default function CustomQuotePageContent() {
                       <Input
                         id="phone"
                         type="tel"
-                        placeholder="+352 XX XX XX XX"
+                        placeholder="+352 621 123 456"
                         value={formData.phone}
                         onChange={(e) => updateFormData("phone", e.target.value)}
                         className="mt-2"
@@ -638,7 +638,7 @@ export default function CustomQuotePageContent() {
                     </Label>
                     <Textarea
                       id="additionalInfo"
-                      placeholder="Y a-t-il des détails importants que nous devrions connaître ?"
+                      placeholder="Détails importants à connaître ? (optionnel)"
                       value={formData.additionalInfo}
                       onChange={(e) => updateFormData("additionalInfo", e.target.value)}
                       rows={4}
@@ -652,7 +652,7 @@ export default function CustomQuotePageContent() {
                     </Label>
                     <Input
                       id="hearAboutUs"
-                      placeholder="Ex: Recommandation, Google, LinkedIn..."
+                      placeholder="Ex: Recommandation, Google, LinkedIn... (optionnel)"
                       value={formData.hearAboutUs}
                       onChange={(e) => updateFormData("hearAboutUs", e.target.value)}
                       className="mt-2"

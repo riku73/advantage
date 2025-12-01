@@ -50,9 +50,9 @@ export default function AboutPageContent() {
               Votre agence marketing au Luxembourg, à l&apos;écoute de vos ambitions
             </h1>
             <p className="mt-6 text-lg text-muted-foreground">
-              Basée à Itzig, Advantage accompagne les entreprises luxembourgeoises
-              dans leur croissance digitale avec des stratégies sur-mesure et des
-              résultats mesurables.
+              Basée au Luxembourg, ADVANTAGE accompagne les entreprises dans leur
+              croissance digitale grâce à des stratégies sur-mesure et à des
+              résultats concrets.
             </p>
             <div className="mt-8">
               <Link
@@ -70,24 +70,32 @@ export default function AboutPageContent() {
       {/* Story */}
       <section className="py-20">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-2">
+          <div className="mx-auto max-w-6xl grid gap-12 lg:grid-cols-2 items-center">
             <FadeIn direction="left">
               <h2 className="text-3xl font-bold">Notre histoire</h2>
               <div className="mt-6 space-y-4 text-muted-foreground">
                 <p>
-                  Fondée en 2022 à Itzig, Advantage est née de la volonté de proposer
-                  aux entreprises luxembourgeoises une alternative locale et réactive
-                  aux grandes agences internationales.
+                  ADVANTAGE est née de la longue collaboration de deux professionnels
+                  du marketing et du web. Forts de plusieurs décennies d&apos;expérience,
+                  nous avons traversé et anticipé les évolutions de l&apos;information,
+                  des technologies et du digital — toujours avec la même passion et
+                  la même exigence.
                 </p>
                 <p>
-                  Notre équipe accompagne des entreprises de tous secteurs - de la
-                  restauration au transport, de la beauté au e-commerce - dans leur
-                  croissance digitale.
+                  Notre volonté : offrir aux petites, moyennes et grandes entreprises
+                  une alternative locale, réactive et fiable face aux grandes agences
+                  internationales.
                 </p>
                 <p>
-                  Nous croyons qu&apos;une stratégie marketing réussie repose sur trois
-                  piliers : une écoute attentive de vos besoins, une exécution
-                  impeccable et des résultats mesurables.
+                  Notre équipe accompagne des clients de tous secteurs — restauration,
+                  transport, beauté, services, industrie, e-commerce et bien d&apos;autres —
+                  dans la définition et la mise en œuvre de leur stratégie digitale.
+                </p>
+                <p>
+                  Nous sommes convaincus qu&apos;une stratégie marketing efficace repose
+                  sur trois piliers : l&apos;écoute, la qualité d&apos;exécution et la mesure
+                  des résultats. C&apos;est cette approche qui guide chacune de nos
+                  collaborations.
                 </p>
               </div>
             </FadeIn>
@@ -139,45 +147,43 @@ export default function AboutPageContent() {
         subtitle="Ils nous font confiance pour leur croissance digitale"
       />
 
-      {/* Mission */}
-      <section className="border-t py-20">
-        <div className="container mx-auto px-4 lg:px-8">
-          <FadeIn className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-bold">Notre mission</h2>
-            <p className="mt-6 text-lg text-muted-foreground">
-              Aider les entreprises luxembourgeoises et de la Grande Région à
-              exploiter tout le potentiel du marketing digital pour accélérer
-              leur croissance et maximiser leur retour sur investissement.
-            </p>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Proximité, réactivité et résultats concrets : voilà ce qui nous
-              différencie des grandes agences internationales.
-            </p>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* CTA */}
+      {/* Mission & CTA */}
       <section className="bg-primary py-20">
         <div className="container mx-auto px-4 lg:px-8">
-          <FadeIn className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold text-primary-foreground">
-              Travaillons ensemble
-            </h2>
-            <p className="mt-4 text-lg text-primary-foreground/90">
-              Prêt à donner un nouvel élan à votre présence digitale ?
-              Parlons de votre projet.
-            </p>
-            <div className="mt-8">
-              <Link
-                href="/devis-personnalise"
-                className="group inline-flex items-center gap-2 rounded-md bg-black dark:bg-white px-8 py-3 font-semibold text-white dark:text-black transition-all hover:bg-gray-900 dark:hover:bg-gray-100 hover:scale-105"
-              >
-                Demandez un devis gratuit
-                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </div>
-          </FadeIn>
+          <div className="mx-auto max-w-6xl grid gap-12 lg:grid-cols-2 items-center">
+            <FadeIn direction="left">
+              <h2 className="text-3xl font-bold text-primary-foreground">Notre mission</h2>
+              <p className="mt-6 text-lg text-primary-foreground/90">
+                Aider les petites, moyennes et grandes entreprises à
+                exploiter tout le potentiel du marketing digital pour accélérer
+                leur croissance et maximiser leur retour sur investissement.
+              </p>
+              <p className="mt-4 text-primary-foreground/80">
+                Proximité, réactivité et résultats concrets : voilà ce qui nous
+                différencie des grandes agences internationales.
+              </p>
+            </FadeIn>
+            <FadeIn direction="right" delay={0.2}>
+              <div className="rounded-2xl bg-black/10 dark:bg-white/10 p-8 text-center">
+                <h3 className="text-2xl font-bold text-primary-foreground">
+                  Travaillons ensemble
+                </h3>
+                <p className="mt-4 text-primary-foreground/90">
+                  Prêt à donner un nouvel élan à votre présence digitale ?
+                  Parlons de votre projet.
+                </p>
+                <div className="mt-6">
+                  <Link
+                    href="/devis-personnalise"
+                    className="group inline-flex items-center gap-2 rounded-md bg-black dark:bg-white px-8 py-3 font-semibold text-white dark:text-black transition-all hover:bg-gray-900 dark:hover:bg-gray-100 hover:scale-105"
+                  >
+                    Demandez un devis gratuit
+                    <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </section>
     </div>

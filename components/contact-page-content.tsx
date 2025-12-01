@@ -64,10 +64,10 @@ export default function ContactPageContent() {
                     <div>
                       <div className="font-semibold">Téléphone</div>
                       <a
-                        href="tel:+352691662460"
+                        href="tel:+35227565962"
                         className="text-muted-foreground hover:text-primary transition-colors"
                       >
-                        +352 691 662 460
+                        +352 27 56 59 62
                       </a>
                     </div>
                   </div>
@@ -78,7 +78,7 @@ export default function ContactPageContent() {
                     </div>
                     <div>
                       <div className="font-semibold">Adresse</div>
-                      <p className="text-muted-foreground">2 Rue de Sandweiler, L-5974 Itzig, Luxembourg</p>
+                      <p className="text-muted-foreground">2 Rue de Sandweiler<br />L-5974 Itzig</p>
                     </div>
                   </div>
                 </div>
@@ -122,7 +122,7 @@ export default function ContactPageContent() {
         <div className="container mx-auto px-4 lg:px-8">
           <FadeIn className="mx-auto max-w-3xl text-center text-sm text-muted-foreground">
             <p>
-              Vos données personnelles sont collectées et traitées par Advantage
+              Vos données personnelles sont collectées et traitées par ADVANTAGE
               uniquement dans le cadre de votre demande de contact. Elles ne
               seront jamais partagées avec des tiers. Vous disposez d'un
               droit d'accès, de modification et de suppression de vos

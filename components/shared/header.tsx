@@ -43,18 +43,18 @@ export default function Header() {
             <Image
               src="/logo-advantage-normal.svg"
               alt="Advantage"
-              width={150}
-              height={20}
-              className="h-5 w-auto dark:hidden"
+              width={180}
+              height={28}
+              className="h-7 w-auto dark:hidden"
               priority
             />
             {/* White logo for dark mode */}
             <Image
               src="/logo-advantage-negative.svg"
               alt="Advantage"
-              width={150}
-              height={20}
-              className="hidden h-5 w-auto dark:block"
+              width={180}
+              height={28}
+              className="hidden h-7 w-auto dark:block"
               priority
             />
           </Link>
@@ -97,7 +97,7 @@ export default function Header() {
           <ThemeToggle />
           <Link
             href="/devis-personnalise"
-            className="rounded-md bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
+            className="rounded-md bg-black dark:bg-white px-6 py-2.5 text-sm font-semibold text-white dark:text-black shadow-sm transition-colors hover:bg-gray-800 dark:hover:bg-gray-100"
           >
             Devis Gratuit
           </Link>
@@ -126,17 +126,17 @@ export default function Header() {
               <Image
                 src="/logo-advantage-normal.svg"
                 alt="Advantage"
-                width={150}
-                height={20}
-                className="h-5 w-auto dark:hidden"
+                width={180}
+                height={28}
+                className="h-7 w-auto dark:hidden"
               />
               {/* White logo for dark mode */}
               <Image
                 src="/logo-advantage-negative.svg"
                 alt="Advantage"
-                width={150}
-                height={20}
-                className="hidden h-5 w-auto dark:block"
+                width={180}
+                height={28}
+                className="hidden h-7 w-auto dark:block"
               />
             </Link>
             <div className="flex items-center gap-3">
@@ -168,7 +168,7 @@ export default function Header() {
               <div className="py-6">
                 <Link
                   href="/devis-personnalise"
-                  className="block rounded-md bg-primary px-6 py-2.5 text-center text-base font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
+                  className="block rounded-md bg-black dark:bg-white px-6 py-2.5 text-center text-base font-semibold text-white dark:text-black shadow-sm transition-colors hover:bg-gray-800 dark:hover:bg-gray-100"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Devis Gratuit

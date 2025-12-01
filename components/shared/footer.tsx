@@ -4,11 +4,12 @@ import { Mail, Phone, MapPin } from "lucide-react";
 
 const navigation = {
   services: [
+    { name: "Landing pages", href: "/services/landing-pages" },
+    { name: "Sites web", href: "/services/sites-web" },
     { name: "SEO", href: "/services/seo" },
     { name: "SEA", href: "/services/sea" },
     { name: "E-mail marketing", href: "/services/email-marketing" },
-    { name: "Sites web", href: "/services/sites-web" },
-    { name: "Landing pages", href: "/services/landing-pages" },
+    { name: "Délivrabilité e-mail", href: "/services/email-deliverability" },
   ],
   company: [
     { name: "À propos", href: "/a-propos" },
@@ -31,17 +32,17 @@ export default function Footer() {
               <Image
                 src="/logo-advantage-normal.svg"
                 alt="Advantage"
-                width={150}
-                height={20}
-                className="h-5 w-auto dark:hidden"
+                width={180}
+                height={28}
+                className="h-7 w-auto dark:hidden"
               />
               {/* White logo for dark mode */}
               <Image
                 src="/logo-advantage-negative.svg"
                 alt="Advantage"
-                width={150}
-                height={20}
-                className="hidden h-5 w-auto dark:block"
+                width={180}
+                height={28}
+                className="hidden h-7 w-auto dark:block"
               />
             </Link>
             <p className="mt-4 text-sm text-muted-foreground">
@@ -100,11 +101,11 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2 text-sm text-muted-foreground">
                 <Phone className="mt-0.5 h-4 w-4 flex-shrink-0" />
-                <span>+352 691 662 460</span>
+                <span>+352 27 56 59 62</span>
               </li>
               <li className="flex items-start gap-2 text-sm text-muted-foreground">
                 <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0" />
-                <span>2 Rue de Sandweiler, L-5974 Itzig, Luxembourg</span>
+                <span>2 Rue de Sandweiler<br />L-5974 Itzig</span>
               </li>
             </ul>
           </div>
@@ -112,7 +113,7 @@ export default function Footer() {
 
         <div className="mt-12 border-t pt-8">
           <p className="text-center text-sm text-muted-foreground">
-            &copy; {currentYear} Advantage. Tous droits réservés.
+            &copy; {currentYear} ADVANTAGE. Tous droits réservés.
           </p>
         </div>
       </div>

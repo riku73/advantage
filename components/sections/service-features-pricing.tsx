@@ -26,9 +26,6 @@ export default function ServiceFeaturesPricing({
           <FadeIn>
             <div className="flex items-center justify-between">
               <h2 className="text-3xl font-bold">Ce qui est inclus</h2>
-              {hasSimplePricing && (
-                <PricingBadge pricing={pricing as ServicePricing} />
-              )}
             </div>
           </FadeIn>
 

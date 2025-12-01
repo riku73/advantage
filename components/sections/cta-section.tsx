@@ -25,7 +25,7 @@ export default function CtaSection() {
             Prêt à faire décoller votre présence digitale ?
           </h2>
           <p className="mt-6 text-lg text-primary-foreground/90">
-            Basée à Itzig, notre équipe vous accompagne de A à Z dans votre
+            Notre équipe vous accompagne de A à Z dans votre
             croissance digitale. Parlons de votre projet.
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">
