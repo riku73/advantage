@@ -6,6 +6,7 @@ import { Video, ArrowRight, CheckCircle2 } from "lucide-react";
 import FadeIn from "@/components/ui/fade-in";
 import StaggerContainer, { StaggerItem } from "@/components/ui/stagger-container";
 import PricingTiers from "@/components/sections/pricing-tiers";
+import FAQSection, { videoProductionFAQs } from "@/components/sections/faq-section";
 import { getServiceById } from "@/lib/services-data";
 
 const benefits = [
@@ -128,6 +129,14 @@ export default function VideoProductionPageContent() {
           </div>
         </div>
       </section>
+
+      {/* FAQ */}
+      <FAQSection
+        title="Questions frequentes sur la production video"
+        subtitle="Tout ce que vous devez savoir sur nos services video"
+        faqs={videoProductionFAQs}
+        className="bg-muted/50"
+      />
 
       {/* CTA */}
       <section className="bg-primary py-20">

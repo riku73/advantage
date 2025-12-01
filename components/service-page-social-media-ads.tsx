@@ -6,6 +6,7 @@ import { Share2, ArrowRight, CheckCircle2 } from "lucide-react";
 import FadeIn from "@/components/ui/fade-in";
 import StaggerContainer, { StaggerItem } from "@/components/ui/stagger-container";
 import PricingTiers from "@/components/sections/pricing-tiers";
+import FAQSection, { socialMediaAdsFAQs } from "@/components/sections/faq-section";
 import { getServiceById } from "@/lib/services-data";
 
 const benefits = [
@@ -129,6 +130,14 @@ export default function SocialMediaAdsPageContent() {
           </div>
         </div>
       </section>
+
+      {/* FAQ */}
+      <FAQSection
+        title="Questions frequentes sur la publicite reseaux sociaux"
+        subtitle="Tout ce que vous devez savoir sur nos services Social Ads"
+        faqs={socialMediaAdsFAQs}
+        className="bg-muted/50"
+      />
 
       {/* CTA */}
       <section className="bg-primary py-20">

@@ -25,6 +25,7 @@ import {
 import FadeIn from "@/components/ui/fade-in";
 import StaggerContainer, { StaggerItem } from "@/components/ui/stagger-container";
 import PricingTiers from "@/components/sections/pricing-tiers";
+import FAQSection, { sitesWebFAQs } from "@/components/sections/faq-section";
 import { getServiceById } from "@/lib/services-data";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -1079,6 +1080,14 @@ export default function SitesWebPageContent() {
           description="Du site one-pager à la boutique e-commerce complète"
         />
       )}
+
+      {/* FAQ */}
+      <FAQSection
+        title="Questions frequentes sur la creation de sites web"
+        subtitle="Tout ce que vous devez savoir sur nos services de developpement web"
+        faqs={sitesWebFAQs}
+        className="bg-muted/50"
+      />
 
       <section className="bg-primary py-20">
         <div className="container mx-auto px-4 lg:px-8">

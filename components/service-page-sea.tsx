@@ -6,6 +6,7 @@ import { MousePointerClick, ArrowRight, CheckCircle2 } from "lucide-react";
 import FadeIn from "@/components/ui/fade-in";
 import StaggerContainer, { StaggerItem } from "@/components/ui/stagger-container";
 import PricingTiers from "@/components/sections/pricing-tiers";
+import FAQSection, { seaFAQs } from "@/components/sections/faq-section";
 import { getServiceById } from "@/lib/services-data";
 
 const benefits = [
@@ -119,6 +120,14 @@ export default function SEAPageContent() {
           description="Configuration initiale ou gestion mensuelle continue"
         />
       )}
+
+      {/* FAQ */}
+      <FAQSection
+        title="Questions frequentes sur Google Ads"
+        subtitle="Tout ce que vous devez savoir sur la publicite payante"
+        faqs={seaFAQs}
+        className="bg-muted/50"
+      />
 
       <section className="bg-primary py-20">
         <div className="container mx-auto px-4 lg:px-8">

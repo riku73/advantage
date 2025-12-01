@@ -6,6 +6,7 @@ import { Target, ArrowRight, CheckCircle2 } from "lucide-react";
 import FadeIn from "@/components/ui/fade-in";
 import StaggerContainer, { StaggerItem } from "@/components/ui/stagger-container";
 import ServiceFeaturesPricing from "@/components/sections/service-features-pricing";
+import FAQSection, { landingPagesFAQs } from "@/components/sections/faq-section";
 import { getServiceById } from "@/lib/services-data";
 
 const benefits = [
@@ -116,6 +117,13 @@ export default function LandingPagesPageContent() {
           <ServiceFeaturesPricing service={service} />
         </section>
       )}
+
+      {/* FAQ */}
+      <FAQSection
+        title="Questions frequentes sur les landing pages"
+        subtitle="Tout ce que vous devez savoir sur nos pages de conversion"
+        faqs={landingPagesFAQs}
+      />
 
       <section className="bg-primary py-20">
         <div className="container mx-auto px-4 lg:px-8">

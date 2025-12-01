@@ -5,6 +5,8 @@ import Image from "next/image";
 import { Users, Target, TrendingUp, Award, ArrowRight } from "lucide-react";
 import FadeIn from "@/components/ui/fade-in";
 import StaggerContainer, { StaggerItem } from "@/components/ui/stagger-container";
+import { ServiceHero } from "@/components/ui/page-hero";
+import ClientsSection from "@/components/sections/clients-section";
 
 const values = [
   {
@@ -38,20 +40,32 @@ export default function AboutPageContent() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="bg-gradient-to-b from-background to-muted/50 py-20">
+      <ServiceHero
+        backgroundImage="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&h=1080&fit=crop&q=80"
+        backgroundAlt="Team collaboration and digital marketing professionals"
+      >
         <div className="container mx-auto px-4 lg:px-8">
           <FadeIn className="mx-auto max-w-3xl text-center" immediate>
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-              Votre partenaire pour une croissance digitale durable
+            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+              Votre agence marketing au Luxembourg, a l&apos;ecoute de vos ambitions
             </h1>
             <p className="mt-6 text-lg text-muted-foreground">
-              Advantage est une agence marketing digital française spécialisée
-              dans la croissance des entreprises grâce à des stratégies
-              data-driven et des campagnes optimisées.
+              Basee a Itzig, Advantage accompagne les entreprises luxembourgeoises
+              dans leur croissance digitale avec des strategies sur-mesure et des
+              resultats mesurables.
             </p>
+            <div className="mt-8">
+              <Link
+                href="/contact"
+                className="group inline-flex items-center justify-center gap-2 rounded-md bg-black dark:bg-white px-8 py-3 font-semibold text-white dark:text-black transition-all hover:bg-gray-800 dark:hover:bg-gray-100 hover:scale-105"
+              >
+                Contactez-nous
+                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </div>
           </FadeIn>
         </div>
-      </section>
+      </ServiceHero>
 
       {/* Story */}
       <section className="py-20">
@@ -61,21 +75,19 @@ export default function AboutPageContent() {
               <h2 className="text-3xl font-bold">Notre histoire</h2>
               <div className="mt-6 space-y-4 text-muted-foreground">
                 <p>
-                  Fondée en 2016, Advantage est née de la volonté de deux
-                  experts en marketing digital de créer une agence différente :
-                  une agence où la transparence, les résultats mesurables et la
-                  satisfaction client sont au cœur de chaque projet.
+                  Fondee en 2022 a Itzig, Advantage est nee de la volonte de proposer
+                  aux entreprises luxembourgeoises une alternative locale et reactive
+                  aux grandes agences internationales.
                 </p>
                 <p>
-                  Au fil des années, nous avons accompagné plus de 150
-                  entreprises dans leur transformation digitale, des startups
-                  innovantes aux PME établies, en passant par des e-commerces
-                  ambitieux.
+                  Notre equipe accompagne des entreprises de tous secteurs - de la
+                  restauration au transport, de la beaute au e-commerce - dans leur
+                  croissance digitale.
                 </p>
                 <p>
-                  Aujourd'hui, notre équipe de spécialistes continue de
-                  repousser les limites du marketing digital pour offrir à nos
-                  clients un avantage compétitif réel et durable.
+                  Nous croyons qu&apos;une strategie marketing reussie repose sur trois
+                  piliers : une ecoute attentive de vos besoins, une execution
+                  impeccable et des resultats mesurables.
                 </p>
               </div>
             </FadeIn>
@@ -121,20 +133,25 @@ export default function AboutPageContent() {
         </div>
       </section>
 
+      {/* Clients */}
+      <ClientsSection
+        title="Nos clients"
+        subtitle="Ils nous font confiance pour leur croissance digitale"
+      />
+
       {/* Mission */}
       <section className="border-t py-20">
         <div className="container mx-auto px-4 lg:px-8">
           <FadeIn className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold">Notre mission</h2>
             <p className="mt-6 text-lg text-muted-foreground">
-              Aider les entreprises francophones à exploiter tout le potentiel
-              du marketing digital pour accélérer leur croissance, augmenter
-              leur visibilité et maximiser leur retour sur investissement.
+              Aider les entreprises luxembourgeoises et de la Grande Region a
+              exploiter tout le potentiel du marketing digital pour accelerer
+              leur croissance et maximiser leur retour sur investissement.
             </p>
             <p className="mt-4 text-lg text-muted-foreground">
-              Nous croyons qu'une stratégie marketing réussie repose sur
-              trois piliers : des données fiables, une créativité audacieuse et
-              une exécution impeccable.
+              Proximite, reactivite et resultats concrets : voila ce qui nous
+              differencie des grandes agences internationales.
             </p>
           </FadeIn>
         </div>
@@ -148,15 +165,15 @@ export default function AboutPageContent() {
               Travaillons ensemble
             </h2>
             <p className="mt-4 text-lg text-primary-foreground/90">
-              Prêt à propulser votre entreprise vers de nouveaux sommets ?
-              Discutons de vos objectifs.
+              Pret a donner un nouvel elan a votre presence digitale ?
+              Parlons de votre projet.
             </p>
             <div className="mt-8">
               <Link
-                href="/contact"
+                href="/devis-personnalise"
                 className="group inline-flex items-center gap-2 rounded-md bg-black dark:bg-white px-8 py-3 font-semibold text-white dark:text-black transition-all hover:bg-gray-900 dark:hover:bg-gray-100 hover:scale-105"
               >
-                Contactez-nous
+                Demandez un devis gratuit
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>

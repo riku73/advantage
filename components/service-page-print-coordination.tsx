@@ -6,6 +6,7 @@ import { Printer, ArrowRight, CheckCircle2 } from "lucide-react";
 import FadeIn from "@/components/ui/fade-in";
 import StaggerContainer, { StaggerItem } from "@/components/ui/stagger-container";
 import ServiceFeaturesPricing from "@/components/sections/service-features-pricing";
+import FAQSection, { printCoordinationFAQs } from "@/components/sections/faq-section";
 import { getServiceById } from "@/lib/services-data";
 
 const benefits = [
@@ -131,6 +132,14 @@ export default function PrintCoordinationPageContent() {
 
       {/* Features & Pricing */}
       <ServiceFeaturesPricing service={service} />
+
+      {/* FAQ */}
+      <FAQSection
+        title="Questions frequentes sur la coordination d'impression"
+        subtitle="Tout ce que vous devez savoir sur nos services d'impression"
+        faqs={printCoordinationFAQs}
+        className="bg-muted/50"
+      />
 
       {/* CTA */}
       <section className="bg-primary py-20">

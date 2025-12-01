@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 const navigation = {
@@ -26,7 +27,22 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block">
-              <span className="text-2xl font-bold text-primary">Advantage</span>
+              {/* Black logo for light mode */}
+              <Image
+                src="/logo-advantage-normal.svg"
+                alt="Advantage"
+                width={150}
+                height={20}
+                className="h-5 w-auto dark:hidden"
+              />
+              {/* White logo for dark mode */}
+              <Image
+                src="/logo-advantage-negative.svg"
+                alt="Advantage"
+                width={150}
+                height={20}
+                className="hidden h-5 w-auto dark:block"
+              />
             </Link>
             <p className="mt-4 text-sm text-muted-foreground">
               Votre agence marketing digital pour une croissance durable et
@@ -80,15 +96,15 @@ export default function Footer() {
             <ul className="mt-4 space-y-3">
               <li className="flex items-start gap-2 text-sm text-muted-foreground">
                 <Mail className="mt-0.5 h-4 w-4 flex-shrink-0" />
-                <span>contact@advantage.com</span>
+                <span>take@advantage.lu</span>
               </li>
               <li className="flex items-start gap-2 text-sm text-muted-foreground">
                 <Phone className="mt-0.5 h-4 w-4 flex-shrink-0" />
-                <span>+33 1 23 45 67 89</span>
+                <span>+352 691 662 460</span>
               </li>
               <li className="flex items-start gap-2 text-sm text-muted-foreground">
                 <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0" />
-                <span>Paris, France</span>
+                <span>2 Rue de Sandweiler, L-5974 Itzig, Luxembourg</span>
               </li>
             </ul>
           </div>

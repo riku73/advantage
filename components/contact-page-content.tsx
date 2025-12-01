@@ -3,15 +3,19 @@
 import { Mail, Phone, MapPin } from "lucide-react";
 import ContactForm from "@/components/sections/contact-form";
 import FadeIn from "@/components/ui/fade-in";
+import { ServiceHero } from "@/components/ui/page-hero";
 
 export default function ContactPageContent() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="bg-gradient-to-b from-background to-muted/50 py-20">
+      <ServiceHero
+        backgroundImage="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1920&h=1080&fit=crop&q=80"
+        backgroundAlt="Contact us - communication and collaboration"
+      >
         <div className="container mx-auto px-4 lg:px-8">
           <FadeIn className="mx-auto max-w-3xl text-center">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
               Parlons de votre projet
             </h1>
             <p className="mt-6 text-lg text-muted-foreground">
@@ -21,7 +25,7 @@ export default function ContactPageContent() {
             </p>
           </FadeIn>
         </div>
-      </section>
+      </ServiceHero>
 
       {/* Contact Form and Info */}
       <section className="py-20">
@@ -45,10 +49,10 @@ export default function ContactPageContent() {
                     <div>
                       <div className="font-semibold">E-mail</div>
                       <a
-                        href="mailto:contact@advantage.com"
+                        href="mailto:take@advantage.lu"
                         className="text-muted-foreground hover:text-primary transition-colors"
                       >
-                        contact@advantage.com
+                        take@advantage.lu
                       </a>
                     </div>
                   </div>
@@ -60,10 +64,10 @@ export default function ContactPageContent() {
                     <div>
                       <div className="font-semibold">Téléphone</div>
                       <a
-                        href="tel:+33123456789"
+                        href="tel:+352691662460"
                         className="text-muted-foreground hover:text-primary transition-colors"
                       >
-                        +33 1 23 45 67 89
+                        +352 691 662 460
                       </a>
                     </div>
                   </div>
@@ -74,7 +78,7 @@ export default function ContactPageContent() {
                     </div>
                     <div>
                       <div className="font-semibold">Adresse</div>
-                      <p className="text-muted-foreground">Paris, France</p>
+                      <p className="text-muted-foreground">2 Rue de Sandweiler, L-5974 Itzig, Luxembourg</p>
                     </div>
                   </div>
                 </div>

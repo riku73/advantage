@@ -366,7 +366,7 @@ export default function CustomQuotePageContent() {
                     </RadioGroup>
                   </div>
 
-                  {formData.projectCategory && formData.projectCategory !== "" && (
+                  {formData.projectCategory && (
                     <div>
                       <Label className="text-base font-semibold mb-4 block">
                         Services spécifiques (optionnel)
