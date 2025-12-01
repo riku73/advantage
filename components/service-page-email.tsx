@@ -130,7 +130,7 @@ export default function EmailMarketingPageContent() {
                 <span>E-mail Marketing</span>
               </div>
               <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-                Transformez vos contacts en clients fidèles
+                E-mail marketing qui fidélise vos clients
               </h1>
               <p className="mt-6 text-lg text-muted-foreground">
                 Créez des campagnes e-mail personnalisées qui engagent, convertissent

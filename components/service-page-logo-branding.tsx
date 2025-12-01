@@ -133,7 +133,7 @@ export default function LogoBrandingPageContent() {
                 <span>Identité Visuelle</span>
               </div>
               <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-                Une identité de marque qui vous démarque
+                Logo et identité visuelle sur mesure
               </h1>
               <p className="mt-6 text-lg text-muted-foreground">
                 Créez une image de marque forte et cohérente avec un logo

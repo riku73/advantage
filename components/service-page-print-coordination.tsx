@@ -132,7 +132,7 @@ export default function PrintCoordinationPageContent() {
                 <span>Coordination Print</span>
               </div>
               <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-                On gère l'impression pour vous
+                Coordination d'impression clé en main
               </h1>
               <p className="mt-6 text-lg text-muted-foreground">
                 Laissez-nous coordonner l'impression de vos supports avec nos

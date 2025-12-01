@@ -54,7 +54,7 @@ export default function SitesWebPageContent() {
                 <span>Développement Web</span>
               </div>
               <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-                Sites web qui convertissent vos visiteurs
+                Sites web performants pour votre entreprise
               </h1>
               <p className="mt-6 text-lg text-muted-foreground">
                 Nous créons des sites web performants, esthétiques et optimisés

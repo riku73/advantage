@@ -132,7 +132,7 @@ export default function ProjectManagementPageContent() {
                 <span>Gestion de Projet</span>
               </div>
               <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-                On gère vos projets de A à Z
+                Gestion de projet digitale de A à Z
               </h1>
               <p className="mt-6 text-lg text-muted-foreground">
                 Confiez-nous la coordination complète de vos projets digitaux et

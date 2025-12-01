@@ -132,7 +132,7 @@ export default function PrintDesignPageContent() {
                 <span>Design Print</span>
               </div>
               <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-                Supports imprimés qui marquent les esprits
+                Design print qui marque les esprits
               </h1>
               <p className="mt-6 text-lg text-muted-foreground">
                 Cartes de visite, flyers, brochures... Nous créons tous vos
