@@ -16,16 +16,9 @@ import FadeIn from "@/components/ui/fade-in";
 import StaggerContainer, { StaggerItem } from "@/components/ui/stagger-container";
 import FAQSection, { landingPagesFAQs } from "@/components/sections/faq-section";
 import { ServiceHero } from "@/components/ui/page-hero";
-import StatsSection, { StatItem } from "@/components/sections/stats-section";
 import BenefitsGrid, { BenefitItem } from "@/components/sections/benefits-grid";
 import ProcessTimeline, { ProcessStep } from "@/components/sections/process-timeline";
 import CTAWithServices, { RelatedService } from "@/components/sections/cta-with-services";
-
-const stats: StatItem[] = [
-  { value: "5x", label: "Taux de conversion supérieur" },
-  { value: "<3s", label: "Temps de chargement" },
-  { value: "95%", label: "Taux de satisfaction client" },
-];
 
 const benefits: BenefitItem[] = [
   {
@@ -140,9 +133,6 @@ export default function LandingPagesPageContent() {
           </div>
         </div>
       </ServiceHero>
-
-      {/* Stats */}
-      <StatsSection stats={stats} className="bg-muted/30" />
 
       {/* Benefits Grid */}
       <BenefitsGrid

@@ -16,16 +16,9 @@ import FadeIn from "@/components/ui/fade-in";
 import StaggerContainer, { StaggerItem } from "@/components/ui/stagger-container";
 import FAQSection, { seaFAQs } from "@/components/sections/faq-section";
 import { ServiceHero } from "@/components/ui/page-hero";
-import StatsSection, { StatItem } from "@/components/sections/stats-section";
 import BenefitsGrid, { BenefitItem } from "@/components/sections/benefits-grid";
 import ProcessTimeline, { ProcessStep } from "@/components/sections/process-timeline";
 import CTAWithServices, { RelatedService } from "@/components/sections/cta-with-services";
-
-const stats: StatItem[] = [
-  { value: "300%", label: "ROI moyen constaté" },
-  { value: "24h", label: "Premiers résultats" },
-  { value: "100%", label: "Budget sous contrôle" },
-];
 
 const benefits: BenefitItem[] = [
   {
@@ -157,9 +150,6 @@ export default function SEAPageContent() {
           </div>
         </div>
       </ServiceHero>
-
-      {/* Stats */}
-      <StatsSection stats={stats} className="bg-muted/30" />
 
       {/* Benefits Grid */}
       <BenefitsGrid

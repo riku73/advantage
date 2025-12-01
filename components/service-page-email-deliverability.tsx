@@ -16,16 +16,9 @@ import FadeIn from "@/components/ui/fade-in";
 import StaggerContainer, { StaggerItem } from "@/components/ui/stagger-container";
 import FAQSection, { emailDeliverabilityFAQs } from "@/components/sections/faq-section";
 import { ServiceHero } from "@/components/ui/page-hero";
-import StatsSection, { StatItem } from "@/components/sections/stats-section";
 import BenefitsGrid, { BenefitItem } from "@/components/sections/benefits-grid";
 import ProcessTimeline, { ProcessStep } from "@/components/sections/process-timeline";
 import CTAWithServices, { RelatedService } from "@/components/sections/cta-with-services";
-
-const stats: StatItem[] = [
-  { value: "99%", label: "Taux d'arrivée en inbox" },
-  { value: "+45%", label: "Amélioration taux ouverture" },
-  { value: "30j", label: "Monitoring inclus" },
-];
 
 const benefits: BenefitItem[] = [
   {
@@ -151,9 +144,6 @@ export default function EmailDeliverabilityPageContent() {
           </div>
         </div>
       </ServiceHero>
-
-      {/* Stats */}
-      <StatsSection stats={stats} className="bg-muted/30" />
 
       {/* Benefits Grid */}
       <BenefitsGrid

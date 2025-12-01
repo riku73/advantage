@@ -14,16 +14,9 @@ import {
 import FadeIn from "@/components/ui/fade-in";
 import FAQSection, { seoFAQs } from "@/components/sections/faq-section";
 import { ServiceHero } from "@/components/ui/page-hero";
-import StatsSection, { StatItem } from "@/components/sections/stats-section";
 import BenefitsGrid, { BenefitItem } from "@/components/sections/benefits-grid";
 import ProcessTimeline, { ProcessStep } from "@/components/sections/process-timeline";
 import CTAWithServices, { RelatedService } from "@/components/sections/cta-with-services";
-
-const stats: StatItem[] = [
-  { value: "70%", label: "Trafic web via recherche" },
-  { value: "14.6%", label: "Taux de conversion SEO" },
-  { value: "12-18", label: "Mois pour ROI positif" },
-];
 
 const benefits: BenefitItem[] = [
   {
@@ -127,9 +120,6 @@ export default function SEOPageContent() {
           </div>
         </div>
       </ServiceHero>
-
-      {/* Stats */}
-      <StatsSection stats={stats} className="bg-muted/30" />
 
       {/* Benefits */}
       <BenefitsGrid

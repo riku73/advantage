@@ -1,134 +1,203 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import { Video, ArrowRight, CheckCircle2 } from "lucide-react";
+import {
+  Video,
+  ArrowRight,
+  Play,
+  Clapperboard,
+  Share2,
+  Users,
+  Mic,
+  Sparkles,
+  Film,
+  Wand2,
+} from "lucide-react";
 import FadeIn from "@/components/ui/fade-in";
 import StaggerContainer, { StaggerItem } from "@/components/ui/stagger-container";
-import PricingTiers from "@/components/sections/pricing-tiers";
 import FAQSection, { videoProductionFAQs } from "@/components/sections/faq-section";
-import { getServiceById } from "@/lib/services-data";
+import { ServiceHero } from "@/components/ui/page-hero";
+import BenefitsGrid, { BenefitItem } from "@/components/sections/benefits-grid";
+import ProcessTimeline, { ProcessStep } from "@/components/sections/process-timeline";
+import CTAWithServices, { RelatedService } from "@/components/sections/cta-with-services";
 
-const benefits = [
-  "Contenu vidéo engageant et mémorable",
-  "Production professionnelle de A à Z",
-  "Optimisé pour toutes les plateformes",
-  "Montage et post-production inclus",
-  "Révisions jusqu'à satisfaction",
+const benefits: BenefitItem[] = [
+  {
+    icon: Play,
+    title: "Contenu engageant",
+    description:
+      "La vidéo génère 1200% plus de partages que le texte et les images combinés sur les réseaux sociaux.",
+  },
+  {
+    icon: Clapperboard,
+    title: "Production complète",
+    description:
+      "De la pré-production au montage final, nous gérons tout le processus de création vidéo.",
+  },
+  {
+    icon: Share2,
+    title: "Multi-plateforme",
+    description:
+      "Formats optimisés pour chaque plateforme : YouTube, LinkedIn, Instagram, TikTok, site web.",
+  },
+  {
+    icon: Sparkles,
+    title: "Révisions incluses",
+    description:
+      "Plusieurs rounds de révisions pour un résultat final qui correspond parfaitement à vos attentes.",
+  },
 ];
 
 const videoTypes = [
-  "Vidéos promo pour réseaux sociaux",
-  "Vidéos corporate et institutionnelles",
-  "Interviews et témoignages clients",
-  "Vidéos produits et démo",
-  "Couverture d'événements",
-  "Vidéos explicatives (motion design disponible)",
+  {
+    icon: Share2,
+    name: "Vidéos réseaux sociaux",
+    description: "Reels, Stories, posts vidéo optimisés pour l'engagement.",
+  },
+  {
+    icon: Film,
+    name: "Vidéos corporate",
+    description: "Présentation d'entreprise, valeurs, culture d'entreprise.",
+  },
+  {
+    icon: Mic,
+    name: "Interviews & Témoignages",
+    description: "Témoignages clients, interviews dirigeants.",
+  },
+  {
+    icon: Clapperboard,
+    name: "Vidéos produits",
+    description: "Démonstrations, unboxing, mises en situation.",
+  },
+  {
+    icon: Users,
+    name: "Couverture événements",
+    description: "Aftermovies, highlights, captations live.",
+  },
+  {
+    icon: Wand2,
+    name: "Motion design",
+    description: "Animations, infographies animées, explainers.",
+  },
+];
+
+const processSteps: ProcessStep[] = [
+  {
+    title: "Brief créatif",
+    description:
+      "Définition des objectifs, du message clé, du ton et du style souhaité. Identification de l'audience cible et des plateformes de diffusion.",
+  },
+  {
+    title: "Pré-production",
+    description:
+      "Écriture du script, storyboarding et planification du tournage. Organisation logistique : lieux, équipe, matériel.",
+  },
+  {
+    title: "Tournage",
+    description:
+      "Captation vidéo professionnelle avec équipement HD/4K. Direction artistique et interviews si nécessaire.",
+  },
+  {
+    title: "Post-production",
+    description:
+      "Montage, étalonnage couleur, sound design et motion graphics. Intégration de la musique et des effets sonores.",
+  },
+  {
+    title: "Livraison",
+    description:
+      "Export dans tous les formats nécessaires. Déclinaisons pour chaque plateforme (vertical, carré, horizontal).",
+  },
+];
+
+const relatedServices: RelatedService[] = [
+  { name: "Photographie", href: "/services/photography" },
+  { name: "Contenu Social", href: "/services/social-content" },
+  { name: "Social Media Ads", href: "/services/social-media-ads" },
 ];
 
 export default function VideoProductionPageContent() {
-  const service = getServiceById("video-production");
-  if (!service) return null;
-
-  const tiers = Array.isArray(service.pricing) ? service.pricing : [];
-
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="bg-gradient-to-b from-background to-muted/50 py-20">
+      <ServiceHero
+        backgroundImage="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?w=1920&h=1080&fit=crop&q=80"
+        backgroundAlt="Professional video production and filming"
+      >
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            <FadeIn direction="left">
-              <div className="inline-flex items-center gap-2 rounded-full border bg-background px-4 py-2 text-sm font-medium">
+          <div className="mx-auto max-w-3xl text-center">
+            <FadeIn immediate>
+              <div className="inline-flex items-center gap-2 rounded-full border border-foreground/20 bg-foreground/10 backdrop-blur-md px-4 py-2 text-sm font-medium text-foreground">
                 <Video className="h-4 w-4 text-primary" />
                 <span>Production Vidéo</span>
               </div>
-              <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl">
+              <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
                 Vidéos qui captivent votre audience
               </h1>
               <p className="mt-6 text-lg text-muted-foreground">
                 De la vidéo promo courte à la vidéo corporate complète, nous
-                créons du contenu vidéo professionnel qui raconte votre histoire.
+                créons du contenu vidéo professionnel qui raconte votre histoire
+                et engage votre audience.
               </p>
-              <div className="mt-8">
+              <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center justify-center gap-2 rounded-md bg-black dark:bg-white px-8 py-3 font-semibold text-white dark:text-black transition-all hover:bg-gray-900 dark:hover:bg-gray-100 hover:scale-105"
+                  className="group inline-flex items-center justify-center gap-2 rounded-md bg-black dark:bg-white px-8 py-3 font-semibold text-white dark:text-black transition-all hover:bg-gray-800 dark:hover:bg-gray-100 hover:scale-105"
                 >
                   Créer ma vidéo
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
             </FadeIn>
-            <FadeIn direction="right" delay={0.2}>
-              <div className="aspect-square overflow-hidden rounded-2xl shadow-xl">
-                <Image
-                  src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?w=800&h=800&fit=crop&q=80"
-                  alt="Professional video production and filming"
-                  width={800}
-                  height={800}
-                  className="object-cover transition-transform hover:scale-105 duration-700"
-                />
-              </div>
-            </FadeIn>
           </div>
         </div>
-      </section>
+      </ServiceHero>
 
-      {/* Benefits */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="mx-auto max-w-3xl">
-            <FadeIn>
-              <h2 className="text-3xl font-bold">
-                Pourquoi investir dans la vidéo ?
-              </h2>
-            </FadeIn>
-            <StaggerContainer className="mt-8 space-y-4">
-              {benefits.map((benefit) => (
-                <StaggerItem key={benefit}>
-                  <div className="flex items-start gap-3 transition-transform hover:translate-x-2">
-                    <CheckCircle2 className="mt-0.5 h-6 w-6 flex-shrink-0 text-primary" />
-                    <span className="text-lg">{benefit}</span>
-                  </div>
-                </StaggerItem>
-              ))}
-            </StaggerContainer>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing */}
-      {tiers.length > 0 && (
-        <section className="bg-muted/50">
-          <PricingTiers
-            tiers={tiers}
-            title="Nos Tarifs Vidéo"
-            description="Choisissez le format qui correspond à vos besoins"
-          />
-        </section>
-      )}
+      {/* Benefits Grid */}
+      <BenefitsGrid
+        title="Pourquoi investir dans la vidéo"
+        subtitle="Le format le plus engageant pour votre communication"
+        benefits={benefits}
+        columns={2}
+      />
 
       {/* Video Types */}
-      <section className="py-20">
+      <section className="bg-muted/50 py-20">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <FadeIn>
+          <div className="mx-auto max-w-5xl">
+            <FadeIn className="text-center">
               <h2 className="text-3xl font-bold">Types de vidéos</h2>
+              <p className="mt-4 text-muted-foreground">
+                Nous produisons tous types de contenus vidéo pour votre entreprise
+              </p>
             </FadeIn>
-            <StaggerContainer className="mt-12 grid gap-4 sm:grid-cols-2">
-              {videoTypes.map((type) => (
-                <StaggerItem key={type}>
-                  <div className="rounded-lg border bg-card p-6 text-left transition-all hover:shadow-lg hover:border-primary/50 hover:scale-105">
-                    <CheckCircle2 className="h-6 w-6 text-primary" />
-                    <p className="mt-3 font-semibold">{type}</p>
-                  </div>
-                </StaggerItem>
-              ))}
+            <StaggerContainer className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {videoTypes.map((type) => {
+                const Icon = type.icon;
+                return (
+                  <StaggerItem key={type.name}>
+                    <div className="h-full rounded-xl border-2 bg-card p-6 transition-all hover:border-primary/50 hover:shadow-lg">
+                      <div className="inline-flex rounded-lg bg-primary/10 p-3">
+                        <Icon className="h-6 w-6 text-primary" />
+                      </div>
+                      <h3 className="mt-4 font-semibold text-lg">{type.name}</h3>
+                      <p className="mt-2 text-sm text-muted-foreground">
+                        {type.description}
+                      </p>
+                    </div>
+                  </StaggerItem>
+                );
+              })}
             </StaggerContainer>
           </div>
         </div>
       </section>
+
+      {/* Process Timeline */}
+      <ProcessTimeline
+        title="Notre processus de production"
+        subtitle="De l'idée au produit final"
+        steps={processSteps}
+      />
 
       {/* FAQ */}
       <FAQSection
@@ -138,28 +207,14 @@ export default function VideoProductionPageContent() {
         className="bg-muted/50"
       />
 
-      {/* CTA */}
-      <section className="bg-primary py-20">
-        <div className="container mx-auto px-4 lg:px-8">
-          <FadeIn className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold text-primary-foreground">
-              Prêt à créer du contenu vidéo impactant ?
-            </h2>
-            <p className="mt-4 text-lg text-primary-foreground/90">
-              Discutons de votre projet vidéo et donnons vie à votre vision.
-            </p>
-            <div className="mt-8">
-              <Link
-                href="/devis-personnalise"
-                className="group inline-flex items-center gap-2 rounded-md bg-black dark:bg-white px-8 py-3 font-semibold text-white dark:text-black transition-all hover:bg-gray-900 dark:hover:bg-gray-100 hover:scale-105"
-              >
-                Demandez un devis
-                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
+      {/* CTA with Related Services */}
+      <CTAWithServices
+        title="Prêt à créer du contenu vidéo impactant ?"
+        description="Discutons de votre projet vidéo et donnons vie à votre vision."
+        buttonText="Demandez un devis"
+        buttonHref="/devis-personnalise"
+        relatedServices={relatedServices}
+      />
     </div>
   );
 }

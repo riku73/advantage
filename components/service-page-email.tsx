@@ -16,16 +16,9 @@ import FadeIn from "@/components/ui/fade-in";
 import StaggerContainer, { StaggerItem } from "@/components/ui/stagger-container";
 import FAQSection, { emailMarketingFAQs } from "@/components/sections/faq-section";
 import { ServiceHero } from "@/components/ui/page-hero";
-import StatsSection, { StatItem } from "@/components/sections/stats-section";
 import BenefitsGrid, { BenefitItem } from "@/components/sections/benefits-grid";
 import ProcessTimeline, { ProcessStep } from "@/components/sections/process-timeline";
 import CTAWithServices, { RelatedService } from "@/components/sections/cta-with-services";
-
-const stats: StatItem[] = [
-  { value: "42x", label: "ROI moyen constaté" },
-  { value: "4.2B", label: "Utilisateurs e-mail mondial" },
-  { value: "99%", label: "Taux de délivrabilité" },
-];
 
 const benefits: BenefitItem[] = [
   {
@@ -156,9 +149,6 @@ export default function EmailMarketingPageContent() {
           </div>
         </div>
       </ServiceHero>
-
-      {/* Stats */}
-      <StatsSection stats={stats} className="bg-muted/30" />
 
       {/* Benefits Grid */}
       <BenefitsGrid

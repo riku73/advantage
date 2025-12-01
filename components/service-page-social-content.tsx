@@ -1,127 +1,197 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import { Calendar, ArrowRight, CheckCircle2 } from "lucide-react";
+import {
+  Calendar,
+  ArrowRight,
+  CheckCircle2,
+  Palette,
+  Clock,
+  TrendingUp,
+  Hash,
+  Image as ImageIcon,
+  PenTool,
+} from "lucide-react";
 import FadeIn from "@/components/ui/fade-in";
 import StaggerContainer, { StaggerItem } from "@/components/ui/stagger-container";
-import ServiceFeaturesPricing from "@/components/sections/service-features-pricing";
 import FAQSection, { socialContentFAQs } from "@/components/sections/faq-section";
-import { getServiceById } from "@/lib/services-data";
+import { ServiceHero } from "@/components/ui/page-hero";
+import BenefitsGrid, { BenefitItem } from "@/components/sections/benefits-grid";
+import ProcessTimeline, { ProcessStep } from "@/components/sections/process-timeline";
+import CTAWithServices, { RelatedService } from "@/components/sections/cta-with-services";
 
-const benefits = [
-  "Présence cohérente sur les réseaux",
-  "Contenu engageant et de qualité",
-  "Gain de temps considérable",
-  "Stratégie éditoriale réfléchie",
-  "Visuels professionnels",
+const benefits: BenefitItem[] = [
+  {
+    icon: Calendar,
+    title: "Présence cohérente",
+    description:
+      "Planning éditorial structuré pour une présence régulière et professionnelle sur vos réseaux sociaux.",
+  },
+  {
+    icon: Palette,
+    title: "Visuels professionnels",
+    description:
+      "Créations graphiques sur mesure qui reflètent votre identité de marque et captent l'attention de votre audience.",
+  },
+  {
+    icon: Clock,
+    title: "Gain de temps considérable",
+    description:
+      "Déléguez la création et la planification de votre contenu pour vous concentrer sur votre coeur de métier.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Engagement optimisé",
+    description:
+      "Contenus créés selon les meilleures pratiques pour maximiser les interactions avec votre communauté.",
+  },
 ];
 
 const included = [
-  "8-10 posts par mois",
-  "Création visuelle",
-  "Rédaction de captions",
-  "Recherche de hashtags",
-  "Planning éditorial",
-  "Scheduling automatique",
+  {
+    icon: ImageIcon,
+    name: "8-10 posts par mois",
+    description: "Contenu régulier pour maintenir l'engagement.",
+  },
+  {
+    icon: Palette,
+    name: "Création visuelle",
+    description: "Visuels personnalisés pour chaque publication.",
+  },
+  {
+    icon: PenTool,
+    name: "Rédaction de captions",
+    description: "Textes optimisés pour l'engagement.",
+  },
+  {
+    icon: Hash,
+    name: "Recherche de hashtags",
+    description: "Hashtags stratégiques pour la visibilité.",
+  },
+  {
+    icon: Calendar,
+    name: "Planning éditorial",
+    description: "Calendrier structuré et thématique.",
+  },
+  {
+    icon: Clock,
+    name: "Scheduling automatique",
+    description: "Publication aux heures optimales.",
+  },
+];
+
+const processSteps: ProcessStep[] = [
+  {
+    title: "Briefing & Stratégie",
+    description:
+      "Définition de votre ligne éditoriale, ton de communication et objectifs mensuels. Analyse de votre audience cible.",
+  },
+  {
+    title: "Création du calendrier",
+    description:
+      "Planification des thématiques et sujets du mois. Proposition d'un calendrier éditorial complet pour validation.",
+  },
+  {
+    title: "Production des contenus",
+    description:
+      "Création des visuels, rédaction des captions et recherche des hashtags optimaux pour chaque publication.",
+  },
+  {
+    title: "Publication & Suivi",
+    description:
+      "Programmation automatique aux heures optimales et suivi des performances avec rapport mensuel.",
+  },
+];
+
+const relatedServices: RelatedService[] = [
+  { name: "Social Media Ads", href: "/services/social-media-ads" },
+  { name: "Photographie", href: "/services/photography" },
+  { name: "Vidéo", href: "/services/video-production" },
 ];
 
 export default function SocialContentPageContent() {
-  const service = getServiceById("social-content");
-  if (!service) return null;
-
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="bg-gradient-to-b from-background to-muted/50 py-20">
+      <ServiceHero
+        backgroundImage="https://images.unsplash.com/photo-1432888622747-4eb9a8f2c2c9?w=1920&h=1080&fit=crop&q=80"
+        backgroundAlt="Social media content creation and editorial calendar"
+      >
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            <FadeIn direction="left">
-              <div className="inline-flex items-center gap-2 rounded-full border bg-background px-4 py-2 text-sm font-medium">
+          <div className="mx-auto max-w-3xl text-center">
+            <FadeIn immediate>
+              <div className="inline-flex items-center gap-2 rounded-full border border-foreground/20 bg-foreground/10 backdrop-blur-md px-4 py-2 text-sm font-medium text-foreground">
                 <Calendar className="h-4 w-4 text-primary" />
                 <span>Création de Contenu Social</span>
               </div>
-              <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl">
+              <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
                 Contenu social qui engage votre audience
               </h1>
               <p className="mt-6 text-lg text-muted-foreground">
                 Calendrier éditorial complet avec visuels créatifs, captions
                 optimisées et hashtags stratégiques pour maximiser votre
-                engagement.
+                engagement sur les réseaux sociaux.
               </p>
-              <div className="mt-8">
+              <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center justify-center gap-2 rounded-md bg-black dark:bg-white px-8 py-3 font-semibold text-white dark:text-black transition-all hover:bg-gray-900 dark:hover:bg-gray-100 hover:scale-105"
+                  className="group inline-flex items-center justify-center gap-2 rounded-md bg-black dark:bg-white px-8 py-3 font-semibold text-white dark:text-black transition-all hover:bg-gray-800 dark:hover:bg-gray-100 hover:scale-105"
                 >
                   Démarrer maintenant
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
             </FadeIn>
-            <FadeIn direction="right" delay={0.2}>
-              <div className="aspect-square overflow-hidden rounded-2xl shadow-xl">
-                <Image
-                  src="https://images.unsplash.com/photo-1432888622747-4eb9a8f2c2c9?w=800&h=800&fit=crop&q=80"
-                  alt="Social media content creation and editorial calendar"
-                  width={800}
-                  height={800}
-                  className="object-cover transition-transform hover:scale-105 duration-700"
-                />
-              </div>
-            </FadeIn>
           </div>
         </div>
-      </section>
+      </ServiceHero>
 
-      {/* Benefits */}
-      <section className="py-20">
+      {/* Benefits Grid */}
+      <BenefitsGrid
+        title="Pourquoi déléguer votre contenu social"
+        subtitle="Concentrez-vous sur votre métier, nous gérons votre présence en ligne"
+        benefits={benefits}
+        columns={2}
+      />
+
+      {/* Ce qui est inclus */}
+      <section className="bg-muted/50 py-20">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="mx-auto max-w-3xl">
-            <FadeIn>
-              <h2 className="text-3xl font-bold">
-                Pourquoi déléguer votre contenu social ?
-              </h2>
-            </FadeIn>
-            <StaggerContainer className="mt-8 space-y-4">
-              {benefits.map((benefit) => (
-                <StaggerItem key={benefit}>
-                  <div className="flex items-start gap-3 transition-transform hover:translate-x-2">
-                    <CheckCircle2 className="mt-0.5 h-6 w-6 flex-shrink-0 text-primary" />
-                    <span className="text-lg">{benefit}</span>
-                  </div>
-                </StaggerItem>
-              ))}
-            </StaggerContainer>
-          </div>
-        </div>
-      </section>
-
-      {/* Features & Pricing */}
-      <section className="bg-muted/50">
-        <ServiceFeaturesPricing service={service} />
-      </section>
-
-      {/* Included */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <FadeIn>
+          <div className="mx-auto max-w-5xl">
+            <FadeIn className="text-center">
               <h2 className="text-3xl font-bold">Ce qui est inclus</h2>
+              <p className="mt-4 text-muted-foreground">
+                Un service complet pour une présence sociale professionnelle
+              </p>
             </FadeIn>
-            <StaggerContainer className="mt-12 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-              {included.map((item) => (
-                <StaggerItem key={item}>
-                  <div className="rounded-lg border bg-card p-6 transition-all hover:shadow-lg hover:border-primary/50 hover:scale-105">
-                    <CheckCircle2 className="mx-auto h-6 w-6 text-primary" />
-                    <p className="mt-3 font-semibold text-sm">{item}</p>
-                  </div>
-                </StaggerItem>
-              ))}
+            <StaggerContainer className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {included.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <StaggerItem key={item.name}>
+                    <div className="h-full rounded-xl border-2 bg-card p-6 transition-all hover:border-primary/50 hover:shadow-lg">
+                      <div className="inline-flex rounded-lg bg-primary/10 p-3">
+                        <Icon className="h-6 w-6 text-primary" />
+                      </div>
+                      <h3 className="mt-4 font-semibold text-lg">{item.name}</h3>
+                      <p className="mt-2 text-sm text-muted-foreground">
+                        {item.description}
+                      </p>
+                    </div>
+                  </StaggerItem>
+                );
+              })}
             </StaggerContainer>
           </div>
         </div>
       </section>
+
+      {/* Process Timeline */}
+      <ProcessTimeline
+        title="Notre méthodologie"
+        subtitle="Un processus structuré pour un contenu de qualité"
+        steps={processSteps}
+      />
 
       {/* FAQ */}
       <FAQSection
@@ -131,29 +201,14 @@ export default function SocialContentPageContent() {
         className="bg-muted/50"
       />
 
-      {/* CTA */}
-      <section className="bg-primary py-20">
-        <div className="container mx-auto px-4 lg:px-8">
-          <FadeIn className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold text-primary-foreground">
-              Prêt à avoir une présence sociale impactante ?
-            </h2>
-            <p className="mt-4 text-lg text-primary-foreground/90">
-              Laissez-nous créer du contenu de qualité pendant que vous vous
-              concentrez sur votre business.
-            </p>
-            <div className="mt-8">
-              <Link
-                href="/contact"
-                className="group inline-flex items-center gap-2 rounded-md bg-black dark:bg-white px-8 py-3 font-semibold text-white dark:text-black transition-all hover:bg-gray-900 dark:hover:bg-gray-100 hover:scale-105"
-              >
-                Commencer maintenant
-                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
+      {/* CTA with Related Services */}
+      <CTAWithServices
+        title="Prêt à avoir une présence sociale impactante ?"
+        description="Laissez-nous créer du contenu de qualité pendant que vous vous concentrez sur votre business."
+        buttonText="Demandez un devis"
+        buttonHref="/devis-personnalise"
+        relatedServices={relatedServices}
+      />
     </div>
   );
 }

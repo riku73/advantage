@@ -25,19 +25,12 @@ import FadeIn from "@/components/ui/fade-in";
 import StaggerContainer, { StaggerItem } from "@/components/ui/stagger-container";
 import FAQSection, { sitesWebFAQs } from "@/components/sections/faq-section";
 import { ServiceHero } from "@/components/ui/page-hero";
-import StatsSection, { StatItem } from "@/components/sections/stats-section";
 import CTAWithServices, { RelatedService } from "@/components/sections/cta-with-services";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-
-const stats: StatItem[] = [
-  { value: "<2.5s", label: "Temps de chargement" },
-  { value: "90+", label: "Score Lighthouse" },
-  { value: "100%", label: "Responsive" },
-];
 
 const relatedServices: RelatedService[] = [
   { name: "SEO", href: "/services/seo" },
@@ -81,9 +74,6 @@ export default function SitesWebPageContent() {
           </div>
         </div>
       </ServiceHero>
-
-      {/* Stats */}
-      <StatsSection stats={stats} className="bg-muted/30" />
 
       {/* Development Process */}
       <section className="py-20">

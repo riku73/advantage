@@ -1,47 +1,137 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import { Briefcase, ArrowRight, CheckCircle2 } from "lucide-react";
+import {
+  Briefcase,
+  ArrowRight,
+  Users,
+  Clock,
+  CheckCircle2,
+  Shield,
+  Globe,
+  Video,
+  Palette,
+  Megaphone,
+  Zap,
+} from "lucide-react";
 import FadeIn from "@/components/ui/fade-in";
 import StaggerContainer, { StaggerItem } from "@/components/ui/stagger-container";
-import ServiceFeaturesPricing from "@/components/sections/service-features-pricing";
 import FAQSection, { projectManagementFAQs } from "@/components/sections/faq-section";
-import { getServiceById } from "@/lib/services-data";
+import { ServiceHero } from "@/components/ui/page-hero";
+import BenefitsGrid, { BenefitItem } from "@/components/sections/benefits-grid";
+import ProcessTimeline, { ProcessStep } from "@/components/sections/process-timeline";
+import CTAWithServices, { RelatedService } from "@/components/sections/cta-with-services";
 
-const benefits = [
-  "Un seul interlocuteur pour tout votre projet",
-  "Coordination de tous les prestataires",
-  "Respect des délais et du budget",
-  "Communication transparente",
-  "Qualité garantie",
+const benefits: BenefitItem[] = [
+  {
+    icon: Users,
+    title: "Un seul interlocuteur",
+    description:
+      "Fini les allers-retours avec plusieurs prestataires. Nous coordonnons tout pour vous avec un point de contact unique.",
+  },
+  {
+    icon: Clock,
+    title: "Respect des délais",
+    description:
+      "Planning rigoureux et suivi quotidien pour garantir le respect de vos deadlines et éviter les retards.",
+  },
+  {
+    icon: Shield,
+    title: "Qualité garantie",
+    description:
+      "Contrôle qualité à chaque étape du projet. Nous ne livrons que des résultats qui répondent à nos standards.",
+  },
+  {
+    icon: CheckCircle2,
+    title: "Budget maîtrisé",
+    description:
+      "Transparence totale sur les coûts. Pas de mauvaises surprises, vous savez exactement ce que vous payez.",
+  },
 ];
 
 const projectTypes = [
-  "Lancement de site web complet",
-  "Campagnes marketing multi-canaux",
-  "Projets de rebranding",
-  "Événements et lancements produits",
-  "Projets de transformation digitale",
-  "Campagnes vidéo et média",
+  {
+    icon: Globe,
+    name: "Lancement de site web",
+    description: "Coordination design, développement, contenu et SEO.",
+  },
+  {
+    icon: Megaphone,
+    name: "Campagnes multi-canaux",
+    description: "Synchronisation SEA, Social Ads, e-mail et contenu.",
+  },
+  {
+    icon: Palette,
+    name: "Projets de rebranding",
+    description: "Logo, charte graphique, supports print et digital.",
+  },
+  {
+    icon: Zap,
+    name: "Lancements produits",
+    description: "Stratégie de lancement et coordination des actions.",
+  },
+  {
+    icon: Video,
+    name: "Campagnes vidéo",
+    description: "Production, montage et diffusion multi-plateformes.",
+  },
+  {
+    icon: Globe,
+    name: "Transformation digitale",
+    description: "Accompagnement global de votre transition numérique.",
+  },
+];
+
+const processSteps: ProcessStep[] = [
+  {
+    title: "Brief & Cadrage",
+    description:
+      "Définition détaillée de vos objectifs, contraintes et attentes. Établissement du périmètre du projet et des KPIs de succès.",
+  },
+  {
+    title: "Planning & Devis",
+    description:
+      "Création du planning détaillé avec les jalons clés. Devis transparent incluant toutes les prestations nécessaires.",
+  },
+  {
+    title: "Coordination des équipes",
+    description:
+      "Sélection et briefing des prestataires. Mise en place des outils de collaboration et suivi du projet.",
+  },
+  {
+    title: "Production & Contrôle",
+    description:
+      "Supervision de toutes les productions avec contrôle qualité à chaque étape. Points réguliers avec vous.",
+  },
+  {
+    title: "Livraison & Bilan",
+    description:
+      "Livraison finale avec documentation. Bilan du projet et recommandations pour la suite.",
+  },
+];
+
+const relatedServices: RelatedService[] = [
+  { name: "Stratégie digitale", href: "/services/digital-strategy" },
+  { name: "Sites Web", href: "/services/sites-web" },
+  { name: "Logo & Branding", href: "/services/logo-branding" },
 ];
 
 export default function ProjectManagementPageContent() {
-  const service = getServiceById("project-management");
-  if (!service) return null;
-
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="bg-gradient-to-b from-background to-muted/50 py-20">
+      <ServiceHero
+        backgroundImage="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&h=1080&fit=crop&q=80"
+        backgroundAlt="Project management and coordination"
+      >
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            <FadeIn direction="left">
-              <div className="inline-flex items-center gap-2 rounded-full border bg-background px-4 py-2 text-sm font-medium">
+          <div className="mx-auto max-w-3xl text-center">
+            <FadeIn immediate>
+              <div className="inline-flex items-center gap-2 rounded-full border border-foreground/20 bg-foreground/10 backdrop-blur-md px-4 py-2 text-sm font-medium text-foreground">
                 <Briefcase className="h-4 w-4 text-primary" />
-                <span>Gestion de projet</span>
+                <span>Gestion de Projet</span>
               </div>
-              <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl">
+              <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
                 On gère vos projets de A à Z
               </h1>
               <p className="mt-6 text-lg text-muted-foreground">
@@ -49,79 +139,66 @@ export default function ProjectManagementPageContent() {
                 marketing. Nous gérons tout pendant que vous vous concentrez sur
                 votre business.
               </p>
-              <div className="mt-8">
+              <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center justify-center gap-2 rounded-md bg-black dark:bg-white px-8 py-3 font-semibold text-white dark:text-black transition-all hover:bg-gray-900 dark:hover:bg-gray-100 hover:scale-105"
+                  className="group inline-flex items-center justify-center gap-2 rounded-md bg-black dark:bg-white px-8 py-3 font-semibold text-white dark:text-black transition-all hover:bg-gray-800 dark:hover:bg-gray-100 hover:scale-105"
                 >
                   Confier mon projet
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
             </FadeIn>
-            <FadeIn direction="right" delay={0.2}>
-              <div className="aspect-square overflow-hidden rounded-2xl shadow-xl">
-                <Image
-                  src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=800&fit=crop&q=80"
-                  alt="Project management and coordination"
-                  width={800}
-                  height={800}
-                  className="object-cover transition-transform hover:scale-105 duration-700"
-                />
-              </div>
-            </FadeIn>
           </div>
         </div>
-      </section>
+      </ServiceHero>
 
-      {/* Benefits */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="mx-auto max-w-3xl">
-            <FadeIn>
-              <h2 className="text-3xl font-bold">
-                Les avantages de l'externalisation
-              </h2>
-            </FadeIn>
-            <StaggerContainer className="mt-8 space-y-4">
-              {benefits.map((benefit) => (
-                <StaggerItem key={benefit}>
-                  <div className="flex items-start gap-3 transition-transform hover:translate-x-2">
-                    <CheckCircle2 className="mt-0.5 h-6 w-6 flex-shrink-0 text-primary" />
-                    <span className="text-lg">{benefit}</span>
-                  </div>
-                </StaggerItem>
-              ))}
-            </StaggerContainer>
-          </div>
-        </div>
-      </section>
-
-      {/* Features & Pricing */}
-      <section className="bg-muted/50">
-        <ServiceFeaturesPricing service={service} />
-      </section>
+      {/* Benefits Grid */}
+      <BenefitsGrid
+        title="Les avantages de l'externalisation"
+        subtitle="Gagnez du temps et de la sérénité"
+        benefits={benefits}
+        columns={2}
+      />
 
       {/* Project Types */}
-      <section className="py-20">
+      <section className="bg-muted/50 py-20">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <FadeIn>
+          <div className="mx-auto max-w-5xl">
+            <FadeIn className="text-center">
               <h2 className="text-3xl font-bold">Types de projets</h2>
+              <p className="mt-4 text-muted-foreground">
+                Nous coordonnons tous types de projets digitaux et marketing
+              </p>
             </FadeIn>
-            <StaggerContainer className="mt-12 grid gap-4 sm:grid-cols-2">
-              {projectTypes.map((type) => (
-                <StaggerItem key={type}>
-                  <div className="rounded-lg border bg-card p-6 text-left transition-all hover:shadow-lg hover:border-primary/50 hover:scale-105">
-                    <CheckCircle2 className="h-6 w-6 text-primary" />
-                    <p className="mt-3 font-semibold">{type}</p>
-                  </div>
-                </StaggerItem>
-              ))}
+            <StaggerContainer className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {projectTypes.map((project) => {
+                const Icon = project.icon;
+                return (
+                  <StaggerItem key={project.name}>
+                    <div className="h-full rounded-xl border-2 bg-card p-6 transition-all hover:border-primary/50 hover:shadow-lg">
+                      <div className="inline-flex rounded-lg bg-primary/10 p-3">
+                        <Icon className="h-6 w-6 text-primary" />
+                      </div>
+                      <h3 className="mt-4 font-semibold text-lg">{project.name}</h3>
+                      <p className="mt-2 text-sm text-muted-foreground">
+                        {project.description}
+                      </p>
+                    </div>
+                  </StaggerItem>
+                );
+              })}
             </StaggerContainer>
           </div>
         </div>
       </section>
+
+      {/* Process Timeline */}
+      <ProcessTimeline
+        title="Notre méthodologie"
+        subtitle="Un processus éprouvé pour des projets réussis"
+        steps={processSteps}
+      />
 
       {/* FAQ */}
       <FAQSection
@@ -131,29 +208,14 @@ export default function ProjectManagementPageContent() {
         className="bg-muted/50"
       />
 
-      {/* CTA */}
-      <section className="bg-primary py-20">
-        <div className="container mx-auto px-4 lg:px-8">
-          <FadeIn className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold text-primary-foreground">
-              Prêt à déléguer votre projet ?
-            </h2>
-            <p className="mt-4 text-lg text-primary-foreground/90">
-              Contactez-nous pour discuter de votre projet et recevoir un devis
-              personnalisé.
-            </p>
-            <div className="mt-8">
-              <Link
-                href="/devis-personnalise"
-                className="group inline-flex items-center gap-2 rounded-md bg-black dark:bg-white px-8 py-3 font-semibold text-white dark:text-black transition-all hover:bg-gray-900 dark:hover:bg-gray-100 hover:scale-105"
-              >
-                Demandez un devis
-                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
+      {/* CTA with Related Services */}
+      <CTAWithServices
+        title="Prêt à déléguer votre projet ?"
+        description="Contactez-nous pour discuter de votre projet et recevoir un devis personnalisé."
+        buttonText="Demandez un devis"
+        buttonHref="/devis-personnalise"
+        relatedServices={relatedServices}
+      />
     </div>
   );
 }
