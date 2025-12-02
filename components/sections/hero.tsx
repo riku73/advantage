@@ -83,7 +83,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mx-auto mt-8 max-w-2xl text-lg text-muted-foreground sm:text-xl"
           >
-            SEO, publicité, sites web — on accélère votre croissance digitale au Luxembourg.
+            SEO, publicité, sites web — nous accélérons votre croissance digitale au Luxembourg.
           </motion.p>
 
           <motion.div
