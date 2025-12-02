@@ -11,8 +11,8 @@ export default function Hero() {
       {/* Background Image with Duotone Effect */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&h=1080&fit=crop&q=80"
-          alt="Digital marketing workspace with analytics dashboard"
+          src="/images/agence-marketing-digital-luxembourg-hero.jpg"
+          alt="Agence marketing digital Luxembourg - ADVANTAGE"
           fill
           className="object-cover grayscale contrast-125"
           priority
