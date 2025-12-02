@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown, Globe, Palette, Share2, Video, Lightbulb, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -54,6 +55,7 @@ const servicesByCategory = categoryOrder.reduce((acc, category) => {
 }, {} as Record<ServiceCategory, typeof services>);
 
 export default function Header() {
+  const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -303,18 +305,21 @@ export default function Header() {
                         const Icon = categoryIcons[category];
                         return (
                           <div key={category}>
-                            <Link
-                              href={categoryLinks[category]}
+                            <button
+                              type="button"
                               className="inline-flex items-center gap-2 py-2 text-sm font-semibold text-foreground hover:text-primary active:text-primary transition-colors"
                               onClick={(e) => {
                                 e.stopPropagation();
+                                e.preventDefault();
+                                const href = categoryLinks[category];
                                 setMobileMenuOpen(false);
                                 setMobileServicesOpen(false);
+                                router.push(href);
                               }}
                             >
                               <Icon className="h-4 w-4 text-primary" />
                               {categoryLabels[category]}
-                            </Link>
+                            </button>
                             <ul className="mt-2 space-y-1 pl-6">
                               {servicesByCategory[category].map((service) => (
                                 <li key={service.id}>
