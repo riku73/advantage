@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown, Globe, Palette, Share2, Video, Lightbulb, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -39,15 +38,6 @@ const categoryOrder: ServiceCategory[] = [
   "consulting",
 ];
 
-// Category links - link to first service in each category
-const categoryLinks: Record<ServiceCategory, string> = {
-  "digital-web": "/services/sites-web",
-  "visual-print": "/services/logo-branding",
-  "social-media": "/services/social-media-ads",
-  "media-production": "/services/video-production",
-  "consulting": "/services/digital-strategy",
-};
-
 // Group services by category
 const servicesByCategory = categoryOrder.reduce((acc, category) => {
   acc[category] = services.filter(s => s.category === category);
@@ -55,7 +45,6 @@ const servicesByCategory = categoryOrder.reduce((acc, category) => {
 }, {} as Record<ServiceCategory, typeof services>);
 
 export default function Header() {
-  const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -305,21 +294,10 @@ export default function Header() {
                         const Icon = categoryIcons[category];
                         return (
                           <div key={category}>
-                            <button
-                              type="button"
-                              className="inline-flex items-center gap-2 py-2 text-sm font-semibold text-foreground hover:text-primary active:text-primary transition-colors"
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                e.preventDefault();
-                                const href = categoryLinks[category];
-                                setMobileMenuOpen(false);
-                                setMobileServicesOpen(false);
-                                router.push(href);
-                              }}
-                            >
+                            <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
                               <Icon className="h-4 w-4 text-primary" />
                               {categoryLabels[category]}
-                            </button>
+                            </div>
                             <ul className="mt-2 space-y-1 pl-6">
                               {servicesByCategory[category].map((service) => (
                                 <li key={service.id}>
@@ -385,17 +363,12 @@ export default function Header() {
 function CategoryHeader({ category }: { category: ServiceCategory }) {
   const Icon = categoryIcons[category];
   return (
-    <NavigationMenuLink asChild>
-      <Link
-        href={categoryLinks[category]}
-        className="flex items-center gap-2 group"
-      >
-        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/20">
-          <Icon className="h-4 w-4 text-primary" />
-        </div>
-        <span className="font-semibold text-sm group-hover:text-primary transition-colors">{categoryLabels[category]}</span>
-      </Link>
-    </NavigationMenuLink>
+    <div className="flex items-center gap-2">
+      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10">
+        <Icon className="h-4 w-4 text-primary" />
+      </div>
+      <span className="font-semibold text-sm">{categoryLabels[category]}</span>
+    </div>
   );
 }
 
