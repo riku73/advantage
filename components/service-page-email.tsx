@@ -152,6 +152,7 @@ export default function EmailMarketingPageContent() {
 
       {/* Benefits Grid */}
       <BenefitsGrid
+        backgroundImage="/images/email-marketing-luxembourg.jpg"
         title="Pourquoi exploiter l'e-mail marketing ?"
         subtitle="Le canal marketing le plus rentable pour votre entreprise"
         benefits={benefits}

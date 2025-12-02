@@ -153,6 +153,7 @@ export default function SEAPageContent() {
 
       {/* Benefits Grid */}
       <BenefitsGrid
+        backgroundImage="/images/sea-publicite-google-ads-luxembourg.jpg"
         title="Pourquoi choisir Google Ads ?"
         subtitle="La publicité payante la plus efficace pour générer du trafic qualifié"
         benefits={benefits}

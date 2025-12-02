@@ -136,6 +136,7 @@ export default function LandingPagesPageContent() {
 
       {/* Benefits Grid */}
       <BenefitsGrid
+        backgroundImage="/images/landing-page-conversion-luxembourg.jpg"
         title="Pourquoi créer une landing page dédiée ?"
         subtitle="Une approche data-driven pour maximiser votre retour sur investissement"
         benefits={benefits}

@@ -115,10 +115,34 @@ const projectCategories = [
   },
 ];
 
+// Custom order for digital-web services (same as services page)
+const digitalWebOrder = [
+  "landing-pages",
+  "sites-web",
+  "seo",
+  "sea",
+  "email-marketing",
+  "email-deliverability",
+];
+
 // Group services by category for easy filtering
 const getServicesForCategory = (category: string) => {
   if (category === "autre") return services; // Show all services for "autre"
-  return services.filter(s => s.category === category);
+
+  const filteredServices = services.filter(s => s.category === category);
+
+  // Apply custom order for digital-web
+  if (category === "digital-web") {
+    filteredServices.sort((a, b) => {
+      const aIndex = digitalWebOrder.indexOf(a.id);
+      const bIndex = digitalWebOrder.indexOf(b.id);
+      if (aIndex === -1) return 1;
+      if (bIndex === -1) return -1;
+      return aIndex - bIndex;
+    });
+  }
+
+  return filteredServices;
 };
 
 const budgetRanges = [

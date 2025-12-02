@@ -149,6 +149,7 @@ export default function DigitalStrategyPageContent() {
 
       {/* Benefits Grid */}
       <BenefitsGrid
+        backgroundImage="/images/strategie-digitale-consulting-luxembourg.jpg"
         title="Pourquoi faire appel à un consultant digital ?"
         subtitle="Gagnez du temps et évitez les erreurs coûteuses"
         benefits={benefits}

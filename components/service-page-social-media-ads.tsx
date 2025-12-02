@@ -152,6 +152,7 @@ export default function SocialMediaAdsPageContent() {
 
       {/* Benefits Grid */}
       <BenefitsGrid
+        backgroundImage="/images/social-media-marketing-luxembourg.jpg"
         title="Pourquoi parier sur la publicité sociale ?"
         subtitle="La publicité sociale pour atteindre vos objectifs business"
         benefits={benefits}

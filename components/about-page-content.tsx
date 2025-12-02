@@ -70,7 +70,7 @@ export default function AboutPageContent() {
       {/* Story */}
       <section className="py-20">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="mx-auto max-w-6xl grid gap-12 lg:grid-cols-2 items-center">
+          <div className="grid gap-12 lg:grid-cols-2 items-center">
             <FadeIn direction="left">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Notre histoire</h2>
               <div className="mt-6 space-y-4 text-muted-foreground">
@@ -150,7 +150,7 @@ export default function AboutPageContent() {
       {/* Mission & CTA */}
       <section className="bg-primary py-20">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="mx-auto max-w-6xl grid gap-12 lg:grid-cols-2 items-center">
+          <div className="grid gap-12 lg:grid-cols-2 items-center">
             <FadeIn direction="left">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-primary-foreground">Notre mission</h2>
               <p className="mt-6 text-lg text-primary-foreground/90">

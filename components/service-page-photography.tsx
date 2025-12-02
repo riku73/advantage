@@ -154,6 +154,7 @@ export default function PhotographyPageContent() {
 
       {/* Benefits Grid */}
       <BenefitsGrid
+        backgroundImage="/images/photographie-professionnelle-luxembourg.jpg"
         title="Pourquoi privilégier la photographie professionnelle ?"
         subtitle="Valorisez votre image avec des visuels de qualité"
         benefits={benefits}

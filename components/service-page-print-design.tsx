@@ -155,6 +155,7 @@ export default function PrintDesignPageContent() {
 
       {/* Benefits Grid */}
       <BenefitsGrid
+        backgroundImage="/images/design-print-luxembourg.jpg"
         title="Pourquoi soigner votre design print ?"
         subtitle="Des créations professionnelles pour votre communication"
         benefits={benefits}

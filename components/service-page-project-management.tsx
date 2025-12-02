@@ -155,6 +155,7 @@ export default function ProjectManagementPageContent() {
 
       {/* Benefits Grid */}
       <BenefitsGrid
+        backgroundImage="/images/gestion-projet-marketing-luxembourg.jpg"
         title="Pourquoi externaliser la gestion de vos projets ?"
         subtitle="Gagnez du temps et de la sérénité"
         benefits={benefits}

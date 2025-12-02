@@ -156,6 +156,7 @@ export default function LogoBrandingPageContent() {
 
       {/* Benefits Grid */}
       <BenefitsGrid
+        backgroundImage="/images/creation-logo-branding-luxembourg.jpg"
         title="Pourquoi construire une identité visuelle forte ?"
         subtitle="Une image de marque professionnelle pour votre entreprise"
         benefits={benefits}

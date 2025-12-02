@@ -148,6 +148,7 @@ export default function SocialContentPageContent() {
 
       {/* Benefits Grid */}
       <BenefitsGrid
+        backgroundImage="/images/creation-contenu-reseaux-sociaux-luxembourg.jpg"
         title="Pourquoi déléguer la création de votre contenu social ?"
         subtitle="Concentrez-vous sur votre métier, nous gérons votre présence en ligne"
         benefits={benefits}

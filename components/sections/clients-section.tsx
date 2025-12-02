@@ -36,7 +36,7 @@ const clients: Client[] = [
   {
     name: "Art & Beauté",
     sector: "Institut de beauté",
-    description: "Institut de beauté à Bonnevoie proposant soins visage, massages et ongles. Plus de 10 ans d'expertise.",
+    description: "Soins visage, massages et ongles à Bonnevoie. Plus de 10 ans d'expertise.",
     services: ["Site e-commerce", "Boutique en ligne", "SEO local"],
     website: "https://art-beaute.lu",
     logo: "/clients/art-beaute.png",
@@ -44,7 +44,7 @@ const clients: Client[] = [
   {
     name: "Paladar",
     sector: "E-commerce gastronomie",
-    description: "E-commerce de produits portugais premium. Paniers gourmands pour entreprises et particuliers.",
+    description: "Produits portugais premium. Paniers gourmands pour entreprises et particuliers.",
     services: ["Site e-commerce complet", "Stratégie de contenu", "Réseaux sociaux"],
     website: "https://paladar.lu",
     logo: "/clients/paladar.png",
@@ -78,7 +78,7 @@ const clients: Client[] = [
     name: "ProSolutions",
     sector: "Transport & Logistique",
     description: "Service de transport, logistique, supply chain et stockage au Luxembourg.",
-    services: ["Création d'entreprise", "Création de logo", "Réservation de domaine"],
+    services: ["Lancement d'entreprise", "Logo", "Domaine"],
     website: "https://prosolutions.lu",
     logo: "/clients/prosolutions.png",
   },
@@ -148,7 +148,7 @@ export default function ClientsSection({
   }
 
   return (
-    <section className="py-20 bg-muted/50">
+    <section id="clients" className="py-20 bg-muted/50 scroll-mt-20">
       <div className="container mx-auto px-4 lg:px-8">
         <FadeIn className="text-center mb-16">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">{title}</h2>
@@ -218,7 +218,7 @@ export default function ClientsSection({
                       {client.services.map((service) => (
                         <span
                           key={service}
-                          className="inline-flex rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary"
+                          className="inline-flex rounded-md border-2 border-primary/50 bg-primary/5 px-3 py-1 text-xs font-medium text-primary"
                         >
                           {service}
                         </span>

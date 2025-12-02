@@ -159,7 +159,7 @@ export default function ServicesGrid() {
                       ))}
                     </ul>
 
-                    <div className="mt-6 pt-6 border-t border-border/50">
+                    <div className="mt-6 pt-6 border-t border-current/20">
                       <Link
                         href={`/services#${category.id}`}
                         className="group inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"

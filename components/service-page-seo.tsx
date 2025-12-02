@@ -123,6 +123,7 @@ export default function SEOPageContent() {
 
       {/* Benefits */}
       <BenefitsGrid
+        backgroundImage="/images/seo-referencement-luxembourg.jpg"
         title="Pourquoi travailler votre référencement naturel ?"
         subtitle="Un investissement rentable sur le long terme"
         benefits={benefits}

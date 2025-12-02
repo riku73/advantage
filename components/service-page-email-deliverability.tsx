@@ -147,6 +147,7 @@ export default function EmailDeliverabilityPageContent() {
 
       {/* Benefits Grid */}
       <BenefitsGrid
+        backgroundImage="/images/delivrabilite-email-luxembourg.jpg"
         title="Pourquoi optimiser la délivrabilité de vos e-mails ?"
         subtitle="Une bonne délivrabilité est essentielle pour le succès de vos campagnes e-mail"
         benefits={benefits}

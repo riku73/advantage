@@ -1,30 +1,51 @@
 "use client";
 
+import { useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import FadeIn from "@/components/ui/fade-in";
+
+function ParallaxImage({ src, alt }: { src: string; alt: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+  const y = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
+
+  return (
+    <div ref={ref} className="absolute inset-0 -z-20 overflow-hidden">
+      <motion.div style={{ y }} className="absolute inset-[-20%] w-[140%] h-[140%]">
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          className="object-cover grayscale"
+        />
+      </motion.div>
+    </div>
+  );
+}
 
 export default function CtaSection() {
   return (
-    <section className="relative overflow-hidden bg-primary py-20 sm:py-24">
-      {/* Decorative elements */}
-      <div className="absolute inset-0 -z-10">
-        <motion.div
-          initial={{ opacity: 0, x: 100 }}
-          whileInView={{ opacity: 0.2, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1 }}
-          className="absolute right-0 top-0 h-full w-full bg-gradient-to-l from-accent/20 to-transparent"
-        />
-      </div>
+    <section className="relative overflow-hidden py-20 sm:py-24">
+      {/* Parallax background image */}
+      <ParallaxImage
+        src="/images/agence-marketing-luxembourg-equipe.jpg"
+        alt="Équipe ADVANTAGE - Agence marketing Luxembourg"
+      />
+      {/* Primary color blur overlay */}
+      <div className="absolute inset-0 -z-10 bg-white/80 dark:bg-gray-900/85 backdrop-blur-sm" />
 
       <div className="container mx-auto px-4 lg:px-8">
         <FadeIn className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Prêt à faire décoller votre présence digitale ?
           </h2>
-          <p className="mt-6 text-lg text-primary-foreground/90">
+          <p className="mt-6 text-lg text-muted-foreground">
             Notre équipe vous accompagne de A à Z dans votre
             croissance digitale. Parlons de votre projet.
           </p>

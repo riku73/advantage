@@ -154,6 +154,7 @@ export default function VideoProductionPageContent() {
 
       {/* Benefits Grid */}
       <BenefitsGrid
+        backgroundImage="/images/production-video-luxembourg.jpg"
         title="Pourquoi miser sur la production vidéo ?"
         subtitle="Le format le plus engageant pour votre communication"
         benefits={benefits}

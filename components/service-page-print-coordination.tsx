@@ -155,6 +155,7 @@ export default function PrintCoordinationPageContent() {
 
       {/* Benefits Grid */}
       <BenefitsGrid
+        backgroundImage="/images/coordination-impression-luxembourg.jpg"
         title="Pourquoi nous confier vos impressions ?"
         subtitle="Simplifiez vos impressions avec un partenaire de confiance"
         benefits={benefits}
