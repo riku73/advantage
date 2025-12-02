@@ -61,9 +61,11 @@ export default function Header() {
     <header
       className={cn(
         "sticky top-0 z-50 w-full transition-all duration-300",
-        isScrolled
-          ? "border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
-          : "bg-transparent border-transparent"
+        mobileMenuOpen
+          ? "bg-white dark:bg-zinc-950 border-b border-border"
+          : isScrolled
+            ? "border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+            : "bg-transparent border-transparent"
       )}
     >
       <nav className="container mx-auto flex h-16 items-center justify-between px-4 lg:px-8">
@@ -96,12 +98,16 @@ export default function Header() {
             type="button"
             className={cn(
               "-m-2.5 inline-flex items-center justify-center rounded-md p-2.5",
-              isScrolled ? "text-foreground" : "text-black dark:text-white"
+              mobileMenuOpen || isScrolled ? "text-foreground" : "text-black dark:text-white"
             )}
-            onClick={() => setMobileMenuOpen(true)}
-            aria-label="Ouvrir le menu"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
           >
-            <Menu className="h-6 w-6" aria-hidden="true" />
+            {mobileMenuOpen ? (
+              <X className="h-6 w-6" aria-hidden="true" />
+            ) : (
+              <Menu className="h-6 w-6" aria-hidden="true" />
+            )}
           </button>
         </div>
 
@@ -245,48 +251,18 @@ export default function Header() {
       {/* Mobile menu */}
       <div
         className={cn(
-          "fixed inset-0 z-50 lg:hidden",
+          "fixed inset-x-0 top-16 bottom-0 z-40 lg:hidden",
           mobileMenuOpen ? "block" : "hidden"
         )}
       >
         <div
-          className="fixed inset-0 bg-black/50 dark:bg-black/70"
+          className="fixed inset-x-0 top-16 bottom-0 bg-black/50 dark:bg-black/70"
           onClick={() => setMobileMenuOpen(false)}
           aria-hidden="true"
         />
 
-        <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-background px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-border">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
-              <Image
-                src="/logo-advantage-normal.svg"
-                alt="Advantage"
-                width={180}
-                height={28}
-                className="h-7 w-auto dark:hidden"
-              />
-              <Image
-                src="/logo-advantage-negative.svg"
-                alt="Advantage"
-                width={180}
-                height={28}
-                className="hidden h-7 w-auto dark:block"
-              />
-            </Link>
-            <div className="flex items-center gap-3">
-              <ThemeToggle />
-              <button
-                type="button"
-                className="-m-2.5 rounded-md p-2.5 text-foreground"
-                onClick={() => setMobileMenuOpen(false)}
-                aria-label="Fermer le menu"
-              >
-                <X className="h-6 w-6" aria-hidden="true" />
-              </button>
-            </div>
-          </div>
-
-          <div className="mt-6 flow-root">
+        <div className="fixed top-16 bottom-0 right-0 z-50 w-full overflow-y-auto bg-white dark:bg-zinc-950 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-border">
+          <div className="flow-root">
             <div className="-my-6 divide-y divide-border">
               <div className="space-y-1 py-6">
                 <Link
