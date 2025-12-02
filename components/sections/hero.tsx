@@ -63,7 +63,8 @@ export default function Hero() {
           >
             Pendant que vous hésitez,
             <br />
-            <span className="whitespace-nowrap">d&apos;autres prennent l&apos;<Shuffle
+            d&apos;autres prennent{" "}
+            <span className="whitespace-nowrap inline-flex items-baseline">l&apos;<Shuffle
                   text="ADVANTAGE"
                   tag="span"
                   className="text-foreground"
