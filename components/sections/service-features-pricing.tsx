@@ -25,7 +25,7 @@ export default function ServiceFeaturesPricing({
         <div className="mx-auto max-w-3xl">
           <FadeIn>
             <div className="flex items-center justify-between">
-              <h2 className="text-3xl font-bold">Ce qui est inclus</h2>
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Ce qui est inclus</h2>
             </div>
           </FadeIn>
 

@@ -1,23 +1,22 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Loader2, CheckCircle2 } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { Loader2 } from "lucide-react";
 import { contactFormSchema, type ContactFormData } from "@/lib/schemas/contact-form";
 import { submitContactForm } from "@/app/actions/submit-contact-form";
 
 export default function ContactForm() {
+  const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
   });
@@ -28,60 +27,13 @@ export default function ContactForm() {
 
     const result = await submitContactForm(data);
 
-    setIsSubmitting(false);
-
     if (result.success) {
-      setIsSuccess(true);
-      reset();
+      router.push("/merci");
     } else {
+      setIsSubmitting(false);
       setErrorMessage(result.message);
     }
   };
-
-  if (isSuccess) {
-    return (
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        className="rounded-2xl border bg-card p-8 text-center"
-      >
-        <motion.div
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-          className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary/10"
-        >
-          <CheckCircle2 className="h-8 w-8 text-primary" />
-        </motion.div>
-        <motion.h3
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="mt-6 text-2xl font-bold"
-        >
-          Message envoyé !
-        </motion.h3>
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="mt-4 text-muted-foreground"
-        >
-          Merci pour votre message. Notre équipe vous contactera dans les plus
-          brefs délais.
-        </motion.p>
-        <motion.button
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          onClick={() => setIsSuccess(false)}
-          className="mt-8 text-sm font-semibold text-primary hover:underline transition-all hover:scale-105"
-        >
-          Envoyer un autre message
-        </motion.button>
-      </motion.div>
-    );
-  }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">

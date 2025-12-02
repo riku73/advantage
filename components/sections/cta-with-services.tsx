@@ -28,7 +28,7 @@ export default function CTAWithServices({
     <section className="bg-primary py-20">
       <div className="container mx-auto px-4 lg:px-8">
         <FadeIn className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-bold text-primary-foreground">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-primary-foreground">
             {title}
           </h2>
           <p className="mt-4 text-lg text-primary-foreground/90">

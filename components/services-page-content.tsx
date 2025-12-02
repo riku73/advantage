@@ -49,11 +49,11 @@ export default function ServicesPageContent() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <ServiceHero
-        backgroundImage="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1920&h=1080&fit=crop&q=80"
-        backgroundAlt="Digital marketing services and strategy planning"
+        backgroundImage="/images/services-marketing-digital-luxembourg.jpg"
+        backgroundAlt="Services marketing digital Luxembourg - ADVANTAGE agence"
       >
         <div className="container mx-auto px-4 lg:px-8">
-          <FadeIn className="mx-auto max-w-3xl text-center" immediate>
+          <FadeIn className="mx-auto max-w-5xl text-center" immediate>
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
               Nos Services Marketing Digital
             </h1>
@@ -79,7 +79,7 @@ export default function ServicesPageContent() {
         <section key={category} id={category} className="py-16 scroll-mt-20">
           <div className="container mx-auto px-4 lg:px-8">
             <FadeIn>
-              <h2 className="text-3xl font-bold mb-2">
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-2">
                 {categoryLabels[category as ServiceCategory]}
               </h2>
               <p className="text-muted-foreground mb-12">
@@ -139,7 +139,7 @@ export default function ServicesPageContent() {
       <section className="bg-primary py-20">
         <div className="container mx-auto px-4 lg:px-8">
           <FadeIn className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold text-primary-foreground">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-primary-foreground">
               Parlons de votre projet
             </h2>
             <p className="mt-4 text-lg text-primary-foreground/90">
@@ -149,7 +149,7 @@ export default function ServicesPageContent() {
             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
               <Link
                 href="/contact"
-                className="group inline-flex items-center gap-2 rounded-md bg-black dark:bg-white px-8 py-3 font-semibold text-white dark:text-black transition-all hover:bg-gray-900 dark:hover:bg-gray-100 hover:scale-105"
+                className="group inline-flex items-center gap-2 rounded-md border-2 border-transparent bg-black dark:bg-white px-8 py-3 font-semibold text-white dark:text-black transition-all hover:bg-gray-900 dark:hover:bg-gray-100 hover:scale-105"
               >
                 Contactez-nous
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />

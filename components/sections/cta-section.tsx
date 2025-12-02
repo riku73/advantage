@@ -31,7 +31,7 @@ export default function CtaSection() {
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">
             <Link
               href="/devis-personnalise"
-              className="group inline-flex items-center justify-center gap-2 rounded-md bg-black dark:bg-white px-8 py-3 text-base font-semibold text-white dark:text-black shadow-lg transition-all hover:bg-gray-900 dark:hover:bg-gray-100 hover:shadow-xl hover:scale-105"
+              className="group inline-flex items-center justify-center gap-2 rounded-md border-2 border-transparent bg-black dark:bg-white px-8 py-3 text-base font-semibold text-white dark:text-black shadow-lg transition-all hover:bg-gray-900 dark:hover:bg-gray-100 hover:shadow-xl hover:scale-105"
             >
               Demandez un devis gratuit
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />

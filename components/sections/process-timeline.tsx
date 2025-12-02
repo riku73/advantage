@@ -27,7 +27,7 @@ export default function ProcessTimeline({
         <div className="mx-auto max-w-3xl">
           {(title || subtitle) && (
             <FadeIn className="text-center mb-12">
-              {title && <h2 className="text-3xl font-bold">{title}</h2>}
+              {title && <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">{title}</h2>}
               {subtitle && (
                 <p className="mt-4 text-muted-foreground">{subtitle}</p>
               )}

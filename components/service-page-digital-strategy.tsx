@@ -115,11 +115,11 @@ export default function DigitalStrategyPageContent() {
     <div className="min-h-screen">
       {/* Hero */}
       <ServiceHero
-        backgroundImage="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&h=1080&fit=crop&q=80"
-        backgroundAlt="Digital strategy consulting and business planning"
+        backgroundImage="/images/strategie-digitale-consulting-luxembourg.jpg"
+        backgroundAlt="Stratégie digitale et consulting Luxembourg"
       >
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="mx-auto max-w-5xl text-center">
             <FadeIn immediate>
               <div className="inline-flex items-center gap-2 rounded-full border border-foreground/20 bg-foreground/10 backdrop-blur-md px-4 py-2 text-sm font-medium text-foreground">
                 <Lightbulb className="h-4 w-4 text-primary" />
@@ -149,7 +149,7 @@ export default function DigitalStrategyPageContent() {
 
       {/* Benefits Grid */}
       <BenefitsGrid
-        title="Pourquoi faire appel à un consultant"
+        title="Pourquoi faire appel à un consultant digital ?"
         subtitle="Gagnez du temps et évitez les erreurs coûteuses"
         benefits={benefits}
         columns={2}
@@ -160,7 +160,7 @@ export default function DigitalStrategyPageContent() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="mx-auto max-w-5xl">
             <FadeIn className="text-center">
-              <h2 className="text-3xl font-bold">Sujets couverts</h2>
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Sujets couverts</h2>
               <p className="mt-4 text-muted-foreground">
                 Tous les aspects de votre stratégie digitale peuvent être abordés
               </p>

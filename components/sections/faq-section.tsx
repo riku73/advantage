@@ -31,7 +31,7 @@ export default function FAQSection({
       <div className="container mx-auto px-4 lg:px-8">
         <FadeIn className="mx-auto max-w-3xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold">{title}</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">{title}</h2>
             {subtitle && (
               <p className="mt-4 text-muted-foreground">{subtitle}</p>
             )}

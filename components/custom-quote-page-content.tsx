@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -54,6 +55,7 @@ interface FormData {
   // Step 5: Additional Information
   additionalInfo: string;
   hearAboutUs: string;
+  privacyConsent: boolean;
 }
 
 const initialFormData: FormData = {
@@ -71,6 +73,7 @@ const initialFormData: FormData = {
   company: "",
   additionalInfo: "",
   hearAboutUs: "",
+  privacyConsent: false,
 };
 
 const projectCategories = [
@@ -121,9 +124,7 @@ const getServicesForCategory = (category: string) => {
 const budgetRanges = [
   { value: "small", label: "Petit budget", description: "Projet simple" },
   { value: "medium", label: "Budget moyen", description: "Projet standard" },
-  { value: "large", label: "Budget conséquent", description: "Projet important" },
-  { value: "enterprise", label: "Grand budget", description: "Projet d'envergure" },
-  { value: "flexible", label: "Budget flexible", description: "À discuter" },
+  { value: "large", label: "Grand budget", description: "Projet d'envergure" },
 ];
 
 const timelineOptions = [
@@ -134,14 +135,14 @@ const timelineOptions = [
 ];
 
 export default function CustomQuotePageContent() {
+  const router = useRouter();
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const totalSteps = 5;
 
-  const updateFormData = (field: keyof FormData, value: string | string[]) => {
+  const updateFormData = (field: keyof FormData, value: string | string[] | boolean) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
@@ -164,7 +165,7 @@ export default function CustomQuotePageContent() {
       case 4:
         return formData.fullName !== "" && formData.email !== "" && formData.phone !== "";
       case 5:
-        return true;
+        return formData.privacyConsent === true;
       default:
         return false;
     }
@@ -193,42 +194,8 @@ export default function CustomQuotePageContent() {
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
     console.log("Form submitted:", formData);
-    setIsSubmitted(true);
-    setIsSubmitting(false);
+    router.push("/merci");
   };
-
-  if (isSubmitted) {
-    return (
-      <div className="min-h-screen bg-gradient-to-b from-background to-muted/50 py-20">
-        <div className="container mx-auto px-4 lg:px-8">
-          <FadeIn className="mx-auto max-w-2xl text-center">
-            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-100 dark:bg-green-900/30 mb-6">
-              <CheckCircle2 className="h-10 w-10 text-green-600 dark:text-green-400" />
-            </div>
-            <h1 className="text-4xl font-bold mb-4">Demande envoyée avec succès !</h1>
-            <p className="text-lg text-muted-foreground mb-8">
-              Merci pour votre demande de devis. Notre équipe va l'analyser et vous
-              contacter dans les 24h avec une proposition détaillée.
-            </p>
-            <div className="flex gap-4 justify-center">
-              <Link
-                href="/"
-                className="inline-flex items-center gap-2 rounded-md border-2 border-black dark:border-white bg-transparent px-6 py-3 font-semibold text-black dark:text-white transition-all hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
-              >
-                Retour à l'accueil
-              </Link>
-              <Link
-                href="/services"
-                className="inline-flex items-center gap-2 rounded-md bg-black dark:bg-white px-6 py-3 font-semibold text-white dark:text-black transition-all hover:bg-gray-900 dark:hover:bg-gray-100"
-              >
-                Voir nos services
-              </Link>
-            </div>
-          </FadeIn>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/50 py-20">
@@ -240,7 +207,7 @@ export default function CustomQuotePageContent() {
               <Sparkles className="h-4 w-4 text-primary" />
               <span>Devis personnalisé</span>
             </div>
-            <h1 className="text-4xl font-bold mb-4">
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-4">
               Obtenez votre devis sur mesure
             </h1>
             <p className="text-lg text-muted-foreground">
@@ -471,7 +438,7 @@ export default function CustomQuotePageContent() {
                       value={formData.budget}
                       onValueChange={(value) => updateFormData("budget", value)}
                     >
-                      <div className="grid gap-4">
+                      <div className="grid grid-cols-3 gap-4">
                         {budgetRanges.map((range) => {
                           const isSelected = formData.budget === range.value;
                           return (
@@ -702,6 +669,35 @@ export default function CustomQuotePageContent() {
                           </div>
                         </div>
                       )}
+                    </div>
+                  </div>
+
+                  {/* Privacy Consent */}
+                  <div
+                    className={cn(
+                      "flex items-start space-x-3 rounded-lg border-2 p-4 transition-all cursor-pointer",
+                      formData.privacyConsent
+                        ? "border-primary bg-primary/10 dark:bg-primary/20"
+                        : "border-muted hover:border-primary/50 bg-card hover:bg-accent/50"
+                    )}
+                    onClick={() => updateFormData("privacyConsent", !formData.privacyConsent)}
+                  >
+                    <Checkbox
+                      id="privacyConsent"
+                      checked={formData.privacyConsent}
+                      onCheckedChange={(checked) => updateFormData("privacyConsent", checked === true)}
+                      className="mt-0.5 data-[state=checked]:bg-primary data-[state=checked]:border-primary"
+                    />
+                    <div className="flex-1">
+                      <Label
+                        htmlFor="privacyConsent"
+                        className="text-sm cursor-pointer select-none"
+                      >
+                        J&apos;accepte que mes données soient collectées et traitées par ADVANTAGE dans le cadre de ma demande de devis. <span className="text-destructive">*</span>
+                      </Label>
+                      <p className="text-xs text-muted-foreground mt-1">
+                        Vos données ne seront jamais partagées avec des tiers et sont protégées conformément au RGPD.
+                      </p>
                     </div>
                   </div>
                 </div>

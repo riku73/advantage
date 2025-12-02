@@ -10,11 +10,11 @@ export default function ContactPageContent() {
     <div className="min-h-screen">
       {/* Hero */}
       <ServiceHero
-        backgroundImage="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1920&h=1080&fit=crop&q=80"
-        backgroundAlt="Contact us - communication and collaboration"
+        backgroundImage="/images/contact-agence-marketing-luxembourg.jpg"
+        backgroundAlt="Contactez ADVANTAGE - Agence marketing digital Luxembourg"
       >
         <div className="container mx-auto px-4 lg:px-8">
-          <FadeIn className="mx-auto max-w-3xl text-center">
+          <FadeIn className="mx-auto max-w-5xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
               Parlons de votre projet
             </h1>
@@ -35,7 +35,7 @@ export default function ContactPageContent() {
             <FadeIn direction="left">
               <div className="space-y-8">
                 <div>
-                  <h2 className="text-2xl font-bold">Contactez-nous</h2>
+                  <h2 className="text-2xl font-bold tracking-tight">Contactez-nous</h2>
                   <p className="mt-2 text-muted-foreground">
                     Notre équipe est là pour répondre à toutes vos questions.
                   </p>
@@ -102,7 +102,7 @@ export default function ContactPageContent() {
             {/* Contact Form */}
             <FadeIn direction="right" delay={0.2} className="lg:col-span-2">
               <div className="rounded-2xl border bg-card p-8 transition-all hover:shadow-lg">
-                <h2 className="text-2xl font-bold">
+                <h2 className="text-2xl font-bold tracking-tight">
                   Demandez un devis gratuit
                 </h2>
                 <p className="mt-2 text-muted-foreground">

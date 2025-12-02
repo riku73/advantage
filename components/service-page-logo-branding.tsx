@@ -122,11 +122,11 @@ export default function LogoBrandingPageContent() {
     <div className="min-h-screen">
       {/* Hero */}
       <ServiceHero
-        backgroundImage="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1920&h=1080&fit=crop&q=80"
-        backgroundAlt="Logo design and brand identity creation"
+        backgroundImage="/images/creation-logo-branding-luxembourg.jpg"
+        backgroundAlt="Création logo et identité visuelle Luxembourg"
       >
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="mx-auto max-w-5xl text-center">
             <FadeIn immediate>
               <div className="inline-flex items-center gap-2 rounded-full border border-foreground/20 bg-foreground/10 backdrop-blur-md px-4 py-2 text-sm font-medium text-foreground">
                 <Palette className="h-4 w-4 text-primary" />
@@ -156,7 +156,7 @@ export default function LogoBrandingPageContent() {
 
       {/* Benefits Grid */}
       <BenefitsGrid
-        title="Pourquoi investir dans votre identité visuelle"
+        title="Pourquoi construire une identité visuelle forte ?"
         subtitle="Une image de marque professionnelle pour votre entreprise"
         benefits={benefits}
         columns={2}
@@ -167,7 +167,7 @@ export default function LogoBrandingPageContent() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="mx-auto max-w-5xl">
             <FadeIn className="text-center">
-              <h2 className="text-3xl font-bold">Ce que vous recevez</h2>
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Ce que vous recevez</h2>
               <p className="mt-4 text-muted-foreground">
                 Un package complet pour construire votre identité de marque
               </p>

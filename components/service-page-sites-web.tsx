@@ -43,11 +43,11 @@ export default function SitesWebPageContent() {
     <div className="min-h-screen">
       {/* Hero */}
       <ServiceHero
-        backgroundImage="https://images.unsplash.com/photo-1547658719-da2b51169166?w=1920&h=1080&fit=crop&q=80"
-        backgroundAlt="Website development with code and responsive design"
+        backgroundImage="/images/creation-site-web-luxembourg.jpg"
+        backgroundAlt="Création site web Luxembourg - Développement web professionnel"
       >
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="mx-auto max-w-5xl text-center">
             <FadeIn immediate>
               <div className="inline-flex items-center gap-2 rounded-full border border-foreground/20 bg-foreground/10 backdrop-blur-md px-4 py-2 text-sm font-medium text-foreground">
                 <Globe className="h-4 w-4 text-primary" />
@@ -79,7 +79,7 @@ export default function SitesWebPageContent() {
       <section className="py-20">
         <div className="container mx-auto px-4 lg:px-8">
           <FadeIn className="mx-auto max-w-3xl">
-            <h2 className="text-3xl font-bold text-center">Notre processus de développement</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-center">Notre processus de développement</h2>
             <p className="mt-4 text-center text-muted-foreground">
               Une méthodologie éprouvée pour garantir la qualité de votre projet
             </p>
@@ -238,7 +238,7 @@ export default function SitesWebPageContent() {
       <section className="bg-muted/50 py-20">
         <div className="container mx-auto px-4 lg:px-8">
           <FadeIn className="mx-auto max-w-5xl">
-            <h2 className="text-3xl font-bold text-center">Standards de qualité</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-center">Standards de qualité</h2>
             <p className="mt-4 text-center text-muted-foreground">
               Des normes strictes pour garantir l'excellence technique
             </p>
@@ -353,7 +353,7 @@ export default function SitesWebPageContent() {
       <section className="py-20">
         <div className="container mx-auto px-4 lg:px-8">
           <FadeIn className="mx-auto max-w-5xl">
-            <h2 className="text-3xl font-bold text-center">Défis techniques courants et nos solutions</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-center">Défis techniques courants et nos solutions</h2>
             <p className="mt-4 text-center text-muted-foreground">
               Comment nous résolvons les problèmes les plus fréquents du développement web
             </p>
@@ -553,7 +553,7 @@ export default function SitesWebPageContent() {
       <section className="bg-muted/50 py-20">
         <div className="container mx-auto px-4 lg:px-8">
           <FadeIn className="mx-auto max-w-4xl">
-            <h2 className="text-3xl font-bold text-center">Pourquoi Next.js pour votre site web ?</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-center">Pourquoi Next.js pour votre site web ?</h2>
             <p className="mt-4 text-center text-muted-foreground">
               Analyse technique approfondie de notre framework principal
             </p>

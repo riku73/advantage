@@ -41,11 +41,11 @@ export default function AboutPageContent() {
     <div className="min-h-screen">
       {/* Hero */}
       <ServiceHero
-        backgroundImage="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&h=1080&fit=crop&q=80"
-        backgroundAlt="Team collaboration and digital marketing professionals"
+        backgroundImage="/images/agence-marketing-luxembourg-equipe.jpg"
+        backgroundAlt="Équipe agence marketing digital Luxembourg - ADVANTAGE"
       >
         <div className="container mx-auto px-4 lg:px-8">
-          <FadeIn className="mx-auto max-w-3xl text-center" immediate>
+          <FadeIn className="mx-auto max-w-5xl text-center" immediate>
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
               Votre agence marketing au Luxembourg, à l&apos;écoute de vos ambitions
             </h1>
@@ -72,7 +72,7 @@ export default function AboutPageContent() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="mx-auto max-w-6xl grid gap-12 lg:grid-cols-2 items-center">
             <FadeIn direction="left">
-              <h2 className="text-3xl font-bold">Notre histoire</h2>
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Notre histoire</h2>
               <div className="mt-6 space-y-4 text-muted-foreground">
                 <p>
                   ADVANTAGE est née de la longue collaboration de deux professionnels
@@ -102,8 +102,8 @@ export default function AboutPageContent() {
             <FadeIn direction="right" delay={0.2}>
               <div className="aspect-square overflow-hidden rounded-2xl shadow-xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=800&fit=crop&q=80"
-                  alt="Team collaboration and digital marketing professionals working together"
+                  src="/images/agence-marketing-luxembourg-histoire.jpg"
+                  alt="Notre histoire - Agence marketing digital Luxembourg ADVANTAGE"
                   width={800}
                   height={800}
                   className="object-cover transition-transform hover:scale-105 duration-700"
@@ -118,7 +118,7 @@ export default function AboutPageContent() {
       <section className="bg-muted/50 py-20">
         <div className="container mx-auto px-4 lg:px-8">
           <FadeIn className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-bold">Nos valeurs</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Nos valeurs</h2>
             <p className="mt-4 text-muted-foreground">
               Les principes qui guident notre travail au quotidien
             </p>
@@ -152,7 +152,7 @@ export default function AboutPageContent() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="mx-auto max-w-6xl grid gap-12 lg:grid-cols-2 items-center">
             <FadeIn direction="left">
-              <h2 className="text-3xl font-bold text-primary-foreground">Notre mission</h2>
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-primary-foreground">Notre mission</h2>
               <p className="mt-6 text-lg text-primary-foreground/90">
                 Aider les petites, moyennes et grandes entreprises à
                 exploiter tout le potentiel du marketing digital pour accélérer

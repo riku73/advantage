@@ -89,11 +89,11 @@ export default function SEOPageContent() {
     <div className="min-h-screen">
       {/* Hero */}
       <ServiceHero
-        backgroundImage="https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=1920&h=1080&fit=crop&q=80"
-        backgroundAlt="SEO analytics and search engine optimization dashboard"
+        backgroundImage="/images/seo-referencement-luxembourg.jpg"
+        backgroundAlt="SEO référencement naturel Luxembourg - Optimisation Google"
       >
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="mx-auto max-w-5xl text-center">
             <FadeIn immediate>
               <div className="inline-flex items-center gap-2 rounded-full border border-foreground/20 bg-foreground/10 backdrop-blur-md px-4 py-2 text-sm font-medium text-foreground">
                 <Search className="h-4 w-4 text-primary" />
@@ -123,7 +123,7 @@ export default function SEOPageContent() {
 
       {/* Benefits */}
       <BenefitsGrid
-        title="Les avantages du référencement naturel"
+        title="Pourquoi travailler votre référencement naturel ?"
         subtitle="Un investissement rentable sur le long terme"
         benefits={benefits}
         columns={2}

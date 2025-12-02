@@ -151,7 +151,7 @@ export default function ClientsSection({
     <section className="py-20 bg-muted/50">
       <div className="container mx-auto px-4 lg:px-8">
         <FadeIn className="text-center mb-16">
-          <h2 className="text-4xl font-bold">{title}</h2>
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">{title}</h2>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
             {subtitle}
           </p>

@@ -114,11 +114,11 @@ export default function SocialContentPageContent() {
     <div className="min-h-screen">
       {/* Hero */}
       <ServiceHero
-        backgroundImage="https://images.unsplash.com/photo-1432888622747-4eb9a8f2c2c9?w=1920&h=1080&fit=crop&q=80"
-        backgroundAlt="Social media content creation and editorial calendar"
+        backgroundImage="/images/creation-contenu-reseaux-sociaux-luxembourg.jpg"
+        backgroundAlt="Création contenu réseaux sociaux Luxembourg"
       >
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="mx-auto max-w-5xl text-center">
             <FadeIn immediate>
               <div className="inline-flex items-center gap-2 rounded-full border border-foreground/20 bg-foreground/10 backdrop-blur-md px-4 py-2 text-sm font-medium text-foreground">
                 <Calendar className="h-4 w-4 text-primary" />
@@ -148,7 +148,7 @@ export default function SocialContentPageContent() {
 
       {/* Benefits Grid */}
       <BenefitsGrid
-        title="Pourquoi déléguer votre contenu social"
+        title="Pourquoi déléguer la création de votre contenu social ?"
         subtitle="Concentrez-vous sur votre métier, nous gérons votre présence en ligne"
         benefits={benefits}
         columns={2}
@@ -159,7 +159,7 @@ export default function SocialContentPageContent() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="mx-auto max-w-5xl">
             <FadeIn className="text-center">
-              <h2 className="text-3xl font-bold">Ce qui est inclus</h2>
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Ce qui est inclus</h2>
               <p className="mt-4 text-muted-foreground">
                 Un service complet pour une présence sociale professionnelle
               </p>

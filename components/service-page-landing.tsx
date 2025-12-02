@@ -102,11 +102,11 @@ export default function LandingPagesPageContent() {
     <div className="min-h-screen">
       {/* Hero */}
       <ServiceHero
-        backgroundImage="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&h=1080&fit=crop&q=80"
-        backgroundAlt="Landing page conversion optimization and A/B testing"
+        backgroundImage="/images/landing-page-conversion-luxembourg.jpg"
+        backgroundAlt="Création landing page Luxembourg - Optimisation conversion"
       >
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="mx-auto max-w-5xl text-center">
             <FadeIn immediate>
               <div className="inline-flex items-center gap-2 rounded-full border border-foreground/20 bg-foreground/10 backdrop-blur-md px-4 py-2 text-sm font-medium text-foreground">
                 <Target className="h-4 w-4 text-primary" />
@@ -136,7 +136,7 @@ export default function LandingPagesPageContent() {
 
       {/* Benefits Grid */}
       <BenefitsGrid
-        title="Pourquoi nos landing pages performent"
+        title="Pourquoi créer une landing page dédiée ?"
         subtitle="Une approche data-driven pour maximiser votre retour sur investissement"
         benefits={benefits}
         columns={3}
@@ -147,7 +147,7 @@ export default function LandingPagesPageContent() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <FadeIn>
-              <h2 className="text-3xl font-bold">Ce qui est inclus</h2>
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Ce qui est inclus</h2>
               <p className="mt-4 text-muted-foreground">
                 Tout ce dont vous avez besoin pour une landing page performante
               </p>

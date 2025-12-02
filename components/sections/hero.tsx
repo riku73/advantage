@@ -39,7 +39,7 @@ export default function Hero() {
             transition={{ duration: 0.5 }}
             className="mx-auto mb-8 inline-flex items-center gap-2 rounded-full border border-foreground/20 bg-foreground/10 backdrop-blur-md px-4 py-2 text-sm font-medium text-foreground"
           >
-            <Sparkles className="h-4 w-4 text-yellow-500 dark:text-yellow-400" />
+            <Sparkles className="h-4 w-4 text-primary" />
             <span>Votre agence marketing au Luxembourg</span>
           </motion.div>
 
@@ -71,7 +71,7 @@ export default function Hero() {
           >
             <Link
               href="/devis-personnalise"
-              className="group inline-flex items-center justify-center gap-2 rounded-md bg-black dark:bg-white px-8 py-3 text-base font-semibold text-white dark:text-black shadow-lg transition-all hover:bg-gray-800 dark:hover:bg-gray-100 hover:scale-105 hover:shadow-xl"
+              className="group inline-flex items-center justify-center gap-2 rounded-md border-2 border-transparent bg-black dark:bg-white px-8 py-3 text-base font-semibold text-white dark:text-black shadow-lg transition-all hover:bg-gray-800 dark:hover:bg-gray-100 hover:scale-105 hover:shadow-xl"
             >
               Demandez un devis gratuit
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />

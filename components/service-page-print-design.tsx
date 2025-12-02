@@ -121,11 +121,11 @@ export default function PrintDesignPageContent() {
     <div className="min-h-screen">
       {/* Hero */}
       <ServiceHero
-        backgroundImage="https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=1920&h=1080&fit=crop&q=80"
-        backgroundAlt="Print design materials and creative work"
+        backgroundImage="/images/design-print-luxembourg.jpg"
+        backgroundAlt="Design print Luxembourg - Cartes de visite et supports imprimés"
       >
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="mx-auto max-w-5xl text-center">
             <FadeIn immediate>
               <div className="inline-flex items-center gap-2 rounded-full border border-foreground/20 bg-foreground/10 backdrop-blur-md px-4 py-2 text-sm font-medium text-foreground">
                 <Palette className="h-4 w-4 text-primary" />
@@ -155,7 +155,7 @@ export default function PrintDesignPageContent() {
 
       {/* Benefits Grid */}
       <BenefitsGrid
-        title="Pourquoi choisir nos designs print"
+        title="Pourquoi soigner votre design print ?"
         subtitle="Des créations professionnelles pour votre communication"
         benefits={benefits}
         columns={2}
@@ -166,7 +166,7 @@ export default function PrintDesignPageContent() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="mx-auto max-w-5xl">
             <FadeIn className="text-center">
-              <h2 className="text-3xl font-bold">Nos supports disponibles</h2>
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Nos supports disponibles</h2>
               <p className="mt-4 text-muted-foreground">
                 Tous types de supports print pour votre communication
               </p>

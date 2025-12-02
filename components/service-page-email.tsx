@@ -5,7 +5,7 @@ import {
   Mail,
   ArrowRight,
   CheckCircle2,
-  DollarSign,
+  Euro,
   Users,
   Zap,
   BarChart3,
@@ -22,7 +22,7 @@ import CTAWithServices, { RelatedService } from "@/components/sections/cta-with-
 
 const benefits: BenefitItem[] = [
   {
-    icon: DollarSign,
+    icon: Euro,
     title: "ROI exceptionnel",
     description:
       "L'e-mail marketing offre le meilleur retour sur investissement : en moyenne 42 EUR générés pour chaque euro investi.",
@@ -119,11 +119,11 @@ export default function EmailMarketingPageContent() {
     <div className="min-h-screen">
       {/* Hero */}
       <ServiceHero
-        backgroundImage="https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=1920&h=1080&fit=crop&q=80"
-        backgroundAlt="E-mail marketing campaign with newsletter design"
+        backgroundImage="/images/email-marketing-luxembourg.jpg"
+        backgroundAlt="E-mail marketing Luxembourg - Campagnes newsletter"
       >
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="mx-auto max-w-5xl text-center">
             <FadeIn immediate>
               <div className="inline-flex items-center gap-2 rounded-full border border-foreground/20 bg-foreground/10 backdrop-blur-md px-4 py-2 text-sm font-medium text-foreground">
                 <Mail className="h-4 w-4 text-primary" />
@@ -152,7 +152,7 @@ export default function EmailMarketingPageContent() {
 
       {/* Benefits Grid */}
       <BenefitsGrid
-        title="Pourquoi l'e-mail marketing"
+        title="Pourquoi exploiter l'e-mail marketing ?"
         subtitle="Le canal marketing le plus rentable pour votre entreprise"
         benefits={benefits}
         columns={2}
@@ -163,7 +163,7 @@ export default function EmailMarketingPageContent() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="mx-auto max-w-5xl">
             <FadeIn className="text-center">
-              <h2 className="text-3xl font-bold">Nos services e-mail marketing</h2>
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Nos services e-mail marketing</h2>
               <p className="mt-4 text-muted-foreground">
                 Une offre complète pour maximiser l'impact de vos campagnes e-mail
               </p>

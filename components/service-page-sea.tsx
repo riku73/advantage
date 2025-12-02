@@ -6,7 +6,7 @@ import {
   ArrowRight,
   CheckCircle2,
   Target,
-  DollarSign,
+  Euro,
   BarChart3,
   Eye,
   ShoppingBag,
@@ -34,7 +34,7 @@ const benefits: BenefitItem[] = [
       "Atteignez exactement votre audience idéale grâce aux options de ciblage avancées : mots-clés, localisation, démographie.",
   },
   {
-    icon: DollarSign,
+    icon: Euro,
     title: "Contrôle total du budget",
     description:
       "Définissez votre budget quotidien et ne payez que lorsqu'un utilisateur clique sur votre annonce. Aucune surprise.",
@@ -119,11 +119,11 @@ export default function SEAPageContent() {
     <div className="min-h-screen">
       {/* Hero */}
       <ServiceHero
-        backgroundImage="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1920&h=1080&fit=crop&q=80"
-        backgroundAlt="Google Ads and PPC advertising campaign dashboard"
+        backgroundImage="/images/sea-publicite-google-ads-luxembourg.jpg"
+        backgroundAlt="SEA Publicité Google Ads Luxembourg - Campagnes PPC"
       >
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="mx-auto max-w-5xl text-center">
             <FadeIn immediate>
               <div className="inline-flex items-center gap-2 rounded-full border border-foreground/20 bg-foreground/10 backdrop-blur-md px-4 py-2 text-sm font-medium text-foreground">
                 <MousePointerClick className="h-4 w-4 text-primary" />
@@ -153,7 +153,7 @@ export default function SEAPageContent() {
 
       {/* Benefits Grid */}
       <BenefitsGrid
-        title="Pourquoi choisir Google Ads"
+        title="Pourquoi choisir Google Ads ?"
         subtitle="La publicité payante la plus efficace pour générer du trafic qualifié"
         benefits={benefits}
         columns={2}
@@ -164,7 +164,7 @@ export default function SEAPageContent() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="mx-auto max-w-5xl">
             <FadeIn className="text-center">
-              <h2 className="text-3xl font-bold">Nos services SEA</h2>
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Nos services SEA</h2>
               <p className="mt-4 text-muted-foreground">
                 Une gamme complète de services pour maximiser votre présence sur Google
               </p>
