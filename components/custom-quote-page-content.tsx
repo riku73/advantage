@@ -222,8 +222,8 @@ export default function CustomQuotePageContent() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-muted/50 py-20">
-      <div className="container mx-auto px-4 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-b from-background to-muted/50 py-20 overflow-x-hidden">
+      <div className="container mx-auto px-4 lg:px-8 overflow-hidden">
         <FadeIn className="mx-auto max-w-4xl">
           {/* Header */}
           <div className="text-center mb-12">
@@ -261,7 +261,7 @@ export default function CustomQuotePageContent() {
                   </div>
                   {step < totalSteps && (
                     <div
-                      className={`h-1 w-12 lg:w-24 transition-all ${
+                      className={`h-1 w-6 sm:w-12 lg:w-24 transition-all ${
                         step < currentStep ? "bg-primary" : "bg-border"
                       }`}
                     />
@@ -269,7 +269,7 @@ export default function CustomQuotePageContent() {
                 </div>
               ))}
             </div>
-            <div className="flex items-center justify-between text-xs text-muted-foreground">
+            <div className="hidden sm:flex items-center justify-between text-xs text-muted-foreground">
               <span>Type</span>
               <span>Détails</span>
               <span>Budget</span>
@@ -462,7 +462,7 @@ export default function CustomQuotePageContent() {
                       value={formData.budget}
                       onValueChange={(value) => updateFormData("budget", value)}
                     >
-                      <div className="grid grid-cols-3 gap-4">
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                         {budgetRanges.map((range) => {
                           const isSelected = formData.budget === range.value;
                           return (

@@ -250,7 +250,7 @@ export default function Header() {
         )}
       >
         <div
-          className="fixed inset-0 bg-background/80 backdrop-blur-sm"
+          className="fixed inset-0 bg-black/50 dark:bg-black/70"
           onClick={() => setMobileMenuOpen(false)}
           aria-hidden="true"
         />
