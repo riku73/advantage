@@ -4,8 +4,20 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
+import Shuffle from "@/components/ui/shadcn-io/shuffle";
 
 export default function Hero() {
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const isDark = mounted && resolvedTheme === "dark";
+
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
       {/* Background Image with Duotone Effect */}
@@ -51,7 +63,18 @@ export default function Hero() {
           >
             Pendant que vous hésitez,
             <br />
-            <span className="whitespace-nowrap">d&apos;autres prennent l&apos;<span className="text-primary">ADVANTAGE</span></span>
+            <span className="whitespace-nowrap">d&apos;autres prennent l&apos;<Shuffle
+                  text="ADVANTAGE"
+                  tag="span"
+                  className="text-foreground"
+                  duration={0.3}
+                  stagger={0.03}
+                  loop={true}
+                  loopDelay={2}
+                  triggerOnHover={false}
+                  colorFrom="#9ca3af"
+                  colorTo={isDark ? "#ffffff" : "#000000"}
+                /></span>
           </motion.h1>
 
           <motion.p
