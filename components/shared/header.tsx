@@ -305,7 +305,7 @@ export default function Header() {
                           <div key={category}>
                             <Link
                               href={categoryLinks[category]}
-                              className="flex items-center gap-2 text-sm font-semibold text-foreground hover:text-primary transition-colors"
+                              className="inline-flex items-center gap-2 py-2 text-sm font-semibold text-foreground hover:text-primary active:text-primary transition-colors"
                               onClick={() => setMobileMenuOpen(false)}
                             >
                               <Icon className="h-4 w-4 text-primary" />
