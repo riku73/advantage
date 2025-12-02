@@ -306,7 +306,11 @@ export default function Header() {
                             <Link
                               href={categoryLinks[category]}
                               className="inline-flex items-center gap-2 py-2 text-sm font-semibold text-foreground hover:text-primary active:text-primary transition-colors"
-                              onClick={() => setMobileMenuOpen(false)}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setMobileMenuOpen(false);
+                                setMobileServicesOpen(false);
+                              }}
                             >
                               <Icon className="h-4 w-4 text-primary" />
                               {categoryLabels[category]}
