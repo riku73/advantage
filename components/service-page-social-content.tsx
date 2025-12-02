@@ -122,7 +122,7 @@ export default function SocialContentPageContent() {
             <FadeIn immediate>
               <div className="inline-flex items-center gap-2 rounded-full border border-foreground/20 bg-foreground/10 backdrop-blur-md px-4 py-2 text-sm font-medium text-foreground">
                 <Calendar className="h-4 w-4 text-primary" />
-                <span>Création de Contenu Social</span>
+                <span>Création de contenu social</span>
               </div>
               <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
                 Contenu social qui engage votre audience

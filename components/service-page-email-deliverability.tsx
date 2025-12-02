@@ -121,7 +121,7 @@ export default function EmailDeliverabilityPageContent() {
             <FadeIn immediate>
               <div className="inline-flex items-center gap-2 rounded-full border border-foreground/20 bg-foreground/10 backdrop-blur-md px-4 py-2 text-sm font-medium text-foreground">
                 <Server className="h-4 w-4 text-primary" />
-                <span>Délivrabilité E-mail</span>
+                <span>Délivrabilité e-mail</span>
               </div>
               <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
                 Assurez que vos e-mails arrivent à destination
