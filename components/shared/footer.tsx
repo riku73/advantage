@@ -3,8 +3,26 @@ import Image from "next/image";
 import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import { services } from "@/lib/services-data";
 
+// Custom order for digital-web services (same as services page)
+const digitalWebOrder = [
+  "landing-pages",
+  "sites-web",
+  "seo",
+  "sea",
+  "email-marketing",
+  "email-deliverability",
+];
+
 // Group services
-const digitalWebServices = services.filter(s => s.category === "digital-web");
+const digitalWebServices = services
+  .filter(s => s.category === "digital-web")
+  .sort((a, b) => {
+    const aIndex = digitalWebOrder.indexOf(a.id);
+    const bIndex = digitalWebOrder.indexOf(b.id);
+    if (aIndex === -1) return 1;
+    if (bIndex === -1) return -1;
+    return aIndex - bIndex;
+  });
 const visualPrintServices = services.filter(s => s.category === "visual-print");
 const socialMediaServices = services.filter(s => s.category === "social-media");
 const mediaProductionServices = services.filter(s => s.category === "media-production");
@@ -68,7 +86,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 flex-shrink-0" />
-                <span>2 Rue de Sandweiler, L-5974 Itzig</span>
+                <span>2 Rue de Sandweiler, L-5974 Itzig, Luxembourg</span>
               </li>
             </ul>
 

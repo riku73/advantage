@@ -38,9 +38,32 @@ const categoryOrder: ServiceCategory[] = [
   "consulting",
 ];
 
+// Custom order for digital-web services (same as services page)
+const digitalWebOrder = [
+  "landing-pages",
+  "sites-web",
+  "seo",
+  "sea",
+  "email-marketing",
+  "email-deliverability",
+];
+
 // Group services by category
 const servicesByCategory = categoryOrder.reduce((acc, category) => {
-  acc[category] = services.filter(s => s.category === category);
+  const categoryServices = services.filter(s => s.category === category);
+
+  // Apply custom order for digital-web
+  if (category === "digital-web") {
+    categoryServices.sort((a, b) => {
+      const aIndex = digitalWebOrder.indexOf(a.id);
+      const bIndex = digitalWebOrder.indexOf(b.id);
+      if (aIndex === -1) return 1;
+      if (bIndex === -1) return -1;
+      return aIndex - bIndex;
+    });
+  }
+
+  acc[category] = categoryServices;
   return acc;
 }, {} as Record<ServiceCategory, typeof services>);
 

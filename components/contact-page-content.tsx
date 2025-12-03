@@ -78,7 +78,7 @@ export default function ContactPageContent() {
                     </div>
                     <div>
                       <div className="font-semibold">Adresse</div>
-                      <p className="text-muted-foreground">2 Rue de Sandweiler<br />L-5974 Itzig</p>
+                      <p className="text-muted-foreground">2 Rue de Sandweiler<br />L-5974 Itzig, Luxembourg</p>
                     </div>
                   </div>
                 </div>
