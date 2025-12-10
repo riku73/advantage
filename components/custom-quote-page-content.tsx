@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import {
@@ -179,6 +179,7 @@ export default function CustomQuotePageContent() {
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const progressBarRef = useRef<HTMLDivElement>(null);
 
   const totalSteps = 5;
 
@@ -214,14 +215,14 @@ export default function CustomQuotePageContent() {
   const nextStep = () => {
     if (canProceed() && currentStep < totalSteps) {
       setCurrentStep(currentStep + 1);
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      progressBarRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
   const prevStep = () => {
     if (currentStep > 1) {
       setCurrentStep(currentStep - 1);
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      progressBarRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
@@ -256,7 +257,7 @@ export default function CustomQuotePageContent() {
           </div>
 
           {/* Progress Bar */}
-          <div className="mb-12">
+          <div ref={progressBarRef} className="mb-12 scroll-mt-8">
             {/* Circles and Lines Row */}
             <div className="flex items-center">
               {[1, 2, 3, 4, 5].map((step, index) => (
