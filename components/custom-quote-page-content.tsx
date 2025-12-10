@@ -18,7 +18,13 @@ import {
   Palette,
   Share2,
   Video,
-  Lightbulb
+  Lightbulb,
+  Mail,
+  Phone,
+  Building2,
+  Wallet,
+  Clock,
+  Users
 } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -55,6 +61,7 @@ interface FormData {
   // Step 5: Additional Information
   additionalInfo: string;
   hearAboutUs: string;
+  hearAboutUsOther: string;
   privacyConsent: boolean;
 }
 
@@ -73,6 +80,7 @@ const initialFormData: FormData = {
   company: "",
   additionalInfo: "",
   hearAboutUs: "",
+  hearAboutUsOther: "",
   privacyConsent: false,
 };
 
@@ -158,6 +166,14 @@ const timelineOptions = [
   { value: "long-term", label: "> 6 mois", description: "Long terme" },
 ];
 
+const hearAboutUsOptions = [
+  { value: "google", label: "Recherche Google" },
+  { value: "linkedin", label: "LinkedIn" },
+  { value: "recommendation", label: "Recommandation" },
+  { value: "social-media", label: "Réseaux sociaux" },
+  { value: "autre", label: "Autre" },
+];
+
 export default function CustomQuotePageContent() {
   const router = useRouter();
   const [currentStep, setCurrentStep] = useState(1);
@@ -183,7 +199,7 @@ export default function CustomQuotePageContent() {
       case 1:
         return formData.projectCategory !== "";
       case 2:
-        return formData.projectName !== "" && formData.projectDescription !== "";
+        return formData.projectName !== "";
       case 3:
         return formData.budget !== "" && formData.timeline !== "";
       case 4:
@@ -241,17 +257,19 @@ export default function CustomQuotePageContent() {
 
           {/* Progress Bar */}
           <div className="mb-12">
-            <div className="flex items-center justify-between mb-4">
-              {[1, 2, 3, 4, 5].map((step) => (
-                <div key={step} className="flex items-center">
+            {/* Circles and Lines Row */}
+            <div className="flex items-center">
+              {[1, 2, 3, 4, 5].map((step, index) => (
+                <div key={step} className={cn("flex items-center", index < 4 && "flex-1")}>
                   <div
-                    className={`flex h-10 w-10 items-center justify-center rounded-full border-2 font-semibold transition-all ${
+                    className={cn(
+                      "flex h-10 w-10 items-center justify-center rounded-full border-2 font-semibold transition-all shrink-0",
                       step < currentStep
-                        ? "border-primary bg-primary text-primary-foreground"
+                        ? "border-black dark:border-white bg-black dark:bg-white text-white dark:text-black"
                         : step === currentStep
-                        ? "border-primary bg-background text-primary"
-                        : "border-border bg-background text-muted-foreground"
-                    }`}
+                        ? "border-black dark:border-white bg-background text-black dark:text-white"
+                        : "border-gray-300 dark:border-gray-600 bg-background text-muted-foreground"
+                    )}
                   >
                     {step < currentStep ? (
                       <CheckCircle2 className="h-5 w-5" />
@@ -259,22 +277,26 @@ export default function CustomQuotePageContent() {
                       step
                     )}
                   </div>
-                  {step < totalSteps && (
+                  {index < 4 && (
                     <div
-                      className={`h-1 w-6 sm:w-12 lg:w-24 transition-all ${
-                        step < currentStep ? "bg-primary" : "bg-border"
-                      }`}
+                      className={cn(
+                        "flex-1 mx-2 transition-all rounded-full",
+                        step < currentStep
+                          ? "h-1 bg-black dark:bg-white"
+                          : "h-0.5 bg-gray-300 dark:bg-gray-600"
+                      )}
                     />
                   )}
                 </div>
               ))}
             </div>
-            <div className="hidden sm:flex items-center justify-between text-xs text-muted-foreground">
-              <span>Type</span>
-              <span>Détails</span>
-              <span>Budget</span>
-              <span>Contact</span>
-              <span>Finaliser</span>
+            {/* Labels Row */}
+            <div className="hidden sm:flex mt-2">
+              {["Type", "Détails", "Budget", "Contact", "Finaliser"].map((label, index) => (
+                <div key={label} className={cn("text-xs text-muted-foreground", index < 4 ? "flex-1" : "")}>
+                  <span className="inline-block w-10 text-center">{label}</span>
+                </div>
+              ))}
             </div>
           </div>
 
@@ -313,21 +335,27 @@ export default function CustomQuotePageContent() {
                           const isSelected = formData.projectCategory === category.value;
                           const Icon = category.icon;
                           return (
-                            <div key={category.value}>
+                            <div
+                              key={category.value}
+                              onClick={() => updateFormData("projectCategory", category.value)}
+                              className="cursor-pointer"
+                            >
                               <RadioGroupItem
                                 value={category.value}
                                 id={category.value}
                                 className="peer sr-only"
                               />
-                              <Label
-                                htmlFor={category.value}
+                              <div
                                 className={cn(
-                                  "relative flex flex-col items-start gap-2 rounded-lg border-2 p-4 cursor-pointer transition-all",
+                                  "relative flex flex-col items-start gap-2 rounded-lg border-2 p-4 transition-all",
                                   isSelected
-                                    ? "border-primary bg-primary/10 dark:bg-primary/20 shadow-lg"
-                                    : "border-muted bg-card hover:bg-accent/50 hover:border-primary/50"
+                                    ? "border-primary bg-primary/10 dark:bg-primary/20 shadow-lg shadow-primary/10"
+                                    : "border-gray-200 dark:border-gray-700 bg-card hover:bg-accent/50 hover:border-gray-300 dark:hover:border-gray-600"
                                 )}
                               >
+                                {isSelected && (
+                                  <div className="absolute inset-0 rounded-lg ring-2 ring-primary ring-offset-2 ring-offset-background pointer-events-none" />
+                                )}
                                 <div className="flex items-center gap-2">
                                   <Icon className={cn(
                                     "h-5 w-5",
@@ -349,7 +377,7 @@ export default function CustomQuotePageContent() {
                                     <CheckCircle2 className="h-5 w-5 text-primary" />
                                   </div>
                                 )}
-                              </Label>
+                              </div>
                             </div>
                           );
                         })}
@@ -370,31 +398,30 @@ export default function CustomQuotePageContent() {
                             <div
                               key={service.id}
                               className={cn(
-                                "flex items-center space-x-3 rounded-lg border-2 p-3 transition-all cursor-pointer",
+                                "relative flex items-center space-x-3 rounded-lg border-2 p-3 transition-all cursor-pointer",
                                 isChecked
-                                  ? "border-primary bg-primary/10 dark:bg-primary/20"
-                                  : "border-muted hover:border-primary/50 bg-card hover:bg-accent/50"
+                                  ? "border-primary bg-primary/10 dark:bg-primary/20 shadow-lg shadow-primary/10"
+                                  : "border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 bg-card hover:bg-accent/50"
                               )}
                               onClick={() => handleServiceToggle(service.id)}
                             >
                               <Checkbox
-                                id={service.id}
                                 checked={isChecked}
-                                onCheckedChange={() => handleServiceToggle(service.id)}
-                                className="data-[state=checked]:bg-primary data-[state=checked]:border-primary"
+                                onCheckedChange={() => {}}
+                                onClick={(e) => e.stopPropagation()}
+                                className="data-[state=checked]:bg-primary data-[state=checked]:border-primary pointer-events-none"
                               />
                               <div className="flex-1">
                                 <div className="flex items-center gap-2">
                                   <ServiceIcon className="h-4 w-4 text-muted-foreground" />
-                                  <Label
-                                    htmlFor={service.id}
+                                  <span
                                     className={cn(
-                                      "text-sm font-medium cursor-pointer select-none",
+                                      "text-sm font-medium select-none",
                                       isChecked ? "text-primary" : "text-foreground"
                                     )}
                                   >
                                     {service.title}
-                                  </Label>
+                                  </span>
                                 </div>
                                 <p className="text-xs text-muted-foreground mt-1">
                                   {service.shortDescription}
@@ -424,7 +451,7 @@ export default function CustomQuotePageContent() {
                   </div>
 
                   <div>
-                    <Label htmlFor="projectDescription">Description du projet *</Label>
+                    <Label htmlFor="projectDescription">Description du projet (optionnel)</Label>
                     <Textarea
                       id="projectDescription"
                       placeholder="Décrivez votre projet en détail : objectifs, fonctionnalités souhaitées, public cible..."
@@ -466,21 +493,27 @@ export default function CustomQuotePageContent() {
                         {budgetRanges.map((range) => {
                           const isSelected = formData.budget === range.value;
                           return (
-                            <div key={range.value}>
+                            <div
+                              key={range.value}
+                              onClick={() => updateFormData("budget", range.value)}
+                              className="cursor-pointer"
+                            >
                               <RadioGroupItem
                                 value={range.value}
                                 id={`budget-${range.value}`}
                                 className="peer sr-only"
                               />
-                              <Label
-                                htmlFor={`budget-${range.value}`}
+                              <div
                                 className={cn(
-                                  "relative flex items-center justify-between rounded-lg border-2 p-4 cursor-pointer transition-all",
+                                  "relative flex items-center justify-between rounded-lg border-2 p-4 transition-all",
                                   isSelected
-                                    ? "border-primary bg-primary/10 dark:bg-primary/20 shadow-lg"
-                                    : "border-muted bg-card hover:bg-accent/50 hover:border-primary/50"
+                                    ? "border-primary bg-primary/10 dark:bg-primary/20 shadow-lg shadow-primary/10"
+                                    : "border-gray-200 dark:border-gray-700 bg-card hover:bg-accent/50 hover:border-gray-300 dark:hover:border-gray-600"
                                 )}
                               >
+                                {isSelected && (
+                                  <div className="absolute inset-0 rounded-lg ring-2 ring-primary ring-offset-2 ring-offset-background pointer-events-none" />
+                                )}
                                 <div>
                                   <span className={cn(
                                     "font-semibold block",
@@ -496,7 +529,7 @@ export default function CustomQuotePageContent() {
                                 {isSelected && (
                                   <CheckCircle2 className="h-5 w-5 text-primary" />
                                 )}
-                              </Label>
+                              </div>
                             </div>
                           );
                         })}
@@ -516,21 +549,27 @@ export default function CustomQuotePageContent() {
                         {timelineOptions.map((option) => {
                           const isSelected = formData.timeline === option.value;
                           return (
-                            <div key={option.value}>
+                            <div
+                              key={option.value}
+                              onClick={() => updateFormData("timeline", option.value)}
+                              className="cursor-pointer"
+                            >
                               <RadioGroupItem
                                 value={option.value}
                                 id={`timeline-${option.value}`}
                                 className="peer sr-only"
                               />
-                              <Label
-                                htmlFor={`timeline-${option.value}`}
+                              <div
                                 className={cn(
-                                  "relative flex flex-col items-start gap-2 rounded-lg border-2 p-4 cursor-pointer transition-all",
+                                  "relative flex flex-col items-start gap-2 rounded-lg border-2 p-4 transition-all",
                                   isSelected
-                                    ? "border-primary bg-primary/10 dark:bg-primary/20 shadow-lg"
-                                    : "border-muted bg-card hover:bg-accent/50 hover:border-primary/50"
+                                    ? "border-primary bg-primary/10 dark:bg-primary/20 shadow-lg shadow-primary/10"
+                                    : "border-gray-200 dark:border-gray-700 bg-card hover:bg-accent/50 hover:border-gray-300 dark:hover:border-gray-600"
                                 )}
                               >
+                                {isSelected && (
+                                  <div className="absolute inset-0 rounded-lg ring-2 ring-primary ring-offset-2 ring-offset-background pointer-events-none" />
+                                )}
                                 <div className="flex items-center gap-2">
                                   {isSelected ? (
                                     <CheckCircle2 className="h-4 w-4 text-primary" />
@@ -548,7 +587,7 @@ export default function CustomQuotePageContent() {
                                 )}>
                                   {option.description}
                                 </span>
-                              </Label>
+                              </div>
                             </div>
                           );
                         })}
@@ -638,71 +677,154 @@ export default function CustomQuotePageContent() {
                   </div>
 
                   <div>
-                    <Label htmlFor="hearAboutUs">
+                    <Label htmlFor="hearAboutUs" className="text-base font-semibold mb-2 block">
                       Comment avez-vous entendu parler de nous ?
                     </Label>
-                    <Input
+                    <select
                       id="hearAboutUs"
-                      placeholder="Ex: Recommandation, Google, LinkedIn... (optionnel)"
                       value={formData.hearAboutUs}
                       onChange={(e) => updateFormData("hearAboutUs", e.target.value)}
-                      className="mt-2"
-                    />
+                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    >
+                      <option value="">Sélectionnez une option</option>
+                      {hearAboutUsOptions.map((option) => (
+                        <option key={option.value} value={option.value}>
+                          {option.label}
+                        </option>
+                      ))}
+                    </select>
+                    {formData.hearAboutUs === "autre" && (
+                      <div className="mt-3">
+                        <Input
+                          id="hearAboutUsOther"
+                          placeholder="Précisez..."
+                          value={formData.hearAboutUsOther}
+                          onChange={(e) => updateFormData("hearAboutUsOther", e.target.value)}
+                        />
+                      </div>
+                    )}
                   </div>
 
                   {/* Summary */}
-                  <div className="rounded-lg border-2 border-primary/20 bg-primary/5 p-6 space-y-4">
-                    <h3 className="font-semibold text-lg flex items-center gap-2">
+                  <div className="rounded-xl border-2 border-primary/20 bg-gradient-to-br from-primary/5 to-primary/10 p-6">
+                    <h3 className="font-semibold text-lg flex items-center gap-2 mb-6">
                       <CheckCircle2 className="h-5 w-5 text-primary" />
                       Récapitulatif de votre demande
                     </h3>
-                    <div className="space-y-3 text-sm">
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">Catégorie :</span>
-                        <span className="font-medium">
+
+                    <div className="grid gap-4 sm:grid-cols-2">
+                      {/* Card 1: Project Type */}
+                      <div className="rounded-lg bg-background/80 backdrop-blur-sm p-4 space-y-3 border border-border/50">
+                        <div className="flex items-center gap-2 text-primary">
+                          <FileText className="h-4 w-4" />
+                          <span className="font-semibold text-sm">Type de projet</span>
+                        </div>
+                        <p className="font-medium">
                           {projectCategories.find((c) => c.value === formData.projectCategory)?.label}
-                        </span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">Budget :</span>
-                        <span className="font-medium">
-                          {budgetRanges.find((b) => b.value === formData.budget)?.label}
-                        </span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">Délai :</span>
-                        <span className="font-medium">
-                          {timelineOptions.find((t) => t.value === formData.timeline)?.label}
-                        </span>
-                      </div>
-                      {formData.services.length > 0 && (
-                        <div>
-                          <span className="text-muted-foreground">Services sélectionnés :</span>
-                          <div className="flex flex-wrap gap-2 mt-2">
+                        </p>
+                        {formData.services.length > 0 && (
+                          <div className="flex flex-wrap gap-1.5">
                             {formData.services.map((serviceId) => {
                               const service = services.find((s) => s.id === serviceId);
                               return service ? (
                                 <span
                                   key={serviceId}
-                                  className="inline-flex rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary"
+                                  className="inline-flex rounded-full bg-primary/15 px-2.5 py-0.5 text-xs font-medium text-primary"
                                 >
                                   {service.title}
                                 </span>
                               ) : null;
                             })}
                           </div>
+                        )}
+                      </div>
+
+                      {/* Card 2: Project Details */}
+                      <div className="rounded-lg bg-background/80 backdrop-blur-sm p-4 space-y-3 border border-border/50">
+                        <div className="flex items-center gap-2 text-primary">
+                          <Briefcase className="h-4 w-4" />
+                          <span className="font-semibold text-sm">Détails du projet</span>
                         </div>
-                      )}
+                        <p className="font-medium">{formData.projectName}</p>
+                        {formData.projectDescription && (
+                          <p className="text-sm text-muted-foreground line-clamp-2">
+                            {formData.projectDescription.length > 80
+                              ? `${formData.projectDescription.substring(0, 80)}...`
+                              : formData.projectDescription}
+                          </p>
+                        )}
+                        {formData.targetAudience && (
+                          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                            <Users className="h-3.5 w-3.5" />
+                            <span>{formData.targetAudience}</span>
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Card 3: Budget & Timeline */}
+                      <div className="rounded-lg bg-background/80 backdrop-blur-sm p-4 space-y-3 border border-border/50">
+                        <div className="flex items-center gap-2 text-primary">
+                          <Wallet className="h-4 w-4" />
+                          <span className="font-semibold text-sm">Budget & Délais</span>
+                        </div>
+                        <div className="flex flex-wrap gap-3">
+                          <span className="inline-flex items-center gap-1.5 text-sm bg-muted/50 rounded-md px-2 py-1">
+                            <Wallet className="h-3.5 w-3.5 text-primary" />
+                            {budgetRanges.find((b) => b.value === formData.budget)?.label}
+                          </span>
+                          <span className="inline-flex items-center gap-1.5 text-sm bg-muted/50 rounded-md px-2 py-1">
+                            <Clock className="h-3.5 w-3.5 text-primary" />
+                            {timelineOptions.find((t) => t.value === formData.timeline)?.label}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Card 4: Contact */}
+                      <div className="rounded-lg bg-background/80 backdrop-blur-sm p-4 space-y-3 border border-border/50">
+                        <div className="flex items-center gap-2 text-primary">
+                          <User className="h-4 w-4" />
+                          <span className="font-semibold text-sm">Contact</span>
+                        </div>
+                        <p className="font-medium">{formData.fullName}</p>
+                        <div className="space-y-1.5 text-sm text-muted-foreground">
+                          <div className="flex items-center gap-2">
+                            <Mail className="h-3.5 w-3.5" />
+                            <span>{formData.email}</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <Phone className="h-3.5 w-3.5" />
+                            <span>{formData.phone}</span>
+                          </div>
+                          {formData.company && (
+                            <div className="flex items-center gap-2">
+                              <Building2 className="h-3.5 w-3.5" />
+                              <span>{formData.company}</span>
+                            </div>
+                          )}
+                        </div>
+                      </div>
                     </div>
+
+                    {/* Source - full width at bottom if present */}
+                    {formData.hearAboutUs && (
+                      <div className="mt-4 pt-4 border-t border-primary/10 text-sm text-muted-foreground">
+                        <span>Source : </span>
+                        <span className="font-medium text-foreground">
+                          {formData.hearAboutUs === "autre" && formData.hearAboutUsOther
+                            ? formData.hearAboutUsOther
+                            : hearAboutUsOptions.find((o) => o.value === formData.hearAboutUs)?.label}
+                        </span>
+                      </div>
+                    )}
                   </div>
 
                   {/* Privacy Consent */}
                   <div
                     className={cn(
-                      "flex items-start space-x-3 rounded-lg border-2 p-4 transition-all cursor-pointer",
+                      "relative flex items-start space-x-3 rounded-lg border-2 p-4 transition-all cursor-pointer",
                       formData.privacyConsent
-                        ? "border-primary bg-primary/10 dark:bg-primary/20"
-                        : "border-muted hover:border-primary/50 bg-card hover:bg-accent/50"
+                        ? "border-primary bg-primary/10 dark:bg-primary/20 shadow-lg shadow-primary/10"
+                        : "border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 bg-card hover:bg-accent/50"
                     )}
                     onClick={() => updateFormData("privacyConsent", !formData.privacyConsent)}
                   >

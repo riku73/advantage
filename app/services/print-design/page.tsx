@@ -2,16 +2,27 @@ import { Metadata } from "next";
 import PrintDesignPageContent from "@/components/service-page-print-design";
 
 export const metadata: Metadata = {
-  title: "Design de supports imprimés | ADVANTAGE",
+  title: "Design supports imprimés Luxembourg",
   description:
-    "Cartes de visite, flyers, brochures professionnels. Designs créatifs prêts pour l'impression à partir de €90.",
+    "Création de cartes de visite, flyers et brochures professionnels au Luxembourg. Designs créatifs et prêts pour l'impression.",
   keywords: [
-    "design print",
+    "design print Luxembourg",
     "cartes de visite",
     "flyers",
     "brochures",
     "supports imprimés",
+    "graphisme print",
   ],
+  openGraph: {
+    title: "Design supports imprimés | ADVANTAGE",
+    description:
+      "Création de cartes de visite, flyers et brochures professionnels. Designs créatifs prêts pour l'impression.",
+    url: "/services/print-design",
+    images: ["/images/design-print-luxembourg.jpg"],
+  },
+  alternates: {
+    canonical: "/services/print-design",
+  },
 };
 
 export default function PrintDesignPage() {

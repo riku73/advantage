@@ -1,0 +1,13 @@
+# robots.txt for ADVANTAGE - Agence Marketing Digital Luxembourg
+# https://advantage.lu
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://advantage.lu/sitemap.xml
+
+# Disallow admin/API routes if any
+Disallow: /api/
+Disallow: /_next/
+Disallow: /merci
