@@ -249,6 +249,15 @@ export default function Header() {
             À propos
           </Link>
           <Link
+            href="/glossaire"
+            className={cn(
+              "px-4 py-2 text-sm font-semibold transition-colors hover:text-primary rounded-md",
+              isScrolled ? "text-foreground" : "text-black dark:text-white"
+            )}
+          >
+            Glossaire
+          </Link>
+          <Link
             href="/contact"
             className={cn(
               "px-4 py-2 text-sm font-semibold transition-colors hover:text-primary rounded-md",
@@ -355,6 +364,13 @@ export default function Header() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   À propos
+                </Link>
+                <Link
+                  href="/glossaire"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-foreground hover:bg-muted"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Glossaire
                 </Link>
                 <Link
                   href="/contact"

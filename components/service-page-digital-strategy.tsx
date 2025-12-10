@@ -190,7 +190,7 @@ export default function DigitalStrategyPageContent() {
 
       {/* Process Timeline */}
       <ProcessTimeline
-        title="Comment ça fonctionne"
+        title="Comment ça fonctionne ?"
         subtitle="Un processus simple et efficace"
         steps={processSteps}
       />

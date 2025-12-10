@@ -145,6 +145,12 @@ export default function EmailMarketingPageContent() {
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
+              <p className="mt-4 text-sm text-muted-foreground">
+                Nouveau dans le marketing digital ?{" "}
+                <Link href="/glossaire" className="underline hover:text-foreground">
+                  Consultez notre glossaire
+                </Link>
+              </p>
             </FadeIn>
           </div>
         </div>
@@ -153,7 +159,7 @@ export default function EmailMarketingPageContent() {
       {/* Benefits Grid */}
       <BenefitsGrid
         backgroundImage="/images/email-marketing-luxembourg.jpg"
-        title="Pourquoi exploiter l'e-mail marketing ?"
+        title="Les avantages de l'e-mail marketing"
         subtitle="Le canal marketing le plus rentable pour votre entreprise"
         benefits={benefits}
         columns={2}
@@ -193,7 +199,7 @@ export default function EmailMarketingPageContent() {
 
       {/* Process Timeline */}
       <ProcessTimeline
-        title="Notre méthodologie e-mail marketing"
+        title="Comment nous travaillons"
         subtitle="Une approche structurée en 5 étapes pour des campagnes performantes"
         steps={processSteps}
       />
@@ -209,7 +215,7 @@ export default function EmailMarketingPageContent() {
       {/* CTA with Related Services */}
       <CTAWithServices
         title="Prêt à booster votre e-mail marketing ?"
-        description="Découvrez comment nos campagnes e-mail peuvent transformer votre communication et générer des résultats concrets."
+        description="Découvrez comment des e-mails bien conçus peuvent fidéliser vos clients et en attirer de nouveaux."
         buttonText="Demandez un devis"
         buttonHref="/devis-personnalise"
         relatedServices={relatedServices}

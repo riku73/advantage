@@ -31,6 +31,7 @@ const consultingServices = services.filter(s => s.category === "consulting");
 const companyLinks = [
   { name: "À propos", href: "/a-propos" },
   { name: "Tous les services", href: "/services" },
+  { name: "Glossaire", href: "/glossaire" },
   { name: "Contact", href: "/contact" },
 ];
 

@@ -118,7 +118,7 @@ export default function LandingPagesPageContent() {
               <p className="mt-6 text-lg text-muted-foreground">
                 Maximisez vos conversions avec des landing pages conçues pour
                 transformer vos visiteurs en clients. Design persuasif,
-                copywriting optimisé et tests A/B pour des résultats mesurables.
+                copywriting optimisé et tests A/B pour transformer plus de visiteurs en clients.
               </p>
               <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
                 <Link
@@ -137,7 +137,7 @@ export default function LandingPagesPageContent() {
       {/* Benefits Grid */}
       <BenefitsGrid
         backgroundImage="/images/landing-page-conversion-luxembourg.jpg"
-        title="Pourquoi créer une landing page dédiée ?"
+        title="Les avantages d'une landing page dédiée"
         subtitle="Une approche data-driven pour maximiser votre retour sur investissement"
         benefits={benefits}
         columns={3}
@@ -185,7 +185,7 @@ export default function LandingPagesPageContent() {
       {/* CTA with Related Services */}
       <CTAWithServices
         title="Boostez vos conversions dès aujourd'hui"
-        description="Créons ensemble une landing page qui génère des résultats concrets pour votre business."
+        description="Créons ensemble une landing page qui transforme vos visiteurs en clients."
         buttonText="Demandez un devis"
         buttonHref="/devis-personnalise"
         relatedServices={relatedServices}

@@ -196,8 +196,8 @@ export default function PrintDesignPageContent() {
 
       {/* Process Timeline */}
       <ProcessTimeline
-        title="Notre processus créatif"
-        subtitle="De l'idée au fichier prêt pour l'impression"
+        title="Du brief à l'impression"
+        subtitle="Les étapes de création de vos supports"
         steps={processSteps}
       />
 

@@ -20,7 +20,7 @@ const values = [
   {
     name: "ROI transparent",
     description:
-      "Reporting détaillé et transparent de tous vos investissements marketing avec des résultats concrets et mesurables.",
+      "Reporting détaillé et transparent de tous vos investissements marketing. Vous savez exactement ce que vous gagnez.",
     icon: TrendingUp,
   },
   {

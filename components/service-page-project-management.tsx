@@ -196,7 +196,7 @@ export default function ProjectManagementPageContent() {
 
       {/* Process Timeline */}
       <ProcessTimeline
-        title="Notre méthodologie"
+        title="Comment nous pilotons votre projet"
         subtitle="Un processus éprouvé pour des projets réussis"
         steps={processSteps}
       />
