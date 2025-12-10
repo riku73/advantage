@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import PrintDesignPageContent from "@/components/service-page-print-design";
+import Content from "./_components/content";
 
 export const metadata: Metadata = {
   title: "Design supports imprimés Luxembourg",
@@ -26,5 +26,5 @@ export const metadata: Metadata = {
 };
 
 export default function PrintDesignPage() {
-  return <PrintDesignPageContent />;
+  return <Content />;
 }

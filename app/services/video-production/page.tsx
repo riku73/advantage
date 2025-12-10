@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import VideoProductionPageContent from "@/components/service-page-video-production";
+import Content from "./_components/content";
 
 export const metadata: Metadata = {
   title: "Production vidéo professionnelle Luxembourg",
@@ -26,5 +26,5 @@ export const metadata: Metadata = {
 };
 
 export default function VideoProductionPage() {
-  return <VideoProductionPageContent />;
+  return <Content />;
 }

@@ -67,6 +67,7 @@ export default function PageHero({
           fill
           className="object-cover grayscale contrast-125"
           priority
+          sizes="100vw"
         />
 
         {/* Mode-adaptive overlay */}

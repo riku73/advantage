@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import SocialMediaAdsPageContent from "@/components/service-page-social-media-ads";
+import Content from "./_components/content";
 
 export const metadata: Metadata = {
   title: "Publicité réseaux sociaux Luxembourg",
@@ -26,5 +26,5 @@ export const metadata: Metadata = {
 };
 
 export default function SocialMediaAdsPage() {
-  return <SocialMediaAdsPageContent />;
+  return <Content />;
 }

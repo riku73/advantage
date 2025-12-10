@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import SitesWebPageContent from "@/components/service-page-sites-web";
+import Content from "./_components/content";
 
 export const metadata: Metadata = {
   title: "Création de sites web Luxembourg",
@@ -27,5 +27,5 @@ export const metadata: Metadata = {
 };
 
 export default function SitesWebPage() {
-  return <SitesWebPageContent />;
+  return <Content />;
 }

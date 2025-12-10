@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import LogoBrandingPageContent from "@/components/service-page-logo-branding";
+import Content from "./_components/content";
 
 export const metadata: Metadata = {
   title: "Logo et identité de marque Luxembourg",
@@ -26,5 +26,5 @@ export const metadata: Metadata = {
 };
 
 export default function LogoBrandingPage() {
-  return <LogoBrandingPageContent />;
+  return <Content />;
 }

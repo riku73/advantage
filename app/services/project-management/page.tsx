@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import ProjectManagementPageContent from "@/components/service-page-project-management";
+import Content from "./_components/content";
 
 export const metadata: Metadata = {
   title: "Gestion de projet externalisée Luxembourg",
@@ -25,5 +25,5 @@ export const metadata: Metadata = {
 };
 
 export default function ProjectManagementPage() {
-  return <ProjectManagementPageContent />;
+  return <Content />;
 }

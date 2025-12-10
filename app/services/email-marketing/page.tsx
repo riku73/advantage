@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import EmailMarketingPageContent from "@/components/service-page-email";
+import Content from "./_components/content";
 
 export const metadata: Metadata = {
   title: "E-mail marketing Luxembourg",
@@ -27,5 +27,5 @@ export const metadata: Metadata = {
 };
 
 export default function EmailMarketingPage() {
-  return <EmailMarketingPageContent />;
+  return <Content />;
 }

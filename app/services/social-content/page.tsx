@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import SocialContentPageContent from "@/components/service-page-social-content";
+import Content from "./_components/content";
 
 export const metadata: Metadata = {
   title: "Création contenu réseaux sociaux Luxembourg",
@@ -26,5 +26,5 @@ export const metadata: Metadata = {
 };
 
 export default function SocialContentPage() {
-  return <SocialContentPageContent />;
+  return <Content />;
 }

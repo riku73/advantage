@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import EmailDeliverabilityPageContent from "@/components/service-page-email-deliverability";
+import Content from "./_components/content";
 
 export const metadata: Metadata = {
   title: "Délivrabilité e-mail Luxembourg",
@@ -27,5 +27,5 @@ export const metadata: Metadata = {
 };
 
 export default function EmailDeliverabilityPage() {
-  return <EmailDeliverabilityPageContent />;
+  return <Content />;
 }

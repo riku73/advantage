@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import ContactPageContent from "@/components/contact-page-content";
+import Content from "./_components/content";
 
 export const metadata: Metadata = {
   title: "Contact - Demandez un devis gratuit",
@@ -24,5 +24,5 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  return <ContactPageContent />;
+  return <Content />;
 }

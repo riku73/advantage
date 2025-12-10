@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import SEOPageContent from "@/components/service-page-seo";
+import Content from "./_components/content";
 
 export const metadata: Metadata = {
   title: "SEO - Référencement naturel Luxembourg",
@@ -27,5 +27,5 @@ export const metadata: Metadata = {
 };
 
 export default function SEOPage() {
-  return <SEOPageContent />;
+  return <Content />;
 }
