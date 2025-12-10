@@ -215,14 +215,18 @@ export default function CustomQuotePageContent() {
   const nextStep = () => {
     if (canProceed() && currentStep < totalSteps) {
       setCurrentStep(currentStep + 1);
-      progressBarRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      setTimeout(() => {
+        progressBarRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 100);
     }
   };
 
   const prevStep = () => {
     if (currentStep > 1) {
       setCurrentStep(currentStep - 1);
-      progressBarRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      setTimeout(() => {
+        progressBarRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 100);
     }
   };
 
