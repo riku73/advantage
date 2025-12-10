@@ -51,8 +51,8 @@ export default function AboutPageContent() {
             </h1>
             <p className="mt-6 text-lg text-muted-foreground">
               Basée au Luxembourg, ADVANTAGE accompagne les entreprises dans leur
-              croissance digitale grâce à des stratégies sur-mesure et à des
-              résultats concrets.
+              croissance digitale grâce à des stratégies sur-mesure et une
+              approche personnalisée pour chaque projet.
             </p>
             <div className="mt-8">
               <Link
@@ -159,7 +159,7 @@ export default function AboutPageContent() {
                 leur croissance et maximiser leur retour sur investissement.
               </p>
               <p className="mt-4 text-primary-foreground/80">
-                Proximité, réactivité et résultats concrets : voilà ce qui nous
+                Proximité, réactivité et engagement pour votre réussite : voilà ce qui nous
                 différencie des grandes agences internationales.
               </p>
             </FadeIn>

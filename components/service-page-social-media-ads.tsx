@@ -134,7 +134,7 @@ export default function SocialMediaAdsPageContent() {
               <p className="mt-6 text-lg text-muted-foreground">
                 Atteignez votre audience cible là où elle se trouve avec des
                 campagnes publicitaires optimisées sur Meta, LinkedIn, TikTok et
-                plus. ROI mesurable et résultats concrets.
+                plus. Attirez de nouveaux clients via Facebook, Instagram et LinkedIn.
               </p>
               <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
                 <Link
@@ -153,7 +153,7 @@ export default function SocialMediaAdsPageContent() {
       {/* Benefits Grid */}
       <BenefitsGrid
         backgroundImage="/images/social-media-marketing-luxembourg.jpg"
-        title="Pourquoi parier sur la publicité sociale ?"
+        title="Les avantages de la publicité sociale"
         subtitle="La publicité sociale pour atteindre vos objectifs business"
         benefits={benefits}
         columns={2}
@@ -193,7 +193,7 @@ export default function SocialMediaAdsPageContent() {
 
       {/* Process Timeline */}
       <ProcessTimeline
-        title="Notre méthodologie Social Ads"
+        title="Comment nous travaillons"
         subtitle="Une approche structurée pour des campagnes performantes"
         steps={processSteps}
       />

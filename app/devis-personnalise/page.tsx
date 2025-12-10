@@ -2,8 +2,25 @@ import { Metadata } from "next";
 import CustomQuotePageContent from "@/components/custom-quote-page-content";
 
 export const metadata: Metadata = {
-  title: "Devis personnalisé | ADVANTAGE Marketing",
-  description: "Obtenez un devis personnalisé pour votre projet digital. Répondez à quelques questions et recevez une estimation détaillée adaptée à vos besoins.",
+  title: "Devis personnalisé gratuit",
+  description:
+    "Obtenez un devis personnalisé pour votre projet digital au Luxembourg. Répondez à quelques questions et recevez une estimation détaillée.",
+  keywords: [
+    "devis marketing digital",
+    "estimation projet web",
+    "devis gratuit Luxembourg",
+    "prix site web",
+  ],
+  openGraph: {
+    title: "Devis personnalisé | ADVANTAGE",
+    description:
+      "Obtenez un devis personnalisé pour votre projet digital. Estimation détaillée et sans engagement.",
+    url: "/devis-personnalise",
+    images: ["/images/og-image.jpg"],
+  },
+  alternates: {
+    canonical: "/devis-personnalise",
+  },
 };
 
 export default function CustomQuotePage() {

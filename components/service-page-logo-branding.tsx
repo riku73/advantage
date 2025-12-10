@@ -197,8 +197,8 @@ export default function LogoBrandingPageContent() {
 
       {/* Process Timeline */}
       <ProcessTimeline
-        title="Notre processus créatif"
-        subtitle="Une méthodologie structurée pour un résultat optimal"
+        title="Du concept au logo final"
+        subtitle="Les étapes pour créer votre identité de marque"
         steps={processSteps}
       />
 

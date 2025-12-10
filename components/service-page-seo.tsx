@@ -33,9 +33,9 @@ const benefits: BenefitItem[] = [
   },
   {
     icon: Target,
-    title: "Réduction du coût d'acquisition",
+    title: "Indépendance publicitaire",
     description:
-      "Le SEO offre un coût par acquisition 61% inférieur aux campagnes payantes sur le long terme. Un canal marketing rentable et pérenne.",
+      "Réduisez votre dépendance aux publicités payantes. Le SEO construit un actif durable qui génère du trafic même sans budget publicitaire.",
   },
   {
     icon: BarChart3,
@@ -103,9 +103,9 @@ export default function SEOPageContent() {
                 Boostez votre visibilité avec le SEO
               </h1>
               <p className="mt-6 text-lg text-muted-foreground">
-                Positionnez votre site en première page Google et attirez un
-                trafic qualifié durable grâce à notre expertise en
-                référencement naturel. Stratégie data-driven et résultats mesurables.
+                Votre agence SEO au Luxembourg pour positionner votre site en
+                première page Google. Attirez un trafic qualifié durable grâce
+                à notre expertise en référencement naturel.
               </p>
               <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
                 <Link
@@ -116,6 +116,12 @@ export default function SEOPageContent() {
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
+              <p className="mt-4 text-sm text-muted-foreground">
+                Nouveau dans le marketing digital ?{" "}
+                <Link href="/glossaire" className="underline hover:text-foreground">
+                  Consultez notre glossaire
+                </Link>
+              </p>
             </FadeIn>
           </div>
         </div>
@@ -124,7 +130,7 @@ export default function SEOPageContent() {
       {/* Benefits */}
       <BenefitsGrid
         backgroundImage="/images/seo-referencement-luxembourg.jpg"
-        title="Pourquoi travailler votre référencement naturel ?"
+        title="Les avantages du référencement naturel"
         subtitle="Un investissement rentable sur le long terme"
         benefits={benefits}
         columns={2}
@@ -132,8 +138,8 @@ export default function SEOPageContent() {
 
       {/* Process Timeline */}
       <ProcessTimeline
-        title="Notre méthodologie SEO"
-        subtitle="Une approche structurée en 6 étapes pour des résultats optimaux"
+        title="Comment nous travaillons"
+        subtitle="Une approche structurée en 6 étapes pour améliorer votre visibilité Google"
         steps={processSteps}
         className="bg-muted/50"
       />

@@ -2,15 +2,27 @@ import { Metadata } from "next";
 import SocialContentPageContent from "@/components/service-page-social-content";
 
 export const metadata: Metadata = {
-  title: "Création de contenu | ADVANTAGE",
+  title: "Création contenu réseaux sociaux Luxembourg",
   description:
-    "Calendrier éditorial complet avec 8-10 posts par mois. Visuels, captions et hashtags inclus à partir de €390/mois.",
+    "Calendrier éditorial complet pour vos réseaux sociaux au Luxembourg. Visuels, captions et stratégie de contenu inclus.",
   keywords: [
+    "création contenu Luxembourg",
     "social media content",
-    "création contenu",
     "calendrier éditorial",
     "gestion réseaux sociaux",
+    "community management",
+    "contenu Instagram",
   ],
+  openGraph: {
+    title: "Création de contenu réseaux sociaux | ADVANTAGE",
+    description:
+      "Calendrier éditorial complet pour vos réseaux sociaux. Visuels, captions et stratégie inclus.",
+    url: "/services/social-content",
+    images: ["/images/creation-contenu-reseaux-sociaux-luxembourg.jpg"],
+  },
+  alternates: {
+    canonical: "/services/social-content",
+  },
 };
 
 export default function SocialContentPage() {

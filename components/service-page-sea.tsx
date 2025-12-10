@@ -135,7 +135,7 @@ export default function SEAPageContent() {
               <p className="mt-6 text-lg text-muted-foreground">
                 Atteignez vos clients au moment précis où ils recherchent vos
                 produits ou services avec des campagnes Google Ads optimisées.
-                Résultats mesurables dès les premières 24 heures.
+                Visibilité immédiate dès le lancement de vos campagnes.
               </p>
               <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
                 <Link
@@ -146,6 +146,12 @@ export default function SEAPageContent() {
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
+              <p className="mt-4 text-sm text-muted-foreground">
+                Nouveau dans le marketing digital ?{" "}
+                <Link href="/glossaire" className="underline hover:text-foreground">
+                  Consultez notre glossaire
+                </Link>
+              </p>
             </FadeIn>
           </div>
         </div>
@@ -154,7 +160,7 @@ export default function SEAPageContent() {
       {/* Benefits Grid */}
       <BenefitsGrid
         backgroundImage="/images/sea-publicite-google-ads-luxembourg.jpg"
-        title="Pourquoi choisir Google Ads ?"
+        title="Les avantages de Google Ads"
         subtitle="La publicité payante la plus efficace pour générer du trafic qualifié"
         benefits={benefits}
         columns={2}
@@ -194,7 +200,7 @@ export default function SEAPageContent() {
 
       {/* Process Timeline */}
       <ProcessTimeline
-        title="Notre méthodologie Google Ads"
+        title="Comment nous travaillons"
         subtitle="Une approche structurée en 5 étapes pour des campagnes performantes"
         steps={processSteps}
       />
@@ -210,7 +216,7 @@ export default function SEAPageContent() {
       {/* CTA with Related Services */}
       <CTAWithServices
         title="Maximisez votre ROI avec Google Ads"
-        description="Discutons de vos objectifs et créons ensemble une stratégie Google Ads qui génère des résultats concrets."
+        description="Discutons de vos objectifs et créons ensemble une stratégie Google Ads qui vous apporte des clients rapidement."
         buttonText="Demandez un devis"
         buttonHref="/devis-personnalise"
         relatedServices={relatedServices}

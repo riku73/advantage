@@ -41,9 +41,9 @@ const benefits: BenefitItem[] = [
   },
   {
     icon: FileCheck,
-    title: "Conformité technique totale",
+    title: "Configuration SPF, DKIM, DMARC",
     description:
-      "Configuration complète SPF, DKIM et DMARC pour respecter les standards d'authentification e-mail.",
+      "Configuration complète des protocoles d'authentification pour que les serveurs reconnaissent vos e-mails comme légitimes.",
   },
 ];
 
@@ -84,12 +84,12 @@ const processSteps: ProcessStep[] = [
   {
     title: "Audit technique complet",
     description:
-      "Analyse approfondie de votre configuration actuelle : SPF, DKIM, DMARC, réputation IP, historique de domaine et taux de plaintes.",
+      "Analyse approfondie de votre configuration actuelle : SPF, DKIM, DMARC, réputation d'expéditeur et historique de domaine.",
   },
   {
     title: "Configuration DNS",
     description:
-      "Mise en place et optimisation des enregistrements DNS nécessaires pour l'authentification e-mail auprès de tous les providers.",
+      "Mise en place et optimisation des enregistrements SPF, DKIM et DMARC pour l'authentification e-mail.",
   },
   {
     title: "Tests de délivrabilité",
@@ -127,9 +127,11 @@ export default function EmailDeliverabilityPageContent() {
                 Assurez que vos e-mails arrivent à destination
               </h1>
               <p className="mt-6 text-lg text-muted-foreground">
-                Évitez les filtres anti-spam et améliorez la délivrabilité de vos
-                e-mails avec notre expertise technique. Configuration complète SPF,
-                DKIM, DMARC et optimisation de réputation d'expéditeur.
+                Évitez les filtres anti-spam grâce à une configuration complète{" "}
+                <Link href="/glossaire#spf" className="underline hover:text-foreground">SPF</Link>,{" "}
+                <Link href="/glossaire#dkim" className="underline hover:text-foreground">DKIM</Link> et{" "}
+                <Link href="/glossaire#dmarc" className="underline hover:text-foreground">DMARC</Link>.
+                Vos e-mails arrivent en boîte de réception, pas en spam.
               </p>
               <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
                 <Link
@@ -140,6 +142,12 @@ export default function EmailDeliverabilityPageContent() {
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
+              <p className="mt-4 text-sm text-muted-foreground">
+                Nouveau dans le marketing digital ?{" "}
+                <Link href="/glossaire" className="underline hover:text-foreground">
+                  Consultez notre glossaire
+                </Link>
+              </p>
             </FadeIn>
           </div>
         </div>
@@ -188,8 +196,8 @@ export default function EmailDeliverabilityPageContent() {
 
       {/* Process Timeline */}
       <ProcessTimeline
-        title="Notre méthodologie"
-        subtitle="Une approche structurée en 4 étapes pour garantir votre délivrabilité"
+        title="Les étapes de l'audit"
+        subtitle="Une approche structurée pour garantir votre délivrabilité"
         steps={processSteps}
       />
 

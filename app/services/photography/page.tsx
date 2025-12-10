@@ -2,16 +2,27 @@ import { Metadata } from "next";
 import PhotographyPageContent from "@/components/service-page-photography";
 
 export const metadata: Metadata = {
-  title: "Photographie professionnelle | ADVANTAGE",
+  title: "Photographie professionnelle Luxembourg",
   description:
-    "Séances photo événements, corporate, produits. Photos haute résolution avec retouche à partir de €290/session.",
+    "Séances photo corporate, événements et produits au Luxembourg. Photos haute résolution avec retouche professionnelle.",
   keywords: [
-    "photographe professionnel",
+    "photographe professionnel Luxembourg",
     "photo corporate",
     "photo événement",
     "photo produit",
     "portraits professionnels",
+    "photographe entreprise",
   ],
+  openGraph: {
+    title: "Photographie professionnelle | ADVANTAGE",
+    description:
+      "Séances photo corporate, événements et produits. Photos haute résolution avec retouche.",
+    url: "/services/photography",
+    images: ["/images/photographie-professionnelle-luxembourg.jpg"],
+  },
+  alternates: {
+    canonical: "/services/photography",
+  },
 };
 
 export default function PhotographyPage() {
