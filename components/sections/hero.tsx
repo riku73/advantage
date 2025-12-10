@@ -2,11 +2,20 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import Shuffle from "@/components/ui/shadcn-io/shuffle";
+
+// Lazy load GSAP Shuffle component (~50KB savings)
+const Shuffle = dynamic(
+  () => import("@/components/ui/shadcn-io/shuffle"),
+  {
+    ssr: false,
+    loading: () => <span className="text-foreground">ADVANTAGE</span>,
+  }
+);
 
 export default function Hero() {
   const { resolvedTheme } = useTheme();
@@ -28,6 +37,7 @@ export default function Hero() {
           fill
           className="object-cover grayscale contrast-125"
           priority
+          fetchPriority="high"
         />
 
         {/* Mode-adaptive overlay */}

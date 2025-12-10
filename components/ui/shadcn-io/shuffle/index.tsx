@@ -143,6 +143,7 @@ const Shuffle: React.FC<ShuffleProps> = ({
 
           const wrap = document.createElement('span');
           wrap.className = 'inline-block overflow-hidden text-left';
+          wrap.setAttribute('aria-hidden', 'true');
           Object.assign(wrap.style, { width: w + 'px', verticalAlign: '-0.15em' });
 
           const inner = document.createElement('span');
@@ -350,7 +351,11 @@ const Shuffle: React.FC<ShuffleProps> = ({
   const classes = `${baseTw} ${ready ? 'visible' : 'invisible'} ${className}`.trim();
   const Tag = (tag || 'p') as keyof React.JSX.IntrinsicElements;
 
-  return React.createElement(Tag, { ref: ref as any, className: classes, style: commonStyle }, text);
+  return React.createElement(
+    Tag,
+    { ref: ref as any, className: classes, style: commonStyle, role: 'text', 'aria-label': text },
+    React.createElement('span', { 'aria-hidden': 'true' }, text)
+  );
 };
 
 export default Shuffle;
