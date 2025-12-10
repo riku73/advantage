@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { Book, Search, Mail, Globe, TrendingUp, ArrowRight, Server } from "lucide-react";
 import FadeIn from "@/components/ui/fade-in";
-import StaggerContainer, { StaggerItem } from "@/components/ui/stagger-container";
 
 interface GlossaryTerm {
   term: string;
@@ -274,7 +273,7 @@ export default function GlossairePageContent() {
             {/* Main Content */}
             <div className="lg:col-span-3 space-y-16">
               {glossaryData.map((category) => (
-                <FadeIn key={category.slug}>
+                <div key={category.slug}>
                   <div
                     id={category.slug}
                     className="scroll-mt-24 flex items-center gap-3 mb-8"
@@ -285,9 +284,9 @@ export default function GlossairePageContent() {
                     <h2 className="text-2xl font-bold">{category.title}</h2>
                   </div>
 
-                  <StaggerContainer className="space-y-6">
+                  <div className="space-y-6">
                     {category.terms.map((item) => (
-                      <StaggerItem key={item.slug}>
+                      <div key={item.slug}>
                         <div
                           id={item.slug}
                           className="scroll-mt-24 rounded-xl border bg-card p-6 transition-all hover:shadow-md hover:border-primary/30"
@@ -304,10 +303,10 @@ export default function GlossairePageContent() {
                             </p>
                           )}
                         </div>
-                      </StaggerItem>
+                      </div>
                     ))}
-                  </StaggerContainer>
-                </FadeIn>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
@@ -317,7 +316,7 @@ export default function GlossairePageContent() {
       {/* CTA */}
       <section className="bg-primary py-20">
         <div className="container mx-auto px-4 lg:px-8">
-          <FadeIn className="mx-auto max-w-3xl text-center">
+          <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl">
               Besoin d&apos;aide pour votre marketing digital ?
             </h2>
@@ -334,7 +333,7 @@ export default function GlossairePageContent() {
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
-          </FadeIn>
+          </div>
         </div>
       </section>
     </div>
