@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import CustomQuotePageContent from "@/components/custom-quote-page-content";
+import Content from "./_components/content";
 
 export const metadata: Metadata = {
   title: "Devis personnalisé gratuit",
@@ -24,5 +24,5 @@ export const metadata: Metadata = {
 };
 
 export default function CustomQuotePage() {
-  return <CustomQuotePageContent />;
+  return <Content />;
 }

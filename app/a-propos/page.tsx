@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import AboutPageContent from "@/components/about-page-content";
+import Content from "./_components/content";
 
 export const metadata: Metadata = {
   title: "À propos - Agence marketing digital Luxembourg",
@@ -24,5 +24,5 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-  return <AboutPageContent />;
+  return <Content />;
 }

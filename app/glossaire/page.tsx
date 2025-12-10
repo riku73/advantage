@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import GlossairePageContent from "@/components/glossaire-page-content";
+import Content from "./_components/content";
 
 export const metadata: Metadata = {
   title: "Glossaire marketing digital",
@@ -26,5 +26,5 @@ export const metadata: Metadata = {
 };
 
 export default function GlossairePage() {
-  return <GlossairePageContent />;
+  return <Content />;
 }

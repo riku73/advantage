@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import SEAPageContent from "@/components/service-page-sea";
+import Content from "./_components/content";
 
 export const metadata: Metadata = {
   title: "SEA - Google Ads Luxembourg",
@@ -27,5 +27,5 @@ export const metadata: Metadata = {
 };
 
 export default function SEAPage() {
-  return <SEAPageContent />;
+  return <Content />;
 }

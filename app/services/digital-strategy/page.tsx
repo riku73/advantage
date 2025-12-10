@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import DigitalStrategyPageContent from "@/components/service-page-digital-strategy";
+import Content from "./_components/content";
 
 export const metadata: Metadata = {
   title: "Consulting stratégie digitale Luxembourg",
@@ -26,5 +26,5 @@ export const metadata: Metadata = {
 };
 
 export default function DigitalStrategyPage() {
-  return <DigitalStrategyPageContent />;
+  return <Content />;
 }

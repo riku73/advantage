@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import PrintCoordinationPageContent from "@/components/service-page-print-coordination";
+import Content from "./_components/content";
 
 export const metadata: Metadata = {
   title: "Coordination impression Luxembourg",
@@ -25,5 +25,5 @@ export const metadata: Metadata = {
 };
 
 export default function PrintCoordinationPage() {
-  return <PrintCoordinationPageContent />;
+  return <Content />;
 }

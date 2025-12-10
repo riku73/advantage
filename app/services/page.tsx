@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import ServicesPageContent from "@/components/services-page-content";
+import Content from "./_components/content";
 
 export const metadata: Metadata = {
   title: "Services marketing digital Luxembourg",
@@ -26,5 +26,5 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
-  return <ServicesPageContent />;
+  return <Content />;
 }

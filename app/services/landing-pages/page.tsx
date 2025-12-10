@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import LandingPagesPageContent from "@/components/service-page-landing";
+import Content from "./_components/content";
 
 export const metadata: Metadata = {
   title: "Landing pages optimisées Luxembourg",
@@ -27,5 +27,5 @@ export const metadata: Metadata = {
 };
 
 export default function LandingPagesPage() {
-  return <LandingPagesPageContent />;
+  return <Content />;
 }

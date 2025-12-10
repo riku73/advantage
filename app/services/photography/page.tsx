@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import PhotographyPageContent from "@/components/service-page-photography";
+import Content from "./_components/content";
 
 export const metadata: Metadata = {
   title: "Photographie professionnelle Luxembourg",
@@ -26,5 +26,5 @@ export const metadata: Metadata = {
 };
 
 export default function PhotographyPage() {
-  return <PhotographyPageContent />;
+  return <Content />;
 }
