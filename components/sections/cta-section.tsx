@@ -23,6 +23,8 @@ function ParallaxImage({ src, alt }: { src: string; alt: string }) {
           alt={alt}
           fill
           className="object-cover grayscale"
+          loading="lazy"
+          sizes="100vw"
         />
       </motion.div>
     </div>
