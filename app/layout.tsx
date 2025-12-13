@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "@/components/shared/header";
 import Footer from "@/components/shared/footer";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Analytics } from "@vercel/analytics/next";
 
 export const viewport: Viewport = {
   themeColor: [
@@ -168,6 +169,12 @@ export default function RootLayout({
   return (
     <html lang="fr" suppressHydrationWarning>
       <head>
+        {/* CookieYes banner - must load first */}
+        <Script
+          id="cookieyes"
+          src="https://cdn-cookieyes.com/client_data/119773b059fdacd83c9223f036b4521f/script.js"
+          strategy="beforeInteractive"
+        />
         {/* Preconnect hints for third-party resources - must be before any scripts */}
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="anonymous" />
@@ -211,6 +218,7 @@ export default function RootLayout({
           <main className="min-h-screen">{children}</main>
           <Footer />
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
